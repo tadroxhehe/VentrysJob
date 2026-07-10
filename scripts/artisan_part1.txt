@@ -1,0 +1,247 @@
+recette : ventrysitem:res_planche_chene ( x1 )
+résultat : ventrysitem:item_bois ( x1 )
+
+recette : minecraft:stick ( x4 ) + minecraft:coal ( x1 ) + ventrysitem:res_planche_chene ( x1 )
+résultat : minecraft:torch ( x4 )
+
+recette : minecraft:stick ( x4 ) + minecraft:charcoal ( x1 ) + ventrysitem:res_planche_chene ( x1 )
+résultat : minecraft:torch ( x4 )
+
+
+recette : ventrysitem:res_planche_chene ( x2 )
+résultat : ventrysitem:res_chope_vide ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x2 )
+résultat : westerosblocks:wooden_plate ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x15 ) + minecraft:stick ( x10 )
+résultat : ventryscombat:epee_courte_en_bois ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x10 ) + minecraft:stick ( x10 )
+résultat : ventryscombat:dague_en_bois ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x15 ) + minecraft:stick ( x10 )
+résultat : ventryscombat:epee_batarde_en_bois ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x25 ) + minecraft:stick ( x10 )
+résultat : ventryscombat:epee_longue_en_bois ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x20 ) + minecraft:stick ( x40 )
+résultat : ventryscombat:bec_de_corbin_en_bois ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x25 ) + minecraft:stick ( x10 )
+résultat : ventryscombat:claymore_en_bois ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x30 ) + minecraft:stick ( x10 )
+résultat : ventryscombat:flamberge_en_bois ( x1 )
+
+
+recette : ventrysitem:res_planche_chene ( x15 ) + minecraft:stick ( x40 )
+résultat : ventryscombat:lance_longue_en_bois ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x15 ) + minecraft:stick ( x40 )
+résultat : ventryscombat:hallebarde_en_bois ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x25 ) + minecraft:stick ( x40 )
+résultat : ventryscombat:barbiche_en_bois ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x25 ) + minecraft:stick ( x40 )
+résultat : ventryscombat:guisarme_en_bois ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x25 ) + minecraft:stick ( x10 )
+résultat : ventryscombat:espadon_en_bois ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x15 ) + minecraft:stick ( x20 )
+résultat : ventryscombat:hache_de_combat_en_bois ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x25 ) + minecraft:stick ( x40 )
+résultat : ventryscombat:hache_de_combat_longue_en_bois ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x15 ) + minecraft:stick ( x20 )
+résultat : ventryscombat:hache_double_courte_en_bois ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x25 ) + minecraft:stick ( x40 )
+résultat : ventryscombat:hache_double_longue_en_bois ( x1 )
+
+
+recette : ventrysitem:res_planche_chene ( x20 ) + minecraft:stick ( x40 )
+résultat : ventryscombat:etoile_du_matin_en_bois ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x20 ) + minecraft:stick ( x30 )
+résultat : ventryscombat:masse_des_ailettes_en_bois ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x20 ) + minecraft:stick ( x30 )
+résultat : ventryscombat:fleau_en_bois ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x10 ) + minecraft:stick ( x10 )
+résultat : ventrysitem:res_balais ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x70 ) + minecraft:stick ( x5 ) +  minecraft:iron_ingot ( x4 )
+résultat : ventryscombat:bocle_en_bois ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x80 ) + minecraft:stick ( x5 ) + minecraft:iron_ingot ( x4 )
+résultat : ventryscombat:pavois_en_bois ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x70 ) + minecraft:stick ( x5 ) + minecraft:iron_ingot ( x4 )
+résultat : ventryscombat:ecu_en_bois ( x1 )
+recette : ventrysitem:res_planche_chene ( x10 ) + minecraft:stick ( x5 ) 
+résultat : ventryscombat:bocle_dentrainement ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x15 ) + minecraft:stick ( x5 )
+résultat : ventryscombat:pavois_dentrainement ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x10 ) + minecraft:stick ( x5  ) 
+résultat : ventryscombat:ecu_dentrainement ( x1 )
+
+recette :  ventrysitem:res_planche_chene ( x3 ) + minecraft:stick ( x16 )
+résultat : ventrysitem:res_brosse ( x1 )
+
+recette :  ventrysitem:res_planche_chene ( x15 ) + minecraft:stick ( x6 ) +  minecraft:iron_nugget ( x3 ) + ventrysitem:res_fils ( x32 )
+résultat : ventrysitem:item_canne_a_peche ( x1 )
+
+recette :  ventrysitem:res_planche_chene ( x20 ) + minecraft:stick ( x5 )
+résultat : ventrysitem:item_maillet ( x1 )
+
+recette :  ventrysitem:res_planche_chene ( x6 ) + minecraft:stick ( x16 ) + ventrysitem:res_fils ( x36 )
+résultat : minecraft:bow ( x1 )
+
+recette :  ventrysitem:res_planche_chene ( x42 ) + minecraft:stick ( x16 ) + ventrysitem:res_fils ( x32 ) + minecraft:iron_nugget ( x6 )
+résultat : ventrysitem:res_contrebasse ( x1 )
+
+recette : minecraft:bone ( x20 )
+résultat : ventrysitem:res_corne_de_brume ( x1 )
+
+recette :  ventrysitem:res_planche_chene ( x16 ) + minecraft:iron_nugget ( x9 ) + ventrysitem:res_cuir_tanne ( x12 )
+résultat : ventrysitem:res_cornemuse ( x1 )
+
+recette :  ventrysitem:res_planche_chene ( x32 ) + minecraft:stick ( x16 ) + minecraft:iron_nugget ( x2 )
+résultat : ventrysitem:res_flute_a_bec ( x1 )
+
+recette :  ventrysitem:res_planche_chene ( x18 ) + minecraft:stick ( x16 )
+résultat : ventrysitem:res_flute_de_pan ( x1 )
+
+recette :  ventrysitem:res_planche_chene ( x32 ) + minecraft:stick ( x32 )
+résultat : ventrysitem:res_harpe ( x1 )
+
+recette :  ventrysitem:res_planche_chene ( x32 ) + minecraft:stick ( x32 )
+résultat : ventrysitem:res_luth ( x1 )
+
+recette :  ventrysitem:res_planche_chene ( x36 ) + minecraft:stick ( x26 ) + minecraft:iron_nugget ( x4 ) + ventrysitem:res_fils ( x28 )
+résultat : ventrysitem:res_violon ( x1 )
+
+recette :  ventrysitem:res_planche_chene ( x52 ) + minecraft:stick ( x12 ) + ventrysitem:res_fils ( x16 ) + minecraft:iron_nugget ( x6 )
+résultat : ventrysitem:res_vielle_a_roue ( x1 )
+
+recette :  ventrysitem:res_planche_chene ( x40 ) + minecraft:stick ( x16 ) + ventrysitem:res_cuir_tanne ( x16 )
+résultat : ventrysitem:res_tambour ( x1 )
+
+recette :  ventrysitem:res_planche_chene ( x24 ) + minecraft:stick ( x12 ) + ventrysitem:res_cuir_tanne ( x14 )
+résultat : ventrysitem:res_tambourin ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x4 ) + ventrysitem:res_clou ( x6 )
+résultat : westerosblocks:oak_vertical_planks_carpet ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x4 ) + ventrysitem:res_clou ( x6 )
+résultat : westerosblocks:birch_vertical_planks_carpet ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x4 ) + ventrysitem:res_clou ( x6 )
+résultat : westerosblocks:spruce_vertical_planks_carpet ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x4 ) + ventrysitem:res_clou ( x6 )
+résultat : westerosblocks:oak_carpet ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x4 ) + ventrysitem:res_clou ( x6 )
+résultat : westerosblocks:birch_carpet ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x4 ) + ventrysitem:res_clou ( x6 )
+résultat : westerosblocks:spruce_carpet ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x18 ) + ventrysitem:res_clou ( x18 )
+résultat : minecraft:oak_planks ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x20 ) + ventrysitem:res_clou ( x18 )
+résultat : westerosblocks:reach_oak_wood_panelling ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x12 ) + ventrysitem:res_clou ( x12 )
+résultat : minecraft:oak_stairs ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x9 ) + ventrysitem:res_clou ( x9 )
+résultat : minecraft:oak_slab ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x9 ) + ventrysitem:res_clou ( x9 )
+résultat : westerosblocks:oak_wall ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x10 ) + ventrysitem:res_clou ( x9 )
+résultat : westerosblocks:reach_oak_wood_panelling_wall ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x12 ) + ventrysitem:res_clou ( x12 )
+résultat : westerosblocks:oak_trip ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x12 ) + ventrysitem:res_clou ( x12 )
+résultat : westerosblocks:oak_hopper ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x4 ) + ventrysitem:res_clou ( x4 )
+résultat : westerosblocks:oak_half_door ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x6 ) + ventrysitem:res_clou ( x4 )
+résultat : minecraft:oak_fence ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x4 ) + ventrysitem:res_clou ( x6 ) + minecraft:stick ( x6 )
+résultat : minecraft:oak_fence_gate ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x18 ) + ventrysitem:res_clou ( x18 )
+résultat : westerosblocks:oak_vertical_planks ( x1 )
+
+
+recette : ventrysitem:res_planche_chene ( x12 ) + ventrysitem:res_clou ( x12 )
+résultat : westerosblocks:oak_vertical_planks_stairs ( x1 )
+
+
+recette : ventrysitem:res_planche_chene ( x9 ) + ventrysitem:res_clou ( x9 )
+résultat : westerosblocks:oak_vertical_planks_slab ( x1 )
+
+
+recette : ventrysitem:res_planche_chene ( x9 ) + ventrysitem:res_clou ( x9 )
+résultat : westerosblocks:oak_vertical_planks_wall ( x1 )
+
+
+recette : ventrysitem:res_planche_chene ( x12 ) + ventrysitem:res_clou ( x12 )
+résultat : westerosblocks:oak_vertical_planks_trip ( x1 )
+
+
+recette : ventrysitem:res_planche_chene ( x12 ) + ventrysitem:res_clou ( x12 )
+résultat :westerosblocks:oak_vertical_planks_hopper ( x1 )
+
+
+recette : ventrysitem:res_planche_chene ( x6 ) + ventrysitem:res_clou ( x4 )
+résultat : westerosblocks:oak_vertical_planks_fence ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x12 ) + ventrysitem:res_clou ( x12 )
+résultat : minecraft:oak_door ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x1 ) + ventrysitem:res_clou ( x2 )
+résultat : minecraft:oak_button ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x9 ) + ventrysitem:res_clou ( x8 )
+résultat : minecraft:oak_trapdoor ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x9 ) + ventrysitem:res_clou ( x9 )
+résultat : westerosblocks:oak_window_shutter ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x4 ) + ventrysitem:res_clou ( x8 )
+résultat : westerosblocks:oak_timber_window_frame  ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x4 ) + ventrysitem:res_clou ( x8 )
+résultat : westerosblocks:drone_carved_wooden_window  ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x4 ) + ventrysitem:res_clou ( x3 ) + minecraft:stick ( x4 )
+résultat : westerosblocks:oak_sign  ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x5 ) + ventrysitem:res_clou ( x8 )
+résultat : westerosblocks:oak_timber_window_frame_mullion  ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x3 ) + ventrysitem:res_clou ( x6 )
+résultat : minecraft:oak_pressure_plate  ( x1 )
+
+recette : minecraft:oak_log ( x1 ) + ventrysitem:res_corde ( x4 )
+résultat : westerosblocks:oak_log_rope ( x1 )

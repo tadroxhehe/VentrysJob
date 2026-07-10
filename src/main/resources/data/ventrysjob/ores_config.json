@@ -1,0 +1,16 @@
+{
+  "ores": [
+    {
+      "id": "verdragon_ore",
+      "name": "Minerai de Verdragon",
+      "texture": "verdragon_ore",
+      "hardness": 8.0,
+      "requires_tool": true,
+      "drops": {
+        "item_id": "ventrysitem:res_verdragon",
+        "count": 1,
+        "experience": 0
+      }
+    }
+  ]
+}

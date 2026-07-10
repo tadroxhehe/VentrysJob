@@ -1,0 +1,427 @@
+{
+  "extraction_config": {
+    "clicks_required": {
+      "oak": 10,
+      "saw": 5,
+      "mining": 10,
+      "stone": 10,
+      "calcite": 10,
+      "sand": 10
+    },
+    "oak_configs": [
+      {
+        "block_id": "minecraft:oak_log",
+        "drop_item": "minecraft:oak_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:oak_wood",
+        "drop_item": "minecraft:oak_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:stripped_oak_log",
+        "drop_item": "minecraft:oak_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:stripped_oak_wood",
+        "drop_item": "minecraft:oak_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:birch_log",
+        "drop_item": "minecraft:birch_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:birch_wood",
+        "drop_item": "minecraft:birch_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:stripped_birch_log",
+        "drop_item": "minecraft:birch_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:stripped_birch_wood",
+        "drop_item": "minecraft:birch_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:spruce_log",
+        "drop_item": "minecraft:spruce_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:spruce_wood",
+        "drop_item": "minecraft:spruce_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:stripped_spruce_log",
+        "drop_item": "minecraft:spruce_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:stripped_spruce_wood",
+        "drop_item": "minecraft:spruce_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:acacia_log",
+        "drop_item": "minecraft:acacia_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:acacia_wood",
+        "drop_item": "minecraft:acacia_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:stripped_acacia_log",
+        "drop_item": "minecraft:acacia_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:stripped_acacia_wood",
+        "drop_item": "minecraft:acacia_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:dark_oak_log",
+        "drop_item": "minecraft:dark_oak_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:dark_oak_wood",
+        "drop_item": "minecraft:dark_oak_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:stripped_dark_oak_log",
+        "drop_item": "minecraft:dark_oak_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:stripped_dark_oak_wood",
+        "drop_item": "minecraft:dark_oak_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:mangrove_log",
+        "drop_item": "minecraft:mangrove_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:mangrove_wood",
+        "drop_item": "minecraft:mangrove_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:stripped_mangrove_log",
+        "drop_item": "minecraft:mangrove_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:stripped_mangrove_wood",
+        "drop_item": "minecraft:mangrove_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:cherry_log",
+        "drop_item": "minecraft:cherry_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:cherry_wood",
+        "drop_item": "minecraft:cherry_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:stripped_cherry_log",
+        "drop_item": "minecraft:cherry_log",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:stripped_cherry_wood",
+        "drop_item": "minecraft:cherry_log",
+        "drop_count": 1
+      }
+    ],
+    "saw_configs": [
+      {
+        "block_id": "minecraft:oak_log",
+        "drop_item": "ventrysitem:res_planche_chene",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:birch_log",
+        "drop_item": "ventrysitem:res_planche_bouleau",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:spruce_log",
+        "drop_item": "ventrysitem:res_planche_sapin",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:acacia_log",
+        "drop_item": "minecraft:acacia_planks",
+        "drop_count": 4
+      },
+      {
+        "block_id": "minecraft:dark_oak_log",
+        "drop_item": "minecraft:dark_oak_planks",
+        "drop_count": 4
+      },
+      {
+        "block_id": "minecraft:mangrove_log",
+        "drop_item": "minecraft:mangrove_planks",
+        "drop_count": 4
+      },
+      {
+        "block_id": "minecraft:cherry_log",
+        "drop_item": "minecraft:cherry_planks",
+        "drop_count": 4
+      }
+    ],
+    "mining_configs": [
+      {
+        "block_id": "minecraft:iron_ore",
+        "drop_item": "minecraft:raw_iron",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:gold_ore",
+        "drop_item": "minecraft:raw_gold",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:copper_ore",
+        "drop_item": "minecraft:raw_copper",
+        "drop_count": 1
+      },
+      {
+        "block_id": "ventrysjob:fer_ore",
+        "drop_item": "minecraft:raw_iron",
+        "drop_count": 1
+      },
+      {
+        "block_id": "ventrysjob:diamant_ore",
+        "drop_item": "minecraft:diamond",
+        "drop_count": 1
+      },
+      {
+        "block_id": "ventrysjob:emeraude_ore",
+        "drop_item": "minecraft:emerald",
+        "drop_count": 1
+      },
+      {
+        "block_id": "ventrysjob:or_ore",
+        "drop_item": "minecraft:raw_gold",
+        "drop_count": 1
+      },
+      {
+        "block_id": "ventrysjob:charbon_ore",
+        "drop_item": "minecraft:coal",
+        "drop_count": 2
+      },
+      {
+        "block_id": "ventrysjob:cuivre_ore",
+        "drop_item": "minecraft:raw_copper",
+        "drop_count": 1
+      },
+      {
+        "block_id": "ventrysjob:argent_ore",
+        "drop_item": "ventrysitem:res_argent_brut",
+        "drop_count": 1
+      },
+      {
+        "block_id": "ventrysjob:etain_ore",
+        "drop_item": "ventrysitem:res_etain_brut",
+        "drop_count": 1
+      },
+      {
+        "block_id": "ventrysjob:saphire_ore",
+        "drop_item": "ventrysitem:res_saphire_brut",
+        "drop_count": 1
+      },
+      {
+        "block_id": "ventrysjob:rubis_ore",
+        "drop_item": "ventrysitem:res_rubis_brut",
+        "drop_count": 1
+      },
+      {
+        "block_id": "ventrysjob:verdragon_ore",
+        "drop_item": "ventrysitem:res_verdragon",
+        "drop_count": 1,
+        "clicks_required": 20
+      }
+    ],
+    "stone_configs": [
+      {
+        "block_id": "minecraft:stone",
+        "drop_item": "ventrysitem:res_pierre_fragmente",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:granite",
+        "drop_item": "ventrysitem:res_pierre_fragmente",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:diorite",
+        "drop_item": "ventrysitem:res_pierre_fragmente",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:andesite",
+        "drop_item": "ventrysitem:res_pierre_fragmente",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:cobblestone",
+        "drop_item": "ventrysitem:res_pierre_fragmente",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:deepslate",
+        "drop_item": "ventrysitem:res_pierre_fragmente",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:cobbled_deepslate",
+        "drop_item": "ventrysitem:res_pierre_fragmente",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:tuff",
+        "drop_item": "ventrysitem:res_pierre_fragmente",
+        "drop_count": 1
+      }
+    ],
+    "calcite_configs": [
+      {
+        "block_id": "minecraft:calcite",
+        "drop_item": "ventrysitem:res_calcaire",
+        "drop_count": 1
+      }
+    ],
+    "sand_configs": [
+      {
+        "block_id": "minecraft:red_sand",
+        "drop_item": "minecraft:red_sand",
+        "drop_count": 1
+      },
+      {
+        "block_id": "minecraft:red_sand",
+        "drop_item": "minecraft:red_sand",
+        "drop_count": 1
+      }
+    ],
+    "clay_configs": [
+      {
+        "block_id": "minecraft:clay",
+        "drop_item": "ventrysitem:res_argile_brun",
+        "drop_count": 1
+      }
+    ],
+    "pickaxe_tools": [
+      "ventrysitem:item_pioche",
+      "ventrysitem:item_pioche_en_bronze"
+    ],
+    "axe_tools": [
+      "ventrysitem:item_hache",
+      "ventrysitem:item_hache_en_bronze"
+    ],
+    "shovel_tools": [
+      "ventrysitem:item_pelle",
+      "ventrysitem:item_pelle_en_bronze"
+    ],
+    "chisel_tools": [
+      "ventrysitem:item_burin",
+      "ventrysitem:item_burin_en_bronze"
+    ],
+    "saw_tools": [
+      "ventrysitem:item_scie",
+      "ventrysitem:item_scie_en_bronze"
+    ],
+    "fork_tools": [
+      "ventrysitem:item_fourche",
+      "ventrysitem:item_fourche_en_bronze"
+    ],
+    "mallet_tools": [
+      "ventrysitem:item_maillet"
+    ],
+    "hammer_tools": [
+      "ventrysitem:item_marteau_en_bronze",
+      "ventrysitem:item_marteau_en_fer"
+    ],
+    "crop_harvest_clicks": 5,
+    "crop_configs": [
+      {
+        "block_id": "minecraft:wheat",
+        "drop_item": "minecraft:wheat",
+        "drop_count": 2,
+        "seed_item": "minecraft:wheat_seeds"
+      },
+      {
+        "block_id": "minecraft:beetroots",
+        "drop_item": "ventrysitem:item_betrave",
+        "drop_count": 1,
+        "seed_item": "minecraft:wheat_seeds"
+      },
+      {
+        "block_id": "ventrysjob:crop_orge",
+        "drop_item": "ventrysitem:item_orge",
+        "drop_count": 2,
+        "seed_item": "ventrysitem:item_graine_orge"
+      },
+      {
+        "block_id": "ventrysjob:crop_tomates",
+        "drop_item": "ventrysitem:item_tomate",
+        "drop_count": 1,
+        "seed_item": "ventrysitem:item_graine_tomates"
+      },
+      {
+        "block_id": "ventrysjob:crop_oignon",
+        "drop_item": "ventrysitem:item_oignon",
+        "drop_count": 1,
+        "seed_item": "ventrysitem:item_graine_doignon"
+      },
+      {
+        "block_id": "ventrysjob:crop_salade",
+        "drop_item": "ventrysitem:item_salade",
+        "drop_count": 1,
+        "seed_item": "ventrysitem:item_graine_salade"
+      },
+      {
+        "block_id": "ventrysjob:crop_raisin",
+        "drop_item": "ventrysitem:item_raisin",
+        "drop_count": 1,
+        "seed_item": "ventrysitem:item_graine_raisin"
+      },
+      {
+        "block_id": "ventrysjob:crop_choux",
+        "drop_item": "ventrysitem:item_choux",
+        "drop_count": 1,
+        "seed_item": "ventrysitem:item_graine_choux"
+      },
+      {
+        "block_id": "ventrysjob:crop_carotte",
+        "drop_item": "ventrysitem:item_carotte",
+        "drop_count": 1,
+        "seed_item": "ventrysitem:item_graine_carotte"
+      },
+      {
+        "block_id": "ventrysjob:crop_betrave",
+        "drop_item": "ventrysitem:item_betrave",
+        "drop_count": 1,
+        "seed_item": "ventrysitem:item_graine_betrave"
+      }
+    ]
+  }
+}
+

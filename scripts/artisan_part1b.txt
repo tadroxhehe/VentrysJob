@@ -1,0 +1,45 @@
+recette : ventrysitem:res_planche_chene ( x16 ) + ventrysitem:res_clou ( x36 ) + minecraft:stick ( x5 )
+résultat : ventrys_blocs:chaisechene  ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x45 ) + ventrysitem:res_clou ( x84 ) + minecraft:stick ( x16 )
+résultat : ventrys_blocs:chaisehautechene  ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x24 ) + ventrysitem:res_clou ( x48 ) + minecraft:stick ( x5 )
+résultat : ventrys_blocs:tablechene  ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x24 ) + ventrysitem:res_clou ( x48 ) + minecraft:stick ( x5 )
+résultat : ventrys_blocs:table_ronde_chene  ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x28 ) + ventrysitem:res_clou ( x64 ) + minecraft:stick ( x4 )
+résultat :  ventrys_blocs:bancchene  ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x48 ) + ventrysitem:res_clou ( x128 ) + minecraft:stick ( x8 )
+résultat :  ventrys_blocs:banc_riche_chene  ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x42 ) + ventrysitem:res_clou ( x96 ) + minecraft:stick ( x6 )
+résultat : ventrys_blocs:banclongchene  ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x70 ) + ventrysitem:res_clou ( x148 ) + minecraft:stick ( x12 )
+résultat : ventrys_blocs:banc_riche_long_chene  ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x40 ) + ventrysitem:res_clou ( x48 ) 
+résultat : ventrys_blocs:caisse_chene  ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x40 ) + ventrysitem:res_clou ( x48 ) + minecraft:iron_nugget ( x4 )
+résultat : minecraft:chest  ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x64 ) + ventrysitem:res_clou ( x128 ) + minecraft:stick ( x8 )
+résultat : ventrys_blocs:armoirechene  ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x14 ) + ventrysitem:res_clou ( x32 ) + minecraft:stick ( x3 )
+résultat : ventrys_blocs:tabouretchene  ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x34 ) + ventrysitem:res_clou ( x52 ) + minecraft:stick ( x4 )
+résultat : ventrys_blocs:petitecomodechene  ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x54 ) + ventrysitem:res_clou ( x84 ) + minecraft:stick ( x8 )
+résultat : ventrys_blocs:comodechene  ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x96 ) + ventrysitem:res_clou ( x152 ) +
+minecraft:stick ( x16 )
+résultat : ventrys_blocs:comodedoublechene ( x1 )

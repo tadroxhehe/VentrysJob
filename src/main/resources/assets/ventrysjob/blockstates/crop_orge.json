@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "age=0": { "model": "ventrysjob:block/crop_orge_stage0" },
+    "age=1": { "model": "ventrysjob:block/crop_orge_stage1" },
+    "age=2": { "model": "ventrysjob:block/crop_orge_stage2" },
+    "age=3": { "model": "ventrysjob:block/crop_orge_stage3" }
+  }
+}

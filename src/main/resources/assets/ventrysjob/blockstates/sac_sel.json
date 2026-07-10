@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "has_items=false": {
+      "model": "ventrysjob:block/sac_sel"
+    },
+    "has_items=true": {
+      "model": "ventrysjob:block/sac_sel_full"
+    }
+  }
+}
+

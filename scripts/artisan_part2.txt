@@ -1,0 +1,335 @@
+recette : ventrysitem:res_planche_sapin ( x18 ) + ventrysitem:res_clou ( x18 )
+résultat : minecraft:spruce_planks ( x1 )
+
+
+recette : ventrysitem:res_planche_sapin ( x12 ) + ventrysitem:res_clou ( x12 )
+résultat : minecraft:spruce_stairs ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x9 ) + ventrysitem:res_clou ( x9 )
+résultat : minecraft:spruce_slab ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x9 ) + ventrysitem:res_clou ( x9 )
+résultat : westerosblocks:spruce_wall ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x12 ) + ventrysitem:res_clou ( x12 )
+résultat : westerosblocks:spruce_trip ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x12 ) + ventrysitem:res_clou ( x12 )
+résultat : westerosblocks:spruce_hopper ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x4 ) + ventrysitem:res_clou ( x4 )
+résultat : westerosblocks:spruce_half_door ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x6 ) + ventrysitem:res_clou ( x4 )
+résultat : minecraft:spruce_fence ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x4 ) + ventrysitem:res_clou ( x6 ) + minecraft:stick ( x6 )
+résultat : minecraft:spruce_fence_gate ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x18 ) + ventrysitem:res_clou ( x18 )
+résultat : westerosblocks:spruce_vertical_planks ( x1 )
+
+
+recette : ventrysitem:res_planche_sapin ( x12 ) + ventrysitem:res_clou ( x12 )
+résultat : westerosblocks:spruce_vertical_planks_stairs ( x1 )
+
+
+recette : ventrysitem:res_planche_sapin ( x9 ) + ventrysitem:res_clou ( x9 )
+résultat : westerosblocks:spruce_vertical_planks_slab ( x1 )
+
+
+recette : ventrysitem:res_planche_sapin ( x9 ) + ventrysitem:res_clou ( x9 )
+résultat : westerosblocks:spruce_vertical_planks_wall ( x1 )
+
+
+recette : ventrysitem:res_planche_sapin ( x12 ) + ventrysitem:res_clou ( x12 )
+résultat : westerosblocks:spruce_vertical_planks_trip ( x1 )
+
+
+recette : ventrysitem:res_planche_sapin ( x12 ) + ventrysitem:res_clou ( x12 )
+résultat :westerosblocks:spruce_vertical_planks_hopper ( x1 )
+
+
+recette : ventrysitem:res_planche_sapin ( x6 ) + ventrysitem:res_clou ( x4 )
+résultat : westerosblocks:spruce_vertical_planks_fence ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x12) + ventrysitem:res_clou ( x12 )
+résultat : westerosblocks:spruce_door ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x12) + ventrysitem:res_clou ( x12 )
+résultat : minecraft:spruce_door ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x1 ) + ventrysitem:res_clou ( x2 )
+résultat : minecraft:spruce_button ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x9 ) + ventrysitem:res_clou ( x8 )
+résultat : minecraft:spruce_trapdoor ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x9 ) + ventrysitem:res_clou ( x9 )
+résultat : westerosblocks:spruce_window_shutter ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x4 ) + ventrysitem:res_clou ( x8 )
+résultat : westerosblocks:spruce_timber_window_frame  ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x4 ) + ventrysitem:res_clou ( x3 ) + minecraft:stick ( x4 )
+résultat : westerosblocks:spruce_sign  ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x5 ) + ventrysitem:res_clou ( x8 )
+résultat : westerosblocks:spruce_timber_window_frame_mullion  ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x3 ) + ventrysitem:res_clou ( x6 )
+résultat : minecraft:spruce_pressure_plate  ( x1 )
+
+recette : minecraft:spruce_log ( x1 ) + ventrysitem:res_corde ( x4 )
+résultat : westerosblocks:spruce_log_rope ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x16 ) + ventrysitem:res_clou ( x36 ) + minecraft:stick ( x5 )
+résultat : ventrys_blocs:chaisesapin  ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x45 ) + ventrysitem:res_clou ( x84 ) + minecraft:stick ( x16 )
+résultat :  ventrys_blocs:chaisehautesapin  ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x24 ) + ventrysitem:res_clou ( x48 ) + minecraft:stick ( x5 )
+résultat : ventrys_blocs:tablesapin  ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x24 ) + ventrysitem:res_clou ( x48 ) + minecraft:stick ( x5 )
+résultat : ventrys_blocs:table_ronde_sapin  ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x28 ) + ventrysitem:res_clou ( x64 ) + minecraft:stick ( x4 )
+résultat : ventrys_blocs:bancsapin  ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x48 ) + ventrysitem:res_clou ( x128 ) + minecraft:stick ( x8 )
+résultat : ventrys_blocs:banc_riche_sapin  ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x42 ) + ventrysitem:res_clou ( x96 ) + minecraft:stick ( x6 )
+résultat : ventrys_blocs:banclongsapin  ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x70 ) + ventrysitem:res_clou ( x148 ) + minecraft:stick ( x12 )
+résultat : ventrys_blocs:banc_riche_long_sapin  ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x40 ) + ventrysitem:res_clou ( x48 ) 
+résultat : ventrys_blocs:caisse_sapin  ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x64 ) + ventrysitem:res_clou ( x128 ) + minecraft:stick ( x8 )
+résultat : ventrys_blocs:armoiresapin  ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x14 ) + ventrysitem:res_clou ( x32 ) + minecraft:stick ( x3 )
+résultat : ventrys_blocs:tabouretsapin  ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x34 ) + ventrysitem:res_clou ( x52 ) + minecraft:stick ( x4 )
+résultat : ventrys_blocs:petitecomodesapin  ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x54 ) + ventrysitem:res_clou ( x84 ) + minecraft:stick ( x8 )
+résultat : ventrys_blocs:comodesapin  ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x96 ) + ventrysitem:res_clou ( x152 ) +
+minecraft:stick ( x16 )
+résultat : ventrys_blocs:comodedoublesapin  ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x18 ) + ventrysitem:res_clou ( x18 )
+résultat : minecraft:birch_planks ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x12 ) + ventrysitem:res_clou ( x12 )
+résultat : minecraft:birch_stairs ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x9 ) + ventrysitem:res_clou ( x9 )
+résultat : minecraft:birch_slab ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x9 ) + ventrysitem:res_clou ( x9 )
+résultat : westerosblocks:birch_wall ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x12 ) + ventrysitem:res_clou ( x12 )
+résultat : westerosblocks:birch_trip ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x12 ) + ventrysitem:res_clou ( x12 )
+résultat : westerosblocks:birch_hopper ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x4 ) + ventrysitem:res_clou ( x4 )
+résultat : westerosblocks:birch_half_door ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x6 ) + ventrysitem:res_clou ( x4 )
+résultat : minecraft:birch_fence ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x4 ) + ventrysitem:res_clou ( x6 ) + minecraft:stick ( x6 )
+résultat : minecraft:birch_fence_gate ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x18 ) + ventrysitem:res_clou ( x18 )
+résultat : westerosblocks:birch_vertical_planks ( x1 )
+
+
+recette : ventrysitem:res_planche_bouleau ( x12 ) + ventrysitem:res_clou ( x12 )
+résultat : westerosblocks:birch_vertical_planks_stairs ( x1 )
+
+
+recette : ventrysitem:res_planche_bouleau ( x9 ) + ventrysitem:res_clou ( x9 )
+résultat : westerosblocks:birch_vertical_planks_slab ( x1 )
+
+
+recette : ventrysitem:res_planche_bouleau ( x9 ) + ventrysitem:res_clou ( x9 )
+résultat : westerosblocks:birch_vertical_planks_wall ( x1 )
+
+
+recette : ventrysitem:res_planche_bouleau ( x12 ) + ventrysitem:res_clou ( x12 )
+résultat : westerosblocks:birch_vertical_planks_trip ( x1 )
+
+
+recette : ventrysitem:res_planche_bouleau ( x12 ) + ventrysitem:res_clou ( x12 )
+résultat :westerosblocks:birch_vertical_planks_hopper ( x1 )
+
+
+recette : ventrysitem:res_planche_bouleau ( x6 ) + ventrysitem:res_clou ( x4 )
+résultat : westerosblocks:birch_vertical_planks_fence ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x12) + ventrysitem:res_clou ( x12 )
+résultat : minecraft:birch_door ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x1 ) + ventrysitem:res_clou ( x2 )
+résultat : minecraft:birch_button ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x9 ) + ventrysitem:res_clou ( x8 )
+résultat : minecraft:birch_trapdoor ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x9 ) + ventrysitem:res_clou ( x9 )
+résultat : westerosblocks:birch_window_shutter ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x4 ) + ventrysitem:res_clou ( x8 )
+résultat : westerosblocks:birch_timber_window_frame  ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x4 ) + ventrysitem:res_clou ( x3 ) + minecraft:stick ( x4 )
+résultat : westerosblocks:birch_sign  ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x5 ) + ventrysitem:res_clou ( x8 )
+résultat : westerosblocks:birch_timber_window_frame_mullion ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x3 ) + ventrysitem:res_clou ( x6 )
+résultat : minecraft:birch_pressure_plate  ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x16 ) + ventrysitem:res_clou ( x36 ) + minecraft:stick ( x5 )
+résultat : ventrys_blocs:chaisebouleau  ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x45 ) + ventrysitem:res_clou ( x84 ) + minecraft:stick ( x16 )
+résultat : ventrys_blocs:chaisehautebouleau  ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x24 ) + ventrysitem:res_clou ( x48 ) + minecraft:stick ( x5 )
+résultat : ventrys_blocs:tablebouleau  ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x24 ) + ventrysitem:res_clou ( x48 ) + minecraft:stick ( x5 )
+résultat : ventrys_blocs:table_ronde_bouleau  ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x28 ) + ventrysitem:res_clou ( x64 ) + minecraft:stick ( x4 )
+résultat : ventrys_blocs:bancbouleau  ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x48 ) + ventrysitem:res_clou ( x128 ) + minecraft:stick ( x8 )
+résultat : ventrys_blocs:banc_riche_bouleau  ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x42 ) + ventrysitem:res_clou ( x96 ) + minecraft:stick ( x6 )
+résultat : ventrys_blocs:banclongbouleau  ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x70 ) + ventrysitem:res_clou ( x148 ) + minecraft:stick ( x12 )
+résultat : ventrys_blocs:banc_riche_long_bouleau  ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x40 ) + ventrysitem:res_clou ( x48 ) 
+résultat : ventrys_blocs:caisse_bouleau  ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x64 ) + ventrysitem:res_clou ( x128 ) + minecraft:stick ( x8 )
+résultat :  ventrys_blocs:armoirebouleau  ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x14 ) + ventrysitem:res_clou ( x32 ) + minecraft:stick ( x3 )
+résultat :  ventrys_blocs:tabouretbouleau  ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x34 ) + ventrysitem:res_clou ( x52 ) + minecraft:stick ( x4 )
+résultat :  ventrys_blocs:petitecomodebouleau  ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x54 ) + ventrysitem:res_clou ( x84 ) + minecraft:stick ( x8 )
+résultat :  ventrys_blocs:comodebouleau  ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x96 ) + ventrysitem:res_clou ( x152 ) +
+minecraft:stick ( x16 )
+résultat :  ventrys_blocs:comodedoublebouleau  ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x52 ) + ventrysitem:res_clou ( x104 ) + minecraft:stick ( x16 )
+résultat : ventrys_blocs:menuisier  ( x1  )
+
+recette : ventrysitem:res_planche_chene ( x40 ) + ventrysitem:res_clou ( x64 ) + ventrysitem:res_fils ( x32 ) + minecraft:stick ( x16 )
+résultat : ventrys_blocs:couturier  ( x1  )
+
+recette : ventrysitem:res_planche_chene ( x4 ) + ventrysitem:res_clou ( x6 ) + ventrysitem:res_corde ( x1 )
+résultat : westerosblocks:wood_ladder  ( x1  )
+
+recette : ventrysitem:res_planche_chene ( x3 ) + ventrysitem:res_clou ( x6 ) + ventrysitem:res_corde ( x2 )
+résultat : westerosblocks:rope_ladder  ( x1  )
+
+recette : ventrysitem:res_planche_chene ( x12 ) + ventrysitem:res_clou ( x36 ) 
+résultat : westerosblocks:closed_barrel ( x1 )
+
+recette : ventrysitem:res_planche_chene ( x10 ) + ventrysitem:res_clou ( x36 ) 
+résultat : westerosblocks:empty_barrel  ( x1  )
+
+recette : ventrysitem:res_planche_chene ( x10 ) + ventrysitem:res_clou ( x30 ) 
+résultat : westerosblocks:straw_bed  ( x1  )
+
+recette : ventrysitem:res_planche_sapin ( x40 ) + ventrysitem:res_clou ( x12 ) + ventrysitem:res_peau_dours ( x1 )
+résultat : westerosblocks:northern_bed ( x1  )
+
+recette : ventrysitem:res_planche_sapin ( x40 ) + ventrysitem:res_clou ( x12 ) + ventrysitem:res_peau_de_loup ( x3 )
+résultat : westerosblocks:itchy_straw_bed ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x60 ) + ventrysitem:res_clou ( x40 ) + ventrysitem:res_laine_blanche ( x12 ) + minecraft:black_dye ( x8 )
+résultat : westerosblocks:nights_watch_bed  ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x60 ) + ventrysitem:res_clou ( x40 ) + ventrysitem:res_laine_blanche ( x12 ) + minecraft:red_dye ( x3 ) + minecraft:brown_dye ( x3 ) + minecraft:white_dye ( x2 )
+résultat : westerosblocks:pale_red_bed ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x60 ) + ventrysitem:res_clou ( x40 ) + ventrysitem:res_laine_blanche ( x12 ) + minecraft:yellow_dye ( x3 ) + minecraft:blue_dye ( x3 ) + minecraft:brown_dye ( x2 )
+résultat : westerosblocks:pale_green_bed  ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x80 ) + ventrysitem:res_clou ( x64 ) + ventrysitem:res_laine_blanche ( x20 ) + minecraft:red_dye ( x8 ) +   minecraft:gold_ingot ( x1 )
+résultat : westerosblocks:noble_red_bed  ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x80 ) + ventrysitem:res_clou ( x64 ) + ventrysitem:res_laine_blanche ( x20 ) + minecraft:blue_dye ( x8 ) +   minecraft:gold_ingot ( x1 )
+résultat : westerosblocks:noble_blue_bed  ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x24 ) + ventrysitem:res_clou ( x26 ) + ventrysitem:res_laine_blanche ( x3 ) + minecraft:stick ( x8 )
+résultat : westerosblocks:stool ( x1 )
+
+recette : ventrysitem:res_planche_sapin ( x36 ) + ventrysitem:res_clou ( x32 ) + ventrysitem:res_laine_blanche ( x6 ) + minecraft:stick ( x8 ) + minecraft:iron_nugget ( x4 ) + minecraft:red_dye ( x4 )
+résultat : westerosblocks:stool_cushion ( x1 )
+
+recette : minecraft:stick ( x32 )
+résultat : westerosblocks:thatch_dark_fur ( x1 )
+
+recette: minecraft:stick ( x24 )
+résultat : westerosblocks:thatch_dark_fur_stairs ( x1 )
+
+recette : minecraft:stick ( x16 )
+résultat : westerosblocks:thatch_dark_fur_slab ( x1 )
+
+recette : minecraft:stick ( x24 )
+résultat : westerosblocks:thatch_dark_fur_tip ( x1 )
+
+recette: minecraft:stick ( x16 )
+résultat : westerosblocks:thatch_dark_fur_wall ( x1 )
+
+recette: minecraft:stick ( x9 )
+résultat :westerosblocks:thatch_dark_fur_carpet ( x1 )
+
+recette : minecraft:stick ( x32 )
+résultat : westerosblocks:thatch_dark_fur ( x1 )
+
+recette : minecraft:stick ( x24 )
+résultat : westerosblocks:thatch_dark_fur_stairs ( x1 )
+
+recette : minecraft:stick ( x16 )
+résultat :westerosblocks:thatch_dark_fur_slab ( x1 )
+
+recette : minecraft:stick ( x24 )
+résultat : westerosblocks:thatch_dark_fur_tip ( x1 )
+
+recette : minecraft:stick ( x16 )
+résultat :westerosblocks:thatch_dark_fur_wall ( x1 )
+
+recette : minecraft:stick ( x9 )
+résultat : westerosblocks:thatch_dark_fur_carpet ( x1 )
+
+recette : minecraft:red_sand ( x6 ) + ventrysitem:res_chaux ( x6 )
+résultat : ventrysitem:res_enduit_de_chaux ( x12 )

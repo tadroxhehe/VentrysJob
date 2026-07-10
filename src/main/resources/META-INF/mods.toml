@@ -1,0 +1,44 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="All rights reserved"
+
+[[mods]]
+modId="ventrysjob"
+version="1.0.3"
+displayName="VentrysJob"
+description='''
+Système de métiers pour serveur RP médiéval.
+8 métiers: Forgeron, Artisan, Apothicaire, Cuisinier, Ouvrier, Couturier, Bâtisseur, Paysan.
+'''
+
+[[mixins]]
+config="mixins.ventrysjob.json"
+
+[[dependencies.ventrysjob]]
+    modId="forge"
+    mandatory=true
+    versionRange="[40.2.21,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.ventrysjob]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.ventrysjob]]
+    modId="ventrysitem"
+    mandatory=false
+    versionRange="[1.0.0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+# [[dependencies.ventrysjob]]
+#     modId="ecoventrys"
+#     mandatory=false
+#     versionRange="[1.0.2,)"
+#     ordering="AFTER"
+#     side="BOTH"
+

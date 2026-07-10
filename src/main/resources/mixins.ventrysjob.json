@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.ventrys.job.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "mixins.ventrysjob.refmap.json",
+  "mixins": [
+    "FarmBlockMixin",
+    "ServerLevelWeatherMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

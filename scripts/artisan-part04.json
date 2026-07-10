@@ -1,0 +1,826 @@
+[
+  {
+    "id": "art_birch_planks",
+    "name": "Planches de bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 18
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 18
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:birch_planks",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_stairs",
+    "name": "Escaliers bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 12
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 12
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:birch_stairs",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_slab",
+    "name": "Dalle bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 9
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 9
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:birch_slab",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_wall",
+    "name": "Muret bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 9
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 9
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:birch_wall",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_tip",
+    "name": "Pointe bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 12
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 12
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:birch_tip",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_hopper",
+    "name": "Hopper bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 12
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 12
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:birch_hopper",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_half_door",
+    "name": "Demi-porte bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 4
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 4
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:birch_half_door",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_fence",
+    "name": "Barriere bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 6
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 4
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:birch_fence",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_fence_gate",
+    "name": "Portillon bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 4
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 6
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 6
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:birch_fence_gate",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_vertical_planks",
+    "name": "Planches verticales bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 18
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 18
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:birch_vertical_planks",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_vert_stairs",
+    "name": "Escaliers planches vert. bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 12
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 12
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:birch_vertical_planks_stairs",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_vert_slab",
+    "name": "Dalle planches vert. bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 9
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 9
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:birch_vertical_planks_slab",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_vert_wall",
+    "name": "Muret planches vert. bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 9
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 9
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:birch_vertical_planks_wall",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_vert_tip",
+    "name": "Pointe planches vert. bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 12
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 12
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:birch_vertical_planks_tip",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_vert_hopper",
+    "name": "Hopper planches vert. bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 12
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 12
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:birch_vertical_planks_hopper",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_vert_fence",
+    "name": "Barriere planches vert. bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 6
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 4
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:birch_vertical_planks_fence",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_door",
+    "name": "Porte bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 12
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 12
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:birch_door",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_button",
+    "name": "Bouton bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 1
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 2
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:birch_button",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_trapdoor",
+    "name": "Trappe bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 9
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 8
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:birch_trapdoor",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_window_shutter",
+    "name": "Volet bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 9
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 9
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:birch_window_shutters",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_timber_frame",
+    "name": "Cadre fenetre bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 4
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 8
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:birch_timber_window_frame",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_dorne_carved_window_birch",
+    "name": "Fenetre sculptee Dorne",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 4
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 8
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:dorne_carved_wooden_window",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_sign",
+    "name": "Panneau bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 4
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 3
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 4
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:birch_sign",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_timber_mullion",
+    "name": "Cadre fenetre meneaux bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 5
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 8
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:birch_timber_window_frame_mullion",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_birch_pressure_plate",
+    "name": "Plaque pression bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 3
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 6
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:birch_pressure_plate",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_chaisebouleau",
+    "name": "Chaise bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 16
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 36
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 5
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:chaise_bouleau",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_chaisehautebouleau",
+    "name": "Chaise haute bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 45
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 84
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 16
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:chaisehautebouleau",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_tablebouleau",
+    "name": "Table bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 24
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 48
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 5
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:tablebouleau",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_table_ronde_bouleau",
+    "name": "Table ronde bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 24
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 48
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 5
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:table_ronde_bouleau",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_bancbouleau",
+    "name": "Banc bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 28
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 64
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 4
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:bancbouleau",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_banc_riche_bouleau",
+    "name": "Banc riche bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 48
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 128
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 8
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:banc_riche_bouleau",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_banclongbouleau",
+    "name": "Banc long bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 42
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 96
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 6
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:banclongbouleau",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_banc_riche_long_bouleau",
+    "name": "Banc riche long bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 70
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 148
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 12
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:banc_riche_long_bouleau",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_caissebouleau",
+    "name": "Caisse bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 40
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 48
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:caisse_bouleau",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_chest_bouleau",
+    "name": "Coffre (bouleau)",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 40
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 48
+      },
+      {
+        "itemId": "minecraft:iron_nugget",
+        "count": 4
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:chest",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_armoirebouleau",
+    "name": "Armoire bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 64
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 128
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 8
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:armoirbouleau",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_tabouretbouleau",
+    "name": "Tabouret bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 14
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 32
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 3
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:tabouretbouleau",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_petitecomodebouleau",
+    "name": "Petite commode bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 34
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 52
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 4
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:petitecomodebouleau",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_comodebouleau",
+    "name": "Commode bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 54
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 84
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 8
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:comode_bouleau",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_comodedoublebouleau",
+    "name": "Commode double bouleau",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_bouleau",
+        "count": 96
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 152
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 16
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:comodedoublebouelau",
+      "count": 1
+    }
+  }
+]

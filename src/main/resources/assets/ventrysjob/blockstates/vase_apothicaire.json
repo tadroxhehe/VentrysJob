@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "growth_stage=0": {
+      "model": "ventrysjob:block/vase_apothicaire_pot"
+    },
+    "growth_stage=1": {
+      "model": "ventrysjob:block/vase_apothicaire_final"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "ventrysjob:block/meule" },
+    "facing=east":  { "model": "ventrysjob:block/meule", "y": 90 },
+    "facing=south": { "model": "ventrysjob:block/meule", "y": 180 },
+    "facing=west":  { "model": "ventrysjob:block/meule", "y": 270 }
+  }
+}

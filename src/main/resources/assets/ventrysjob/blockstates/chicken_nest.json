@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "has_egg=false": {
+      "model": "ventrysjob:block/chicken_nest"
+    },
+    "has_egg=true": {
+      "model": "ventrysjob:block/chicken_nest_with_egg"
+    }
+  }
+}
+

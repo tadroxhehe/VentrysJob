@@ -1,0 +1,53 @@
+{
+  "default_stage_duration_ticks": 1296000,
+  "crops": [
+    {
+      "block_id": "minecraft:wheat",
+      "stage_durations_ticks": [246857, 246857, 246857, 246857, 246857, 246857, 246857]
+    },
+    {
+      "block_id": "minecraft:carrots",
+      "stage_durations_ticks": [740571, 740571, 740571, 740571, 740571, 740571, 740571]
+    },
+    {
+      "block_id": "minecraft:potatoes",
+      "stage_durations_ticks": [493714, 493714, 493714, 493714, 493714, 493714, 493714]
+    },
+    {
+      "block_id": "minecraft:beetroots",
+      "stage_durations_ticks": [1728000, 1728000, 1728000]
+    },
+    {
+      "block_id": "ventrysjob:crop_orge",
+      "stage_durations_ticks": [1296000, 1296000, 1296000, 1296000]
+    },
+    {
+      "block_id": "ventrysjob:crop_tomates",
+      "stage_durations_ticks": [1296000, 1296000, 1296000, 1296000]
+    },
+    {
+      "block_id": "ventrysjob:crop_oignon",
+      "stage_durations_ticks": [1296000, 1296000, 1296000, 1296000]
+    },
+    {
+      "block_id": "ventrysjob:crop_salade",
+      "stage_durations_ticks": [1296000, 1296000, 1296000, 1296000]
+    },
+    {
+      "block_id": "ventrysjob:crop_raisin",
+      "stage_durations_ticks": [1296000, 1296000, 1296000, 1296000]
+    },
+    {
+      "block_id": "ventrysjob:crop_choux",
+      "stage_durations_ticks": [1296000, 1296000, 1296000, 1296000]
+    },
+    {
+      "block_id": "ventrysjob:crop_carotte",
+      "stage_durations_ticks": [1296000, 1296000, 1296000, 1296000]
+    },
+    {
+      "block_id": "ventrysjob:crop_betrave",
+      "stage_durations_ticks": [1296000, 1296000, 1296000, 1296000]
+    }
+  ]
+}

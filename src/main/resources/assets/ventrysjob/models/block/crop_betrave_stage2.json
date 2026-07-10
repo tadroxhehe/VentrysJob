@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "ventrysjob:block/paysans/bettrave_2"
+  }
+}

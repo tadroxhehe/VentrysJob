@@ -1,0 +1,8 @@
+# Liste des minerais à créer
+# Format: id_minerai;nom_affiché
+# Exemple: iron_ore;Minerai de Fer
+
+# Ajoutez vos minerais ici, un par ligne:
+iron_ore;Minerai de Fer
+gold_ore;Minerai d'Or
+copper_ore;Minerai de Cuivre

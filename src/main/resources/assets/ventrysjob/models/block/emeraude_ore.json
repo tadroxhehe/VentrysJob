@@ -1,0 +1,7 @@
+{
+    "textures":  {
+                     "all":  "ventrysjob:block/emeraude_ore",
+                     "particle":  "#all"
+                 },
+    "parent":  "block/cube_all"
+}

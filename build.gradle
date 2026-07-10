@@ -1,0 +1,233 @@
+buildscript {
+    repositories {
+        maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+    }
+    dependencies {
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
+    }
+}
+
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+}
+
+apply plugin: 'org.spongepowered.mixin'
+
+version = '1.0.3'
+group = 'com.ventrys.job'
+
+base {
+    archivesName = 'ventrysjob'
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+minecraft {
+    mappings channel: 'official', version: '1.18.2'
+    
+    copyIdeResources = true
+    
+    runs {
+        configureEach {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            property 'forge.enabledGameTestNamespaces', 'ventrysjob'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${project.buildDir}/createSrgToMcp/output.srg"
+            args '-mixin.config=mixins.ventrysjob.json'
+            
+            mods {
+                ventrysjob {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        client {
+            property 'forge.enabledGameTestNamespaces', 'ventrysjob'
+        }
+
+        server {
+            property 'forge.enabledGameTestNamespaces', 'ventrysjob'
+            args '--nogui'
+        }
+
+        gameTestServer {
+            property 'forge.enabledGameTestNamespaces', 'ventrysjob'
+        }
+
+        data {
+            workingDirectory project.file('run-data')
+            args '--mod', 'ventrysjob', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+        }
+    }
+}
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+mixin {
+    add sourceSets.main, 'mixins.ventrysjob.refmap.json'
+    config 'mixins.ventrysjob.json'
+}
+
+repositories {
+    maven { url = "https://maven.minecraftforge.net/" }
+    maven { url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/" }
+    maven { url = "https://repo.spongepowered.org/repository/maven-public/" }
+    // flatDir {
+    //     dirs '../EcoVentrys/build/libs', '../VentrysItem/build/libs'
+    // }
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.18.2-40.2.21'
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+    
+    // GeckoLib - Version compatible avec Forge 40.2+ pour Minecraft 1.18.2
+    // Utiliser la version 3.0.57 ou plus récente depuis Maven
+    implementation fg.deobf("software.bernie.geckolib:geckolib-forge-1.18:3.0.57")
+    
+    // Dépendances locales
+    // implementation files('libs/ecoventrys-1.0.2-stable.jar') // Désactivé temporairement
+    // implementation files('VentrysItem/build/libs/ventrysitem-1.0.0.jar') // Désactivé temporairement
+}
+
+import groovy.json.JsonBuilder
+import java.util.Locale
+import org.gradle.api.file.DuplicatesStrategy
+import org.gradle.api.file.RelativePath
+
+/** Même règle que ResourceLocation (chemins de sons) : [a-z0-9._/-] uniquement. */
+ext.sanitizeMcSoundRelPath = { String relPathWithExt ->
+    if (relPathWithExt == null || relPathWithExt.trim().isEmpty()) {
+        return 'sound.ogg'
+    }
+    def lower = relPathWithExt.replace('\\', '/')
+    if (!lower.endsWith('.ogg')) {
+        lower += '.ogg'
+    }
+    def base = lower.substring(0, lower.length() - 4)
+    def cleaned = base.split('/').collect { seg ->
+        def s = seg.replaceAll(/[^a-zA-Z0-9._-]/, '_').replaceAll(/^_+|_+$/, '').replaceAll(/_+/, '_')
+        s.toLowerCase(Locale.US)
+    }.findAll { it != null && !it.isEmpty() }.join('/')
+    if (cleaned.isEmpty()) {
+        cleaned = 'sound'
+    }
+    return cleaned + '.ogg'
+}
+
+def generatedVentrysSoundsDir = layout.buildDirectory.dir('generatedVentrysSounds')
+sourceSets.main.resources.srcDir(generatedVentrysSoundsDir)
+
+/**
+ * Liste tous les .ogg sous ventrysjobsfx/Nouveau dossier/sfx_* et génère sounds.json
+ * (Minecraft tire au hasard une entrée par événement → variations par métier / vase).
+ */
+tasks.register('generateVentrysjobSoundsJson') {
+    def sfxPack = file("${rootDir}/ventrysjobsfx/Nouveau dossier")
+    def outFile = layout.buildDirectory.file('generatedVentrysSounds/assets/ventrysjob/sounds.json')
+    inputs.dir(sfxPack).optional()
+    outputs.file(outFile)
+
+    def mappings = [
+            ['sfx_craft_couturier', 'craft_couturier', 0.92],
+            ['sfx_craft_cuisinier', 'craft_cuisinier', 0.92],
+            ['sfx_craft_forgeron', 'craft_forgeron', 0.92],
+            ['sfx_craft_apothicaire', 'craft_apothicaire', 0.92],
+            ['sfx_craft_artisan', 'craft_artisan', 0.92],
+            ['sfx_plante_vase', 'vase_plante', 0.88]
+    ]
+
+    doLast {
+        def rootObj = [:]
+        mappings.each { folderName, soundKey, vol ->
+            def d = file("${sfxPack}/${folderName}")
+            def soundList = []
+            if (d.directory) {
+                d.eachFileRecurse { f ->
+                    if (f.file && f.name.endsWith('.ogg')) {
+                        def rel = d.toPath().relativize(f.toPath()).toString().replace('\\', '/')
+                        def sanitizedFile = sanitizeMcSoundRelPath(rel)
+                        def stemNoExt = sanitizedFile.substring(0, sanitizedFile.length() - 4)
+                        soundList.add([
+                                name   : "ventrysjob:${soundKey}/${stemNoExt}",
+                                volume : vol,
+                                stream : false
+                        ])
+                    }
+                }
+            }
+            if (!soundList.isEmpty()) {
+                rootObj[soundKey] = [sounds: soundList]
+            }
+        }
+        outFile.get().asFile.parentFile.mkdirs()
+        outFile.get().asFile.text = new JsonBuilder(rootObj).toPrettyString()
+    }
+}
+
+tasks.named('processResources') {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    dependsOn generateVentrysjobSoundsJson
+    inputs.file("$rootDir/src/main/resources/data/ventrysjob/jobs.json")
+        .withPropertyName('ventrysjobJobsJson')
+
+    // Variations : tout *.ogg (y compris sous-dossiers) → assets/ventrysjob/sounds/<clé>/
+    def sfxPack = file("${rootDir}/ventrysjobsfx/Nouveau dossier")
+    if (sfxPack.directory) {
+        inputs.dir(sfxPack).withPropertyName('ventrysjobSfxPack')
+        [
+                ['sfx_craft_couturier', 'craft_couturier'],
+                ['sfx_craft_cuisinier', 'craft_cuisinier'],
+                ['sfx_craft_forgeron', 'craft_forgeron'],
+                ['sfx_craft_apothicaire', 'craft_apothicaire'],
+                ['sfx_craft_artisan', 'craft_artisan'],
+                ['sfx_plante_vase', 'vase_plante']
+        ].each { folderName, destKey ->
+            def sub = file("${sfxPack}/${folderName}")
+            if (sub.directory) {
+                from(sub) {
+                    include '**/*.ogg'
+                    into "assets/ventrysjob/sounds/${destKey}"
+                    eachFile { details ->
+                        def neu = sanitizeMcSoundRelPath(details.relativePath.pathString.replace('\\', '/'))
+                        details.relativePath = RelativePath.parse(true, neu)
+                    }
+                }
+            }
+        }
+    }
+
+    def sfxDir = file("${rootDir}/ventrysjobsfx")
+    if (sfxDir.directory) {
+        inputs.dir(sfxDir).withPropertyName('ventrysjobSfx')
+        from(sfxDir) {
+            include '*.ogg'
+            into 'assets/ventrysjob/sounds'
+        }
+    }
+}
+
+jar {
+    archiveFileName = 'VentrysJob.Jar'
+    manifest {
+        attributes([
+            "Specification-Title": "VentrysJob",
+            "Specification-Vendor": "Ventrys",
+            "Specification-Version": "1",
+            "Implementation-Title": project.name,
+            "Implementation-Version": project.version,
+            "Implementation-Vendor": "Ventrys",
+            "MixinConfigs": "mixins.ventrysjob.json"
+        ])
+    }
+}
+
+jar.finalizedBy('reobfJar')
+

@@ -1,0 +1,8 @@
+﻿{
+  "variants": {
+    "facing=north": { "model": "ventrysjob:block/metier_tisser" },
+    "facing=east":  { "model": "ventrysjob:block/metier_tisser", "y": 90 },
+    "facing=south": { "model": "ventrysjob:block/metier_tisser", "y": 180 },
+    "facing=west":  { "model": "ventrysjob:block/metier_tisser", "y": 270 }
+  }
+}

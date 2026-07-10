@@ -1,0 +1,476 @@
+recette : ventrysitem:res_pierre_fragmente ( x18 ) + ventrysitem:res_enduit_de_chaux ( x4 )
+résultat : westerosblocks:cobblestone ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x12 ) + ventrysitem:res_enduit_de_chaux ( x3 )
+résultat : westerosblocks:cobblestone_stairs ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x9 ) + ventrysitem:res_enduit_de_chaux ( x2 )
+résultat : westerosblocks:cobblestone_slab ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x9 ) + ventrysitem:res_enduit_de_chaux ( x2 )
+résultat : westerosblocks:cobblestone_wall ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x12 ) + ventrysitem:res_enduit_de_chaux ( x3 )
+résultat : westerosblocks:cobblestone_tip ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x12 ) + ventrysitem:res_enduit_de_chaux ( x3 )
+résultat : westerosblocks:cobblestone_hopper ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x12 ) + ventrysitem:res_enduit_de_chaux ( x3 )
+résultat : westerosblocks:cobblestone_fence ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x4 ) + westerosblocks:cobblestone ( x1 )
+résultat : westerosblocks:grey_granite ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:cobblestone_stairs ( x1 )
+résultat : westerosblocks:grey_granite_stairs ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:cobblestone_slab ( x1 )
+résultat : westerosblocks:grey_granite_slab ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x1 ) + westerosblocks:cobblestone_fence ( x1 )
+résultat : westerosblocks:grey_granite_fence ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:cobblestone_tip ( x1 )
+résultat : westerosblocks:grey_granite_tip ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:cobblestone_hopper ( x1 )
+résultat : westerosblocks:grey_granite_hopper ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:cobblestone_wall ( x1 )
+résultat : westerosblocks:grey_granite_wall ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x4 ) + westerosblocks:cobblestone ( x1 )
+résultat : westerosblocks:light_grey_brick ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:cobblestone_stairs ( x1 )
+résultat : westerosblocks:light_grey_brick_stairs ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:cobblestone_slab ( x1 )
+résultat : westerosblocks:light_grey_brick_slab ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x1 ) + westerosblocks:cobblestone_fence( x1 )
+résultat : westerosblocks:light_grey_brick_fence ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:cobblestone_tip ( x1 )
+résultat : westerosblocks:light_grey_brick_tip ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:cobblestone_hopper ( x1 )
+résultat : westerosblocks:light_grey_brick_hopper ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:cobblestone_wall ( x1 )
+résultat : westerosblocks:light_grey_brick_wall ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:cobblestone ( x1 )
+résultat : westerosblocks:grey_granite_arrow_slit ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:cobblestone ( x1 )
+résultat : westerosblocks:grey_granite_arrow_window ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:cobblestone ( x1 )
+résultat : westerosblocks:grey_granite_arrow_ornate ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x4 ) + westerosblocks:cobblestone ( x1 )
+résultat : westerosblocks:small_smooth_stone_brick ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:cobblestone_stairs ( x1 )
+résultat : westerosblocks:small_smooth_stone_brick_stairs ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:cobblestone_slab ( x1 )
+résultat : westerosblocks:small_smooth_stone_brick_slab ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x1 ) + westerosblocks:cobblestone_fence( x1 )
+résultat : westerosblocks:small_smooth_stone_brick_fence ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:cobblestone_tip ( x1 )
+résultat : westerosblocks:small_smooth_stone_brick_tip ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:cobblestone_hopper ( x1 )
+résultat : westerosblocks:small_smooth_stone_brick_hopper ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:cobblestone_wall ( x1 )
+résultat : westerosblocks:small_smooth_stone_brick_wall ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x8 ) + westerosblocks:cobblestone ( x1 )
+résultat : westerosblocks:grey_granite_polished ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x6 ) + westerosblocks:cobblestone_stairs ( x1 )
+résultat : westerosblocks:grey_granite_polished_stairs ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x4 ) + westerosblocks:cobblestone_slab ( x1 )
+résultat : westerosblocks:grey_granite_polished_slab ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x4 ) + westerosblocks:cobblestone_wall ( x1 )
+résultat : westerosblocks:grey_granite_polished_wall ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x4 ) + westerosblocks:cobblestone_slab ( x1 )
+résultat : westerosblocks:grey_granite_polished_slab ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x8 ) + westerosblocks:cobblestone ( x1 )
+résultat : westerosblocks:grey_brick_engraved ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x4 ) + westerosblocks:cobblestone_wall ( x1 )
+résultat : westerosblocks:grey_brick_engraved_wall ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x12 ) + westerosblocks:cobblestone ( x1 )
+résultat : westerosblocks:faith_carved_grey_brick ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x18 ) + ventrysitem:res_enduit_de_chaux ( x4 )
+résultat : westerosblocks:dark_cobblestone ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x12 ) + ventrysitem:res_enduit_de_chaux ( x3 )
+résultat : westerosblocks:dark_cobblestone_stairs ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x9 ) + ventrysitem:res_enduit_de_chaux ( x2 )
+résultat : westerosblocks:dark_cobblestone_slab ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x9 ) + ventrysitem:res_enduit_de_chaux ( x2 )
+résultat : westerosblocks:dark_cobblestone_wall ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x12 ) + ventrysitem:res_enduit_de_chaux ( x3 )
+résultat : westerosblocks:dark_cobblestone_tip ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x12 ) + ventrysitem:res_enduit_de_chaux ( x3 )
+résultat : westerosblocks:dark_cobblestone_hopper ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x12 ) + ventrysitem:res_enduit_de_chaux ( x3 )
+résultat : westerosblocks:dark_cobblestone_fence ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x4 ) + westerosblocks:dark_cobblestone ( x1 )
+résultat : westerosblocks:winterfell_granite ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:dark_cobblestone_stairs ( x1 )
+résultat : westerosblocks:winterfell_granite_stairs ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:dark_cobblestone_slab ( x1 )
+résultat : westerosblocks:winterfell_granite_slab ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x1 ) + westerosblocks:dark_cobblestone_fence( x1 )
+résultat : westerosblocks:winterfell_granite_fence ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:dark_cobblestone_tip ( x1 )
+résultat : westerosblocks:winterfell_granite_tip ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:dark_cobblestone_hopper ( x1 )
+résultat : westerosblocks:winterfell_granite_hopper ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:dark_cobblestone_wall ( x1 )
+résultat : westerosblocks:winterfell_granite_wall ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:dark_cobblestone ( x1 )
+résultat : westerosblocks:winterfell_granite_arrow_slit ( x1 )
+
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:dark_cobblestone ( x1 )
+résultat : westerosblocks:winterfell_granite_arrow_window ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:dark_cobblestone ( x1 )
+résultat : westerosblocks:winterfell_granite_arrow_ornate ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x4 ) + westerosblocks:dark_cobblestone ( x1 )
+résultat : westerosblocks:small_dark_grey_brick ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:cobblestone_stairs ( x1 )
+résultat : westerosblocks:small_dark_grey_brick_stairs ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:dark_cobblestone_slab ( x1 )
+résultat : westerosblocks:small_dark_grey_brick_slab ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x1 ) + westerosblocks:dark_cobblestone_fence( x1 )
+résultat : westerosblocks:small_dark_grey_brick_fence ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:dark_cobblestone_tip ( x1 )
+résultat : westerosblocks:small_dark_grey_brick_tip ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:dark_cobblestone_hopper ( x1 )
+résultat : westerosblocks:small_dark_grey_brick_hopper ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:dark_cobblestone_wall ( x1 )
+résultat : westerosblocks:small_dark_grey_brick_wall ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x8 ) + westerosblocks:dark_cobblestone ( x1 )
+résultat : westerosblocks:dark_grey_brick_engraved ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x4 ) + westerosblocks:dark_cobblestone_wall ( x1 )
+résultat : westerosblocks:dark_grey_brick_engraved_wall ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x12 ) + westerosblocks:dark_cobblestone ( x1 )
+résultat : westerosblocks:faith_carved_dark_grey_brick ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x18 ) + ventrysitem:res_enduit_de_chaux ( x4 )
+résultat : westerosblocks:green_grey_cobblestone ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x12 ) + ventrysitem:res_enduit_de_chaux ( x3 )
+résultat : westerosblocks:green_grey_cobblestone_stairs ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x9 ) + ventrysitem:res_enduit_de_chaux ( x2 )
+résultat : westerosblocks:green_grey_cobblestone_slab ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x9 ) + ventrysitem:res_enduit_de_chaux ( x2 )
+résultat : westerosblocks:green_grey_cobblestone_wall ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x12 ) + ventrysitem:res_enduit_de_chaux ( x3 )
+résultat : westerosblocks:green_grey_cobblestone_tip ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x12 ) + ventrysitem:res_enduit_de_chaux ( x3 )
+résultat : westerosblocks:green_grey_cobblestone_hopper ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x12 ) + ventrysitem:res_enduit_de_chaux ( x3 )
+résultat : westerosblocks:green_grey_cobblestone_fence ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x4 ) + westerosblocks:green_grey_cobblestone ( x1 )
+résultat : westerosblocks:green_grey_granite ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:cobblestone_stairs ( x1 )
+résultat : westerosblocks:green_grey_granite_stairs ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:green_grey_cobblestone_slab ( x1 )
+résultat : westerosblocks:green_grey_granite_slab ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x1 ) + westerosblocks:green_grey_cobblestone_fence( x1 )
+résultat : westerosblocks:green_grey_granite_fence ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:green_grey_cobblestone_tip ( x1 )
+résultat : westerosblocks:green_grey_granite_tip ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:green_grey_cobblestone_hopper ( x1 )
+résultat : westerosblocks:green_grey_granite_hopper ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:green_grey_cobblestone_wall ( x1 )
+résultat : westerosblocks:green_grey_granite_wall ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:green_grey_cobblestone ( x1 )
+résultat : westerosblocks:green_grey_granite_arrow_slit ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:green_grey_cobblestone ( x1 )
+résultat : westerosblocks:green_grey_granite_arrow_window ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:green_grey_cobblestone ( x1 )
+résultat : westerosblocks:green_grey_granite_arrow_ornate ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x4 ) + westerosblocks:green_grey_cobblestone ( x1 )
+résultat : westerosblocks:small_stone_brick ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:green_grey_cobblestone_stairs ( x1 )
+résultat : westerosblocks:small_stone_brick_stairs ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:green_grey_cobblestone_slab ( x1 )
+résultat : westerosblocks:small_stone_brick_slab ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x1 ) + westerosblocks:green_grey_cobblestone_fence( x1 )
+résultat : westerosblocks:small_stone_brick_fence ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:green_grey_cobblestone_tip ( x1 )
+résultat : westerosblocks:small_stone_brick_tip ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x3 ) + westerosblocks:green_grey_cobblestone_hopper ( x1 )
+résultat : westerosblocks:small_stone_brick_hopper ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 ) + westerosblocks:green_grey_cobblestone_wall ( x1 )
+résultat : westerosblocks:small_stone_brick_wall ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x8 ) + westerosblocks:green_grey_cobblestone ( x1 )
+résultat : westerosblocks:green_grey_granite_polished ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x6 ) + westerosblocks:green_grey_cobblestone_stairs ( x1 )
+résultat : westerosblocks:green_grey_granite_polished_stairs ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x4 ) + westerosblocks:green_grey_cobblestone_slab ( x1 )
+résultat : westerosblocks:green_grey_granite_polished_slab ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x4 ) + westerosblocks:green_grey_cobblestone_wall ( x1 )
+résultat : westerosblocks:green_grey_granite_polished_wall ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x4 ) + westerosblocks:green_grey_cobblestone_slab ( x1 )
+résultat : westerosblocks:green_grey_granite_polished_slab ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x8 ) + westerosblocks:green_grey_cobblestone ( x1 )
+résultat : westerosblocks:green_grey_brick_engraved ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x4 ) + westerosblocks:green_grey_cobblestone_wall ( x1 )
+résultat : westerosblocks:green_grey_brick_engraved_wall ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x12 ) + westerosblocks:green_grey_cobblestone ( x1 )
+résultat : westerosblocks:faith_carved_small_stone_brick ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x28 ) + ventrysitem:res_enduit_de_chaux ( x6 )
+résultat : ventrys_blocs:bancpierretaille ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x58 ) + ventrysitem:res_enduit_de_chaux ( x12 )
+résultat : ventrys_blocs:banc_riche_pierre_taillee ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x42 ) + ventrysitem:res_enduit_de_chaux ( x10 )
+résultat : ventrys_blocs:banclongpierretaillee ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x72 ) + ventrysitem:res_enduit_de_chaux ( x24 )
+résultat : ventrys_blocs:banc_riche_long_pierre_taillee ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x24 ) + ventrysitem:res_enduit_de_chaux ( x6 )
+résultat : ventrys_blocs:tablepierretaillee ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x24 ) + ventrysitem:res_enduit_de_chaux ( x6 )
+résultat : ventrys_blocs:table_ronde_pierretaillee ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x16 ) + ventrysitem:res_enduit_de_chaux ( x6 )
+résultat : ventrys_blocs:chaise_pierre_taillee ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x45 ) + ventrysitem:res_enduit_de_chaux ( x18 )
+résultat : ventrys_blocs:chaisehautepierretaillee ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x14 ) + ventrysitem:res_enduit_de_chaux ( x6 )
+résultat : ventrys_blocs:chaisehautepierretaillee ( x1 )
+
+recette : minecraft:dirt ( x4 ) + ventrysitem:res_planche_chene ( x12 ) + minecraft:red_sand ( x6 )
+résultat : ventrys_blocs:timber_oak_white_frame ( x1 )
+
+recette : minecraft:dirt ( x4 ) + ventrysitem:res_planche_chene ( x12 ) + minecraft:red_sand ( x6 )
+résultat : ventrys_blocs:timber_oak_white_vertical ( x1 )
+
+recette : minecraft:dirt ( x4 ) + ventrysitem:res_planche_chene ( x16 ) + minecraft:red_sand ( x6 )
+résultat : ventrys_blocs:timber_oak_white_crosshatch ( x1 )
+
+recette : minecraft:dirt ( x4 ) + ventrysitem:res_planche_chene ( x14 ) + minecraft:red_sand ( x6 )
+résultat : ventrys_blocs:timber_oak_white_righthatch ( x1 )
+
+recette : minecraft:dirt ( x4 ) + ventrysitem:res_planche_chene ( x14 ) + minecraft:red_sand ( x6 )
+résultat : ventrys_blocs:timber_oak_white_lefthatch ( x1 )
+
+recette : minecraft:dirt ( x4 ) + ventrysitem:res_planche_chene ( x14 ) + minecraft:red_sand ( x6 )
+résultat : ventrys_blocs:timber_oak_white_close_studding ( x1 )
+
+recette : minecraft:dirt ( x4 ) + ventrysitem:res_planche_chene ( x16 ) + minecraft:red_sand ( x6 )
+résultat : ventrys_blocs:timber_oak_white_lefthatch_large ( x1 )
+
+recette : minecraft:dirt ( x4 ) + ventrysitem:res_planche_chene ( x16 ) + minecraft:red_sand ( x6 )
+résultat : ventrys_blocs:timber_oak_white_righthatch_large ( x1 )
+
+recette : minecraft:dirt ( x4 ) + ventrysitem:res_planche_chene ( x18 ) + minecraft:red_sand ( x6 )
+résultat : ventrys_blocs:timber_oak_white_righthatch_studded ( x1 )
+recette : minecraft:dirt ( x4 ) + ventrysitem:res_planche_chene ( x18 ) + minecraft:red_sand ( x6 )
+résultat : ventrys_blocs:timber_oak_white_lefthatch_studded ( x1 )
+
+recette : minecraft:dirt ( x4 ) + ventrysitem:res_planche_chene ( x18 ) + minecraft:red_sand ( x6 )
+résultat : ventrys_blocs:timber_oak_white_bressumer ( x1 )
+
+recette : minecraft:dirt ( x6 ) + ventrysitem:res_planche_chene ( x12 ) + minecraft:red_sand ( x4 )
+résultat : ventrys_blocs:timber_oak_brown_frame ( x1 )
+
+recette : minecraft:dirt ( x6 ) + ventrysitem:res_planche_chene ( x12 ) + minecraft:red_sand ( x4 )
+résultat : ventrys_blocs:timber_oak_brown_vertical ( x1 )
+
+recette : minecraft:dirt ( x6 ) + ventrysitem:res_planche_chene ( x16 ) + minecraft:red_sand ( x4 )
+résultat : ventrys_blocs:timber_oak_brown_crosshatch ( x1 )
+
+recette : minecraft:dirt ( x6 ) + ventrysitem:res_planche_chene ( x14 ) + minecraft:red_sand ( x4 )
+résultat : ventrys_blocs:timber_oak_brown_righthatch ( x1 )
+
+recette : minecraft:dirt ( x6 ) + ventrysitem:res_planche_chene ( x14 ) + minecraft:red_sand ( x4 )
+résultat : ventrys_blocs:timber_oak_brown_lefthatch ( x1 )
+
+recette : minecraft:dirt ( x6 ) + ventrysitem:res_planche_chene ( x14 ) + minecraft:red_sand ( x4 )
+résultat : ventrys_blocs:timber_oak_brown_close_studding ( x1 )
+
+recette : minecraft:dirt ( x6 ) + ventrysitem:res_planche_chene ( x16 ) + minecraft:red_sand ( x4 )
+résultat : ventrys_blocs:timber_oak_brown_lefthatch_large ( x1 )
+
+recette : minecraft:dirt ( x6 ) + ventrysitem:res_planche_chene ( x16 ) + minecraft:red_sand ( x4 )
+résultat : ventrys_blocs:timber_oak_brown_righthatch_large ( x1 )
+
+recette : minecraft:dirt ( x6 ) + ventrysitem:res_planche_chene ( x18 ) + minecraft:red_sand ( x4 )
+résultat : ventrys_blocs:timber_oak_brown_righthatch_studded ( x1 )
+
+recette : minecraft:dirt ( x6 ) + ventrysitem:res_planche_chene ( x18 ) + minecraft:red_sand ( x4 )
+résultat : ventrys_blocs:timber_oak_brown_lefthatch_studded ( x1 )
+
+recette : minecraft:dirt ( x4 ) + ventrysitem:res_planche_chene ( x18 ) + minecraft:red_sand ( x6 )
+résultat : ventrys_blocs:timber_oak_brown_bressumer ( x1 )
+
+recette : ventrysitem:res_argile_brun ( x24 ) + ventrysitem:res_calcaire ( x18 )
+résultat : westerosblocks:brown_slate ( x1 )
+
+recette : ventrysitem:res_argile_brun ( x12 ) + ventrysitem:res_calcaire ( x9 )
+résultat : westerosblocks:brown_slate_slab ( x1 )
+
+recette : ventrysitem:res_argile_brun ( x18 ) + ventrysitem:res_calcaire ( x12 )
+résultat : westerosblocks:brown_slate_stairs ( x1 )
+
+recette : ventrysitem:res_argile_brun ( x18 ) + ventrysitem:res_calcaire ( x12 )
+résultat : westerosblocks:brown_slate_tip ( x1 )
+
+recette : ventrysitem:res_argile_brun ( x18 ) + ventrysitem:res_calcaire ( x12 )
+résultat : westerosblocks:brown_slate_hopper ( x1 )
+
+recette : ventrysitem:res_argile_brun ( x9 ) + ventrysitem:res_calcaire ( x6 )
+résultat : westerosblocks:brown_slate_fence ( x1 )
+
+recette : ventrysitem:res_argile_brun ( x12 ) + ventrysitem:res_calcaire ( x9 )
+résultat : westerosblocks:brown_slate_wall ( x1 )
+
+recette : ventrysitem:res_argile_orange ( x24 ) + ventrysitem:res_calcaire ( x18 )
+résultat : westerosblocks:orange_slate ( x1 )
+
+recette : ventrysitem:res_argile_orange ( x12 ) + ventrysitem:res_calcaire ( x9 )
+résultat : westerosblocks:orange_slate_slab ( x1 )
+
+recette : ventrysitem:res_argile_orange ( x18 ) +  ventrysitem:res_calcaire ( x12 )
+résultat : westerosblocks:orange_slate_stairs ( x1 )
+
+recette : ventrysitem:res_argile_orange ( x18 ) + ventrysitem:res_calcaire ( x12 )
+résultat : westerosblocks:orange_slate_tip ( x1 )
+
+recette : ventrysitem:res_argile_orange ( x18 ) + ventrysitem:res_calcaire ( x12 )
+résultat : westerosblocks:orange_slate_hopper ( x1 )
+
+recette : ventrysitem:res_argile_orange ( x9 ) + ventrysitem:res_calcaire ( x6 )
+résultat : westerosblocks:orange_slate_fence ( x1 )
+
+recette : ventrysitem:res_argile_orange ( x12 ) + ventrysitem:res_calcaire ( x9 )
+résultat : westerosblocks:orange_slate_wall ( x1 )
+
+recette : ventrysitem:res_argile_bleu ( x24 ) + ventrysitem:res_calcaire ( x18 )
+résultat : westerosblocks:blue_slate ( x1 )
+
+recette : ventrysitem:res_argile_bleu ( x12 ) + ventrysitem:res_calcaire ( x9 )
+résultat : westerosblocks:blue_slate_slab ( x1 )
+
+recette : ventrysitem:res_argile_bleu ( x18 ) + ventrysitem:res_calcaire ( x12 )
+résultat : westerosblocks:blue_slate_stairs ( x1 )
+
+recette : ventrysitem:res_argile_bleu ( x18 ) + ventrysitem:res_calcaire ( x12 )
+résultat : westerosblocks:blue_slate_tip ( x1 )
+
+recette : ventrysitem:res_argile_bleu ( x18 ) + ventrysitem:res_calcaire ( x12 )
+résultat : westerosblocks:blue_slate_hopper ( x1 )
+
+recette : ventrysitem:res_argile_bleu ( x9 ) + ventrysitem:res_calcaire ( x6 )
+résultat : westerosblocks:blue_slate_fence ( x1 )
+
+recette : ventrysitem:res_argile_bleu ( x12 ) + ventrysitem:res_calcaire ( x9 )
+résultat : westerosblocks:blue_slate_wall ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x2 )
+résultat : minecraft:stone_button ( x1 )
+
+recette : ventrysitem:res_pierre_fragmente ( x6 ) + ventrysitem:res_enduit_de_chaux ( x2 )
+résultat : minecraft:stone_button ( x1 )
+
+recette : ventrysitem:res_clou ( x96 ) + ventrysitem:res_planche_chene  ( x140 ) + minecraft:stick ( x16 )
+résultat : astikocrafts:animal_cart ( x1 )
+
+recette : ventrysitem:res_clou ( x96 ) + ventrysitem:res_planche_chene  ( x140 ) + minecraft:stick ( x16 )
+résultat : astikocrafts:supply_cart ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x48 ) + ventrysitem:res_clou ( x72 )
+résultat : westerosblocks:bench_drawers ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x48 ) + ventrysitem:res_clou ( x72 )
+résultat : westerosblocks:bench_butcher_knives ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x48 ) + ventrysitem:res_clou ( x72 )
+résultat : westerosblocks:bench_carpentry_hammer_saw ( x1 )
+
+recette : minecraft:stick ( x4 )
+résultat : westerosblocks:wattle_fence ( x1 )
+
+recette : ventrysitem:res_planche_bouleau ( x24 ) + ventrysitem:res_clou ( x36 )
+résultat : westerosblocks:table ( x1 )

@@ -1,0 +1,12 @@
+{
+  "default_process_duration_ms": 20000,
+  "recipes": [
+    {
+      "input": "minecraft:wheat",
+      "input_count": 1,
+      "output": "ventrysitem:res_farine",
+      "output_count": 1
+    }
+  ]
+}
+

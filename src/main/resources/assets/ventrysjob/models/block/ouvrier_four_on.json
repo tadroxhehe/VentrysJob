@@ -1,0 +1,10 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "particle": "#side",
+    "front": "ventrysjob:block/furnace_front_on",
+    "side": "ventrysjob:block/furnace_side",
+    "top": "ventrysjob:block/furnace_top"
+  }
+}
+

@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "lit=false,facing=north": { "model": "ventrysjob:block/forgeron_four" },
+    "lit=false,facing=east":  { "model": "ventrysjob:block/forgeron_four", "y": 90 },
+    "lit=false,facing=south": { "model": "ventrysjob:block/forgeron_four", "y": 180 },
+    "lit=false,facing=west":  { "model": "ventrysjob:block/forgeron_four", "y": 270 },
+    "lit=true,facing=north":  { "model": "ventrysjob:block/forgeron_four_on" },
+    "lit=true,facing=east":   { "model": "ventrysjob:block/forgeron_four_on", "y": 90 },
+    "lit=true,facing=south":  { "model": "ventrysjob:block/forgeron_four_on", "y": 180 },
+    "lit=true,facing=west":   { "model": "ventrysjob:block/forgeron_four_on", "y": 270 }
+  }
+}

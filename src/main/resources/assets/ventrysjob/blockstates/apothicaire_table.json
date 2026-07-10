@@ -1,0 +1,8 @@
+﻿{
+  "variants": {
+    "facing=north": { "model": "ventrysjob:block/apothicaire_table" },
+    "facing=east":  { "model": "ventrysjob:block/apothicaire_table", "y": 90 },
+    "facing=south": { "model": "ventrysjob:block/apothicaire_table", "y": 180 },
+    "facing=west":  { "model": "ventrysjob:block/apothicaire_table", "y": 270 }
+  }
+}

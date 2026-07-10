@@ -1,0 +1,72 @@
+{
+  "reproduction": {
+    "min_nutrition_percent": 30,
+    "min_hydration_percent": 30,
+    "required_time_minutes": 4320,
+    "detection_radius_blocks": 10
+  },
+  "milk_extraction_interval_ms": 21600000,
+  "animals": [
+    {
+      "id": "ventrysjob:custom_cow",
+      "drops": [
+        {
+          "item_id": "ventrysitem:item_bouguignon_boeuf",
+          "min_count": 3,
+          "max_count": 3
+        },
+        {
+          "item_id": "ventrysitem:item_faux_fillet_boeuf",
+          "min_count": 36,
+          "max_count": 36
+        },
+        {
+          "item_id": "minecraft:leather",
+          "min_count": 32,
+          "max_count": 32
+        }
+      ]
+    },
+    {
+      "id": "ventrysjob:custom_pig",
+      "drops": [
+        {
+          "item_id": "ventrysitem:item_cotelette_de_porc",
+          "min_count": 24,
+          "max_count": 24
+        },
+        {
+          "item_id": "ventrysitem:item_lard_porc",
+          "min_count": 6,
+          "max_count": 6
+        }
+      ]
+    },
+    {
+      "id": "ventrysjob:custom_chicken",
+      "drops": [
+        {
+          "item_id": "ventrysitem:item_fillet_de_poulet_crue",
+          "min_count": 15,
+          "max_count": 15
+        },
+        {
+          "item_id": "minecraft:feather",
+          "min_count": 32,
+          "max_count": 32
+        }
+      ]
+    },
+    {
+      "id": "ventrysjob:custom_sheep",
+      "drops": [
+        {
+          "item_id": "ventrysitem:item_gigot_dagneau_cru",
+          "min_count": 18,
+          "max_count": 18
+        }
+      ]
+    }
+  ]
+}
+
