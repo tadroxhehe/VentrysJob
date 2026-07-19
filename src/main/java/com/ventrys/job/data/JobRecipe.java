@@ -13,20 +13,19 @@ public class JobRecipe {
     private RecipeIngredient output;
     /** Plusieurs sorties optionnelles ; si renseigné, utilisé pour le craft à la place de {@link #output} seul. */
     private List<RecipeIngredient> outputs;
-    // private int energyCost; // Desactive temporairement
+    /** Coût énergie métier ; {@code -1} = calcul automatique ({@link com.ventrys.job.energy.JobEnergyCostCalculator}). */
+    private float energyCost = -1f;
     private int craftTime;
 
     public JobRecipe() {
         this.inputs = new ArrayList<>();
-        // this.energyCost = 0; // Desactive temporairement
-        this.craftTime = 20; // 1 seconde par défaut
+        this.craftTime = 20;
     }
 
     public JobRecipe(String id, String name) {
         this.id = id;
         this.name = name;
         this.inputs = new ArrayList<>();
-        // this.energyCost = 0; // Desactive temporairement
         this.craftTime = 20;
     }
 
@@ -91,13 +90,13 @@ public class JobRecipe {
         return Collections.emptyList();
     }
 
-    // public int getEnergyCost() {
-    //     return energyCost;
-    // }
+    public float getEnergyCost() {
+        return energyCost;
+    }
 
-    // public void setEnergyCost(int energyCost) {
-    //     this.energyCost = energyCost;
-    // }
+    public void setEnergyCost(float energyCost) {
+        this.energyCost = energyCost;
+    }
 
     public int getCraftTime() {
         return craftTime;
@@ -111,4 +110,3 @@ public class JobRecipe {
         this.inputs.add(ingredient);
     }
 }
-

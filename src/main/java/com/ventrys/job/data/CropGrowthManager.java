@@ -38,6 +38,8 @@ public final class CropGrowthManager {
     private static final int MAX_CROPS_PER_TICK = 100;
     private static final int SAVED_DATA_PURGE_INTERVAL = 1200;
     private static final int SAVED_DATA_PURGE_BATCH = 250;
+    private static final int SAVED_DATA_PURGE_BATCH_HEAVY = 1000;
+    private static final int SAVED_DATA_HEAVY_THRESHOLD = 5000;
     private static int tickCounter = 0;
     /** Rotation sur la liste des chunks (indices), pas sur chaque culture */
     private static final Map<ResourceKey<Level>, Integer> CHUNK_ROTATION_INDEX = new ConcurrentHashMap<>();
@@ -174,7 +176,11 @@ public final class CropGrowthManager {
 
         for (ServerLevel level : server.getAllLevels()) {
             if (shouldPurgeSavedData) {
-                int removed = CropGrowthSavedData.get(level).purgeOrphanBatch(level, SAVED_DATA_PURGE_BATCH);
+                CropGrowthSavedData saved = CropGrowthSavedData.get(level);
+                int batch = saved.size() >= SAVED_DATA_HEAVY_THRESHOLD
+                        ? SAVED_DATA_PURGE_BATCH_HEAVY
+                        : SAVED_DATA_PURGE_BATCH;
+                int removed = saved.purgeOrphanBatch(level, batch);
                 if (removed > 0) {
                     VentrysJob.LOGGER.debug("Purge cultures persistées {}: {} orphelin(s)", level.dimension().location(), removed);
                 }

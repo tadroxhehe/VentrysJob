@@ -63,9 +63,14 @@ public class OuvrierFourMenu extends AbstractContainerMenu {
 
     @Override
     public boolean stillValid(@NotNull Player player) {
-        return blockEntity != null && 
-               blockEntity.getLevel() != null && 
-               blockEntity.getLevel().getBlockEntity(blockEntity.getBlockPos()) == blockEntity;
+        if (blockEntity == null || blockEntity.isRemoved() || blockEntity.getLevel() == null) {
+            return false;
+        }
+        if (blockEntity.getLevel().getBlockEntity(blockEntity.getBlockPos()) != blockEntity) {
+            return false;
+        }
+        var pos = blockEntity.getBlockPos();
+        return player.distanceToSqr(pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D) <= 64.0D;
     }
 
     @Override

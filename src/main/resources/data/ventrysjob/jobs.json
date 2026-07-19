@@ -214,6 +214,25 @@
                     }
                 },
                 {
+                    "id": "clef_trousseau",
+                    "name": "Trousseau de clefs",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "minecraft:iron_ingot",
+                            "count": 6
+                        },
+                        {
+                            "itemId": "minecraft:iron_nugget",
+                            "count": 6
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:res_trousseau_de_clefs",
+                        "count": 1
+                    }
+                },
+                {
                     "id": "iron_nugget",
                     "name": "Pepites de Fer x9",
                     "description": "Neuf pepites de fer",
@@ -9878,21 +9897,6 @@
                     }
                 },
                 {
-                    "id": "cuis_farine_ble",
-                    "name": "Farine",
-                    "description": "",
-                    "inputs": [
-                        {
-                            "itemId": "minecraft:wheat",
-                            "count": 1
-                        }
-                    ],
-                    "output": {
-                        "itemId": "ventrysitem:res_farine",
-                        "count": 1
-                    }
-                },
-                {
                     "id": "cuis_sucre_betrave",
                     "name": "Sucre (betterave)",
                     "description": "",
@@ -11656,6 +11660,21 @@
                     ],
                     "output": {
                         "itemId": "ventrysjob:sac_sel",
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "cout_bourse",
+                    "name": "Bourse",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_cuir_tanne",
+                            "count": 4
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:res_bourse",
                         "count": 1
                     }
                 }

@@ -98,6 +98,13 @@ public class SacSelMenu extends AbstractContainerMenu {
 
     @Override
     public boolean stillValid(@NotNull Player player) {
-        return true; // Le Sac à Sel est accessible à tous
+        if (blockEntity == null || blockEntity.isRemoved() || blockEntity.getLevel() == null) {
+            return false;
+        }
+        if (blockEntity.getLevel().getBlockEntity(blockEntity.getBlockPos()) != blockEntity) {
+            return false;
+        }
+        var pos = blockEntity.getBlockPos();
+        return player.distanceToSqr(pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D) <= 64.0D;
     }
 }

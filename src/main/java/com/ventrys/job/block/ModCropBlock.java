@@ -1,5 +1,7 @@
 package com.ventrys.job.block;
 
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
@@ -8,6 +10,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 
+import java.util.Random;
 import java.util.function.Supplier;
 
 /**
@@ -43,5 +46,10 @@ public class ModCropBlock extends CropBlock {
     @Override
     protected ItemLike getBaseSeedId() {
         return seedItem.get();
+    }
+
+    @Override
+    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, Random random) {
+        // Croissance temps réel via CropGrowthManager — jamais de randomTick vanilla.
     }
 }

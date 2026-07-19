@@ -123,16 +123,25 @@ ext.sanitizeMcSoundRelPath = { String relPathWithExt ->
 }
 
 def generatedVentrysSoundsDir = layout.buildDirectory.dir('generatedVentrysSounds')
-sourceSets.main.resources.srcDir(generatedVentrysSoundsDir)
+
+def sonsJobDir = file("${rootDir}/../sonsjob")
+def sonsJobCraftSounds = [
+        ['artisan.ogg', 'craft_artisan', 0.92],
+        ['couturier.ogg', 'craft_couturier', 0.92],
+        ['cuisine.ogg', 'craft_cuisinier', 0.92],
+        ['apothicaire.ogg', 'craft_apothicaire', 0.92],
+]
 
 /**
  * Liste tous les .ogg sous ventrysjobsfx/Nouveau dossier/sfx_* et génère sounds.json
  * (Minecraft tire au hasard une entrée par événement → variations par métier / vase).
+ * Les sons principaux viennent de {@code sonsjob/} à la racine du pack.
  */
 tasks.register('generateVentrysjobSoundsJson') {
     def sfxPack = file("${rootDir}/ventrysjobsfx/Nouveau dossier")
     def outFile = layout.buildDirectory.file('generatedVentrysSounds/assets/ventrysjob/sounds.json')
     inputs.dir(sfxPack).optional()
+    inputs.dir(sonsJobDir).optional()
     outputs.file(outFile)
 
     def mappings = [
@@ -146,9 +155,21 @@ tasks.register('generateVentrysjobSoundsJson') {
 
     doLast {
         def rootObj = [:]
+
+        sonsJobCraftSounds.each { srcName, soundKey, vol ->
+            def f = file("${sonsJobDir}/${srcName}")
+            if (f.file) {
+                rootObj[soundKey] = [sounds: [[
+                        name  : "ventrysjob:${soundKey}",
+                        volume: vol,
+                        stream: false
+                ]]]
+            }
+        }
+
         mappings.each { folderName, soundKey, vol ->
             def d = file("${sfxPack}/${folderName}")
-            def soundList = []
+            def soundList = rootObj.computeIfAbsent(soundKey) { [sounds: []] }.sounds
             if (d.directory) {
                 d.eachFileRecurse { f ->
                     if (f.file && f.name.endsWith('.ogg')) {
@@ -163,8 +184,8 @@ tasks.register('generateVentrysjobSoundsJson') {
                     }
                 }
             }
-            if (!soundList.isEmpty()) {
-                rootObj[soundKey] = [sounds: soundList]
+            if (soundList.isEmpty()) {
+                rootObj.remove(soundKey)
             }
         }
         outFile.get().asFile.parentFile.mkdirs()
@@ -180,6 +201,19 @@ tasks.named('processResources') {
 
     // Variations : tout *.ogg (y compris sous-dossiers) → assets/ventrysjob/sounds/<clé>/
     def sfxPack = file("${rootDir}/ventrysjobsfx/Nouveau dossier")
+    if (sonsJobDir.directory) {
+        inputs.dir(sonsJobDir).withPropertyName('sonsJobCraftSounds')
+        sonsJobCraftSounds.each { srcName, soundKey, vol ->
+            def srcFile = file("${sonsJobDir}/${srcName}")
+            if (srcFile.file) {
+                from(sonsJobDir) {
+                    include srcName
+                    rename srcName, "${soundKey}.ogg"
+                    into 'assets/ventrysjob/sounds'
+                }
+            }
+        }
+    }
     if (sfxPack.directory) {
         inputs.dir(sfxPack).withPropertyName('ventrysjobSfxPack')
         [

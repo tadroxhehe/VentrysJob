@@ -32,7 +32,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class CustomSheep extends CustomAnimal implements IForgeShearable {
+public class CustomSheep extends CustomAnimal implements IForgeShearable, LivestockTextureHolder {
     public static final int WOOL_DROP_COUNT = 5;
     public static final long WOOL_REGROW_INTERVAL_MS = 86_400_000L; // 24 heures
     public static final String DEFAULT_TEXTURE = "mouton_parfais";
@@ -40,6 +40,10 @@ public class CustomSheep extends CustomAnimal implements IForgeShearable {
     private static final List<String> TEXTURE_VARIANTS = List.of(
         "mouton_parfais"
     );
+
+    public static List<String> getTextureVariantIds() {
+        return TEXTURE_VARIANTS;
+    }
 
     private static final ResourceLocation WOOL_ITEM = new ResourceLocation("ventrysitem", "res_laine_blanche");
 

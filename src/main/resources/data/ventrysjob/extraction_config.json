@@ -371,11 +371,11 @@
         "block_id": "minecraft:beetroots",
         "drop_item": "ventrysitem:item_betrave",
         "drop_count": 1,
-        "seed_item": "minecraft:wheat_seeds"
+        "seed_item": "ventrysitem:item_graine_betrave"
       },
       {
         "block_id": "ventrysjob:crop_orge",
-        "drop_item": "ventrysitem:item_orge",
+        "drop_item": "ventrysitem:res_orge",
         "drop_count": 2,
         "seed_item": "ventrysitem:item_graine_orge"
       },

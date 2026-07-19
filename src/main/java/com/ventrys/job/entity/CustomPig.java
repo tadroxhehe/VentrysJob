@@ -5,6 +5,9 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobSpawnType;
@@ -17,13 +20,17 @@ import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Random;
 
-public class CustomPig extends CustomAnimal {
+public class CustomPig extends CustomAnimal implements LivestockTextureHolder {
 
     public static final String DEFAULT_TEXTURE = "texture_cochon";
 
     private static final List<String> TEXTURE_VARIANTS = List.of(
         "cochon_rose_gris", "texture_cochon", "texture_cochon_noir", "texture_cochon_violace"
     );
+
+    public static List<String> getTextureVariantIds() {
+        return TEXTURE_VARIANTS;
+    }
 
     private static final EntityDataAccessor<String> TEXTURE_VARIANT =
         SynchedEntityData.defineId(CustomPig.class, EntityDataSerializers.STRING);
@@ -99,6 +106,26 @@ public class CustomPig extends CustomAnimal {
     @Override
     protected float getHeightOffset() {
         return -0.84f; // +20% de hauteur approx.
+    }
+
+    @Override
+    public SoundEvent getAmbientSound() {
+        return SoundEvents.PIG_AMBIENT;
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return SoundEvents.PIG_HURT;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.PIG_DEATH;
+    }
+
+    @Override
+    protected void playStepSound(net.minecraft.core.BlockPos pos, net.minecraft.world.level.block.state.BlockState state) {
+        this.playSound(SoundEvents.PIG_STEP, 0.15F, 1.0F);
     }
 
     @Override

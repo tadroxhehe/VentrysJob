@@ -32,7 +32,7 @@ import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 
-public class CustomChicken extends CustomAnimal {
+public class CustomChicken extends CustomAnimal implements LivestockTextureHolder {
 
     public static final String DEFAULT_TEXTURE = "poule_marron";
 
@@ -40,6 +40,10 @@ public class CustomChicken extends CustomAnimal {
         "poule_gris_blanc", "poule_grise", "poule_jauni_clair", "poule_marron",
         "poule_marron_fonce", "poule_marron_grise", "poule_marron_jauni", "poule_marron_sepia", "poule_noir"
     );
+
+    public static List<String> getTextureVariantIds() {
+        return TEXTURE_VARIANTS;
+    }
 
     private static final EntityDataAccessor<String> TEXTURE_VARIANT =
         SynchedEntityData.defineId(CustomChicken.class, EntityDataSerializers.STRING);

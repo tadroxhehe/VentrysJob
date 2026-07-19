@@ -20,13 +20,17 @@ import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Random;
 
-public class CustomCow extends CustomAnimal {
+public class CustomCow extends CustomAnimal implements LivestockTextureHolder {
 
     public static final String DEFAULT_TEXTURE = "vache";
 
     private static final List<String> TEXTURE_VARIANTS = List.of(
         "vache", "vache_grise", "vache_grise_marron", "vache_sombre"
     );
+
+    public static List<String> getTextureVariantIds() {
+        return TEXTURE_VARIANTS;
+    }
 
     private static final EntityDataAccessor<String> TEXTURE_VARIANT =
         SynchedEntityData.defineId(CustomCow.class, EntityDataSerializers.STRING);

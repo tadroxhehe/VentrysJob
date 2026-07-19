@@ -7,6 +7,8 @@ import com.ventrys.job.data.CropGrowthManager;
 import com.ventrys.job.data.JobActions;
 import com.ventrys.job.data.JobPermissionService;
 import com.ventrys.job.data.MalletUsage;
+import com.ventrys.job.energy.JobActionEnergyCosts;
+import com.ventrys.job.energy.JobEnergyHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.level.ServerLevel;
@@ -124,6 +126,7 @@ public class BlockPlacementEvent {
 
         if (JobPermissionService.isBatisseur(player) && player instanceof ServerPlayer serverPlayer) {
             if (MalletUsage.hasMalletInOffhand(serverPlayer)) {
+                JobEnergyHelper.consumeForAction(serverPlayer, JobActionEnergyCosts.PLACE_BLOCK);
                 MalletUsage.applyWear(serverPlayer, offhandItem);
             }
         }

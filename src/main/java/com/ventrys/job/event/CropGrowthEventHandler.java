@@ -1,6 +1,8 @@
 package com.ventrys.job.event;
 
 import com.ventrys.job.VentrysJob;
+import com.ventrys.job.energy.JobActionEnergyCosts;
+import com.ventrys.job.energy.JobEnergyHelper;
 import com.ventrys.job.audio.ExtractionSounds;
 import com.ventrys.job.data.CropGrowthConfig;
 import com.ventrys.job.data.CropGrowthManager;
@@ -105,6 +107,10 @@ public final class CropGrowthEventHandler {
             }
 
             event.setCanceled(true);
+
+            if (!JobEnergyHelper.consumeForAction(player, JobActionEnergyCosts.HARVEST_CROP)) {
+                return;
+            }
 
             boolean success = com.ventrys.job.data.JobActions.giveCropDrops(
                 player, level, event.getPos(), cropConfigOpt.get());

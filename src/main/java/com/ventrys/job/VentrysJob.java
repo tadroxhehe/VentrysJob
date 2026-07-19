@@ -81,6 +81,7 @@ public class VentrysJob {
 
     @SubscribeEvent
     public void onServerStarted(ServerStartedEvent event) {
+        CropGrowthConfig.loadConfig();
         LOGGER.info("VentrysJob — chargement des données joueurs (dossier {}/ventrysjob/)",
             event.getServer().getWorldPath(net.minecraft.world.level.storage.LevelResource.ROOT));
         JobActions.loadExtractedPositions();

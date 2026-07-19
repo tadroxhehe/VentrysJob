@@ -23,14 +23,18 @@ public final class CropGrowthConfig {
 
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private static final Map<String, CropConfigEntry> CROP_CONFIG = new HashMap<>();
-    private static long defaultStageDuration = 600L; // 30 secondes par défaut
+
+    /** 48 h réelles par stade de croissance (20 ticks/s). */
+    public static final long STAGE_DURATION_48H_TICKS = 48L * 3600L * 20L;
+
+    private static long defaultStageDuration = STAGE_DURATION_48H_TICKS;
 
     private CropGrowthConfig() {
     }
 
     public static void loadConfig() {
         CROP_CONFIG.clear();
-        defaultStageDuration = 600L;
+        defaultStageDuration = STAGE_DURATION_48H_TICKS;
 
         try (InputStream resourceStream = CropGrowthConfig.class.getResourceAsStream("/data/ventrysjob/crop_growth.json")) {
             if (resourceStream == null) {
@@ -64,17 +68,10 @@ public final class CropGrowthConfig {
                         }
 
                         String blockId = cropObj.get("block_id").getAsString();
-                        ResourceLocation registryName;
                         try {
-                            registryName = new ResourceLocation(blockId);
+                            new ResourceLocation(blockId);
                         } catch (Exception ex) {
                             VentrysJob.LOGGER.warn("ID de bloc de culture invalide: {}", blockId);
-                            continue;
-                        }
-
-                        Block block = ForgeRegistries.BLOCKS.getValue(registryName);
-                        if (!(block instanceof CropBlock)) {
-                            VentrysJob.LOGGER.warn("Bloc {} n'est pas une culture gérée (CropBlock). Ignoré.", blockId);
                             continue;
                         }
 
@@ -93,7 +90,6 @@ public final class CropGrowthConfig {
                         }
 
                         CROP_CONFIG.put(blockId, new CropConfigEntry(blockId, stageDurations));
-                        VentrysJob.LOGGER.debug("Culture: {} — {} étapes", blockId, stageDurations.size());
                     }
                 }
             }
@@ -106,14 +102,41 @@ public final class CropGrowthConfig {
             VentrysJob.LOGGER.warn("Aucune culture configurée, utilisation des valeurs par défaut");
             loadDefaultValues();
         }
+
+        logLoadedSummary();
+    }
+
+    private static void logLoadedSummary() {
+        int cropBlocks = 0;
+        for (String blockId : CROP_CONFIG.keySet()) {
+            Block block = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(blockId));
+            if (block instanceof CropBlock) {
+                cropBlocks++;
+            } else {
+                VentrysJob.LOGGER.warn("Culture configurée mais bloc absent ou non-CropBlock au registre: {}", blockId);
+            }
+        }
+        long stageHours = (defaultStageDuration * 50L) / 3_600_000L;
+        VentrysJob.LOGGER.info(
+            "Cultures — {} entrée(s) config, {} CropBlock(s) au registre, ~{} h par stade (défaut)",
+            CROP_CONFIG.size(), cropBlocks, stageHours
+        );
     }
 
     private static void loadDefaultValues() {
-        defaultStageDuration = 600L;
+        defaultStageDuration = STAGE_DURATION_48H_TICKS;
         registerDefault("minecraft:wheat", 7);
         registerDefault("minecraft:carrots", 7);
         registerDefault("minecraft:potatoes", 7);
         registerDefault("minecraft:beetroots", 3);
+        registerDefault("ventrysjob:crop_orge", 3);
+        registerDefault("ventrysjob:crop_tomates", 3);
+        registerDefault("ventrysjob:crop_oignon", 3);
+        registerDefault("ventrysjob:crop_salade", 3);
+        registerDefault("ventrysjob:crop_raisin", 3);
+        registerDefault("ventrysjob:crop_choux", 3);
+        registerDefault("ventrysjob:crop_carotte", 3);
+        registerDefault("ventrysjob:crop_betrave", 3);
     }
 
     private static void registerDefault(String blockId, int stages) {

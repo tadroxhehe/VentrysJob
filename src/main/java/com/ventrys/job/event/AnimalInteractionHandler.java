@@ -1,6 +1,8 @@
 package com.ventrys.job.event;
 
 import com.ventrys.job.data.PlayerJobData;
+import com.ventrys.job.energy.JobActionEnergyCosts;
+import com.ventrys.job.energy.JobEnergyHelper;
 import com.ventrys.job.entity.CustomAnimal;
 import com.ventrys.job.entity.CustomChicken;
 import com.ventrys.job.entity.CustomCow;
@@ -64,6 +66,12 @@ public class AnimalInteractionHandler {
                 }
                 // Toutes les conditions sont remplies : traire
                 if (!player.level.isClientSide) {
+                    if (!(player instanceof net.minecraft.server.level.ServerPlayer serverPlayer)
+                            || !JobEnergyHelper.consumeForAction(serverPlayer, JobActionEnergyCosts.MILK_COW)) {
+                        event.setCancellationResult(InteractionResult.FAIL);
+                        event.setCanceled(true);
+                        return;
+                    }
                     ItemStack milk = cow.extractMilk();
                     if (!milk.isEmpty()) {
                         heldItem.shrink(1);
@@ -92,6 +100,12 @@ public class AnimalInteractionHandler {
                 }
                 
                 if (!player.level.isClientSide) {
+                    if (!(player instanceof net.minecraft.server.level.ServerPlayer serverPlayer)
+                            || !JobEnergyHelper.consumeForAction(serverPlayer, JobActionEnergyCosts.FEED_ANIMAL)) {
+                        event.setCancellationResult(InteractionResult.FAIL);
+                        event.setCanceled(true);
+                        return;
+                    }
                     animal.addNutrition(20);
                     if (!player.isCreative()) {
                         heldItem.shrink(1);
@@ -113,6 +127,12 @@ public class AnimalInteractionHandler {
                 }
                 
                 if (!player.level.isClientSide) {
+                    if (!(player instanceof net.minecraft.server.level.ServerPlayer serverPlayer)
+                            || !JobEnergyHelper.consumeForAction(serverPlayer, JobActionEnergyCosts.HYDRATE_ANIMAL)) {
+                        event.setCancellationResult(InteractionResult.FAIL);
+                        event.setCanceled(true);
+                        return;
+                    }
                     animal.addHydration(30);
                     if (!player.isCreative()) {
                         heldItem.shrink(1);
@@ -124,32 +144,31 @@ public class AnimalInteractionHandler {
                 return;
             }
             
-            // Reproduction entre deux animaux
+            // Reproduction manuelle : uniquement si le délai (ex. 3 jours) est déjà accumulé
             if (heldItem.isEmpty() && animal.canReproduce()) {
-                // Chercher un autre animal du même type à proximité
                 Animal mate = findMate(animal);
-                if (mate instanceof CustomAnimal customMate && customMate.canReproduce()) {
-                    if (animal.isMale() != customMate.isMale()) {
-                        // Reproduction possible
-                        if (!player.level.isClientSide && player.level instanceof net.minecraft.server.level.ServerLevel serverLevel) {
-                            net.minecraft.world.entity.AgeableMob offspring = animal.getBreedOffspring(serverLevel, customMate);
-                            if (offspring != null) {
-                                offspring.setAge(-24000); // Bébé
-                                offspring.moveTo(animal.getX(), animal.getY(), animal.getZ(), 0.0F, 0.0F);
-                                player.level.addFreshEntity(offspring);
-                                // Coût de reproduction : les deux parents passent sous le seuil
-                                // et devront être re-nourris/hydratés avant de pouvoir se reproduire
-                                // à nouveau (anti-spam de bébés).
-                                animal.addNutrition(-BREEDING_COST);
-                                animal.addHydration(-BREEDING_COST);
-                                customMate.addNutrition(-BREEDING_COST);
-                                customMate.addHydration(-BREEDING_COST);
-                            }
+                if (mate instanceof CustomAnimal customMate
+                        && animal.isReproductionReadyWith(customMate)) {
+                    if (!player.level.isClientSide && player.level instanceof net.minecraft.server.level.ServerLevel serverLevel) {
+                        if (!(player instanceof net.minecraft.server.level.ServerPlayer serverPlayer)
+                                || !JobEnergyHelper.consumeForAction(serverPlayer, JobActionEnergyCosts.BREED_ANIMAL)) {
+                            event.setCancellationResult(InteractionResult.FAIL);
+                            event.setCanceled(true);
+                            return;
                         }
-                        event.setCancellationResult(InteractionResult.SUCCESS);
-                        event.setCanceled(true);
-                        return;
+                        net.minecraft.world.entity.AgeableMob offspring = animal.getBreedOffspring(serverLevel, customMate);
+                        if (offspring != null) {
+                            offspring.setAge(-24000);
+                            offspring.moveTo(animal.getX(), animal.getY(), animal.getZ(), 0.0F, 0.0F);
+                            player.level.addFreshEntity(offspring);
+                            animal.addNutrition(-BREEDING_COST);
+                            animal.addHydration(-BREEDING_COST);
+                            customMate.addNutrition(-BREEDING_COST);
+                            customMate.addHydration(-BREEDING_COST);
+                        }
                     }
+                    event.setCancellationResult(InteractionResult.SUCCESS);
+                    event.setCanceled(true);
                 }
             }
         }

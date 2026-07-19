@@ -38,7 +38,6 @@
   "ventrysjob.gui.recipe.ingredients": "Ingrédients :",
   "ventrysjob.gui.recipe.result": "Résultat :",
   "ventrysjob.gui.job.not_found": "Métier introuvable !",
-  
   "ventrysjob.message.extraction.success": "Extraction réussie !",
   "ventrysjob.message.sawing.success": "Sciage réussi !",
   "ventrysjob.message.stone_extraction.success": "Extraction pierre réussie !",
@@ -46,20 +45,18 @@
   "ventrysjob.message.calcite_extraction.success": "Extraction calcite réussie !",
   "ventrysjob.message.sand_extraction.success": "Extraction sable réussie !",
   "ventrysjob.message.clay_extraction.success": "Extraction argile réussie !",
-  
   "ventrysjob.message.craft.must_be_job": "Vous devez être %s pour utiliser cette recette !",
   "ventrysjob.message.craft.insufficient_ingredients": "Ingrédients insuffisants !",
   "ventrysjob.message.craft.success": "Craft réussi : %s",
   "ventrysjob.message.craft.inventory_full": "Inventaire plein !",
   "ventrysjob.message.craft.ingredient_error": "Erreur lors de la consommation des ingrédients !",
   "ventrysjob.message.craft.error": "§cErreur lors du craft !",
-  
+  "ventrysjob.message.energy.insufficient": "§cÉnergie métier insuffisante ! Reposez-vous ou attendez la régénération.",
   "ventrysjob.message.job.set": "Votre métier a été défini : %s",
   "ventrysjob.message.job.removed": "Votre métier a été supprimé",
   "ventrysjob.message.job.current": "Votre métier actuel : %s",
   "ventrysjob.message.job.none": "Vous n'avez pas de métier défini. Demandez à un admin de vous en assigner un.",
   "ventrysjob.message.job.progress_reset": "Vos progressions d'extraction ont été réinitialisées",
-  
   "ventrysjob.message.vase.empty": "§cLe vase de plantation est vide, rien à arroser !",
   "ventrysjob.message.vase.already_watered": "§eLe vase de plantation a déjà été arrosé !",
   "ventrysjob.message.vase.watered": "§aLe vase de plantation a été arrosé, la croissance commence !",
@@ -70,19 +67,16 @@
   "ventrysjob.message.vase.use_water": "§7Utilisez un seau d'eau pour arroser votre plante !",
   "ventrysjob.message.vase.harvest.success": "§aRécolte réussie !",
   "ventrysjob.message.vase.wrong_job": "§cVous devez être apothicaire pour utiliser ce vase de plantation !",
-  
   "ventrysjob.message.furnace.must_be_worker": "§cVous devez être ouvrier pour utiliser ce four à charbon de bois !",
   "ventrysjob.message.furnace.lit": "§aLe four à charbon de bois est maintenant allumé !",
   "ventrysjob.message.furnace.already_lit": "§eLe four à charbon de bois est déjà allumé !",
   "ventrysjob.message.furnace.forgeron.lit": "§aLe four de forge est maintenant allumé !",
   "ventrysjob.message.furnace.forgeron.already_lit": "§eLe four de forge est déjà allumé !",
   "ventrysjob.message.furnace.forgeron.must_be_blacksmith": "§cVous devez être forgeron pour utiliser ce four de forge !",
-  
   "ventrysjob.message.metier.must_be_tailor": "§cVous devez être couturier pour utiliser ce métier à tisser !",
   "ventrysjob.message.job_table.must_be_cook": "§cVous devez être cuisinier pour utiliser cette table de cuisine !",
   "ventrysjob.message.job_table.must_be_artisan": "§cVous devez être artisan pour utiliser cette table d'artisanat !",
   "ventrysjob.message.metier.must_be_apothecary": "§cVous devez être apothicaire pour utiliser ce vase de plantation !",
-  
   "ventrysjob.command.job.not_found": "Métier introuvable : %s",
   "ventrysjob.command.job.set.success": "Métier %s défini pour %d joueur(s)",
   "ventrysjob.command.job.remove.success": "Métier supprimé pour %d joueur(s)",
@@ -99,14 +93,12 @@
   "ventrysjob.command.job.debug.item": "- %s : %s (%d recettes)",
   "ventrysjob.command.job.config.extractable": "Blocs extractibles configurés :",
   "ventrysjob.command.job.config.item": "- %s → %dx %s",
-  
   "ventrysjob.message.block.placement.ouvrier.restricted": "§cEn tant qu'ouvrier, vous ne pouvez poser que des blocs de chêne !",
   "ventrysjob.message.block.placement.batisseur.no_mallet": "§cVous devez tenir un maillet dans votre main gauche pour poser des blocs !",
   "ventrysjob.message.block.placement.paysan.restricted": "§cEn tant que paysan, vous ne pouvez planter que les cultures autorisées !",
   "ventrysjob.message.block.placement.restricted": "§cVotre métier ne vous permet pas de poser des blocs !",
   "ventrysjob.message.block.placement.mallet.broken": "§cVotre maillet s'est cassé !",
   "ventrysjob.message.meule.must_be_farmer": "§cVous devez être paysan pour utiliser cette meule !",
-  
   "ventrysjob.message.block.break.extracted": "§cCe bloc doit être extrait avec le bon outil !",
   "ventrysjob.message.block.break.batisseur.extractable": "§cEn tant que bâtisseur, vous ne pouvez pas casser les blocs extractibles !",
   "ventrysjob.message.craft.forgeron.no_hammer": "§cVous devez tenir un marteau de forge en main gauche pour fabriquer sur l'enclume !",
@@ -114,18 +106,16 @@
   "ventrysjob.message.craft.artisan.no_saw": "§cVous devez tenir une scie en main gauche pour fabriquer sur l'établi artisan !",
   "ventrysjob.message.craft.artisan.saw_broken": "§cVotre scie s'est cassée !",
   "ventrysjob.message.block.break.restricted": "§cVotre métier ne vous permet pas de casser ces blocs !",
-  
   "container.ventrysjob.chicken_nest": "Nid de Poule",
   "block.ventrysjob.chicken_nest": "Nid de Poule",
-  "entity.ventrysjob.custom_pig": "Porc",
+  "entity.ventrysjob.custom_pig": "Cochon",
   "entity.ventrysjob.custom_cow": "Vache",
   "entity.ventrysjob.custom_chicken": "Poule",
   "entity.ventrysjob.custom_sheep": "Mouton",
-  "item.ventrysjob.custom_pig_spawn_egg": "Œuf d'apparition de Porc",
-  "item.ventrysjob.custom_cow_spawn_egg": "Œuf d'apparition de Vache",
-  "item.ventrysjob.custom_chicken_spawn_egg": "Œuf d'apparition de Poule",
-  "item.ventrysjob.custom_sheep_spawn_egg": "Œuf d'apparition de Mouton",
-  
+  "item.ventrysjob.custom_pig_spawn_egg": "Œuf d'apparition — Cochon",
+  "item.ventrysjob.custom_cow_spawn_egg": "Œuf d'apparition — Vache",
+  "item.ventrysjob.custom_chicken_spawn_egg": "Œuf d'apparition — Poule",
+  "item.ventrysjob.custom_sheep_spawn_egg": "Œuf d'apparition — Mouton",
   "ventrysjob.animal.sex.male": "Mâle",
   "ventrysjob.animal.sex.female": "Femelle",
   "ventrysjob.animal.nutrition.starving": "Affamé",
@@ -134,9 +124,7 @@
   "ventrysjob.animal.hydration.thirsty": "Assoiffé",
   "ventrysjob.animal.hydration.hydrated": "Hydraté",
   "ventrysjob.animal.hydration.well_hydrated": "Très hydraté",
-  
   "ventrysjob.crop.growth": "Croissance",
-  
   "ventrysjob.message.animal.feed.restricted": "§cSeul le métier paysan peut nourrir les animaux !",
   "ventrysjob.message.animal.hydrate.restricted": "§cSeul le métier paysan peut hydrater les animaux !",
   "ventrysjob.message.farmland.till.restricted": "§cSeul le métier paysan peut labourer la terre !",
@@ -145,7 +133,6 @@
   "ventrysjob.message.crop.harvest.not_mature": "§eCulture pas encore mature.",
   "ventrysjob.message.crop.harvest.invalid_config": "§cRécolte impossible : configuration invalide.",
   "ventrysjob.message.chicken_nest.must_be_farmer": "§cVous devez être paysan pour utiliser ce nid de poule !",
-  
   "ventrysjob.command.time.server_not_found": "Niveau serveur introuvable",
   "ventrysjob.command.time.debug.header": "=== DEBUG TEMPS VENTRYS ===",
   "ventrysjob.command.time.irl_paris": "Heure IRL Paris: %s",

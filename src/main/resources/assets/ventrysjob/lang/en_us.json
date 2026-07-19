@@ -42,6 +42,7 @@
   "ventrysjob.message.craft.inventory_full": "Inventory full!",
   "ventrysjob.message.craft.ingredient_error": "Error while consuming ingredients!",
   "ventrysjob.message.craft.error": "Craft error!",
+  "ventrysjob.message.energy.insufficient": "Insufficient job energy! Rest or wait for regeneration.",
   
   "ventrysjob.message.job.set": "Your job has been set: %s",
   "ventrysjob.message.job.removed": "Your job has been removed",

@@ -1,6 +1,8 @@
 package com.ventrys.job.extraction;
 
 import com.ventrys.job.VentrysJob;
+import com.ventrys.job.energy.JobActionEnergyCosts;
+import com.ventrys.job.energy.JobEnergyHelper;
 import com.ventrys.job.audio.ExtractionSounds;
 import com.ventrys.job.data.PlayerJobData;
 import com.ventrys.job.network.NetworkHandler;
@@ -70,7 +72,7 @@ public final class ExtractionInteractionHandler {
 
     private static boolean handleExtraction(
             ServerPlayer player, Level level, BlockPos pos, InteractionHand hand,
-            String extractionType, int requiredClicks, String progressMessage,
+            String extractionType, int requiredClicks, float energyCost, String progressMessage,
             BiPredicate<ItemStack, InteractionHand> toolChecker,
             Consumer<ExtractionContext> extractionAction) {
 
@@ -113,6 +115,22 @@ public final class ExtractionInteractionHandler {
         );
 
         if (currentClicks >= requiredClicks) {
+            if (!JobEnergyHelper.consumeForAction(player, energyCost)) {
+                clickProgress.remove(key);
+                lastClickTime.remove(key);
+                Map<String, String> typeMapFail = ExtractionProgressManager.getActiveProgressionsByType().get(playerUUID);
+                if (typeMapFail != null) {
+                    typeMapFail.remove(finalTypeToUse);
+                    if (typeMapFail.isEmpty()) {
+                        ExtractionProgressManager.getActiveProgressionsByType().remove(playerUUID);
+                    }
+                }
+                NetworkHandler.INSTANCE.send(
+                    PacketDistributor.PLAYER.with(() -> player),
+                    new ExtractionProgressPacket(key, 0, requiredClicks, "")
+                );
+                return true;
+            }
             ExtractionContext context = new ExtractionContext(player, level, pos, hand, heldItem);
             extractionAction.accept(context);
             clickProgress.remove(key);
@@ -155,7 +173,7 @@ public final class ExtractionInteractionHandler {
     private static boolean handleOakExtraction(ServerPlayer player, Level level, BlockPos pos, InteractionHand hand) {
         return handleExtraction(
             player, level, pos, hand,
-            "oak", OAK_EXTRACTION_CLICKS, "Progression",
+            "oak", OAK_EXTRACTION_CLICKS, JobActionEnergyCosts.EXTRACT_LOG, "Progression",
             (item, h) -> ExtractionConfigRegistry.isAxe(item),
             context -> extractOakLog(context.player, context.level, context.pos)
         );
@@ -207,7 +225,7 @@ public final class ExtractionInteractionHandler {
     private static boolean handleSawing(ServerPlayer player, Level level, BlockPos pos, InteractionHand hand) {
         return handleExtraction(
             player, level, pos, hand,
-            "saw", SAW_CLICKS, "Progression",
+            "saw", SAW_CLICKS, JobActionEnergyCosts.EXTRACT_SAW, "Progression",
             (item, h) -> ExtractionConfigRegistry.isSaw(item),
             context -> sawLog(context.player, context.level, context.pos)
         );
@@ -253,10 +271,13 @@ public final class ExtractionInteractionHandler {
         int requiredClicks = miningConfig != null
             ? miningConfig.resolveClicksRequired(MINING_CLICKS)
             : MINING_CLICKS;
+        float energyCost = blockId.contains("verdragon")
+            ? JobActionEnergyCosts.EXTRACT_VERDRAGON
+            : JobActionEnergyCosts.EXTRACT_ORE;
 
         return handleExtraction(
             player, level, pos, hand,
-            "mine", requiredClicks, "Progression",
+            "mine", requiredClicks, energyCost, "Progression",
             (item, h) -> ExtractionConfigRegistry.isPickaxe(item),
             context -> mineOre(context.player, context.level, context.pos, context.hand)
         );
@@ -292,7 +313,7 @@ public final class ExtractionInteractionHandler {
     private static boolean handleStoneExtraction(ServerPlayer player, Level level, BlockPos pos, InteractionHand hand) {
         return handleExtraction(
             player, level, pos, hand,
-            "stone", STONE_EXTRACTION_CLICKS, "Progression",
+            "stone", STONE_EXTRACTION_CLICKS, JobActionEnergyCosts.EXTRACT_STONE, "Progression",
             (item, h) -> isChisel(item),
             context -> extractStone(context.player, context.level, context.pos, context.hand)
         );
@@ -328,7 +349,7 @@ public final class ExtractionInteractionHandler {
     private static boolean handleCalciteExtraction(ServerPlayer player, Level level, BlockPos pos, InteractionHand hand) {
         return handleExtraction(
             player, level, pos, hand,
-            "calcite", STONE_EXTRACTION_CLICKS, "Progression",
+            "calcite", STONE_EXTRACTION_CLICKS, JobActionEnergyCosts.EXTRACT_CALCITE, "Progression",
             (item, h) -> isChisel(item),
             context -> extractCalcite(context.player, context.level, context.pos, context.hand)
         );
@@ -364,7 +385,7 @@ public final class ExtractionInteractionHandler {
     private static boolean handleSandExtraction(ServerPlayer player, Level level, BlockPos pos, InteractionHand hand) {
         return handleExtraction(
             player, level, pos, hand,
-            "sand", STONE_EXTRACTION_CLICKS, "Progression",
+            "sand", STONE_EXTRACTION_CLICKS, JobActionEnergyCosts.EXTRACT_SAND, "Progression",
             (item, h) -> ExtractionConfigRegistry.isShovel(item),
             context -> extractSand(context.player, context.level, context.pos, context.hand)
         );
@@ -400,7 +421,7 @@ public final class ExtractionInteractionHandler {
     private static boolean handleClayExtraction(ServerPlayer player, Level level, BlockPos pos, InteractionHand hand) {
         return handleExtraction(
             player, level, pos, hand,
-            "clay", CLAY_EXTRACTION_CLICKS, "Progression",
+            "clay", CLAY_EXTRACTION_CLICKS, JobActionEnergyCosts.EXTRACT_CLAY, "Progression",
             (item, h) -> ExtractionConfigRegistry.isShovel(item),
             context -> extractClay(context.player, context.level, context.pos, context.hand)
         );

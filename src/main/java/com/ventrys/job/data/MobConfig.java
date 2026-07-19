@@ -131,9 +131,9 @@ public final class MobConfig {
     
     private static void loadDefaults() {
         ANIMALS.clear();
-        minNutritionPercent = 30;
-        minHydrationPercent = 30;
-        requiredTimeMinutes = 15;
+        minNutritionPercent = 20;
+        minHydrationPercent = 20;
+        requiredTimeMinutes = 4320;
         milkExtractionIntervalMs = 60_000L;
         detectionRadiusBlocks = 16.0D;
     }

@@ -3,6 +3,8 @@ package com.ventrys.job.event;
 import com.ventrys.job.data.ForkConfig;
 import com.ventrys.job.data.JobActions;
 import com.ventrys.job.data.JobPermissionService;
+import com.ventrys.job.energy.JobActionEnergyCosts;
+import com.ventrys.job.energy.JobEnergyHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -90,6 +92,11 @@ public class ToolRestrictionEvent {
                     }
                     
                     if (farmlandState != null) {
+                        if (!JobEnergyHelper.consumeForAction((net.minecraft.server.level.ServerPlayer) player,
+                                JobActionEnergyCosts.TILL_FARMLAND)) {
+                            event.setCanceled(true);
+                            return;
+                        }
                         level.setBlock(pos, farmlandState, 11);
                         // Endommager la fourche
                         if (heldItem.isDamageableItem()) {

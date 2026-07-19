@@ -35,7 +35,6 @@ for (const [rid, name, desc, a, b] of simple) {
 }
 /* Seau → métier artisan (art_seau) dans jobs.json */
 R.push(rec("cuis_pain_patte", "Pain", "", [ing("ventrysitem:res_patte_a_pain", 1)], out("ventrysitem:item_pain", 1)));
-R.push(rec("cuis_farine_ble", "Farine", "", [ing("minecraft:wheat", 1)], out("ventrysitem:res_farine", 1)));
 R.push(rec("cuis_sucre_betrave", "Sucre (betterave)", "", [ing("ventrysitem:item_betrave", 1)], out("ventrysitem:item_sucre", 1)));
 R.push(rec("cuis_patte_pain_complet", "Pate a pain", "", [ing("ventrysitem:res_farine", 3), ing("ventrysitem:item_gourde_deau", 1), ing("ventrysitem:res_sel", 1)], null, [out("ventrysitem:res_patte_a_pain", 1), out("ventrysitem:item_gourde_en_cuir_vide", 1)]));
 R.push(rec("cuis_bol_huile", "Bol d'huile", "", [ing("ventrysitem:res_tournesol", 1), ing("ventrysitem:res_bol", 1)], out("ventrysitem:res_bol_dhuile", 1)));

@@ -1,0 +1,38 @@
+{
+  "craft_artisan": {
+    "sounds": [
+      {
+        "name": "ventrysjob:craft_artisan",
+        "volume": 0.92,
+        "stream": false
+      }
+    ]
+  },
+  "craft_couturier": {
+    "sounds": [
+      {
+        "name": "ventrysjob:craft_couturier",
+        "volume": 0.92,
+        "stream": false
+      }
+    ]
+  },
+  "craft_cuisinier": {
+    "sounds": [
+      {
+        "name": "ventrysjob:craft_cuisinier",
+        "volume": 0.92,
+        "stream": false
+      }
+    ]
+  },
+  "craft_apothicaire": {
+    "sounds": [
+      {
+        "name": "ventrysjob:craft_apothicaire",
+        "volume": 0.92,
+        "stream": false
+      }
+    ]
+  }
+}

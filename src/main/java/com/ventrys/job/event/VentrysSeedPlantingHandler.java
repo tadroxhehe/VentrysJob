@@ -3,6 +3,8 @@ package com.ventrys.job.event;
 import com.ventrys.job.VentrysJob;
 import com.ventrys.job.data.CropGrowthManager;
 import com.ventrys.job.data.PlayerJobData;
+import com.ventrys.job.energy.JobActionEnergyCosts;
+import com.ventrys.job.energy.JobEnergyHelper;
 import com.ventrys.job.init.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
@@ -104,6 +106,14 @@ public final class VentrysSeedPlantingHandler {
         BlockState planted = crop.defaultBlockState().setValue(crop.getAgeProperty(), 0);
         if (!planted.canSurvive(level, cropPos)) {
             return;
+        }
+
+        if (!player.isCreative()) {
+            if (!(player instanceof net.minecraft.server.level.ServerPlayer serverPlayer)
+                    || !JobEnergyHelper.consumeForAction(serverPlayer, JobActionEnergyCosts.PLANT_SEED)) {
+                event.setCanceled(true);
+                return;
+            }
         }
 
         level.setBlock(cropPos, planted, Block.UPDATE_ALL_IMMEDIATE);

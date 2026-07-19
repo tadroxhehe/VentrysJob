@@ -49,7 +49,7 @@ public class ModBlocks {
         }
     };
 
-    private static CreativeModeTab mobSpawnEggTab() {
+    static CreativeModeTab mobSpawnEggTab() {
         return VentrysMobCreativeTab.getOrFallback(VENTRYS_JOBS_TAB);
     }
 
@@ -140,17 +140,17 @@ public class ModBlocks {
     public static final RegistryObject<Item> CHICKEN_NEST_ITEM = ITEMS.register("chicken_nest",
         () -> new BlockItem(CHICKEN_NEST.get(), new Item.Properties().tab(VENTRYS_JOBS_TAB)));
     
-    // Œufs de spawn pour les animaux
+    // Œufs de spawn (texture aléatoire au spawn)
     public static final RegistryObject<Item> CUSTOM_PIG_SPAWN_EGG = ITEMS.register("custom_pig_spawn_egg",
         () -> new com.ventrys.job.item.CustomSpawnEggItem(
             () -> com.ventrys.job.init.ModEntities.CUSTOM_PIG.get(),
             new Item.Properties().tab(mobSpawnEggTab())));
-    
+
     public static final RegistryObject<Item> CUSTOM_COW_SPAWN_EGG = ITEMS.register("custom_cow_spawn_egg",
         () -> new com.ventrys.job.item.CustomSpawnEggItem(
             () -> com.ventrys.job.init.ModEntities.CUSTOM_COW.get(),
             new Item.Properties().tab(mobSpawnEggTab())));
-    
+
     public static final RegistryObject<Item> CUSTOM_CHICKEN_SPAWN_EGG = ITEMS.register("custom_chicken_spawn_egg",
         () -> new com.ventrys.job.item.CustomSpawnEggItem(
             () -> com.ventrys.job.init.ModEntities.CUSTOM_CHICKEN.get(),

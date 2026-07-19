@@ -1,5 +1,7 @@
 package com.ventrys.job.block.entity;
 
+import com.ventrys.job.energy.JobActionEnergyCosts;
+import com.ventrys.job.energy.JobEnergyHelper;
 import com.ventrys.job.audio.PositionalSounds;
 import com.ventrys.job.init.ModBlockEntities;
 import com.ventrys.job.init.ModSounds;
@@ -80,6 +82,11 @@ public class VaseApothicaireBlockEntity extends BlockEntity {
             sendMessage(player, "ventrysjob.message.vase.already_watered");
             return InteractionResult.FAIL;
         }
+
+        if (player instanceof net.minecraft.server.level.ServerPlayer serverPlayer
+                && !JobEnergyHelper.consumeForAction(serverPlayer, JobActionEnergyCosts.VASE_WATER)) {
+            return InteractionResult.FAIL;
+        }
         
         // Arroser le vase
         isWatered = true;
@@ -136,6 +143,11 @@ public class VaseApothicaireBlockEntity extends BlockEntity {
             sendMessage(player, "ventrysjob.message.vase.cannot_plant");
             return InteractionResult.FAIL;
         }
+
+        if (player instanceof net.minecraft.server.level.ServerPlayer serverPlayer
+                && !JobEnergyHelper.consumeForAction(serverPlayer, JobActionEnergyCosts.VASE_PLANT)) {
+            return InteractionResult.FAIL;
+        }
         
         // Planter l'item
         plantedItemId = itemId;
@@ -173,6 +185,11 @@ public class VaseApothicaireBlockEntity extends BlockEntity {
     
     private InteractionResult harvestPlant(Player player) {
         if (plantedItemId == null) {
+            return InteractionResult.FAIL;
+        }
+
+        if (player instanceof net.minecraft.server.level.ServerPlayer serverPlayer
+                && !JobEnergyHelper.consumeForAction(serverPlayer, JobActionEnergyCosts.VASE_HARVEST)) {
             return InteractionResult.FAIL;
         }
         

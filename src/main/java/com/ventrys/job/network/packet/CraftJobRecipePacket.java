@@ -1,7 +1,8 @@
 package com.ventrys.job.network.packet;
 
-// import com.tadrox.ecoventrys.capabilities.SurvivalDataCapability; // Desactive temporairement
 import com.ventrys.job.VentrysJob;
+import com.ventrys.job.energy.JobEnergyCostCalculator;
+import com.ventrys.job.compat.VentrysSurvivalBridge;
 import com.ventrys.job.data.HammerUsage;
 import com.ventrys.job.data.SawUsage;
 import com.ventrys.job.data.Job;
@@ -182,10 +183,13 @@ public class CraftJobRecipePacket {
                 return;
             }
 
-            // Verification d'energie desactivee temporairement
-            // if (recipe.getEnergyCost() > 0) {
-            //     // Code d'integration EcoVentrys desactive
-            // }
+            // Vérification énergie métier
+            float energyCost = JobEnergyCostCalculator.resolveCraftCost(jobId, recipe);
+            VentrysSurvivalBridge.catchUpPassiveRegen(player);
+            if (energyCost > 0f && VentrysSurvivalBridge.getJobEnergy(player) < energyCost) {
+                VentrysSurvivalBridge.sendInsufficientEnergy(player);
+                return;
+            }
 
             // Verifier les ingredients
             for (RecipeIngredient ingredient : recipe.getInputs()) {
@@ -232,6 +236,9 @@ public class CraftJobRecipePacket {
                     } else {
                         for (ItemStack stack : resultStacks) {
                             giveStackOrDrop(player, stack);
+                        }
+                        if (energyCost > 0f) {
+                            VentrysSurvivalBridge.tryConsumeJobEnergy(player, energyCost);
                         }
                         player.sendMessage(new TranslatableComponent("ventrysjob.message.craft.success", recipe.getName()), player.getUUID());
                         if ("forgeron".equals(jobId) && requiresForgeHammer(recipe)) {

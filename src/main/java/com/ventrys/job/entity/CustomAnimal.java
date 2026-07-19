@@ -1,5 +1,7 @@
 package com.ventrys.job.entity;
 
+import com.ventrys.job.data.LivestockProgressManager;
+import com.ventrys.job.data.LivestockProgressSavedData;
 import com.ventrys.job.data.MobConfig;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -57,18 +59,11 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
     // Utiliser un CompoundTag pour stocker les données longues non synchronisées
     
     // Données non synchronisées (gérées côté serveur) - Utilisation de timestamps réels (ms)
-    private long lastNutritionDecrease = 0; // Timestamp en millisecondes
-    private long lastHydrationDecrease = 0; // Timestamp en millisecondes
-    private long lastMilkExtraction = 0; // Timestamp en millisecondes (pour les vaches)
-    private long reproductionStartTime = 0L; // Timestamp en millisecondes
-    private long lastRegenerationTime = 0; // Timestamp en millisecondes pour la régénération
-    private long lastReproductionCheck = 0; // Timestamp en millisecondes pour la vérification automatique de reproduction
-    
-    // Intervalles en millisecondes (indépendants des ticks du monde)
-    private static final long NUTRITION_DECREASE_INTERVAL_MS = 1_200_000L; // 20 minutes = 1 200 000 ms
-    private static final long HYDRATION_DECREASE_INTERVAL_MS = 600_000L; // 10 minutes = 600 000 ms
-    private static final long REGENERATION_INTERVAL_MS = 300_000L; // 5 minutes = 300 000 ms (pour test, normalement 1h = 3 600 000 ms)
-    private static final long REPRODUCTION_CHECK_INTERVAL_MS = 5_000L; // Vérifier la reproduction toutes les 5 secondes
+    private long lastNutritionDecrease = 0;
+    private long lastHydrationDecrease = 0;
+    private long lastMilkExtraction = 0;
+    private long reproductionProgressMs = 0L;
+    private long lastRegenerationTime = 0;
     
     protected CustomAnimal(EntityType<? extends Animal> entityType, Level level) {
         super(entityType, level);
@@ -84,8 +79,7 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
             this.lastHydrationDecrease = currentTime;
             this.lastMilkExtraction = currentTime;
             this.lastRegenerationTime = currentTime;
-            this.lastReproductionCheck = currentTime;
-            this.reproductionStartTime = 0L;
+            this.reproductionProgressMs = 0L;
         }
     }
     
@@ -186,183 +180,64 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
     @Override
     public void tick() {
         super.tick();
-        
-        if (!this.level.isClientSide) {
-            long currentTime = System.currentTimeMillis();
-            
-            // Initialiser les timestamps si c'est la première fois (pour les animaux chargés)
-            if (lastNutritionDecrease == 0) {
-                lastNutritionDecrease = currentTime;
-            }
-            if (lastHydrationDecrease == 0) {
-                lastHydrationDecrease = currentTime;
-            }
-            if (lastRegenerationTime == 0) {
-                lastRegenerationTime = currentTime;
-            }
-            if (lastReproductionCheck == 0) {
-                lastReproductionCheck = currentTime;
-            }
-            
-            // Calculer les diminutions de nutrition (avec protection contre les désynchronisations)
-            long timeSinceLastNutrition = currentTime - lastNutritionDecrease;
-            if (timeSinceLastNutrition < 0) {
-                // Timestamp invalide (crash/redémarrage), réinitialiser
-                lastNutritionDecrease = currentTime;
-            } else if (timeSinceLastNutrition >= NUTRITION_DECREASE_INTERVAL_MS) {
-                // Limiter les diminutions pour éviter les pertes massives après un crash
-                long maxAllowedTime = NUTRITION_DECREASE_INTERVAL_MS * 10; // Max 10 intervalles
-                if (timeSinceLastNutrition > maxAllowedTime) {
-                    timeSinceLastNutrition = maxAllowedTime;
-                    lastNutritionDecrease = currentTime - maxAllowedTime;
-                }
-                
-                // Calculer combien de diminutions ont dû se produire
-                int decreases = (int) (timeSinceLastNutrition / NUTRITION_DECREASE_INTERVAL_MS);
-                decreaseNutrition(decreases);
-                // Ajuster le timestamp pour éviter les accumulations
-                lastNutritionDecrease = currentTime - (timeSinceLastNutrition % NUTRITION_DECREASE_INTERVAL_MS);
-            }
-            
-            // Calculer les diminutions d'hydratation (avec protection contre les désynchronisations)
-            long timeSinceLastHydration = currentTime - lastHydrationDecrease;
-            if (timeSinceLastHydration < 0) {
-                // Timestamp invalide (crash/redémarrage), réinitialiser
-                lastHydrationDecrease = currentTime;
-            } else if (timeSinceLastHydration >= HYDRATION_DECREASE_INTERVAL_MS) {
-                // Limiter les diminutions pour éviter les pertes massives après un crash
-                long maxAllowedTime = HYDRATION_DECREASE_INTERVAL_MS * 10; // Max 10 intervalles
-                if (timeSinceLastHydration > maxAllowedTime) {
-                    timeSinceLastHydration = maxAllowedTime;
-                    lastHydrationDecrease = currentTime - maxAllowedTime;
-                }
-                
-                // Calculer combien de diminutions ont dû se produire
-                int decreases = (int) (timeSinceLastHydration / HYDRATION_DECREASE_INTERVAL_MS);
-                decreaseHydration(decreases);
-                // Ajuster le timestamp pour éviter les accumulations
-                lastHydrationDecrease = currentTime - (timeSinceLastHydration % HYDRATION_DECREASE_INTERVAL_MS);
-            }
-            
-            // Régénération lente si nutrition >= 50% et hydratation >= 50%
-            if (getNutrition() >= 50 && getHydration() >= 50) {
-                long timeSinceLastRegeneration = currentTime - lastRegenerationTime;
-                // Protection contre les timestamps invalides
-                if (timeSinceLastRegeneration < 0) {
-                    lastRegenerationTime = currentTime;
-                } else if (timeSinceLastRegeneration >= REGENERATION_INTERVAL_MS) {
-                    // Régénérer 1 coeur (2 points de vie)
-                    float currentHealth = this.getHealth();
-                    float maxHealth = this.getMaxHealth();
-                    if (currentHealth < maxHealth) {
-                        this.heal(2.0f);
-                        // Ajuster le timestamp
-                        lastRegenerationTime = currentTime - (timeSinceLastRegeneration % REGENERATION_INTERVAL_MS);
-                    } else {
-                        // Si déjà à vie max, réinitialiser le timer
-                        lastRegenerationTime = currentTime;
-                    }
-                }
-            } else {
-                // Si les conditions ne sont plus remplies, réinitialiser le timer de régénération
-                if (lastRegenerationTime != 0) {
-                    lastRegenerationTime = currentTime;
-                }
-            }
-            
-            // Les animaux meurent de faim/soif si leurs stats atteignent 0
-            if (getNutrition() <= 0 || getHydration() <= 0) {
-                this.hurt(net.minecraft.world.damagesource.DamageSource.STARVE, Float.MAX_VALUE);
-            }
-            
-            // Vérifier les conditions de reproduction
-            checkReproductionConditions();
-            
-            // Reproduction automatique : vérifier périodiquement si l'animal peut se reproduire
-            long timeSinceLastReproductionCheck = currentTime - lastReproductionCheck;
-            if (timeSinceLastReproductionCheck >= REPRODUCTION_CHECK_INTERVAL_MS) {
-                // Toujours vérifier la reproduction (même si les conditions ne sont pas remplies,
-                // pour réinitialiser le timer si nécessaire)
-                attemptAutomaticReproduction();
-                lastReproductionCheck = currentTime;
-            }
+
+        if (!this.level.isClientSide && this.tickCount % 20 == 0) {
+            LivestockProgressManager.syncEntity(this);
         }
     }
-    
-    /**
-     * Tente une reproduction automatique avec un partenaire à proximité
-     * Le timer ne démarre QUE si les 2 mobs sont à proximité ET remplissent les conditions
-     */
-    private void attemptAutomaticReproduction() {
-        if (this.level.isClientSide || !(this.level instanceof net.minecraft.server.level.ServerLevel serverLevel)) {
+
+    public long getReproductionProgressMs() {
+        return reproductionProgressMs;
+    }
+
+    public long getLastNutritionDecreaseMs() {
+        return lastNutritionDecrease;
+    }
+
+    public long getLastHydrationDecreaseMs() {
+        return lastHydrationDecrease;
+    }
+
+    public long getLastRegenerationTimeMs() {
+        return lastRegenerationTime;
+    }
+
+    /** Applique l'état persisté (temps réel, y compris chunk déchargé) sur l'entité chargée. */
+    public void applyLivestockEntry(LivestockProgressSavedData.Entry entry) {
+        if (entry == null || this.level.isClientSide) {
             return;
         }
-        
-        // Vérifier d'abord que cet animal remplit les conditions de base
-        if (!this.canReproduce() || this.isDeadOrDying() || !this.isAlive()) {
-            // Si les conditions ne sont plus remplies, réinitialiser le timer
-            this.reproductionStartTime = 0L;
-            return;
-        }
-        
-        // Chercher un partenaire dans un rayon de 10 blocs
-        double radius = 10.0D;
-        java.util.List<net.minecraft.world.entity.animal.Animal> nearbyAnimals = this.level.getEntitiesOfClass(
-            net.minecraft.world.entity.animal.Animal.class,
-            this.getBoundingBox().inflate(radius),
-            entity -> entity != this &&
-                     entity.getClass() == this.getClass() &&
-                     entity instanceof CustomAnimal &&
-                     !entity.isDeadOrDying() &&
-                     entity.isAlive()
-        );
-        
-        // Chercher un partenaire valide
-        CustomAnimal validMate = null;
-        for (net.minecraft.world.entity.animal.Animal potentialMate : nearbyAnimals) {
-            if (potentialMate instanceof CustomAnimal customMate) {
-                // Vérifier que le partenaire peut aussi se reproduire
-                if (!customMate.canReproduce()) {
-                    continue;
-                }
-                
-                // Vérifier que les sexes sont opposés
-                if (this.isMale() == customMate.isMale()) {
-                    continue;
-                }
-                
-                // Partenaire valide trouvé
-                validMate = customMate;
-                break;
+        setNutrition(entry.nutrition);
+        setHydration(entry.hydration);
+        this.reproductionProgressMs = entry.reproductionProgressMs;
+        this.lastNutritionDecrease = entry.lastNutritionDecreaseMs;
+        this.lastHydrationDecrease = entry.lastHydrationDecreaseMs;
+        this.lastRegenerationTime = entry.lastRegenerationMs;
+        if (entry.pendingHealHearts > 0) {
+            float currentHealth = this.getHealth();
+            float maxHealth = this.getMaxHealth();
+            if (currentHealth < maxHealth) {
+                this.heal(entry.pendingHealHearts * 2.0f);
             }
+            entry.pendingHealHearts = 0;
         }
-        
-        // Si aucun partenaire valide n'est trouvé, réinitialiser le timer
-        if (validMate == null) {
-            this.reproductionStartTime = 0L;
-            return;
+    }
+
+    public boolean isReproductionProgressComplete() {
+        long requiredMs = MobConfig.getRequiredTimeMinutes() * 60_000L;
+        return reproductionProgressMs >= requiredMs;
+    }
+
+    /** Les deux parents doivent avoir accumulé le délai configuré (ex. 3 jours). */
+    public boolean isReproductionReadyWith(CustomAnimal mate) {
+        if (mate == null || mate == this) {
+            return false;
         }
-        
-        // Vérifier si le timer de reproduction est prêt
-        if (this.isReproductionTimerReady(validMate)) {
-            // Conditions remplies : procéder à la reproduction
-            net.minecraft.world.entity.AgeableMob offspring = this.getBreedOffspring(serverLevel, validMate);
-            if (offspring != null) {
-                offspring.setAge(-24000); // Bébé
-                // Placer le bébé entre les deux parents
-                double midX = (this.getX() + validMate.getX()) / 2.0;
-                double midY = Math.max(this.getY(), validMate.getY());
-                double midZ = (this.getZ() + validMate.getZ()) / 2.0;
-                offspring.moveTo(midX, midY, midZ, 0.0F, 0.0F);
-                this.level.addFreshEntity(offspring);
-                
-                // Réinitialiser les timers de reproduction pour les deux parents
-                this.resetReproductionTimer();
-                validMate.resetReproductionTimer();
-            }
-        }
-        // Si le timer n'est pas encore prêt mais qu'un partenaire valide existe,
-        // le timer continuera à s'écouler (déjà démarré dans isReproductionTimerReady)
+        return canReproduce()
+            && mate.canReproduce()
+            && isMale() != mate.isMale()
+            && isReproductionProgressComplete()
+            && mate.isReproductionProgressComplete();
     }
     
     public boolean isMale() {
@@ -393,14 +268,6 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
         setHydration(getHydration() + amount);
     }
     
-    private void decreaseNutrition(int amount) {
-        setNutrition(getNutrition() - amount);
-    }
-    
-    private void decreaseHydration(int amount) {
-        setHydration(getHydration() - amount);
-    }
-    
     public AnimalNutritionStatus getNutritionStatus() {
         int nutrition = getNutrition();
         if (nutrition < 30) return AnimalNutritionStatus.STARVING;
@@ -416,87 +283,20 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
     }
     
     /**
-     * Vérifie si cet animal peut se reproduire (conditions de base uniquement)
-     * Le timer de reproduction est géré dans attemptAutomaticReproduction()
+     * Vérifie si cet animal peut accumuler du temps de reproduction (faim/soif au-dessus du seuil).
      */
     public boolean canReproduce() {
         int minNutrition = MobConfig.getMinNutritionPercent();
         int minHydration = MobConfig.getMinHydrationPercent();
-        
-        // Vérifier uniquement les conditions de base (nutrition et hydratation)
         return getNutrition() >= minNutrition && getHydration() >= minHydration;
     }
-    
-    /**
-     * Vérifie si le timer de reproduction avec un partenaire spécifique est terminé
-     * @param partner Le partenaire potentiel
-     * @return true si le timer est terminé et la reproduction peut avoir lieu
-     */
-    private boolean isReproductionTimerReady(CustomAnimal partner) {
-        if (partner == null || partner == this) {
-            return false;
-        }
-        
-        // Vérifier que les deux remplissent toujours les conditions
-        if (!this.canReproduce() || !partner.canReproduce()) {
-            return false;
-        }
-        
-        // Vérifier que les sexes sont opposés
-        if (this.isMale() == partner.isMale()) {
-            return false;
-        }
-        
-        // Si le timer n'a pas encore démarré, le démarrer maintenant
-        long currentTime = System.currentTimeMillis();
-        if (this.reproductionStartTime == 0L) {
-            this.reproductionStartTime = currentTime;
-            return false;
-        }
-        
-        // Vérifier la robustesse : si le temps est anormal, réinitialiser
-        long elapsed = currentTime - this.reproductionStartTime;
-        if (elapsed < 0) {
-            // Temps négatif = problème de synchronisation, réinitialiser
-            this.reproductionStartTime = currentTime;
-            return false;
-        }
-        
-        // Protection contre les valeurs anormalement grandes (crash/redémarrage)
-        int requiredTime = MobConfig.getRequiredTimeMinutes();
-        long requiredMs = requiredTime * 60_000L;
-        if (elapsed > requiredMs * 10) {
-            // Temps anormalement grand, réinitialiser
-            this.reproductionStartTime = currentTime;
-            return false;
-        }
-        
-        // Vérifier si le temps requis est écoulé
-        return elapsed >= requiredMs;
-    }
-    
-    private void checkReproductionConditions() {
-        // Si les conditions ne sont plus remplies, réinitialiser le compteur
-        // Cette vérification garantit la robustesse : si les conditions changent, le processus s'arrête
-        if (this.reproductionStartTime != 0L) {
-            int minNutrition = MobConfig.getMinNutritionPercent();
-            int minHydration = MobConfig.getMinHydrationPercent();
-            
-            // Si les conditions ne sont plus remplies, réinitialiser le timer
-            if (getNutrition() < minNutrition || getHydration() < minHydration) {
-                this.reproductionStartTime = 0L;
-            }
-            // Vérifier aussi si l'animal est mort
-            else if (this.isDeadOrDying() || !this.isAlive()) {
-                this.reproductionStartTime = 0L;
-            }
-        }
-    }
-    
+
     public void resetReproductionTimer() {
-        this.reproductionStartTime = 0L;
+        this.reproductionProgressMs = 0L;
+        if (this.level instanceof ServerLevel serverLevel && !this.level.isClientSide) {
+            LivestockProgressManager.resetReproduction(this.getUUID(), serverLevel);
+        }
     }
-    
     public boolean canExtractMilk() {
         if (isMale()) {
             return false;
@@ -549,12 +349,11 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
         tag.putBoolean("IsMale", isMale());
         tag.putInt("Nutrition", getNutrition());
         tag.putInt("Hydration", getHydration());
-        tag.putLong("ReproductionStartTime", this.reproductionStartTime);
+        tag.putLong("ReproductionProgressMs", this.reproductionProgressMs);
         tag.putLong("LastNutritionDecrease", lastNutritionDecrease);
         tag.putLong("LastHydrationDecrease", lastHydrationDecrease);
         tag.putLong("LastMilkExtraction", lastMilkExtraction);
         tag.putLong("LastRegenerationTime", lastRegenerationTime);
-        tag.putLong("LastReproductionCheck", lastReproductionCheck);
     }
     
     @Override
@@ -569,54 +368,27 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
         if (tag.contains("Hydration")) {
             setHydration(tag.getInt("Hydration"));
         }
-        if (tag.contains("ReproductionStartTime")) {
-            this.reproductionStartTime = tag.getLong("ReproductionStartTime");
-        }
-        
-        long currentTime = System.currentTimeMillis();
-        
-        // Charger et calculer les diminutions accumulées pour la nutrition
-        if (tag.contains("LastNutritionDecrease")) {
-            long savedNutritionTime = tag.getLong("LastNutritionDecrease");
-            long timeSinceLastNutrition = currentTime - savedNutritionTime;
 
-            if (timeSinceLastNutrition < 0) {
-                lastNutritionDecrease = currentTime;
-            } else if (timeSinceLastNutrition >= NUTRITION_DECREASE_INTERVAL_MS) {
-                long maxAllowedTime = NUTRITION_DECREASE_INTERVAL_MS * 10L;
-                if (timeSinceLastNutrition > maxAllowedTime) {
-                    timeSinceLastNutrition = maxAllowedTime;
-                    lastNutritionDecrease = currentTime - maxAllowedTime;
-                }
-                int decreases = (int) (timeSinceLastNutrition / NUTRITION_DECREASE_INTERVAL_MS);
-                decreaseNutrition(decreases);
-                lastNutritionDecrease = currentTime - (timeSinceLastNutrition % NUTRITION_DECREASE_INTERVAL_MS);
-            } else {
-                lastNutritionDecrease = savedNutritionTime;
+        long currentTime = System.currentTimeMillis();
+
+        if (tag.contains("ReproductionProgressMs")) {
+            this.reproductionProgressMs = Math.max(0L, tag.getLong("ReproductionProgressMs"));
+        } else if (tag.contains("ReproductionStartTime")) {
+            long legacyStart = tag.getLong("ReproductionStartTime");
+            if (legacyStart > 0L) {
+                long requiredMs = MobConfig.getRequiredTimeMinutes() * 60_000L;
+                this.reproductionProgressMs = Math.min(requiredMs, Math.max(0L, currentTime - legacyStart));
             }
+        }
+
+        if (tag.contains("LastNutritionDecrease")) {
+            lastNutritionDecrease = tag.getLong("LastNutritionDecrease");
         } else {
             lastNutritionDecrease = currentTime;
         }
 
-        // Charger et calculer les diminutions accumulées pour l'hydratation
         if (tag.contains("LastHydrationDecrease")) {
-            long savedHydrationTime = tag.getLong("LastHydrationDecrease");
-            long timeSinceLastHydration = currentTime - savedHydrationTime;
-
-            if (timeSinceLastHydration < 0) {
-                lastHydrationDecrease = currentTime;
-            } else if (timeSinceLastHydration >= HYDRATION_DECREASE_INTERVAL_MS) {
-                long maxAllowedTime = HYDRATION_DECREASE_INTERVAL_MS * 10L;
-                if (timeSinceLastHydration > maxAllowedTime) {
-                    timeSinceLastHydration = maxAllowedTime;
-                    lastHydrationDecrease = currentTime - maxAllowedTime;
-                }
-                int decreases = (int) (timeSinceLastHydration / HYDRATION_DECREASE_INTERVAL_MS);
-                decreaseHydration(decreases);
-                lastHydrationDecrease = currentTime - (timeSinceLastHydration % HYDRATION_DECREASE_INTERVAL_MS);
-            } else {
-                lastHydrationDecrease = savedHydrationTime;
-            }
+            lastHydrationDecrease = tag.getLong("LastHydrationDecrease");
         } else {
             lastHydrationDecrease = currentTime;
         }
@@ -627,26 +399,13 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
             lastMilkExtraction = currentTime;
         }
         
-        // Charger le timestamp de régénération
         if (tag.contains("LastRegenerationTime")) {
             lastRegenerationTime = tag.getLong("LastRegenerationTime");
-            // Vérifier la validité du timestamp
             if (lastRegenerationTime <= 0 || lastRegenerationTime > currentTime) {
                 lastRegenerationTime = currentTime;
             }
         } else {
             lastRegenerationTime = currentTime;
-        }
-        
-        // Charger le timestamp de vérification de reproduction
-        if (tag.contains("LastReproductionCheck")) {
-            lastReproductionCheck = tag.getLong("LastReproductionCheck");
-            // Vérifier la validité du timestamp
-            if (lastReproductionCheck <= 0 || lastReproductionCheck > currentTime) {
-                lastReproductionCheck = currentTime;
-            }
-        } else {
-            lastReproductionCheck = currentTime;
         }
     }
     
