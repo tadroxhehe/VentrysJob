@@ -10,15 +10,17 @@ import com.ventrys.job.data.MalletUsage;
 import com.ventrys.job.energy.JobActionEnergyCosts;
 import com.ventrys.job.energy.JobEnergyHelper;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -47,11 +49,14 @@ public class BlockPlacementEvent {
         }
 
         BlockState blockToPlace = blockItem.getBlock().defaultBlockState();
-        if (BlockPlacementRules.canPlayerPlaceBlock(player, blockToPlace, event.getPos())) {
+        if (BlockPlacementRules.canPlayerPlaceBlock(player, blockToPlace, event.getPos(), true)) {
             return;
         }
 
         event.setCanceled(true);
+        event.setCancellationResult(InteractionResult.FAIL);
+        event.setUseItem(Event.Result.DENY);
+        event.setUseBlock(Event.Result.DENY);
         VentrysJob.LOGGER.debug("Placement de bloc bloqué (RightClickBlock) pour {}.", player.getName().getString());
     }
 
@@ -71,18 +76,22 @@ public class BlockPlacementEvent {
         }
 
         BlockState placedState = event.getPlacedBlock();
-        if (BlockPlacementRules.canPlayerPlaceBlock(player, placedState, event.getPos())) {
+        if (BlockPlacementRules.canPlayerPlaceBlock(player, placedState, event.getPos(), true)) {
             return;
         }
 
         event.setCanceled(true);
+        // Remet l'ancien état si le cancel Forge n'a pas suffi (certains mods / chemins vanilla).
+        LevelAccessor world = event.getWorld();
+        BlockState replaced = event.getBlockSnapshot().getReplacedBlock();
+        world.setBlock(event.getPos(), replaced, 3);
         BlockPlacementRules.refundPlacedBlockItem(player, placedState);
         VentrysJob.LOGGER.debug("Placement de bloc bloqué (EntityPlaceEvent) pour {} — item rendu.",
             player.getName().getString());
     }
 
     /**
-     * Gère le placement effectif du bloc (tag extracted, maillet, cultures).
+     * Gère le placement effectif du bloc (tag extracted, maillet, cultures, énergie).
      */
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void onBlockPlaced(BlockEvent.EntityPlaceEvent event) {
@@ -125,10 +134,18 @@ public class BlockPlacementEvent {
         }
 
         if (JobPermissionService.isBatisseur(player) && player instanceof ServerPlayer serverPlayer) {
-            if (MalletUsage.hasMalletInOffhand(serverPlayer)) {
-                JobEnergyHelper.consumeForAction(serverPlayer, JobActionEnergyCosts.PLACE_BLOCK);
-                MalletUsage.applyWear(serverPlayer, offhandItem);
+            if (!MalletUsage.hasMalletInOffhand(serverPlayer)) {
+                // Ne devrait pas arriver (filet) — on ne consomme rien.
+                return;
             }
+            if (!JobEnergyHelper.consumeForAction(serverPlayer, JobActionEnergyCosts.PLACE_BLOCK)) {
+                event.setCanceled(true);
+                LevelAccessor world = event.getWorld();
+                world.setBlock(event.getPos(), event.getBlockSnapshot().getReplacedBlock(), 3);
+                BlockPlacementRules.refundPlacedBlockItem(player, event.getPlacedBlock());
+                return;
+            }
+            MalletUsage.applyWear(serverPlayer, serverPlayer.getOffhandItem());
         }
 
         if (event.getWorld() instanceof ServerLevel serverLevel) {

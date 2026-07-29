@@ -38,8 +38,9 @@ public class VaseApothicaireBlock extends Block implements EntityBlock {
     private static final VoxelShape COLLISION_SHAPE = Shapes.box(0.25390625, 0.0, 0.25390625, 0.74609375, 0.796875, 0.74609375);
     
     public VaseApothicaireBlock() {
+        // Cassable à la main par n'importe qui (drop via loot_tables/blocks/vase_apothicaire.json).
         super(BlockBehaviour.Properties.of(Material.STONE)
-                .strength(2.0f)
+                .strength(0.5f)
                 .noOcclusion());
         this.registerDefaultState(this.stateDefinition.any().setValue(GROWTH_STAGE, 0));
     }

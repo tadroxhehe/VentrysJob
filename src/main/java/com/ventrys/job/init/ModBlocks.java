@@ -100,36 +100,40 @@ public class ModBlocks {
     public static final RegistryObject<Block> SAC_SEL = BLOCKS.register("sac_sel",
         () -> new SacSelBlock());
 
-    // Block Items - TOUS dans l'onglet VentrysJobs
+    // Block Items - machines / tables : non stackables
+    private static Item.Properties unstackableJobBlock() {
+        return new Item.Properties().tab(VENTRYS_JOBS_TAB).stacksTo(1);
+    }
+
     public static final RegistryObject<Item> OUVRIER_FOUR_ITEM = ITEMS.register("ouvrier_four",
-        () -> new BlockItem(OUVRIER_FOUR.get(), new Item.Properties().tab(VENTRYS_JOBS_TAB)));
+        () -> new BlockItem(OUVRIER_FOUR.get(), unstackableJobBlock()));
 
     public static final RegistryObject<Item> FORGERON_FOUR_ITEM = ITEMS.register("forgeron_four",
-        () -> new BlockItem(FORGERON_FOUR.get(), new Item.Properties().tab(VENTRYS_JOBS_TAB)));
+        () -> new BlockItem(FORGERON_FOUR.get(), unstackableJobBlock()));
 
     public static final RegistryObject<Item> VASE_APOTHICAIRE_ITEM = ITEMS.register("vase_apothicaire",
-        () -> new BlockItem(VASE_APOTHICAIRE.get(), new Item.Properties().tab(VENTRYS_JOBS_TAB)));
+        () -> new BlockItem(VASE_APOTHICAIRE.get(), unstackableJobBlock()));
 
     public static final RegistryObject<Item> MEULE_ITEM = ITEMS.register("meule",
-        () -> new BlockItem(MEULE.get(), new Item.Properties().tab(VENTRYS_JOBS_TAB)));
+        () -> new BlockItem(MEULE.get(), unstackableJobBlock()));
 
     public static final RegistryObject<Item> FORGERON_TABLE_ITEM = ITEMS.register("forgeron_table",
-        () -> new BlockItem(FORGERON_TABLE.get(), new Item.Properties().tab(VENTRYS_JOBS_TAB)));
+        () -> new BlockItem(FORGERON_TABLE.get(), unstackableJobBlock()));
 
     public static final RegistryObject<Item> ARTISAN_TABLE_ITEM = ITEMS.register("artisan_table",
-        () -> new BlockItem(ARTISAN_TABLE.get(), new Item.Properties().tab(VENTRYS_JOBS_TAB)));
+        () -> new BlockItem(ARTISAN_TABLE.get(), unstackableJobBlock()));
 
     public static final RegistryObject<Item> APOTHICAIRE_TABLE_ITEM = ITEMS.register("apothicaire_table",
-        () -> new BlockItem(APOTHICAIRE_TABLE.get(), new Item.Properties().tab(VENTRYS_JOBS_TAB)));
+        () -> new BlockItem(APOTHICAIRE_TABLE.get(), unstackableJobBlock()));
 
     public static final RegistryObject<Item> CUISINIER_TABLE_ITEM = ITEMS.register("cuisinier_table",
-        () -> new BlockItem(CUISINIER_TABLE.get(), new Item.Properties().tab(VENTRYS_JOBS_TAB)));
+        () -> new BlockItem(CUISINIER_TABLE.get(), unstackableJobBlock()));
 
     public static final RegistryObject<Item> METIER_TISSER_ITEM = ITEMS.register("metier_tisser",
-        () -> new BlockItem(METIER_TISSER.get(), new Item.Properties().tab(VENTRYS_JOBS_TAB)));
+        () -> new BlockItem(METIER_TISSER.get(), unstackableJobBlock()));
 
     public static final RegistryObject<Item> SAC_SEL_ITEM = ITEMS.register("sac_sel",
-        () -> new BlockItem(SAC_SEL.get(), new Item.Properties().tab(VENTRYS_JOBS_TAB)));
+        () -> new BlockItem(SAC_SEL.get(), unstackableJobBlock()));
     
     // Nid de poule
     public static final RegistryObject<Block> CHICKEN_NEST = BLOCKS.register("chicken_nest",
@@ -138,7 +142,7 @@ public class ModBlocks {
                 .noOcclusion()));
     
     public static final RegistryObject<Item> CHICKEN_NEST_ITEM = ITEMS.register("chicken_nest",
-        () -> new BlockItem(CHICKEN_NEST.get(), new Item.Properties().tab(VENTRYS_JOBS_TAB)));
+        () -> new BlockItem(CHICKEN_NEST.get(), unstackableJobBlock()));
     
     // Œufs de spawn (texture aléatoire au spawn)
     public static final RegistryObject<Item> CUSTOM_PIG_SPAWN_EGG = ITEMS.register("custom_pig_spawn_egg",

@@ -2,7 +2,11 @@ package com.ventrys.job.data;
 
 import com.ventrys.job.block.JobTableBlock;
 import com.ventrys.job.block.MetierTisserBlock;
+import com.ventrys.job.compat.VentrysSurvivalBridge;
+import com.ventrys.job.energy.JobActionEnergyCosts;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -20,6 +24,13 @@ public final class BlockPlacementRules {
     }
 
     public static boolean canPlayerPlaceBlock(Player player, BlockState blockToPlace, BlockPos pos) {
+        return canPlayerPlaceBlock(player, blockToPlace, pos, false);
+    }
+
+    /**
+     * @param notify si true, envoie le message d'erreur au joueur en cas de refus
+     */
+    public static boolean canPlayerPlaceBlock(Player player, BlockState blockToPlace, BlockPos pos, boolean notify) {
         if (player.isCreative()) {
             return true;
         }
@@ -37,26 +48,59 @@ public final class BlockPlacementRules {
 
         String playerJob = JobPermissionService.getJob(player);
         if (CropGrowthConfig.isConfiguredCrop(placedBlock)) {
-            return "paysan".equals(playerJob);
+            boolean ok = "paysan".equals(playerJob);
+            if (!ok && notify) {
+                deny(player, "ventrysjob.message.block.placement.paysan.restricted");
+            }
+            return ok;
         }
 
         if (JobPermissionService.isPaysan(player)) {
+            if (notify) {
+                deny(player, "ventrysjob.message.block.placement.paysan.restricted");
+            }
             return false;
         }
         if (JobPermissionService.isOuvrier(player)) {
             if (JobActions.isExtractableLog(blockToPlace, pos)) {
                 return true;
             }
-            return blockToPlace.getBlock() == Blocks.OAK_PLANKS;
+            boolean ok = blockToPlace.getBlock() == Blocks.OAK_PLANKS;
+            if (!ok && notify) {
+                deny(player, "ventrysjob.message.block.placement.ouvrier.restricted");
+            }
+            return ok;
         }
         if (JobPermissionService.isBatisseur(player)) {
-            ItemStack offhandItem = player.getOffhandItem();
-            return !offhandItem.isEmpty() && MalletConfig.isMallet(offhandItem.getItem());
+            if (!(player instanceof ServerPlayer serverPlayer)) {
+                return false;
+            }
+            if (!MalletUsage.hasMalletInOffhand(serverPlayer)) {
+                if (notify) {
+                    deny(player, "ventrysjob.message.block.placement.batisseur.no_mallet");
+                }
+                return false;
+            }
+            if (VentrysSurvivalBridge.isAvailable()
+                    && VentrysSurvivalBridge.getJobEnergy(serverPlayer) < JobActionEnergyCosts.PLACE_BLOCK) {
+                if (notify) {
+                    VentrysSurvivalBridge.sendInsufficientEnergy(serverPlayer);
+                }
+                return false;
+            }
+            return true;
         }
         if (playerJob != null && !playerJob.isEmpty()) {
+            if (notify) {
+                deny(player, "ventrysjob.message.block.placement.restricted");
+            }
             return false;
         }
         return true;
+    }
+
+    private static void deny(Player player, String translationKey) {
+        player.sendMessage(new TranslatableComponent(translationKey), player.getUUID());
     }
 
     /**

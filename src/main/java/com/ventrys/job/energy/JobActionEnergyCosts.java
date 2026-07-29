@@ -27,10 +27,10 @@ public final class JobActionEnergyCosts {
     public static final float MILK_COW = 3.0f;
     public static final float BREED_ANIMAL = 8.0f;
 
-    // Bâtisseur
-    public static final float PLACE_BLOCK = 0.15f;
-    public static final float BREAK_DECORATIVE = 0.25f;
-    public static final float BREAK_NORMAL = 0.1f;
+    // Bâtisseur — ~0.3 % de la barre (0–100) par bloc posé / cassé
+    public static final float PLACE_BLOCK = 0.3f;
+    public static final float BREAK_DECORATIVE = 0.3f;
+    public static final float BREAK_NORMAL = 0.3f;
 
     // Apothicaire — vase
     public static final float VASE_PLANT = 0.3f;

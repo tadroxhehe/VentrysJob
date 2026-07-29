@@ -214,6 +214,7 @@ public class RealTimeSyncHandler {
                 }
                 int irlHour = parisTime.getHour();
                 int gameHour = RealTimeManager.convertIRLToGameHour(irlHour);
+                String windowState = RealTimeManager.isTimeRunning(parisTime) ? "actif" : "fige";
                 
                 // Calculer phase jour/nuit
                 String phase = "jour";
@@ -225,8 +226,8 @@ public class RealTimeSyncHandler {
                     phase = "soir";
                 }
                 
-                VentrysJob.LOGGER.debug("[TIME SYNC] IRL: {}:{}, cible jeu: {}h ({} ticks), actuel: {} ticks ({}h, {}), dérive: {} ticks, Δsync: {} ticks",
-                    String.format("%02d", irlHour), String.format("%02d", currentIRLMinute),
+                VentrysJob.LOGGER.debug("[TIME SYNC] IRL: {}:{} ({}), cible jeu: {}h ({} ticks), actuel: {} ticks ({}h, {}), dérive: {} ticks, Δsync: {} ticks",
+                    String.format("%02d", irlHour), String.format("%02d", currentIRLMinute), windowState,
                     gameHour, normalizedTarget, 
                     normalizedAfter, (normalizedAfter / 1000), phase,
                     diffAfter, afterTicks - beforeTicks);

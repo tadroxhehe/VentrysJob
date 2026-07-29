@@ -69,6 +69,22 @@ public class TimeDebugCommand {
         // Afficher les infos
         source.sendSuccess(new TranslatableComponent("ventrysjob.command.time.debug.header"), false);
         source.sendSuccess(new TranslatableComponent("ventrysjob.command.time.irl_paris", String.format("%02d:%02d", irlHour, irlMinute)), false);
+        boolean running = RealTimeManager.isTimeRunning(parisTime);
+        source.sendSuccess(new TranslatableComponent(
+                running ? "ventrysjob.command.time.window.active" : "ventrysjob.command.time.window.frozen",
+                "17:00",
+                "02:00",
+                String.format("%.3f", RealTimeManager.gameHoursPerIrlHour())
+        ), false);
+        if (running) {
+            long sec = RealTimeManager.secondsIntoWindow(parisTime);
+            source.sendSuccess(new TranslatableComponent(
+                    "ventrysjob.command.time.window.progress",
+                    sec,
+                    RealTimeManager.WINDOW_SECONDS,
+                    String.format("%.1f", RealTimeManager.windowProgress(parisTime) * 100.0D)
+            ), false);
+        }
         source.sendSuccess(new TranslatableComponent(
             "ventrysjob.command.time.game_target",
             String.format("%02d:%02d (doDaylightCycle=%s)", targetGameHour, targetGameMinute, doDaylightCycle),
