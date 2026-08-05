@@ -40,6 +40,22 @@ public class PlayerJobData {
     });
     
     /**
+     * Applique un métier reçu du serveur (client) — sans sauvegarde disque.
+     */
+    public static void applySyncedJob(UUID playerId, String jobId) {
+        if (playerId == null) {
+            return;
+        }
+        if (jobId == null || jobId.isEmpty()) {
+            playerJobs.remove(playerId);
+        } else if ("tanneur".equals(jobId)) {
+            playerJobs.put(playerId, "couturier");
+        } else {
+            playerJobs.put(playerId, jobId);
+        }
+    }
+
+    /**
      * Obtient le métier actuel d'un joueur
      */
     public static String getPlayerJob(Player player) {

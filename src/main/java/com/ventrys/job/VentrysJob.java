@@ -33,6 +33,13 @@ public class VentrysJob {
     public static final String MOD_ID = "ventrysjob";
     public static final Logger LOGGER = LogManager.getLogger();
 
+    /** true dès le début de ServerStopping — évite les ClassNotFound pendant le déchargement des chunks. */
+    private static volatile boolean shuttingDown;
+
+    public static boolean isShuttingDown() {
+        return shuttingDown;
+    }
+
     public VentrysJob() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         
@@ -52,6 +59,7 @@ public class VentrysJob {
         String modVersion = ModList.get().getModContainerById(MOD_ID)
             .map(c -> c.getModInfo().getVersion().toString())
             .orElse("?");
+        shuttingDown = false;
         LOGGER.info("VentrysJob {} — chargement (vérifiez cette version si la prod ne correspond pas au JAR attendu)", modVersion);
         
         event.enqueueWork(() -> {
@@ -76,7 +84,23 @@ public class VentrysJob {
             
             OuvrierFourBlockEntity.loadConfiguration();
             ForgeronFourBlockEntity.loadConfiguration();
+
+            // Précharge les classes souvent absentes du chemin chaud : au shutdown le classloader
+            // ModLauncher peut refuser de les résoudre → NoClassDefFoundError / Failed to save chunk.
+            preloadShutdownSensitiveClasses();
         });
+    }
+
+    private static void preloadShutdownSensitiveClasses() {
+        try {
+            Class.forName("com.ventrys.job.util.FarmlandMoistureManager");
+            Class.forName("com.ventrys.job.util.ChickenNestIndex");
+            Class.forName("com.ventrys.job.util.AgriChunkScanner");
+            Class.forName("com.ventrys.job.extraction.ExtractionProgressManager");
+            Class.forName("com.ventrys.job.data.CropGrowthManager");
+        } catch (Throwable t) {
+            LOGGER.warn("Préchargement classes shutdown: {}", t.toString());
+        }
     }
 
     @SubscribeEvent
@@ -97,15 +121,33 @@ public class VentrysJob {
     
     @SubscribeEvent
     public void onServerStopping(ServerStoppingEvent event) {
+        shuttingDown = true;
         LOGGER.debug("Arrêt serveur — nettoyage VentrysJob");
-        if (event.getServer() != null) {
-            RealTimeSyncHandler.restoreDaylightCycle(event.getServer());
+        try {
+            if (event.getServer() != null) {
+                RealTimeSyncHandler.restoreDaylightCycle(event.getServer());
+            }
+        } catch (Throwable t) {
+            LOGGER.warn("Arrêt — restoreDaylightCycle: {}", t.toString());
         }
-        JobActions.forceCleanup(); // Nettoyer toutes les progressions avant l'arrêt
-        JobActions.shutdownExtractedPositionsSaver();
-        JobActions.saveExtractedPositions();
-        PlayerJobData.forceSave(); // Sauvegarder les données en attente
-        PlayerJobData.shutdown(); // Arrêter l'ExecutorService proprement
+        try {
+            JobActions.forceCleanup();
+        } catch (Throwable t) {
+            // Ne jamais faire crasher l'arrêt serveur (JAR partiel / hot-swap / classloader)
+            LOGGER.warn("Arrêt — forceCleanup ignoré: {}", t.toString());
+        }
+        try {
+            JobActions.shutdownExtractedPositionsSaver();
+            JobActions.saveExtractedPositions();
+        } catch (Throwable t) {
+            LOGGER.warn("Arrêt — save extracted positions: {}", t.toString());
+        }
+        try {
+            PlayerJobData.forceSave();
+            PlayerJobData.shutdown();
+        } catch (Throwable t) {
+            LOGGER.warn("Arrêt — PlayerJobData: {}", t.toString());
+        }
         LOGGER.info("VentrysJob — sauvegardes terminées (progressions, métiers joueurs, positions extraites)");
     }
 

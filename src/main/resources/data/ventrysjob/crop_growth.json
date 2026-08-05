@@ -1,53 +1,53 @@
 {
-  "default_stage_duration_ticks": 3456000,
+  "default_stage_duration_ticks": 493714,
   "crops": [
     {
       "block_id": "minecraft:wheat",
-      "stage_durations_ticks": [3456000, 3456000, 3456000, 3456000, 3456000, 3456000, 3456000]
+      "stage_durations_ticks": [493714, 493714, 493714, 493714, 493714, 493714, 493716]
     },
     {
       "block_id": "minecraft:carrots",
-      "stage_durations_ticks": [3456000, 3456000, 3456000, 3456000, 3456000, 3456000, 3456000]
+      "stage_durations_ticks": [493714, 493714, 493714, 493714, 493714, 493714, 493716]
     },
     {
       "block_id": "minecraft:potatoes",
-      "stage_durations_ticks": [3456000, 3456000, 3456000, 3456000, 3456000, 3456000, 3456000]
+      "stage_durations_ticks": [493714, 493714, 493714, 493714, 493714, 493714, 493716]
     },
     {
       "block_id": "minecraft:beetroots",
-      "stage_durations_ticks": [3456000, 3456000, 3456000]
+      "stage_durations_ticks": [1152000, 1152000, 1152000]
     },
     {
       "block_id": "ventrysjob:crop_orge",
-      "stage_durations_ticks": [3456000, 3456000, 3456000]
+      "stage_durations_ticks": [1152000, 1152000, 1152000]
     },
     {
       "block_id": "ventrysjob:crop_tomates",
-      "stage_durations_ticks": [3456000, 3456000, 3456000]
+      "stage_durations_ticks": [1152000, 1152000, 1152000]
     },
     {
       "block_id": "ventrysjob:crop_oignon",
-      "stage_durations_ticks": [3456000, 3456000, 3456000]
+      "stage_durations_ticks": [1152000, 1152000, 1152000]
     },
     {
       "block_id": "ventrysjob:crop_salade",
-      "stage_durations_ticks": [3456000, 3456000, 3456000]
+      "stage_durations_ticks": [1152000, 1152000, 1152000]
     },
     {
       "block_id": "ventrysjob:crop_raisin",
-      "stage_durations_ticks": [3456000, 3456000, 3456000]
+      "stage_durations_ticks": [1152000, 1152000, 1152000]
     },
     {
       "block_id": "ventrysjob:crop_choux",
-      "stage_durations_ticks": [3456000, 3456000, 3456000]
+      "stage_durations_ticks": [1152000, 1152000, 1152000]
     },
     {
       "block_id": "ventrysjob:crop_carotte",
-      "stage_durations_ticks": [3456000, 3456000, 3456000]
+      "stage_durations_ticks": [1152000, 1152000, 1152000]
     },
     {
       "block_id": "ventrysjob:crop_betrave",
-      "stage_durations_ticks": [3456000, 3456000, 3456000]
+      "stage_durations_ticks": [1152000, 1152000, 1152000]
     }
   ]
 }

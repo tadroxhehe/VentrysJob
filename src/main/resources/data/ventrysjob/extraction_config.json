@@ -1,12 +1,12 @@
 {
   "extraction_config": {
     "clicks_required": {
-      "oak": 10,
-      "saw": 5,
-      "mining": 10,
-      "stone": 10,
-      "calcite": 10,
-      "sand": 10
+      "oak": 5,
+      "saw": 3,
+      "mining": 5,
+      "stone": 5,
+      "calcite": 5,
+      "sand": 5
     },
     "oak_configs": [
       {
@@ -154,17 +154,17 @@
       {
         "block_id": "minecraft:oak_log",
         "drop_item": "ventrysitem:res_planche_chene",
-        "drop_count": 1
+        "drop_count": 2
       },
       {
         "block_id": "minecraft:birch_log",
         "drop_item": "ventrysitem:res_planche_bouleau",
-        "drop_count": 1
+        "drop_count": 2
       },
       {
         "block_id": "minecraft:spruce_log",
         "drop_item": "ventrysitem:res_planche_sapin",
-        "drop_count": 1
+        "drop_count": 2
       },
       {
         "block_id": "minecraft:acacia_log",
@@ -257,49 +257,44 @@
         "block_id": "ventrysjob:verdragon_ore",
         "drop_item": "ventrysitem:res_verdragon",
         "drop_count": 1,
-        "clicks_required": 20
+        "clicks_required": 10
       }
     ],
     "stone_configs": [
       {
         "block_id": "minecraft:stone",
         "drop_item": "ventrysitem:res_pierre_fragmente",
-        "drop_count": 1
-      },
-      {
-        "block_id": "minecraft:granite",
-        "drop_item": "ventrysitem:res_pierre_fragmente",
-        "drop_count": 1
+        "drop_count": 3
       },
       {
         "block_id": "minecraft:diorite",
         "drop_item": "ventrysitem:res_pierre_fragmente",
-        "drop_count": 1
+        "drop_count": 3
       },
       {
         "block_id": "minecraft:andesite",
         "drop_item": "ventrysitem:res_pierre_fragmente",
-        "drop_count": 1
+        "drop_count": 3
       },
       {
         "block_id": "minecraft:cobblestone",
         "drop_item": "ventrysitem:res_pierre_fragmente",
-        "drop_count": 1
+        "drop_count": 3
       },
       {
         "block_id": "minecraft:deepslate",
         "drop_item": "ventrysitem:res_pierre_fragmente",
-        "drop_count": 1
+        "drop_count": 3
       },
       {
         "block_id": "minecraft:cobbled_deepslate",
         "drop_item": "ventrysitem:res_pierre_fragmente",
-        "drop_count": 1
+        "drop_count": 3
       },
       {
         "block_id": "minecraft:tuff",
         "drop_item": "ventrysitem:res_pierre_fragmente",
-        "drop_count": 1
+        "drop_count": 3
       }
     ],
     "calcite_configs": [
@@ -323,7 +318,7 @@
     ],
     "clay_configs": [
       {
-        "block_id": "minecraft:clay",
+        "block_id": "minecraft:brown_concrete_powder",
         "drop_item": "ventrysitem:res_argile_brun",
         "drop_count": 1
       }
@@ -359,13 +354,25 @@
       "ventrysitem:item_marteau_en_bronze",
       "ventrysitem:item_marteau_en_fer"
     ],
-    "crop_harvest_clicks": 5,
+    "crop_harvest_clicks": 3,
     "crop_configs": [
       {
         "block_id": "minecraft:wheat",
         "drop_item": "minecraft:wheat",
         "drop_count": 2,
         "seed_item": "minecraft:wheat_seeds"
+      },
+      {
+        "block_id": "minecraft:potatoes",
+        "drop_item": "ventrysitem:item_patate",
+        "drop_count": 2,
+        "seed_item": "ventrysitem:item_patate"
+      },
+      {
+        "block_id": "minecraft:carrots",
+        "drop_item": "ventrysitem:item_carotte",
+        "drop_count": 2,
+        "seed_item": "ventrysitem:item_graine_carotte"
       },
       {
         "block_id": "minecraft:beetroots",

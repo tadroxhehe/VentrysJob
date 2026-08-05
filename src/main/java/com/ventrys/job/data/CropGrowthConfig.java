@@ -24,17 +24,18 @@ public final class CropGrowthConfig {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private static final Map<String, CropConfigEntry> CROP_CONFIG = new HashMap<>();
 
-    /** 48 h réelles par stade de croissance (20 ticks/s). */
-    public static final long STAGE_DURATION_48H_TICKS = 48L * 3600L * 20L;
+    /** 48 h réelles pour la maturité totale (réparties entre les stades, 20 ticks/s). */
+    public static final long MATURITY_DURATION_48H_TICKS = 48L * 3600L * 20L;
 
-    private static long defaultStageDuration = STAGE_DURATION_48H_TICKS;
+    /** Fallback ~48 h / 7 stades (blé). */
+    private static long defaultStageDuration = MATURITY_DURATION_48H_TICKS / 7L;
 
     private CropGrowthConfig() {
     }
 
     public static void loadConfig() {
         CROP_CONFIG.clear();
-        defaultStageDuration = STAGE_DURATION_48H_TICKS;
+        defaultStageDuration = MATURITY_DURATION_48H_TICKS / 7L;
 
         try (InputStream resourceStream = CropGrowthConfig.class.getResourceAsStream("/data/ventrysjob/crop_growth.json")) {
             if (resourceStream == null) {
@@ -116,15 +117,15 @@ public final class CropGrowthConfig {
                 VentrysJob.LOGGER.warn("Culture configurée mais bloc absent ou non-CropBlock au registre: {}", blockId);
             }
         }
-        long stageHours = (defaultStageDuration * 50L) / 3_600_000L;
+        long maturityHours = (MATURITY_DURATION_48H_TICKS * 50L) / 3_600_000L;
         VentrysJob.LOGGER.info(
-            "Cultures — {} entrée(s) config, {} CropBlock(s) au registre, ~{} h par stade (défaut)",
-            CROP_CONFIG.size(), cropBlocks, stageHours
+            "Cultures — {} entrée(s) config, {} CropBlock(s) au registre, ~{} h maturité totale",
+            CROP_CONFIG.size(), cropBlocks, maturityHours
         );
     }
 
     private static void loadDefaultValues() {
-        defaultStageDuration = STAGE_DURATION_48H_TICKS;
+        defaultStageDuration = MATURITY_DURATION_48H_TICKS / 7L;
         registerDefault("minecraft:wheat", 7);
         registerDefault("minecraft:carrots", 7);
         registerDefault("minecraft:potatoes", 7);
@@ -141,8 +142,10 @@ public final class CropGrowthConfig {
 
     private static void registerDefault(String blockId, int stages) {
         List<Long> durations = new ArrayList<>();
+        long base = MATURITY_DURATION_48H_TICKS / stages;
+        long remainder = MATURITY_DURATION_48H_TICKS - (base * stages);
         for (int i = 0; i < stages; i++) {
-            durations.add(defaultStageDuration);
+            durations.add(i == stages - 1 ? base + remainder : base);
         }
         CROP_CONFIG.put(blockId, new CropConfigEntry(blockId, durations));
     }

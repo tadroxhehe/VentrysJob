@@ -144,7 +144,7 @@ public class AnimalInteractionHandler {
                 return;
             }
             
-            // Reproduction manuelle : uniquement si le délai (ex. 3 jours) est déjà accumulé
+            // Reproduction manuelle : uniquement si le délai (ex. 48 h) est déjà accumulé
             if (heldItem.isEmpty() && animal.canReproduce()) {
                 Animal mate = findMate(animal);
                 if (mate instanceof CustomAnimal customMate
@@ -178,20 +178,40 @@ public class AnimalInteractionHandler {
     private static final int BREEDING_COST = 40;
 
     private static boolean canFeed(CustomAnimal animal, Item item) {
-        // Mouton et poule : graines VentrysItem (ventrysitem:item_graine_*)
-        if (animal instanceof CustomSheep || animal instanceof CustomChicken) {
+        // Poule : graines VentrysItem uniquement
+        if (animal instanceof CustomChicken) {
             return isVentrysSeed(item);
         }
-        // Porc : patate VentrysItem (ventrysitem:item_patate)
+        // Mouton : légumes / fourrage Ventrys (pas seulement les graines)
+        if (animal instanceof CustomSheep) {
+            return isSheepFood(item);
+        }
+        // Porc : patate VentrysItem
         if (animal instanceof CustomPig) {
             return isVentrysItem(item, "item_patate");
         }
-        // Vache : blé (vanilla)
+        // Vache : blé vanilla
         if (animal instanceof CustomCow) {
             return item == Items.WHEAT;
         }
-        // Autres animaux personnalisés : fallback sur les aliments génériques
         return item == Items.WHEAT || item == Items.CARROT || item == Items.POTATO || item == Items.BEETROOT;
+    }
+
+    /** Choux, betterave, salade, carotte, orge, graines Ventrys. */
+    private static boolean isSheepFood(Item item) {
+        ResourceLocation id = ForgeRegistries.ITEMS.getKey(item);
+        if (id == null || !"ventrysitem".equals(id.getNamespace())) {
+            return false;
+        }
+        String path = id.getPath();
+        if (path.startsWith("item_graine_")) {
+            return true;
+        }
+        return "item_choux".equals(path)
+                || "item_betrave".equals(path)
+                || "item_salade".equals(path)
+                || "item_carotte".equals(path)
+                || "res_orge".equals(path);
     }
 
     /** Vrai si l'item est une graine VentrysItem (ventrysitem:item_graine_*). */

@@ -98,6 +98,7 @@
   "ventrysjob.message.block.placement.paysan.restricted": "§cEn tant que paysan, vous ne pouvez planter que les cultures autorisées !",
   "ventrysjob.message.block.placement.restricted": "§cVotre métier ne vous permet pas de poser des blocs !",
   "ventrysjob.message.block.placement.mallet.broken": "§cVotre maillet s'est cassé !",
+  "ventrysjob.message.tool.broken": "§cCet outil est cassé et ne peut plus être utilisé.",
   "ventrysjob.message.meule.must_be_farmer": "§cVous devez être paysan pour utiliser cette meule !",
   "ventrysjob.message.block.break.extracted": "§cCe bloc doit être extrait avec le bon outil !",
   "ventrysjob.message.block.break.batisseur.extractable": "§cEn tant que bâtisseur, vous ne pouvez pas casser les blocs extractibles !",

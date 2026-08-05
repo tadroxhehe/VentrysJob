@@ -18,7 +18,7 @@ public final class SawUsage {
     }
 
     public static boolean isBroken(ItemStack stack) {
-        return stack.isDamageableItem() && stack.getDamageValue() >= stack.getMaxDamage();
+        return ToolDurability.isBroken(stack);
     }
 
     public static void applyWear(ServerPlayer player, ItemStack sawStack) {

@@ -5,6 +5,7 @@ import com.ventrys.job.energy.JobActionEnergyCosts;
 import com.ventrys.job.energy.JobEnergyHelper;
 import com.ventrys.job.audio.ExtractionSounds;
 import com.ventrys.job.data.PlayerJobData;
+import com.ventrys.job.data.ToolDurability;
 import com.ventrys.job.network.NetworkHandler;
 import com.ventrys.job.network.packet.ExtractionProgressPacket;
 import net.minecraft.core.BlockPos;
@@ -25,11 +26,11 @@ import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 
 public final class ExtractionInteractionHandler {
-    private static final int OAK_EXTRACTION_CLICKS = 10;
-    private static final int SAW_CLICKS = 5;
-    private static final int MINING_CLICKS = 10;
-    private static final int STONE_EXTRACTION_CLICKS = 10;
-    private static final int CLAY_EXTRACTION_CLICKS = 5;
+    private static final int OAK_EXTRACTION_CLICKS = 5;
+    private static final int SAW_CLICKS = 3;
+    private static final int MINING_CLICKS = 5;
+    private static final int STONE_EXTRACTION_CLICKS = 5;
+    private static final int CLAY_EXTRACTION_CLICKS = 3;
 
     private ExtractionInteractionHandler() {
     }
@@ -65,9 +66,96 @@ public final class ExtractionInteractionHandler {
             } else if (ExtractionConfigRegistry.isExtractableClay(state, pos) && ExtractionConfigRegistry.isShovel(player.getItemInHand(hand))) {
                 return handleClayExtraction((ServerPlayer) player, level, pos, hand);
             }
+        } else if ("paysan".equals(playerJob)) {
+            if (com.ventrys.job.data.CropGrowthConfig.isConfiguredCrop(state.getBlock())) {
+                return handleCropHarvest((ServerPlayer) player, level, pos, state, hand);
+            }
+        } else if (com.ventrys.job.data.CropGrowthConfig.isConfiguredCrop(state.getBlock())) {
+            player.sendMessage(new TranslatableComponent("ventrysjob.message.crop.harvest.require_fork"),
+                    player.getUUID());
+            return true;
         }
 
         return false;
+    }
+
+    /**
+     * Récolte multi-clics (overlay) : paysan + fourche sur culture mature.
+     */
+    private static boolean handleCropHarvest(ServerPlayer player, Level level, BlockPos pos,
+                                            BlockState state, InteractionHand hand) {
+        ItemStack heldItem = player.getItemInHand(hand);
+        if (!com.ventrys.job.data.ForkConfig.isFork(heldItem.getItem())
+                || !ToolDurability.isUsable(heldItem)) {
+            player.sendMessage(new TranslatableComponent("ventrysjob.message.crop.harvest.require_fork"),
+                    player.getUUID());
+            return true;
+        }
+
+        if (!(state.getBlock() instanceof net.minecraft.world.level.block.CropBlock cropBlock)) {
+            return false;
+        }
+
+        int currentAge = state.getValue(cropBlock.getAgeProperty());
+        if (currentAge < cropBlock.getMaxAge()) {
+            player.sendMessage(new TranslatableComponent("ventrysjob.message.crop.harvest.not_mature"),
+                    player.getUUID());
+            return true;
+        }
+
+        var blockId = ForgeRegistries.BLOCKS.getKey(state.getBlock());
+        if (blockId == null) {
+            return false;
+        }
+        var cropConfigOpt = com.ventrys.job.data.ForkConfig.getCropConfig(blockId.toString());
+        if (cropConfigOpt.isEmpty()) {
+            player.sendMessage(new TranslatableComponent("ventrysjob.message.crop.harvest.invalid_config"),
+                    player.getUUID());
+            return true;
+        }
+
+        final com.ventrys.job.data.ForkConfig.CropConfig cropConfig = cropConfigOpt.get();
+        return handleExtraction(
+                player, level, pos, hand,
+                "cropharvest",
+                com.ventrys.job.data.ForkConfig.getClicksRequired(),
+                JobActionEnergyCosts.HARVEST_CROP,
+                "Récolte",
+                (item, h) -> com.ventrys.job.data.ForkConfig.isFork(item.getItem())
+                        && ToolDurability.isUsable(item),
+                context -> completeCropHarvest(context.player, context.level, context.pos, context.hand, cropConfig)
+        );
+    }
+
+    private static void completeCropHarvest(ServerPlayer player, Level level, BlockPos pos,
+                                            InteractionHand hand,
+                                            com.ventrys.job.data.ForkConfig.CropConfig cropConfig) {
+        BlockState state = level.getBlockState(pos);
+        if (!com.ventrys.job.data.CropGrowthConfig.isConfiguredCrop(state.getBlock())) {
+            return;
+        }
+        if (!(state.getBlock() instanceof net.minecraft.world.level.block.CropBlock cropBlock)) {
+            return;
+        }
+        if (state.getValue(cropBlock.getAgeProperty()) < cropBlock.getMaxAge()) {
+            return;
+        }
+
+        boolean success = ExtractionDropFactory.giveCropDrops(player, level, pos, cropConfig);
+        if (!success) {
+            player.sendMessage(new TranslatableComponent("ventrysjob.message.crop.harvest.invalid_config"),
+                    player.getUUID());
+            return;
+        }
+
+        level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+        com.ventrys.job.data.CropGrowthManager.unregisterCrop(level, pos);
+        ExtractionSounds.play(level, pos, ExtractionSounds.Kind.CROP);
+
+        ItemStack heldItem = player.getItemInHand(hand);
+        if (com.ventrys.job.data.ForkConfig.isFork(heldItem.getItem())) {
+            ToolDurability.hurtAndBreak(heldItem, player, hand);
+        }
     }
 
     private static boolean handleExtraction(
@@ -95,7 +183,7 @@ public final class ExtractionInteractionHandler {
 
         Map<String, Long> lastClickTime = ExtractionProgressManager.getLastClickTime();
         Long lastTime = lastClickTime.get(key);
-        if (lastTime != null && (currentTime - lastTime) < 1000) {
+        if (lastTime != null && (currentTime - lastTime) < 500) {
             return true;
         }
 
@@ -203,7 +291,7 @@ public final class ExtractionInteractionHandler {
 
         ItemStack heldItem = player.getMainHandItem();
         if (ExtractionConfigRegistry.isAxe(heldItem)) {
-            heldItem.hurt(1, level.random, player);
+            ToolDurability.hurtAndBreak(heldItem, player, InteractionHand.MAIN_HAND);
         }
     }
 
@@ -260,7 +348,7 @@ public final class ExtractionInteractionHandler {
 
         ItemStack heldItem = player.getMainHandItem();
         if (ExtractionConfigRegistry.isSaw(heldItem)) {
-            heldItem.hurt(1, level.random, player);
+            ToolDurability.hurtAndBreak(heldItem, player, InteractionHand.MAIN_HAND);
         }
     }
 
@@ -306,7 +394,7 @@ public final class ExtractionInteractionHandler {
 
         ItemStack heldItem = player.getItemInHand(hand);
         if (ExtractionConfigRegistry.isPickaxe(heldItem)) {
-            heldItem.hurt(1, level.random, player);
+            ToolDurability.hurtAndBreak(heldItem, player, hand);
         }
     }
 
@@ -324,13 +412,12 @@ public final class ExtractionInteractionHandler {
         String blockId = ForgeRegistries.BLOCKS.getKey(state.getBlock()).toString();
         ExtractionConfigRegistry.StoneConfig config = ExtractionConfigRegistry.getStoneConfigInternal(blockId);
 
-        if (config == null) {
-            return;
-        }
+        String dropId = config != null ? config.getDropItem() : "ventrysitem:res_pierre_fragmente";
+        int dropCount = config != null ? config.getDropCount() : 1;
 
         level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
 
-        ItemStack dropItem = ExtractionDropFactory.createDropItem(config.getDropItem(), config.getDropCount(), null);
+        ItemStack dropItem = ExtractionDropFactory.createDropItem(dropId, dropCount, null);
         if (!dropItem.isEmpty()) {
             ExtractionDropFactory.spawnDrop(level, pos, dropItem);
             player.sendMessage(new TranslatableComponent("ventrysjob.message.stone_extraction.success"), player.getUUID());
@@ -342,7 +429,7 @@ public final class ExtractionInteractionHandler {
 
         ItemStack heldItem = player.getItemInHand(hand);
         if (isChisel(heldItem)) {
-            heldItem.hurt(1, level.random, player);
+            ToolDurability.hurtAndBreak(heldItem, player, hand);
         }
     }
 
@@ -378,7 +465,7 @@ public final class ExtractionInteractionHandler {
 
         ItemStack heldItem = player.getItemInHand(hand);
         if (isChisel(heldItem)) {
-            heldItem.hurt(1, level.random, player);
+            ToolDurability.hurtAndBreak(heldItem, player, hand);
         }
     }
 
@@ -414,7 +501,7 @@ public final class ExtractionInteractionHandler {
 
         ItemStack heldItem = player.getItemInHand(hand);
         if (ExtractionConfigRegistry.isShovel(heldItem)) {
-            heldItem.hurt(1, level.random, player);
+            ToolDurability.hurtAndBreak(heldItem, player, hand);
         }
     }
 
@@ -450,7 +537,7 @@ public final class ExtractionInteractionHandler {
 
         ItemStack heldItem = player.getItemInHand(hand);
         if (ExtractionConfigRegistry.isShovel(heldItem)) {
-            heldItem.hurt(1, level.random, player);
+            ToolDurability.hurtAndBreak(heldItem, player, hand);
         }
     }
 }

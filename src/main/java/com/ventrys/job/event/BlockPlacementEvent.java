@@ -16,7 +16,6 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BlockEvent;
@@ -29,13 +28,15 @@ import net.minecraftforge.fml.common.Mod;
 public class BlockPlacementEvent {
 
     /**
-     * Annule le clic avant {@link BlockItem#useOn} (évite la consommation côté client).
+     * Empêche la pose d'un {@link BlockItem} non autorisé, sans bloquer manger / boire
+     * (ni l'autre main) quand un bloc est dans le viseur.
+     * <p>
+     * Important : tourner côté client aussi (sinon le client « mange » le clic en tentative
+     * de pose), et renvoyer {@link InteractionResult#PASS} plutôt que {@code FAIL}
+     * pour laisser Minecraft retomber sur {@code Item#use} (nourriture).
      */
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
-        if (event.getWorld().isClientSide()) {
-            return;
-        }
         if (!(event.getEntity() instanceof Player player)) {
             return;
         }
@@ -44,24 +45,39 @@ public class BlockPlacementEvent {
         }
 
         ItemStack heldItem = player.getItemInHand(event.getHand());
+
+        // Nourriture / boisson dans cette main : ne jamais interférer
+        if (heldItem.isEdible()) {
+            return;
+        }
+
         if (!(heldItem.getItem() instanceof BlockItem blockItem)) {
             return;
         }
 
+        boolean client = event.getWorld().isClientSide();
         BlockState blockToPlace = blockItem.getBlock().defaultBlockState();
-        if (BlockPlacementRules.canPlayerPlaceBlock(player, blockToPlace, event.getPos(), true)) {
+        if (BlockPlacementRules.canPlayerPlaceBlock(player, blockToPlace, event.getPos(), !client)) {
             return;
         }
 
-        event.setCanceled(true);
-        event.setCancellationResult(InteractionResult.FAIL);
+        // Interdire pose + activation du bloc visé, mais laisser la chaîne d'interaction
+        // continuer (autre main, Item#use, etc.). L'item n'est pas consommé ici.
         event.setUseItem(Event.Result.DENY);
         event.setUseBlock(Event.Result.DENY);
-        VentrysJob.LOGGER.debug("Placement de bloc bloqué (RightClickBlock) pour {}.", player.getName().getString());
+        event.setCanceled(true);
+        event.setCancellationResult(InteractionResult.PASS);
+        if (!client) {
+            BlockPlacementRules.syncInventory(player);
+            VentrysJob.LOGGER.debug("Placement de bloc bloqué (RightClickBlock) pour {}.", player.getName().getString());
+        }
     }
 
     /**
-     * Filet serveur : si la pose passe malgré tout, annuler l'événement et rendre le bloc.
+     * Filet serveur : si la pose passe malgré le RightClickBlock, annuler.
+     * <p>
+     * Ne pas « refund » : ForgeHooks restaure déjà le stack à l'annulation de
+     * {@link BlockEvent.EntityPlaceEvent} (sinon duplication). On resync le client.
      */
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void onEntityPlaceDenied(BlockEvent.EntityPlaceEvent event) {
@@ -76,17 +92,14 @@ public class BlockPlacementEvent {
         }
 
         BlockState placedState = event.getPlacedBlock();
-        if (BlockPlacementRules.canPlayerPlaceBlock(player, placedState, event.getPos(), true)) {
+        // notify=false : le message a souvent déjà été envoyé au RightClickBlock
+        if (BlockPlacementRules.canPlayerPlaceBlock(player, placedState, event.getPos(), false)) {
             return;
         }
 
         event.setCanceled(true);
-        // Remet l'ancien état si le cancel Forge n'a pas suffi (certains mods / chemins vanilla).
-        LevelAccessor world = event.getWorld();
-        BlockState replaced = event.getBlockSnapshot().getReplacedBlock();
-        world.setBlock(event.getPos(), replaced, 3);
-        BlockPlacementRules.refundPlacedBlockItem(player, placedState);
-        VentrysJob.LOGGER.debug("Placement de bloc bloqué (EntityPlaceEvent) pour {} — item rendu.",
+        BlockPlacementRules.syncInventory(player);
+        VentrysJob.LOGGER.debug("Placement de bloc bloqué (EntityPlaceEvent) pour {} — item conservé via Forge.",
             player.getName().getString());
     }
 
@@ -134,18 +147,18 @@ public class BlockPlacementEvent {
         }
 
         if (JobPermissionService.isBatisseur(player) && player instanceof ServerPlayer serverPlayer) {
-            if (!MalletUsage.hasMalletInOffhand(serverPlayer)) {
-                // Ne devrait pas arriver (filet) — on ne consomme rien.
+            // Re-check (filet) : sans maillet utilisable → annuler (Forge restaure l'item)
+            if (!MalletUsage.hasUsableMallet(serverPlayer)) {
+                event.setCanceled(true);
+                BlockPlacementRules.syncInventory(player);
                 return;
             }
             if (!JobEnergyHelper.consumeForAction(serverPlayer, JobActionEnergyCosts.PLACE_BLOCK)) {
                 event.setCanceled(true);
-                LevelAccessor world = event.getWorld();
-                world.setBlock(event.getPos(), event.getBlockSnapshot().getReplacedBlock(), 3);
-                BlockPlacementRules.refundPlacedBlockItem(player, event.getPlacedBlock());
+                BlockPlacementRules.syncInventory(player);
                 return;
             }
-            MalletUsage.applyWear(serverPlayer, serverPlayer.getOffhandItem());
+            MalletUsage.applyWearToHeldMallet(serverPlayer);
         }
 
         if (event.getWorld() instanceof ServerLevel serverLevel) {

@@ -11,7 +11,8 @@ import java.util.concurrent.ConcurrentHashMap;
 public final class ExtractionProgressManager {
     private static final Map<String, Integer> clickProgress = new ConcurrentHashMap<>();
     private static final Map<String, Long> lastClickTime = new ConcurrentHashMap<>();
-    private static final long PROGRESSION_RESET_DELAY = 3000;
+    /** Délai avant reset si le joueur change de cible / pause trop longue (réseau inclus). */
+    private static final long PROGRESSION_RESET_DELAY = 10000;
     private static final Map<String, Map<String, String>> activeProgressionsByType = new ConcurrentHashMap<>();
 
     private ExtractionProgressManager() {
@@ -58,7 +59,7 @@ public final class ExtractionProgressManager {
         if (key.contains("_mine_")) return "mine";
         if (key.contains("_stone_") || key.contains("_calcite_")) return "stone";
         if (key.contains("_sand_") || key.contains("_clay_")) return "sand";
-        if (key.contains("_crop_harvest_")) return "crop_harvest";
+        if (key.contains("_cropharvest_") || key.contains("_crop_harvest_")) return "cropharvest";
         return "oak";
     }
 

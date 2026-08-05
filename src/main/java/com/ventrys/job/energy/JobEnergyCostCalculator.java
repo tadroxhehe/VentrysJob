@@ -5,6 +5,7 @@ import com.ventrys.job.data.RecipeIngredient;
 
 /**
  * Résout le coût énergie d'un craft table (valeur JSON ou calcul automatique).
+ * Valeurs ~+20 % vs grille précédente.
  */
 public final class JobEnergyCostCalculator {
 
@@ -28,121 +29,139 @@ public final class JobEnergyCostCalculator {
         String outputId = primaryOutputId(recipe);
 
         if (id.contains("statue")) {
-            return 85f;
+            return 100f;
         }
 
         // Armures forgeron
-        if (id.contains("platecorps3")) return 65f;
-        if (id.contains("platecorps2")) return 48f;
-        if (id.contains("platecorps1")) return 35f;
-        if (id.contains("platebas3")) return 40f;
-        if (id.contains("platebas2")) return 30f;
-        if (id.contains("platebas1")) return 22f;
-        if (id.contains("platetete3")) return 25f;
-        if (id.contains("platetete2")) return 18f;
-        if (id.contains("platetete1")) return 12f;
-        if (id.contains("maillecorps")) return 38f;
-        if (id.contains("maillebas")) return 30f;
-        if (id.contains("mailletete")) return 22f;
+        if (id.contains("platecorps3")) return 80f;
+        if (id.contains("platecorps2")) return 58f;
+        if (id.contains("platecorps1")) return 42f;
+        if (id.contains("platebas3")) return 48f;
+        if (id.contains("platebas2")) return 36f;
+        if (id.contains("platebas1")) return 26f;
+        if (id.contains("platetete3")) return 30f;
+        if (id.contains("platetete2")) return 22f;
+        if (id.contains("platetete1")) return 14f;
+        if (id.contains("maillecorps")) return 46f;
+        if (id.contains("maillebas")) return 36f;
+        if (id.contains("mailletete")) return 26f;
 
         // Couturier armures
-        if (id.contains("gambison_corp") || id.contains("gambisoncorps")) return 25f;
-        if (id.contains("gambison_bas")) return 18f;
-        if (id.contains("gambison_tete")) return 15f;
-        if (id.contains("cuir") && id.contains("corps")) return 32f;
-        if (id.contains("cuir") && (id.contains("bas") || id.contains("haut"))) return 24f;
+        if (id.contains("gambison_corp") || id.contains("gambisoncorps")) return 30f;
+        if (id.contains("gambison_bas")) return 22f;
+        if (id.contains("gambison_tete")) return 18f;
+        if (id.contains("cuir") && id.contains("corps")) return 38f;
+        if (id.contains("cuir") && (id.contains("bas") || id.contains("haut"))) return 29f;
 
         // Armes
-        if (id.contains("flamberge") || id.contains("espadon")) return 38f;
-        if (id.contains("claymore")) return 28f;
-        if (id.contains("dague")) return 18f;
-        if (id.contains("crossbow") || id.contains("arbalete")) return 22f;
-        if (id.contains("ecu")) return 20f;
+        if (id.contains("flamberge") || id.contains("espadon")) return 46f;
+        if (id.contains("claymore")) return 34f;
+        if (id.contains("dague")) return 22f;
+        if (id.contains("crossbow") || id.contains("arbalete")) return 26f;
+        if (id.contains("ecu")) return 24f;
 
         // Gemmes taillées
         if (id.contains("taille") || id.contains("taill")) {
             if (outputId.contains("diamant") || outputId.contains("emeraude")
                     || outputId.contains("saphir") || outputId.contains("rubis")) {
-                return 45f;
+                return 54f;
             }
         }
 
         // Apothicaire infusions
         if (id.contains("infusion")) {
             if (id.contains("adrenaline") || id.contains("dadrenaline") || id.contains("lierre")) {
-                return 42f;
+                return 50f;
             }
-            return 28f;
+            return 34f;
         }
-        if (id.contains("bandage") || id.contains("baume")) return 10f;
+        if (id.contains("bandage") || id.contains("baume")) return 12f;
 
         // Stations métier
         if (id.contains("enclume") || id.contains("alambic") || id.contains("marmite")) {
-            return 30f;
+            return 36f;
         }
 
         // Outils forgeron
         if (id.contains("_bronze") || id.contains("bronze_")) {
-            if (isToolOutput(outputId)) return 8f;
+            if (isToolOutput(outputId)) return 10f;
         }
         if (isToolOutput(outputId) && (outputId.contains("fer") || outputId.contains("iron"))) {
-            return 12f;
+            return 14f;
         }
 
         // Cuisinier
         if ("cuisinier".equals(jobId)) {
-            if (isSimpleCook(id, recipe)) return 2f;
-            if (id.contains("soupe") || id.contains("ragout") || id.contains("ragoût")) return 12f;
+            if (isSimpleCook(id, recipe)) return 2.5f;
+            if (id.contains("soupe") || id.contains("ragout") || id.contains("ragoût")) return 14f;
             if (id.contains("vin") || id.contains("gateau") || id.contains("gâteau") || id.contains("chope")) {
-                return 26f;
+                return 31f;
             }
             if (id.contains("farine") || id.contains("pate") || id.contains("pâte") || id.contains("sucre")) {
-                return 5f;
+                return 6f;
             }
         }
 
         // Artisan meubles / blocs
         if ("artisan".equals(jobId)) {
-            if (inputTotal >= 40) return 18f;
-            if (inputTotal >= 20) return 12f;
-            if (inputTotal >= 8) return 8f;
-            return 5f;
+            if (inputTotal >= 40) return 22f;
+            if (inputTotal >= 20) return 14f;
+            if (inputTotal >= 8) return 10f;
+            return 6f;
         }
 
         // Couturier textile
         if ("couturier".equals(jobId)) {
-            if (id.contains("fil") || id.contains("tissu") || id.contains("corde")) return 3f;
-            if (id.contains("gourde") || id.contains("laisse") || id.contains("sel")) return 10f;
+            if (id.contains("fil") || id.contains("tissu") || id.contains("corde")) return 4f;
+            if (id.contains("gourde") || id.contains("laisse") || id.contains("sel")) return 12f;
         }
 
-        // Forgeron composants
+        // Forgeron : petits objets bas ; outils restent 10/14 ; gros crafts armures au fallback
         if ("forgeron".equals(jobId)) {
-            if (id.contains("maille") || id.contains("clou")) return 4f;
-            if (id.contains("bronze_lingot") || id.contains("lingot")) return 5f;
-            if (id.contains("clef") || id.contains("cadenat")) return 15f;
-            if (inputTotal >= 60) return 25f;
-            if (inputTotal >= 24) return 18f;
+            if (id.contains("arrow") || id.contains("fleche")) {
+                return 3f;
+            }
+            if (id.contains("clou") || id.contains("pepite") || id.contains("nugget")
+                    || id.contains("lingot") || id.contains("ingot")) {
+                return 2f;
+            }
+            if (id.contains("clef") || id.contains("cadenat") || id.contains("key") || id.contains("lock")) {
+                return 5f;
+            }
+            // Anneaux / maille brute (pas les pièces d'armure déjà gérées plus haut)
+            if (id.contains("maille") && !id.contains("corps") && !id.contains("bas") && !id.contains("tete")) {
+                return 2f;
+            }
+            if (inputTotal >= 60) {
+                return 30f;
+            }
+            if (inputTotal >= 24) {
+                return 22f;
+            }
+            if (inputTotal <= 8) {
+                return 3f;
+            }
         }
 
         // Apothicaire divers
         if ("apothicaire".equals(jobId)) {
-            if (id.contains("bougie") || id.contains("teinture")) return 5f;
-            if (inputTotal >= 8) return 12f;
-            return 8f;
+            if (id.contains("bougie") || id.contains("teinture")) return 6f;
+            if (inputTotal >= 8) return 14f;
+            return 10f;
         }
 
         // Ouvrier
         if ("ouvrier".equals(jobId) && id.contains("charbon")) {
-            return 3f;
+            return 4f;
         }
 
         // Fallback générique
-        if (inputTotal >= 100) return 35f;
-        if (inputTotal >= 60) return 25f;
-        if (inputTotal >= 30) return 15f;
-        if (inputTotal >= 10) return 8f;
-        if (inputTotal >= 4) return 5f;
-        return 3f;
+        if (inputTotal >= 100) return 42f;
+        if (inputTotal >= 60) return 30f;
+        if (inputTotal >= 30) return 18f;
+        if (inputTotal >= 10) return 10f;
+        if (inputTotal >= 4) return 6f;
+        return 4f;
     }
 
     private static boolean isSimpleCook(String id, JobRecipe recipe) {

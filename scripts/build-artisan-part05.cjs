@@ -128,10 +128,6 @@ const ventrysjobExtras = [
     { itemId: 'ventrysitem:res_pierre_fragmente', count: 64 },
     { itemId: 'minecraft:charcoal', count: 16 },
   ], output: { itemId: 'ventrysjob:ouvrier_four', count: 1 } },
-  { id: 'art_four_minerais', name: 'Four a minerais', description: '', inputs: [
-    { itemId: 'ventrysitem:res_pierre_fragmente', count: 64 },
-    { itemId: 'minecraft:coal', count: 16 },
-  ], output: { itemId: 'ventrysjob:forgeron_four', count: 1 } },
   { id: 'art_vase_plantation', name: 'Vase de plantation', description: '', inputs: [
     { itemId: 'ventrysitem:res_argile_brun', count: 12 },
     { itemId: 'minecraft:dirt', count: 6 },

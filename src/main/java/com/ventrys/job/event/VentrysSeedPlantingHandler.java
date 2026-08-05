@@ -16,6 +16,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.FarmBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -46,6 +47,8 @@ public final class VentrysSeedPlantingHandler {
         putSeed("ventrysitem:item_graine_choux", ModBlocks.CROP_CHOUX);
         putSeed("ventrysitem:item_graine_carotte", ModBlocks.CROP_CAROTTE);
         putSeed("ventrysitem:item_graine_betrave", ModBlocks.CROP_BETRAVE);
+        // Patate = tubercule plantable (bloc vanilla potatoes)
+        putSeed("ventrysitem:item_patate", () -> Blocks.POTATOES);
     }
 
     private static void putSeed(String itemId, Supplier<Block> crop) {

@@ -22,7 +22,7 @@ public class ForkConfig {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private static final Set<String> FORK_TOOLS = new HashSet<>();
     private static final Map<String, CropConfig> CROP_CONFIGS = new HashMap<>();
-    private static int CLICKS_REQUIRED = 5;
+    private static int CLICKS_REQUIRED = 3;
     
     public record CropConfig(String blockId, String dropItem, int dropCount, String seedItem) {}
     
@@ -111,7 +111,7 @@ public class ForkConfig {
     private static void loadDefaults() {
         FORK_TOOLS.clear();
         CROP_CONFIGS.clear();
-        CLICKS_REQUIRED = 5;
+        CLICKS_REQUIRED = 3;
         
         // Plus de valeurs hardcodées - tout est chargé depuis le JSON
     }
@@ -135,9 +135,18 @@ public class ForkConfig {
      */
     public static boolean isFork(Item item) {
         if (item == null) return false;
-        ResourceLocation registryName = item.getRegistryName();
+        ResourceLocation registryName = ForgeRegistries.ITEMS.getKey(item);
+        if (registryName == null) {
+            registryName = item.getRegistryName();
+        }
         if (registryName == null) return false;
-        return FORK_TOOLS.contains(registryName.toString());
+        String id = registryName.toString();
+        if (FORK_TOOLS.contains(id)) {
+            return true;
+        }
+        // Fallback : id ventrysitem contenant "fourche" (évite un JSON désync / alias)
+        return "ventrysitem".equals(registryName.getNamespace())
+                && registryName.getPath().contains("fourche");
     }
     
     /**

@@ -83,8 +83,17 @@ public final class AgriChunkScanner {
         if (level == null || chunkPos == null) {
             return;
         }
-        CropGrowthManager.forgetChunk(level, chunkPos);
-        FarmlandMoistureManager.forgetChunk(level, chunkPos);
-        ChickenNestIndex.forgetChunk(level, chunkPos);
+        try {
+            CropGrowthManager.forgetChunk(level, chunkPos);
+        } catch (Throwable ignored) {
+        }
+        try {
+            FarmlandMoistureManager.forgetChunk(level, chunkPos);
+        } catch (Throwable ignored) {
+        }
+        try {
+            ChickenNestIndex.forgetChunk(level, chunkPos);
+        } catch (Throwable ignored) {
+        }
     }
 }

@@ -67,6 +67,7 @@ public class JobCommand {
         int count = 0;
         for (ServerPlayer player : players) {
             PlayerJobData.setPlayerJob(player, jobId);
+            com.ventrys.job.network.NetworkHandler.syncPlayerJob(player);
             player.sendMessage(new TranslatableComponent("ventrysjob.message.job.set", JobManager.getJob(jobId).getName()), player.getUUID());
             count++;
         }
@@ -81,6 +82,7 @@ public class JobCommand {
         int count = 0;
         for (ServerPlayer player : players) {
             PlayerJobData.removePlayerJob(player);
+            com.ventrys.job.network.NetworkHandler.syncPlayerJob(player);
             player.sendMessage(new TranslatableComponent("ventrysjob.message.job.removed"), player.getUUID());
             count++;
         }

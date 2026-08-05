@@ -82,7 +82,8 @@ public class ChiselConfig {
     
     private static void loadDefaults() {
         CHISEL_ITEMS.clear();
-        // Valeurs par défaut si aucun burin n'est configuré
+        CHISEL_ITEMS.add("ventrysitem:item_burin");
+        CHISEL_ITEMS.add("ventrysitem:item_burin_en_bronze");
     }
     
     /**

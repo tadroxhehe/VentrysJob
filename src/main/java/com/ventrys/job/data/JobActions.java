@@ -152,6 +152,31 @@ public class JobActions {
         return ExtractionConfigRegistry.isStoneProtectedFromMining(state);
     }
 
+    /** Pierre des mines : granite cassé à la pioche (casse vanilla, sans drop). */
+    public static boolean isMineGranite(BlockState state) {
+        return state != null && state.is(net.minecraft.world.level.block.Blocks.GRANITE);
+    }
+
+    /**
+     * Client + serveur : granite + pioche usable → autoriser le début de casse.
+     * Le métier n'est pas requis ici (souvent pas encore sync client) ;
+     * le serveur valide ouvrier dans BreakEvent.
+     */
+    public static boolean canAttemptGranitePickaxeBreak(net.minecraft.world.entity.player.Player player, BlockState state) {
+        return isMineGranite(state) && player != null && isPickaxe(player.getMainHandItem());
+    }
+
+    /**
+     * Serveur (et client si métier sync) : ouvrier + pioche → casse granite sans drop.
+     * Indépendant des perms LuckPerms / OP.
+     */
+    public static boolean canOuvrierVanillaBreakGranite(net.minecraft.world.entity.player.Player player, BlockState state) {
+        if (!canAttemptGranitePickaxeBreak(player, state)) {
+            return false;
+        }
+        return JobPermissionService.isOuvrier(player);
+    }
+
     public static boolean isExtractableCalcite(BlockState state) {
         return ExtractionConfigRegistry.isExtractableCalcite(state);
     }

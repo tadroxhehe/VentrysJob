@@ -173,14 +173,22 @@ public class VaseApothicaireBlockEntity extends BlockEntity {
     }
     
     private boolean canHarvest() {
-        // OPTIMISATION: Vérifications rapides en premier
-        if (plantedItemId == null || !isWatered || plantedTime == 0) {
+        if (plantedItemId == null) {
             return false;
         }
-        
-        // OPTIMISATION: Éviter l'appel System.currentTimeMillis() si possible
-        long currentTime = System.currentTimeMillis();
-        return (currentTime - plantedTime) >= growthTimeMs;
+        // Stade mature (BE ou blockstate) = récoltable, même si un reload a corrompu isWatered/plantedTime
+        if (currentStage >= 1) {
+            return true;
+        }
+        BlockState state = getBlockState();
+        if (state.hasProperty(com.ventrys.job.block.VaseApothicaireBlock.GROWTH_STAGE)
+                && state.getValue(com.ventrys.job.block.VaseApothicaireBlock.GROWTH_STAGE) >= 1) {
+            return true;
+        }
+        if (!isWatered || plantedTime == 0) {
+            return false;
+        }
+        return (System.currentTimeMillis() - plantedTime) >= growthTimeMs;
     }
     
     private InteractionResult harvestPlant(Player player) {
@@ -292,23 +300,43 @@ public class VaseApothicaireBlockEntity extends BlockEntity {
             currentStage = 1; // migration anciennes sauvegardes (ex- stade 2)
         }
         lastStageCheckTimeMs = tag.contains("last_stage_check_time_ms") ? tag.getLong("last_stage_check_time_ms") : 0;
-        
-        // Protection contre les timestamps invalides après crash/redémarrage
+
         long currentTime = System.currentTimeMillis();
-        if (plantedTime > 0) {
-            // Si le timestamp est dans le futur ou trop ancien (plus de 10x la durée de croissance), réinitialiser
-            if (plantedTime > currentTime || plantedTime < currentTime - (growthTimeMs * 10)) {
-                plantedTime = 0;
-                isWatered = false;
-                currentStage = 0;
-                if (plantedItemId != null) {
-                    plantedTime = currentTime;
-                    currentStage = 0;
-                }
-            }
+        // Horloge serveur dans le futur uniquement : ne plus reset isWatered (ça bloquait la récolte
+        // avec un vase encore en stade final visuel → message "déjà une plante").
+        if (plantedTime > currentTime) {
+            plantedTime = currentTime;
         }
-        
-        // Mettre à jour le blockstate après chargement
+        if (plantedItemId != null && isWatered && plantedTime > 0
+                && (currentTime - plantedTime) >= growthTimeMs) {
+            currentStage = 1;
+        }
+    }
+
+    @Override
+    public void onLoad() {
+        super.onLoad();
+        // level est dispo ici (pas pendant load()) : resync blockstate + récupération états cassés
+        if (level == null || level.isClientSide) {
+            return;
+        }
+        BlockState state = getBlockState();
+        if (plantedItemId != null
+                && state.hasProperty(com.ventrys.job.block.VaseApothicaireBlock.GROWTH_STAGE)
+                && state.getValue(com.ventrys.job.block.VaseApothicaireBlock.GROWTH_STAGE) >= 1) {
+            currentStage = 1;
+            // Anciennes saves corrompues : mature visuellement mais plus marqué arrosé
+            if (!isWatered) {
+                isWatered = true;
+            }
+            if (plantedTime == 0) {
+                plantedTime = System.currentTimeMillis() - growthTimeMs;
+            }
+            setChanged();
+        } else if (plantedItemId != null && isWatered && plantedTime > 0
+                && (System.currentTimeMillis() - plantedTime) >= growthTimeMs) {
+            currentStage = 1;
+        }
         updateBlockState();
     }
     

@@ -1,19 +1,25 @@
 package com.ventrys.job.event;
 
 import com.ventrys.job.data.BlockBreakRules;
+import com.ventrys.job.data.BlockPlacementRules;
 import com.ventrys.job.data.CropGrowthConfig;
+import com.ventrys.job.data.FurnitureAccess;
 import com.ventrys.job.data.JobActions;
 import com.ventrys.job.data.JobPermissionService;
 import com.ventrys.job.data.MalletUsage;
+import com.ventrys.job.data.ToolDurability;
 import com.ventrys.job.energy.JobActionEnergyCosts;
 import com.ventrys.job.energy.JobEnergyHelper;
 import com.ventrys.job.VentrysJob;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.protocol.game.ClientboundBlockUpdatePacket;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -22,6 +28,10 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+/**
+ * Casse de blocs : règles métier uniquement (pas LuckPerms / permission-level).
+ * Le créatif contourne ; la survie suit ouvrier / bâtisseur / terrain libre.
+ */
 @Mod.EventBusSubscriber(modid = VentrysJob.MOD_ID)
 public class BlockBreakEventHandler {
     
@@ -33,14 +43,39 @@ public class BlockBreakEventHandler {
         if (event.getPlayer().isCreative()) {
             return;
         }
-        BlockState state = event.getState();
+        Player p = event.getPlayer();
+        BlockState st = event.getState();
+        if (FurnitureAccess.isFurniture(st) || BlockBreakRules.isNarrationTextBlock(st)
+                || (BlockPlacementRules.isOuvrierMineSupportBlock(st) && JobPermissionService.isOuvrier(p))) {
+            return;
+        }
+        // Cultures : récolte multi-clics (pas de casse vanilla)
+        if (CropGrowthConfig.isConfiguredCrop(st.getBlock())) {
+            event.setNewSpeed(0.0f);
+            return;
+        }
         BlockPos pos = event.getPos();
-        if (JobActions.isAnyExtractableBlock(state, pos) || JobActions.isStoneProtectedFromMining(state)) {
+        if (canBatisseurMalletBreak(p, st, pos)) {
+            float speed = BlockBreakRules.requiresBatisseur(st)
+                    ? BlockBreakRules.capDecorativeBreakSpeed(event.getNewSpeed())
+                    : BlockBreakRules.malletBreakSpeed(event.getNewSpeed());
+            event.setNewSpeed(speed);
+            return;
+        }
+        // Granite (mines) : pioche — autoriser la vitesse même si le métier n'est pas sync client
+        if (JobActions.canAttemptGranitePickaxeBreak(p, st)) {
+            return;
+        }
+        if (JobActions.isMineGranite(st)) {
+            event.setNewSpeed(0.0f);
+            return;
+        }
+        if (JobActions.isAnyExtractableBlock(st, pos) || JobActions.isStoneProtectedFromMining(st)
+                || BlockBreakRules.requiresBatisseur(st)) {
             event.setNewSpeed(0.0f);
         }
     }
 
-    // Événement principal pour empêcher la casse avec des outils non autorisés
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void onLeftClickBlock(PlayerInteractEvent.LeftClickBlock event) {
         Player player = event.getPlayer();
@@ -53,8 +88,41 @@ public class BlockBreakEventHandler {
         BlockState state = level.getBlockState(pos);
         ItemStack heldItem = player.getItemInHand(InteractionHand.MAIN_HAND);
 
+        if (BlockBreakRules.isStaffProtectedUnbreakable(state)) {
+            event.setCanceled(true);
+            return;
+        }
+
+        if (FurnitureAccess.isFurniture(state) || BlockBreakRules.isNarrationTextBlock(state)
+                || (BlockPlacementRules.isOuvrierMineSupportBlock(state) && JobPermissionService.isOuvrier(player))) {
+            return;
+        }
+
+        // Cultures : multi-clics fourche (overlay), comme l'extraction ouvrier
+        if (CropGrowthConfig.isConfiguredCrop(state.getBlock())) {
+            event.setCanceled(true);
+            if (player instanceof ServerPlayer serverPlayer && !level.isClientSide) {
+                JobActions.handleBlockInteraction(serverPlayer, level, pos, state, InteractionHand.MAIN_HAND);
+                // Les messages d'erreur (pas paysan / pas fourche / immature) sont déjà
+                // envoyés par ExtractionInteractionHandler — ne pas en renvoyer un second.
+            }
+            return;
+        }
+
+        if (canBatisseurMalletBreak(player, state, pos)) {
+            return;
+        }
+
+        // Granite = pierre des mines : pioche (métier validé serveur au BreakEvent)
+        if (JobActions.isMineGranite(state)) {
+            if (JobActions.canAttemptGranitePickaxeBreak(player, state)) {
+                return;
+            }
+            event.setCanceled(true);
+            return;
+        }
+
         if (!JobPermissionService.isUnrestrictedVentrysJobBlock(state, pos)) {
-            // Client + serveur : pas de crack / progression vanilla sur blocs extractibles.
             if (JobActions.isAnyExtractableBlock(state, pos) || JobActions.isStoneProtectedFromMining(state)) {
                 event.setCanceled(true);
                 if (player instanceof ServerPlayer serverPlayer && !level.isClientSide) {
@@ -64,36 +132,19 @@ public class BlockBreakEventHandler {
             }
         }
 
-        if (!(player instanceof ServerPlayer serverPlayer)) {
+        // Client + serveur : construction réservée bâtisseur (ne pas exiger ServerPlayer)
+        if (BlockBreakRules.requiresBatisseur(state)) {
+            if (!BlockBreakRules.canPlayerBreakBlock(player, state)) {
+                event.setCanceled(true);
+            }
             return;
         }
 
-        // Machines / tables du mod uniquement — pas les minerais ni cultures custom
         if (JobPermissionService.isUnrestrictedVentrysJobBlock(state, pos)) {
             return;
         }
 
-        String playerJob = JobPermissionService.getJob(serverPlayer);
-        boolean isConfiguredCrop = CropGrowthConfig.isConfiguredCrop(state.getBlock());
-
-        if (isConfiguredCrop) {
-            boolean isFork = com.ventrys.job.data.ForkConfig.isFork(heldItem.getItem());
-
-            if (!"paysan".equals(playerJob) || !isFork) {
-                event.setCanceled(true);
-                return;
-            }
-        }
-
-        if (BlockBreakRules.isDecorativeBuildingBlock(state)) {
-            if (!BlockBreakRules.canPlayerBreakBlock(serverPlayer, state)) {
-                event.setCanceled(true);
-                return;
-            }
-            return;
-        }
-
-        if (JobPermissionService.isBatisseur(serverPlayer)) {
+        if (!(player instanceof ServerPlayer serverPlayer)) {
             return;
         }
 
@@ -107,7 +158,6 @@ public class BlockBreakEventHandler {
         }
     }
 
-    // Événement pour réduire la vitesse de casse avec des outils non autorisés
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void onBreakSpeed(PlayerEvent.BreakSpeed event) {
         Player player = event.getPlayer();
@@ -119,6 +169,37 @@ public class BlockBreakEventHandler {
         BlockPos pos = event.getPos();
         ItemStack heldItem = player.getItemInHand(InteractionHand.MAIN_HAND);
 
+        if (BlockBreakRules.isStaffProtectedUnbreakable(state)) {
+            event.setNewSpeed(0.0f);
+            return;
+        }
+
+        if (FurnitureAccess.isFurniture(state) || BlockBreakRules.isNarrationTextBlock(state)
+                || (BlockPlacementRules.isOuvrierMineSupportBlock(state) && JobPermissionService.isOuvrier(player))) {
+            return;
+        }
+
+        if (CropGrowthConfig.isConfiguredCrop(state.getBlock())) {
+            event.setNewSpeed(0.0f);
+            return;
+        }
+
+        if (canBatisseurMalletBreak(player, state, pos)) {
+            float speed = BlockBreakRules.requiresBatisseur(state)
+                    ? BlockBreakRules.capDecorativeBreakSpeed(event.getNewSpeed())
+                    : BlockBreakRules.malletBreakSpeed(event.getNewSpeed());
+            event.setNewSpeed(speed);
+            return;
+        }
+
+        if (JobActions.canAttemptGranitePickaxeBreak(player, state)) {
+            return;
+        }
+        if (JobActions.isMineGranite(state)) {
+            event.setNewSpeed(0.0f);
+            return;
+        }
+
         if (JobPermissionService.isUnrestrictedVentrysJobBlock(state, pos)) {
             return;
         }
@@ -128,24 +209,9 @@ public class BlockBreakEventHandler {
             return;
         }
 
-        if (!(player instanceof ServerPlayer serverPlayer)) {
-            return;
-        }
-
-        String playerJob = JobPermissionService.getJob(serverPlayer);
-        boolean isConfiguredCrop = CropGrowthConfig.isConfiguredCrop(state.getBlock());
-
-        if (isConfiguredCrop) {
-            boolean isFork = com.ventrys.job.data.ForkConfig.isFork(heldItem.getItem());
-            if ("paysan".equals(playerJob) && isFork) {
-                return;
-            }
-            event.setNewSpeed(0.0f);
-            return;
-        }
-
-        if (BlockBreakRules.isDecorativeBuildingBlock(state)) {
-            if (!BlockBreakRules.canPlayerBreakBlock(serverPlayer, state)) {
+        // Client + serveur (plus d'early-return ServerPlayer qui laissait le client incohérent)
+        if (BlockBreakRules.requiresBatisseur(state)) {
+            if (!BlockBreakRules.canPlayerBreakBlock(player, state)) {
                 event.setNewSpeed(0.0f);
                 return;
             }
@@ -153,11 +219,8 @@ public class BlockBreakEventHandler {
             return;
         }
 
-        if (JobPermissionService.isBatisseur(serverPlayer)) {
-            return;
-        }
-
-        if (shouldPreventBreaking(state, heldItem, serverPlayer)) {
+        if (player instanceof ServerPlayer serverPlayer
+                && shouldPreventBreaking(state, heldItem, serverPlayer)) {
             event.setNewSpeed(0.0f);
         }
     }
@@ -169,11 +232,82 @@ public class BlockBreakEventHandler {
         }
         BlockState state = event.getState();
         BlockPos pos = event.getPos();
+        ItemStack held = player.getMainHandItem();
+
+        if (BlockBreakRules.isStaffProtectedUnbreakable(state)) {
+            event.setCanceled(true);
+            return;
+        }
+
+        // Granite (pierre des mines) : AUCUN drop
+        if (JobActions.isMineGranite(state)) {
+            boolean ouvrierPick = JobActions.canOuvrierVanillaBreakGranite(player, state);
+            // Pas de récup bâtisseur sur granite
+            if (!ouvrierPick) {
+                event.setCanceled(true);
+                return;
+            }
+            if (!JobEnergyHelper.consumeForAction(player, JobActionEnergyCosts.BREAK_NORMAL)) {
+                event.setCanceled(true);
+                return;
+            }
+            event.setCanceled(true);
+            removeBlockNoDrop(player, pos, state);
+            ToolDurability.hurtAndBreak(held, player, InteractionHand.MAIN_HAND);
+            return;
+        }
+
+        // Texte HRP : casse libre à la main, aucun drop
+        if (BlockBreakRules.isNarrationTextBlock(state)) {
+            event.setCanceled(true);
+            removeBlockNoDrop(player, pos, state);
+            return;
+        }
+
+        // Meubles : casse libre + drop item-bloc (loot Westeros souvent vide)
+        if (FurnitureAccess.isFurniture(state)) {
+            forceDropBlockAsItem(event, player, state, pos);
+            return;
+        }
+
+        // Supports de mine : ouvrier (libre) OU bâtisseur + maillet (récup)
+        if (BlockPlacementRules.isOuvrierMineSupportBlock(state)) {
+            if (JobPermissionService.isOuvrier(player)) {
+                forceDropBlockAsItem(event, player, state, pos);
+                return;
+            }
+            if (!canBatisseurMalletBreak(player, state, pos)) {
+                event.setCanceled(true);
+                return;
+            }
+            // Bâtisseur + maillet : suite dans le bloc canBatisseurMalletBreak ci-dessous
+        }
+
+        // Cultures : jamais de casse vanilla (récolte = LeftClick + fourche)
+        if (CropGrowthConfig.isConfiguredCrop(state.getBlock())) {
+            event.setCanceled(true);
+            return;
+        }
+
+        // Bâtisseur + maillet : récupère le bloc cassé (sauf extraction / farm)
+        if (canBatisseurMalletBreak(player, state, pos)) {
+            float cost = BlockBreakRules.requiresBatisseur(state)
+                    ? JobActionEnergyCosts.BREAK_DECORATIVE
+                    : JobActionEnergyCosts.BREAK_NORMAL;
+            if (!JobEnergyHelper.consumeForAction(player, cost)) {
+                event.setCanceled(true);
+                return;
+            }
+            MalletUsage.applyWearToHeldMallet(player);
+            forceDropBlockAsItem(event, player, state, pos);
+            return;
+        }
+
         if (JobActions.isAnyExtractableBlock(state, pos) || JobActions.isStoneProtectedFromMining(state)) {
             event.setCanceled(true);
             return;
         }
-        if (BlockBreakRules.isDecorativeBuildingBlock(state)) {
+        if (BlockBreakRules.requiresBatisseur(state)) {
             if (!BlockBreakRules.canPlayerBreakBlock(player, state)) {
                 event.setCanceled(true);
                 return;
@@ -182,18 +316,87 @@ public class BlockBreakEventHandler {
                 event.setCanceled(true);
                 return;
             }
-            MalletUsage.applyWear(player, player.getOffhandItem());
-        } else if (JobPermissionService.isBatisseur(player)) {
-            JobEnergyHelper.consumeForAction(player, JobActionEnergyCosts.BREAK_NORMAL);
+            MalletUsage.applyWearToHeldMallet(player);
+            forceDropBlockAsItem(event, player, state, pos);
         }
     }
 
     /**
-     * Vérifie si la casse du bloc doit être empêchée
+     * Bâtisseur + maillet : casse récupérable.
+     * Exclut granite, filons / extraction, cultures (farm).
      */
+    private static boolean canBatisseurMalletBreak(Player player, BlockState state, BlockPos pos) {
+        if (player == null || state == null) {
+            return false;
+        }
+        if (state.getBlock() == Blocks.BEDROCK) {
+            return false;
+        }
+        if (BlockBreakRules.isStaffProtectedUnbreakable(state)) {
+            return false;
+        }
+        if (isBatisseurReclaimExcluded(state, pos)) {
+            return false;
+        }
+        if (!MalletUsage.hasUsableMallet(player)) {
+            return false;
+        }
+        return JobPermissionService.isBatisseur(player);
+    }
+
+    /** Granite / extraction / farm : pas de récup maillet. */
+    private static boolean isBatisseurReclaimExcluded(BlockState state, BlockPos pos) {
+        if (JobActions.isMineGranite(state)) {
+            return true;
+        }
+        if (CropGrowthConfig.isConfiguredCrop(state.getBlock())) {
+            return true;
+        }
+        BlockPos p = pos != null ? pos : BlockPos.ZERO;
+        return JobActions.isAnyExtractableBlock(state, p)
+                || JobActions.isStoneProtectedFromMining(state);
+    }
+
+    private static void removeBlockNoDrop(ServerPlayer player, BlockPos pos, BlockState state) {
+        Level level = player.getLevel();
+        level.removeBlock(pos, false);
+        level.levelEvent(2001, pos, net.minecraft.world.level.block.Block.getId(state));
+        if (level instanceof ServerLevel serverLevel) {
+            serverLevel.getChunkSource().blockChanged(pos);
+            player.connection.send(new ClientboundBlockUpdatePacket(pos, level.getBlockState(pos)));
+        }
+    }
+
+    /**
+     * Force le drop de l'item-bloc (Westeros / déco : loot souvent vide).
+     * Coffres / tonneaux : laisse le vanilla (contenu + conteneur).
+     * @return true si casse custom effectuée
+     */
+    private static boolean forceDropBlockAsItem(BlockEvent.BreakEvent event, ServerPlayer player,
+                                               BlockState state, BlockPos pos) {
+        var block = state.getBlock();
+        if (block instanceof net.minecraft.world.level.block.ChestBlock
+                || block instanceof net.minecraft.world.level.block.AbstractChestBlock
+                || block instanceof net.minecraft.world.level.block.BarrelBlock) {
+            return false;
+        }
+        ItemStack asItem = new ItemStack(block.asItem());
+        if (asItem.isEmpty()) {
+            return false;
+        }
+        event.setCanceled(true);
+        removeBlockNoDrop(player, pos, state);
+        net.minecraft.world.level.block.Block.popResource(player.getLevel(), pos, asItem);
+        return true;
+    }
+
     private static boolean shouldPreventBreaking(BlockState state, ItemStack tool, ServerPlayer player) {
         var blockRegistryName = state.getBlock().getRegistryName();
         if (blockRegistryName == null) return false;
+
+        if (JobActions.isMineGranite(state)) {
+            return !JobActions.isPickaxe(tool);
+        }
 
         if (JobActions.isStoneProtectedFromMining(state)) {
             return !JobActions.isChiselTool(tool);
@@ -201,53 +404,25 @@ public class BlockBreakEventHandler {
         
         String playerJob = JobPermissionService.getJob(player);
         
-        // Vérifier les restrictions par métier et outil
         if ("ouvrier".equals(playerJob)) {
-            // Ouvrier : doit avoir le bon outil pour chaque action
-            // Vérifier les blocs d'extraction de logs
             if (JobActions.isExtractableLog(state, BlockPos.ZERO)) {
-                boolean isAxe = JobActions.isAxe(tool);
-                return !isAxe;
+                return !JobActions.isAxe(tool);
             }
-            
-            // Vérifier les blocs de pierre
             if (JobActions.isExtractableStone(state)) {
-                boolean isChisel = JobActions.isChiselTool(tool);
-                return !isChisel;
+                return !JobActions.isChiselTool(tool);
             }
-            
-            // Vérifier les blocs de calcite
             if (JobActions.isExtractableCalcite(state)) {
-                boolean isChisel = JobActions.isChiselTool(tool);
-                return !isChisel;
+                return !JobActions.isChiselTool(tool);
             }
-            
-            // Vérifier les blocs de sable
             if (JobActions.isExtractableSand(state, BlockPos.ZERO)) {
-                boolean isShovel = JobActions.isShovel(tool);
-                return !isShovel;
+                return !JobActions.isShovel(tool);
             }
-            
-            // Vérifier les minerais
             if (JobActions.isExtractableOre(state, BlockPos.ZERO)) {
-                boolean isPickaxe = JobActions.isPickaxe(tool);
-                return !isPickaxe;
+                return !JobActions.isPickaxe(tool);
             }
-            
-            // Vérifier les blocs de clay
             if (JobActions.isExtractableClay(state, BlockPos.ZERO)) {
-                boolean isShovel = JobActions.isShovel(tool);
-                return !isShovel;
+                return !JobActions.isShovel(tool);
             }
-        } else if ("paysan".equals(playerJob)) {
-            // Paysan : peut récolter les cultures avec une fourche
-            // La récolte est gérée dans CropGrowthConfig, pas ici
-            // Pas de restriction supplémentaire pour les autres blocs
-        } else if ("batisseur".equals(playerJob)) {
-            // Bâtisseur : peut casser tous les blocs SAUF ceux qui sont extractibles
-            // (déjà géré dans onLeftClickBlock)
-        } else {
-            // Autres métiers : pas de restrictions spéciales pour la casse
         }
         
         return false;

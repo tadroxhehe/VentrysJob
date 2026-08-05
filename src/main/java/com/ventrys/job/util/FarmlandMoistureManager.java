@@ -9,6 +9,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FarmBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.chunk.LevelChunk;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -37,10 +38,14 @@ public final class FarmlandMoistureManager {
         Map<Long, Set<BlockPos>> perLevel = TRACKED.computeIfAbsent(level.dimension(), dim -> new HashMap<>());
         long chunkKey = chunkKey(pos);
         perLevel.computeIfAbsent(chunkKey, key -> new HashSet<>()).add(pos.immutable());
-        ensureMoisture(level, pos, state, true);
+        // Labour / pose : setBlock normal OK (chunk déjà chargé, pas pendant ChunkEvent.Load).
+        ensureMoistureViaLevel(level, pos, state);
     }
 
-    /** Enregistrement au scan de chunk : pas de propagation voisins (évite les cascades NeighborNotify). */
+    /**
+     * Scan au {@code ChunkEvent.Load} : ne jamais appeler {@link Level#setBlock} ici.
+     * Ça déclenche neighbor updates + getChunk → deadlock / ServerHangWatchdog (60s).
+     */
     public static void trackFromChunkScan(ServerLevel level, BlockPos pos, BlockState state) {
         if (level == null || pos == null || state == null || !(state.getBlock() instanceof FarmBlock)) {
             return;
@@ -48,7 +53,17 @@ public final class FarmlandMoistureManager {
         Map<Long, Set<BlockPos>> perLevel = TRACKED.computeIfAbsent(level.dimension(), dim -> new HashMap<>());
         long chunkKey = chunkKey(pos);
         perLevel.computeIfAbsent(chunkKey, key -> new HashSet<>()).add(pos.immutable());
-        ensureMoisture(level, pos, state, false);
+
+        if (state.getValue(FarmBlock.MOISTURE) >= FarmBlock.MAX_MOISTURE) {
+            return;
+        }
+        LevelChunk chunk = level.getChunkSource().getChunkNow(pos.getX() >> 4, pos.getZ() >> 4);
+        if (chunk == null) {
+            return;
+        }
+        BlockState updated = state.setValue(FarmBlock.MOISTURE, FarmBlock.MAX_MOISTURE);
+        chunk.setBlockState(pos, updated, false);
+        level.getChunkSource().blockChanged(pos);
     }
 
     public static void untrack(ServerLevel level, BlockPos pos) {
@@ -81,11 +96,10 @@ public final class FarmlandMoistureManager {
         FarmlandProtectionHandler.clearMoistureCooldownForChunk(chunkPos);
     }
 
-    private static void ensureMoisture(ServerLevel level, BlockPos pos, BlockState state, boolean notifyNeighbors) {
+    private static void ensureMoistureViaLevel(ServerLevel level, BlockPos pos, BlockState state) {
         if (state.getBlock() instanceof FarmBlock && state.getValue(FarmBlock.MOISTURE) < FarmBlock.MAX_MOISTURE) {
             BlockState updated = state.setValue(FarmBlock.MOISTURE, FarmBlock.MAX_MOISTURE);
-            int flags = Block.UPDATE_CLIENTS | (notifyNeighbors ? Block.UPDATE_NEIGHBORS : 0);
-            level.setBlock(pos, updated, flags);
+            level.setBlock(pos, updated, Block.UPDATE_CLIENTS | Block.UPDATE_NEIGHBORS);
         }
     }
 

@@ -37,7 +37,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Block Entity pour le Four Ouvrier - Transforme les planches en charbon
+ * Block Entity pour le Four Ouvrier - Transforme les bûches (extract) en charbon de bois
  */
 @Mod.EventBusSubscriber
 public class OuvrierFourBlockEntity extends BlockEntity implements MenuProvider {
@@ -56,19 +56,23 @@ public class OuvrierFourBlockEntity extends BlockEntity implements MenuProvider 
      * Initialise les items valides selon la configuration manuelle
      */
     private static void initializeValidItems() {
-        // Configuration par défaut - SEULEMENT les items spécifiés
-        VALID_INPUT_ITEMS.add("ventrysitem:res_planche_chene");
-        VALID_INPUT_ITEMS.add("ventrysitem:res_planche_bouleau");
-        VALID_INPUT_ITEMS.add("ventrysitem:res_planche_sapin");
+        // Bûches extractibles par l'ouvrier (pas les planches transformées)
+        VALID_INPUT_ITEMS.add("minecraft:oak_log");
+        VALID_INPUT_ITEMS.add("minecraft:birch_log");
+        VALID_INPUT_ITEMS.add("minecraft:spruce_log");
+        VALID_INPUT_ITEMS.add("minecraft:acacia_log");
+        VALID_INPUT_ITEMS.add("minecraft:dark_oak_log");
+        VALID_INPUT_ITEMS.add("minecraft:mangrove_log");
+        VALID_INPUT_ITEMS.add("minecraft:cherry_log");
         
         VALID_OUTPUT_ITEMS.add("minecraft:charcoal");
         
-        // Recettes par défaut (ratio 1:1 - 1 planche = 1 charbon)
-        TRANSFORMATION_RECIPES.put("ventrysitem:res_planche_chene", "minecraft:charcoal");
-        TRANSFORMATION_RECIPES.put("ventrysitem:res_planche_bouleau", "minecraft:charcoal");
-        TRANSFORMATION_RECIPES.put("ventrysitem:res_planche_sapin", "minecraft:charcoal");
+        // Ratio 1:1 — 1 bûche = 1 charbon de bois
+        for (String logId : VALID_INPUT_ITEMS) {
+            TRANSFORMATION_RECIPES.put(logId, "minecraft:charcoal");
+        }
         
-        VentrysJob.LOGGER.debug("Four ouvrier — configuration par défaut");
+        VentrysJob.LOGGER.debug("Four ouvrier — configuration par défaut (bûches)");
         VentrysJob.LOGGER.debug("Items d'entrée: {}", VALID_INPUT_ITEMS);
         VentrysJob.LOGGER.debug("Items de sortie: {}", VALID_OUTPUT_ITEMS);
         VentrysJob.LOGGER.debug("Recettes: {}", TRANSFORMATION_RECIPES);
@@ -101,14 +105,14 @@ public class OuvrierFourBlockEntity extends BlockEntity implements MenuProvider 
     // Données pour le menu (progression de la transformation)
     public final ContainerData data;
     private long startTick = 0;
-    private static final long TRANSFORMATION_DURATION_TICKS = 24L * 60L * 60L * 20L; // 24 heures
+    private static final long TRANSFORMATION_DURATION_TICKS = 2L * 60L * 60L * 20L; // 2 heures
     private boolean isLit = false; // État d'allumage du four
     private int particleTickCounter = 0; // Compteur pour les particules
     private boolean isTransforming = false; // État de transformation
     private long flintAndSteelFireStartTick = 0;
-    // Le feu dure un peu plus longtemps que la transformation (24 h + 5 min)
+    // Le feu dure un peu plus longtemps que la transformation (2 h + 5 min)
     // pour garantir que la fournée se termine avant l'extinction du feu.
-    private static final long FLINT_AND_STEEL_FIRE_DURATION_TICKS = TRANSFORMATION_DURATION_TICKS + (5L * 60L * 20L); // 24 h 05
+    private static final long FLINT_AND_STEEL_FIRE_DURATION_TICKS = TRANSFORMATION_DURATION_TICKS + (5L * 60L * 20L); // 2 h 05
     
     public OuvrierFourBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.OUVRIER_FOUR.get(), pos, state);
@@ -328,7 +332,7 @@ public class OuvrierFourBlockEntity extends BlockEntity implements MenuProvider 
     private static boolean hasRecipe(OuvrierFourBlockEntity entity) {
         ItemStack stack = entity.itemHandler.getStackInSlot(0);
         
-        // Une seule planche suffit (ratio 1:1)
+        // Une seule bûche suffit (ratio 1:1)
         if (stack.isEmpty()) {
             return false;
         }
@@ -353,7 +357,7 @@ public class OuvrierFourBlockEntity extends BlockEntity implements MenuProvider 
                 // Récupérer la quantité dans le slot
                 int inputCount = input.getCount();
                 
-                // Ratio 1:1 - 1 planche = 1 charbon
+                // Ratio 1:1 - 1 bûche = 1 charbon
                 int outputCount = inputCount;
                 if (outputCount < 1) {
                     outputCount = 1; // Minimum 1 charbon

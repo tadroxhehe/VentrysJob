@@ -1,45 +1,928 @@
 [
-  {"id": "art_oak_planks", "name": "Planches de chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 18}, {"itemId": "ventrysitem:res_clou", "count": 18}], "output": {"itemId": "minecraft:oak_planks", "count": 1}},
-  {"id": "art_reach_oak_panelling", "name": "Lambris chene Reach", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 20}, {"itemId": "ventrysitem:res_clou", "count": 18}], "output": {"itemId": "westerosblocks:reach_oak_wood_panelling", "count": 1}},
-  {"id": "art_oak_stairs", "name": "Escaliers chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 12}, {"itemId": "ventrysitem:res_clou", "count": 12}], "output": {"itemId": "minecraft:oak_stairs", "count": 1}},
-  {"id": "art_oak_slab", "name": "Dalle chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 9}, {"itemId": "ventrysitem:res_clou", "count": 9}], "output": {"itemId": "minecraft:oak_slab", "count": 1}},
-  {"id": "art_oak_wall", "name": "Muret chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 9}, {"itemId": "ventrysitem:res_clou", "count": 9}], "output": {"itemId": "westerosblocks:oak_wall", "count": 1}},
-  {"id": "art_reach_oak_panelling_wall", "name": "Muret lambris Reach", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 10}, {"itemId": "ventrysitem:res_clou", "count": 9}], "output": {"itemId": "westerosblocks:reach_oak_wood_panelling_wall", "count": 1}},
-  {"id": "art_oak_tip", "name": "Pointe chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 12}, {"itemId": "ventrysitem:res_clou", "count": 12}], "output": {"itemId": "westerosblocks:oak_tip", "count": 1}},
-  {"id": "art_oak_hopper", "name": "Hopper chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 12}, {"itemId": "ventrysitem:res_clou", "count": 12}], "output": {"itemId": "westerosblocks:oak_hopper", "count": 1}},
-  {"id": "art_oak_half_door", "name": "Demi-porte chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 4}, {"itemId": "ventrysitem:res_clou", "count": 4}], "output": {"itemId": "westerosblocks:oak_half_door", "count": 1}},
-  {"id": "art_oak_fence", "name": "Barriere chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 6}, {"itemId": "ventrysitem:res_clou", "count": 4}], "output": {"itemId": "minecraft:oak_fence", "count": 1}},
-  {"id": "art_oak_fence_gate", "name": "Portillon chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 4}, {"itemId": "ventrysitem:res_clou", "count": 6}, {"itemId": "minecraft:stick", "count": 6}], "output": {"itemId": "minecraft:oak_fence_gate", "count": 1}},
-  {"id": "art_oak_vertical_planks", "name": "Planches verticales chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 18}, {"itemId": "ventrysitem:res_clou", "count": 18}], "output": {"itemId": "westerosblocks:oak_vertical_planks", "count": 1}},
-  {"id": "art_oak_vert_stairs", "name": "Escaliers planches vert. chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 12}, {"itemId": "ventrysitem:res_clou", "count": 12}], "output": {"itemId": "westerosblocks:oak_vertical_planks_stairs", "count": 1}},
-  {"id": "art_oak_vert_slab", "name": "Dalle planches vert. chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 9}, {"itemId": "ventrysitem:res_clou", "count": 9}], "output": {"itemId": "westerosblocks:oak_vertical_planks_slab", "count": 1}},
-  {"id": "art_oak_vert_wall", "name": "Muret planches vert. chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 9}, {"itemId": "ventrysitem:res_clou", "count": 9}], "output": {"itemId": "westerosblocks:oak_vertical_planks_wall", "count": 1}},
-  {"id": "art_oak_vert_tip", "name": "Pointe planches vert. chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 12}, {"itemId": "ventrysitem:res_clou", "count": 12}], "output": {"itemId": "westerosblocks:oak_vertical_planks_tip", "count": 1}},
-  {"id": "art_oak_vert_hopper", "name": "Hopper planches vert. chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 12}, {"itemId": "ventrysitem:res_clou", "count": 12}], "output": {"itemId": "westerosblocks:oak_vertical_planks_hopper", "count": 1}},
-  {"id": "art_oak_vert_fence", "name": "Barriere planches vert. chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 6}, {"itemId": "ventrysitem:res_clou", "count": 4}], "output": {"itemId": "westerosblocks:oak_vertical_planks_fence", "count": 1}},
-  {"id": "art_oak_door", "name": "Porte chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 12}, {"itemId": "ventrysitem:res_clou", "count": 12}], "output": {"itemId": "minecraft:oak_door", "count": 1}},
-  {"id": "art_oak_button", "name": "Bouton chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 1}, {"itemId": "ventrysitem:res_clou", "count": 2}], "output": {"itemId": "minecraft:oak_button", "count": 1}},
-  {"id": "art_oak_trapdoor", "name": "Trappe chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 9}, {"itemId": "ventrysitem:res_clou", "count": 8}], "output": {"itemId": "minecraft:oak_trapdoor", "count": 1}},
-  {"id": "art_oak_window_shutter", "name": "Volet chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 9}, {"itemId": "ventrysitem:res_clou", "count": 9}], "output": {"itemId": "westerosblocks:oak_window_shutters", "count": 1}},
-  {"id": "art_oak_timber_frame", "name": "Cadre fenetre chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 4}, {"itemId": "ventrysitem:res_clou", "count": 8}], "output": {"itemId": "westerosblocks:oak_timber_window_frame", "count": 1}},
-  {"id": "art_dorne_carved_window", "name": "Fenetre sculptee Dorne", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 4}, {"itemId": "ventrysitem:res_clou", "count": 8}], "output": {"itemId": "westerosblocks:dorne_carved_wooden_window", "count": 1}},
-  {"id": "art_oak_sign", "name": "Panneau chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 4}, {"itemId": "ventrysitem:res_clou", "count": 3}, {"itemId": "minecraft:stick", "count": 4}], "output": {"itemId": "minecraft:oak_sign", "count": 1}},
-  {"id": "art_oak_timber_mullion", "name": "Cadre fenetre meneaux chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 5}, {"itemId": "ventrysitem:res_clou", "count": 8}], "output": {"itemId": "westerosblocks:oak_timber_window_frame_mullion", "count": 1}},
-  {"id": "art_oak_pressure_plate", "name": "Plaque pression chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 3}, {"itemId": "ventrysitem:res_clou", "count": 6}], "output": {"itemId": "minecraft:oak_pressure_plate", "count": 1}},
-  {"id": "art_oak_log_rope", "name": "Rondin chene corde", "description": "", "inputs": [{"itemId": "minecraft:oak_log", "count": 1}, {"itemId": "ventrysitem:res_corde", "count": 4}], "output": {"itemId": "westerosblocks:oak_log_rope", "count": 1}},
-  {"id": "art_chaisechene", "name": "Chaise chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 16}, {"itemId": "ventrysitem:res_clou", "count": 36}, {"itemId": "minecraft:stick", "count": 5}], "output": {"itemId": "ventrys_blocs:chaisechene", "count": 1}},
-  {"id": "art_chaisehautechene", "name": "Chaise haute chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 45}, {"itemId": "ventrysitem:res_clou", "count": 84}, {"itemId": "minecraft:stick", "count": 16}], "output": {"itemId": "ventrys_blocs:chaisehautechene", "count": 1}},
-  {"id": "art_tablechene", "name": "Table chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 24}, {"itemId": "ventrysitem:res_clou", "count": 48}, {"itemId": "minecraft:stick", "count": 5}], "output": {"itemId": "ventrys_blocs:tablechene", "count": 1}},
-  {"id": "art_table_ronde_chene", "name": "Table ronde chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 24}, {"itemId": "ventrysitem:res_clou", "count": 48}, {"itemId": "minecraft:stick", "count": 5}], "output": {"itemId": "ventrys_blocs:table_ronde_chene", "count": 1}},
-  {"id": "art_bancchene", "name": "Banc chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 28}, {"itemId": "ventrysitem:res_clou", "count": 64}, {"itemId": "minecraft:stick", "count": 4}], "output": {"itemId": "ventrys_blocs:bancchene", "count": 1}},
-  {"id": "art_banc_riche_chene", "name": "Banc riche chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 48}, {"itemId": "ventrysitem:res_clou", "count": 128}, {"itemId": "minecraft:stick", "count": 8}], "output": {"itemId": "ventrys_blocs:banc_riche_chene", "count": 1}},
-  {"id": "art_banclongchene", "name": "Banc long chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 42}, {"itemId": "ventrysitem:res_clou", "count": 96}, {"itemId": "minecraft:stick", "count": 6}], "output": {"itemId": "ventrys_blocs:banclongchene", "count": 1}},
-  {"id": "art_banc_riche_long_chene", "name": "Banc riche long chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 70}, {"itemId": "ventrysitem:res_clou", "count": 148}, {"itemId": "minecraft:stick", "count": 12}], "output": {"itemId": "ventrys_blocs:banc_riche_long_chene", "count": 1}},
-  {"id": "art_caissechene", "name": "Caisse chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 40}, {"itemId": "ventrysitem:res_clou", "count": 48}], "output": {"itemId": "ventrys_blocs:caissechene", "count": 1}},
-  {"id": "art_chest_chene", "name": "Coffre (chene)", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 40}, {"itemId": "ventrysitem:res_clou", "count": 48}, {"itemId": "minecraft:iron_nugget", "count": 4}], "output": {"itemId": "minecraft:chest", "count": 1}},
-  {"id": "art_armoirechene", "name": "Armoire chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 64}, {"itemId": "ventrysitem:res_clou", "count": 128}, {"itemId": "minecraft:stick", "count": 8}], "output": {"itemId": "ventrys_blocs:armoirechene", "count": 1}},
-  {"id": "art_tabouretchene", "name": "Tabouret chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 14}, {"itemId": "ventrysitem:res_clou", "count": 32}, {"itemId": "minecraft:stick", "count": 3}], "output": {"itemId": "ventrys_blocs:tabouretchene", "count": 1}},
-  {"id": "art_petitecomodechene", "name": "Petite commode chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 34}, {"itemId": "ventrysitem:res_clou", "count": 52}, {"itemId": "minecraft:stick", "count": 4}], "output": {"itemId": "ventrys_blocs:petitecomodechene", "count": 1}},
-  {"id": "art_comodechene", "name": "Commode chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 54}, {"itemId": "ventrysitem:res_clou", "count": 84}, {"itemId": "minecraft:stick", "count": 8}], "output": {"itemId": "ventrys_blocs:comodechene", "count": 1}},
-  {"id": "art_comodedoublechene", "name": "Commode double chene", "description": "", "inputs": [{"itemId": "ventrysitem:res_planche_chene", "count": 96}, {"itemId": "ventrysitem:res_clou", "count": 152}, {"itemId": "minecraft:stick", "count": 16}], "output": {"itemId": "ventrys_blocs:comodedoublechene", "count": 1}}
+  {
+    "id": "art_oak_planks",
+    "name": "Planches de chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 2
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 2
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:oak_planks",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_thin_oak_log",
+    "name": "Poutres",
+    "description": "Poutres de chene (1 buche → 8)",
+    "inputs": [
+      {
+        "itemId": "minecraft:oak_log",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:thin_oak_log",
+      "count": 8
+    }
+  },
+  {
+    "id": "art_thin_spruce_log",
+    "name": "Poutres",
+    "description": "Poutres de sapin (1 buche → 8)",
+    "inputs": [
+      {
+        "itemId": "minecraft:spruce_log",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:thin_spruce_log",
+      "count": 8
+    }
+  },
+  {
+    "id": "art_thin_birch_log",
+    "name": "Poutres",
+    "description": "Poutres de bouleau (1 buche → 8)",
+    "inputs": [
+      {
+        "itemId": "minecraft:birch_log",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:thin_birch_log",
+      "count": 8
+    }
+  },
+  {
+    "id": "art_reach_oak_panelling",
+    "name": "Lambris chene Reach",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 2
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 2
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:reach_oak_wood_panelling",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_stairs",
+    "name": "Escaliers chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 1
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:oak_stairs",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_slab",
+    "name": "Dalle chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 1
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:oak_slab",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_wall",
+    "name": "Muret chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 3
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 3
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:oak_wall",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_reach_oak_panelling_wall",
+    "name": "Muret lambris Reach",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 2
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 2
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:reach_oak_wood_panelling_wall",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_tip",
+    "name": "Pointe chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 4
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 4
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:oak_tip",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_hopper",
+    "name": "Hopper chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 4
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 4
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:oak_hopper",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_half_door",
+    "name": "Demi-porte chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 1
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:oak_half_door",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_fence",
+    "name": "Barriere chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 1
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:oak_fence",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_fence_gate",
+    "name": "Portillon chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 1
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 1
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:oak_fence_gate",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_vertical_planks",
+    "name": "Planches verticales chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 2
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 2
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:oak_vertical_planks",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_vert_stairs",
+    "name": "Escaliers planches vert. chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 1
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:oak_vertical_planks_stairs",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_vert_slab",
+    "name": "Dalle planches vert. chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 1
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:oak_vertical_planks_slab",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_vert_wall",
+    "name": "Muret planches vert. chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 2
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 2
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:oak_vertical_planks_wall",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_vert_tip",
+    "name": "Pointe planches vert. chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 2
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 2
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:oak_vertical_planks_tip",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_vert_hopper",
+    "name": "Hopper planches vert. chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 2
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 2
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:oak_vertical_planks_hopper",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_vert_fence",
+    "name": "Barriere planches vert. chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 1
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:oak_vertical_planks_fence",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_door",
+    "name": "Porte chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 1
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:oak_door",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_button",
+    "name": "Bouton chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 1
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:oak_button",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_trapdoor",
+    "name": "Trappe chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 1
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:oak_trapdoor",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_window_shutter",
+    "name": "Volet chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 3
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 3
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:oak_window_shutters",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_timber_frame",
+    "name": "Cadre fenetre chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 2
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 3
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:oak_timber_window_frame",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_dorne_carved_window",
+    "name": "Fenetre sculptee Dorne",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 1
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 3
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:dorne_carved_wooden_window",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_sign",
+    "name": "Panneau chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 1
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 1
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:oak_sign",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_timber_mullion",
+    "name": "Cadre fenetre meneaux chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 2
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 3
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:oak_timber_window_frame_mullion",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_pressure_plate",
+    "name": "Plaque pression chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 1
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 2
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:oak_pressure_plate",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_oak_log_rope",
+    "name": "Rondin chene corde",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "minecraft:oak_log",
+        "count": 1
+      },
+      {
+        "itemId": "ventrysitem:res_corde",
+        "count": 4
+      }
+    ],
+    "output": {
+      "itemId": "westerosblocks:oak_log_rope",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_chaisechene",
+    "name": "Chaise chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 4
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 9
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:chaisechene",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_chaisehautechene",
+    "name": "Chaise haute chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 11
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 21
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 4
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:chaisehautechene",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_tablechene",
+    "name": "Table chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 6
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 12
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:tablechene",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_table_ronde_chene",
+    "name": "Table ronde chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 6
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 12
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:table_ronde_chene",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_bancchene",
+    "name": "Banc chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 7
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 16
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:bancchene",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_banc_riche_chene",
+    "name": "Banc riche chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 16
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 42
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 3
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:banc_riche_chene",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_banclongchene",
+    "name": "Banc long chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 10
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 24
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 2
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:banclongchene",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_banc_riche_long_chene",
+    "name": "Banc riche long chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 23
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 49
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 4
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:banc_riche_long_chene",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_caissechene",
+    "name": "Caisse chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 10
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 12
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:caissechene",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_chest_chene",
+    "name": "Coffre (chene)",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 13
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 16
+      },
+      {
+        "itemId": "minecraft:iron_nugget",
+        "count": 4
+      }
+    ],
+    "output": {
+      "itemId": "minecraft:chest",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_armoirechene",
+    "name": "Armoire chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 21
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 42
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 3
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:armoirechene",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_tabouretchene",
+    "name": "Tabouret chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 3
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 8
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:tabouretchene",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_petitecomodechene",
+    "name": "Petite commode chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 11
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 17
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 1
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:petitecomodechene",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_comodechene",
+    "name": "Commode chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 18
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 28
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 3
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:comodechene",
+      "count": 1
+    }
+  },
+  {
+    "id": "art_comodedoublechene",
+    "name": "Commode double chene",
+    "description": "",
+    "inputs": [
+      {
+        "itemId": "ventrysitem:res_planche_chene",
+        "count": 32
+      },
+      {
+        "itemId": "ventrysitem:res_clou",
+        "count": 50
+      },
+      {
+        "itemId": "minecraft:stick",
+        "count": 5
+      }
+    ],
+    "output": {
+      "itemId": "ventrys_blocs:comodedoublechene",
+      "count": 1
+    }
+  }
 ]

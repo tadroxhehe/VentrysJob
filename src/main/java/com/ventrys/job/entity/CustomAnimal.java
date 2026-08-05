@@ -228,7 +228,7 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
         return reproductionProgressMs >= requiredMs;
     }
 
-    /** Les deux parents doivent avoir accumulé le délai configuré (ex. 3 jours). */
+    /** Les deux parents doivent avoir accumulé le délai configuré (ex. 48 h). */
     public boolean isReproductionReadyWith(CustomAnimal mate) {
         if (mate == null || mate == this) {
             return false;

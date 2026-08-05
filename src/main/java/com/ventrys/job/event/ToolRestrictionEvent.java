@@ -3,6 +3,7 @@ package com.ventrys.job.event;
 import com.ventrys.job.data.ForkConfig;
 import com.ventrys.job.data.JobActions;
 import com.ventrys.job.data.JobPermissionService;
+import com.ventrys.job.data.ToolDurability;
 import com.ventrys.job.energy.JobActionEnergyCosts;
 import com.ventrys.job.energy.JobEnergyHelper;
 import net.minecraft.core.BlockPos;
@@ -42,7 +43,8 @@ public class ToolRestrictionEvent {
                 // Si c'est un paysan, bloquer les houes vanilla (seules les fourches sont autorisées)
                 if (JobPermissionService.isPaysan(event.getPlayer())) {
                     // Vérifier si c'est une fourche configurée
-                    if (ForkConfig.isFork(event.getHeldItemStack().getItem())) {
+                    if (ForkConfig.isFork(event.getHeldItemStack().getItem())
+                            && ToolDurability.isUsable(event.getHeldItemStack())) {
                         // Permettre le labour avec une fourche - ne pas bloquer l'événement
                         return;
                     } else {
@@ -58,7 +60,7 @@ public class ToolRestrictionEvent {
     @SubscribeEvent
     public static void onPlayerInteract(PlayerInteractEvent.RightClickBlock event) {
         Player player = event.getPlayer();
-        ItemStack heldItem = player.getMainHandItem();
+        ItemStack heldItem = player.getItemInHand(event.getHand());
         BlockState state = event.getWorld().getBlockState(event.getPos());
 
         // Permettre l'utilisation normale en mode créatif
@@ -66,9 +68,14 @@ public class ToolRestrictionEvent {
             return;
         }
 
+        // Pose de torche : ne jamais bloquer (ouvrier / tout métier)
+        if (com.ventrys.job.data.BlockPlacementRules.isTorchLikeItem(heldItem)) {
+            return;
+        }
+
         // RESTRICTION : Seul le job paysan peut labourer (till farmland)
         // Utiliser la liste configurable des fourches au lieu des houes
-        if (ForkConfig.isFork(heldItem.getItem())) {
+        if (ForkConfig.isFork(heldItem.getItem()) && ToolDurability.isUsable(heldItem)) {
             // Vérifier si c'est de la terre ou de l'herbe (peut être labouré)
             if (state.getBlock() == net.minecraft.world.level.block.Blocks.DIRT || 
                 state.getBlock() == net.minecraft.world.level.block.Blocks.GRASS_BLOCK) {
@@ -78,7 +85,7 @@ public class ToolRestrictionEvent {
                 }
                 // Si c'est un paysan avec une fourche, déclencher le labour manuellement
                 // Les fourches moddées n'ont pas ToolActions.HOE_TILL, donc on doit le faire manuellement
-                if (!event.getWorld().isClientSide && player instanceof net.minecraft.server.level.ServerPlayer) {
+                if (!event.getWorld().isClientSide && player instanceof net.minecraft.server.level.ServerPlayer serverPlayer) {
                     BlockPos pos = event.getPos();
                     Level level = event.getWorld();
                     BlockState currentState = level.getBlockState(pos);
@@ -92,16 +99,13 @@ public class ToolRestrictionEvent {
                     }
                     
                     if (farmlandState != null) {
-                        if (!JobEnergyHelper.consumeForAction((net.minecraft.server.level.ServerPlayer) player,
-                                JobActionEnergyCosts.TILL_FARMLAND)) {
+                        if (!JobEnergyHelper.consumeForAction(serverPlayer, JobActionEnergyCosts.TILL_FARMLAND)) {
                             event.setCanceled(true);
                             return;
                         }
                         level.setBlock(pos, farmlandState, 11);
-                        // Endommager la fourche
-                        if (heldItem.isDamageableItem()) {
-                            heldItem.hurt(1, level.random, (net.minecraft.server.level.ServerPlayer) player);
-                        }
+                        ToolDurability.hurtAndBreak(heldItem, serverPlayer,
+                                net.minecraft.world.InteractionHand.MAIN_HAND);
                         event.setCanceled(true); // Empêcher l'interaction normale
                     }
                 }

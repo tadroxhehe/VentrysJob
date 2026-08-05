@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ToolActions;
 import net.minecraftforge.registries.ForgeRegistries;
 import com.ventrys.job.data.ChiselConfig;
+import com.ventrys.job.data.ToolDurability;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -139,7 +140,7 @@ public final class ExtractionConfigRegistry {
     }
 
     static boolean isSaw(ItemStack itemStack) {
-        if (itemStack.isEmpty()) return false;
+        if (!ToolDurability.isUsable(itemStack)) return false;
 
         String itemId = ForgeRegistries.ITEMS.getKey(itemStack.getItem()).toString();
         if (SAW_TOOLS.containsKey(itemId)) {
@@ -167,12 +168,19 @@ public final class ExtractionConfigRegistry {
     }
 
     public static boolean isExtractableStone(BlockState state, BlockPos pos) {
-        String blockId = ForgeRegistries.BLOCKS.getKey(state.getBlock()).toString();
-        boolean isConfigured = STONE_CONFIGS.containsKey(blockId);
-        if (isConfigured) {
-            VentrysJob.LOGGER.debug("Pierre {} - Configuré: {}", blockId, isConfigured);
+        if (state == null) {
+            return false;
         }
-        return isConfigured;
+        // Granite = mines (pioche), jamais carrière / burin
+        if (state.is(Blocks.GRANITE)) {
+            return false;
+        }
+        String blockId = ForgeRegistries.BLOCKS.getKey(state.getBlock()).toString();
+        if (STONE_CONFIGS.containsKey(blockId)) {
+            return true;
+        }
+        // Filet : pierre brute overworld (andésite, diorite, stone…) même si la config a loupé une entrée
+        return isRoughNaturalStone(state);
     }
 
     public static boolean isExtractableCalcite(BlockState state, BlockPos pos) {
@@ -191,7 +199,7 @@ public final class ExtractionConfigRegistry {
     }
 
     public static boolean isAxe(ItemStack item) {
-        if (item.isEmpty()) return false;
+        if (!ToolDurability.isUsable(item)) return false;
 
         String itemId = ForgeRegistries.ITEMS.getKey(item.getItem()).toString();
 
@@ -225,7 +233,7 @@ public final class ExtractionConfigRegistry {
     }
 
     public static boolean isPickaxe(ItemStack item) {
-        if (item.isEmpty()) return false;
+        if (!ToolDurability.isUsable(item)) return false;
 
         String itemId = ForgeRegistries.ITEMS.getKey(item.getItem()).toString();
 
@@ -259,7 +267,7 @@ public final class ExtractionConfigRegistry {
     }
 
     public static boolean isShovel(ItemStack item) {
-        if (item.isEmpty()) return false;
+        if (!ToolDurability.isUsable(item)) return false;
 
         String itemId = ForgeRegistries.ITEMS.getKey(item.getItem()).toString();
         if (SHOVEL_TOOLS.containsKey(itemId)) {
@@ -280,8 +288,15 @@ public final class ExtractionConfigRegistry {
     }
 
     public static boolean isChiselTool(ItemStack item) {
-        if (item.isEmpty()) return false;
-        return ChiselConfig.isChisel(item.getItem());
+        if (item == null || item.isEmpty()) {
+            return false;
+        }
+        // Reconnaître le burin même si la dura/stack est dans un état limite (sinon
+        // isUsable=false → extraction pierre muette + bloc protégé = deadlock).
+        if (!ChiselConfig.isChisel(item.getItem())) {
+            return false;
+        }
+        return ToolDurability.isUsable(item);
     }
 
     public static boolean isAnyExtractableBlock(BlockState state, BlockPos pos) {
@@ -300,12 +315,15 @@ public final class ExtractionConfigRegistry {
     }
 
     public static boolean isExtractableStone(BlockState state) {
-        String blockId = ForgeRegistries.BLOCKS.getKey(state.getBlock()).toString();
-        return STONE_CONFIGS.containsKey(blockId);
+        return isExtractableStone(state, BlockPos.ZERO);
     }
 
     /** Pierre brute vanilla non encore listée dans stone_configs (filet de sécurité). */
     public static boolean isRoughNaturalStone(BlockState state) {
+        // Granite = pierre des mines (pioche), pas carrières (burin)
+        if (state.is(Blocks.GRANITE)) {
+            return false;
+        }
         if (state.is(BlockTags.BASE_STONE_OVERWORLD)) {
             return true;
         }
@@ -316,8 +334,11 @@ public final class ExtractionConfigRegistry {
                 || block == Blocks.TUFF;
     }
 
-    /** Pierre minée uniquement via extraction au burin — jamais à la main. */
+    /** Pierre des carrières : extraction au burin uniquement (pas le granite des mines). */
     public static boolean isStoneProtectedFromMining(BlockState state) {
+        if (state.is(Blocks.GRANITE)) {
+            return false;
+        }
         return isExtractableStone(state) || isRoughNaturalStone(state);
     }
 

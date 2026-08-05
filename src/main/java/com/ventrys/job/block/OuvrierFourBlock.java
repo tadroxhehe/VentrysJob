@@ -31,7 +31,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Bloc Four pour le métier Ouvrier - Transforme les planches en charbon
+ * Bloc Four pour le métier Ouvrier - Transforme les bûches en charbon de bois
  */
 public class OuvrierFourBlock extends BaseEntityBlock {
     

@@ -7,20 +7,119 @@ import com.ventrys.job.energy.JobActionEnergyCosts;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.Set;
 
 /**
  * Règles métier pour la pose de blocs (VentrysJob).
+ * <p>
+ * Joueurs : quasi uniquement les meubles. Bâtisseur + maillet : tout.
  */
 public final class BlockPlacementRules {
 
+    /**
+     * Poutres / murets bois / supports de mine autorisés pour l'ouvrier
+     * (en plus des planches chêne et des bûches extractibles).
+     */
+    private static final Set<String> OUVRIER_MINE_SUPPORT_BLOCKS = Set.of(
+            // Bûches fines (= poutres)
+            "westerosblocks:thin_oak_log",
+            "westerosblocks:thin_spruce_log",
+            "westerosblocks:thin_birch_log",
+            // Murets bois
+            "westerosblocks:oak_wall",
+            "westerosblocks:spruce_wall",
+            "westerosblocks:birch_wall",
+            "westerosblocks:oak_vertical_planks_wall",
+            "westerosblocks:spruce_vertical_planks_wall",
+            "westerosblocks:birch_vertical_planks_wall",
+            // Barrières bois
+            "minecraft:oak_fence",
+            "minecraft:spruce_fence",
+            "minecraft:birch_fence",
+            "westerosblocks:oak_vertical_planks_fence",
+            "westerosblocks:spruce_vertical_planks_fence",
+            "westerosblocks:birch_vertical_planks_fence",
+            // Accès / lumière mine
+            "minecraft:ladder",
+            "westerosblocks:wood_ladder",
+            "westerosblocks:rope_ladder",
+            "minecraft:torch",
+            "minecraft:wall_torch",
+            "minecraft:soul_torch",
+            "minecraft:soul_wall_torch",
+            "minecraft:redstone_torch",
+            "minecraft:redstone_wall_torch"
+    );
+
     private BlockPlacementRules() {
+    }
+
+    /** Torches (sol / mur / soul / redstone) et variantes dont l'id contient "torch". */
+    public static boolean isTorchLike(BlockState state) {
+        if (state == null || state.isAir()) {
+            return false;
+        }
+        return isTorchLike(state.getBlock());
+    }
+
+    public static boolean isTorchLike(Block block) {
+        if (block == null) {
+            return false;
+        }
+        if (block == Blocks.TORCH || block == Blocks.WALL_TORCH
+                || block == Blocks.SOUL_TORCH || block == Blocks.SOUL_WALL_TORCH
+                || block == Blocks.REDSTONE_TORCH || block == Blocks.REDSTONE_WALL_TORCH) {
+            return true;
+        }
+        ResourceLocation id = ForgeRegistries.BLOCKS.getKey(block);
+        return id != null && id.getPath().contains("torch");
+    }
+
+    public static boolean isTorchLikeItem(ItemStack stack) {
+        if (stack == null || stack.isEmpty()) {
+            return false;
+        }
+        if (stack.is(Items.TORCH) || stack.is(Items.SOUL_TORCH) || stack.is(Items.REDSTONE_TORCH)) {
+            return true;
+        }
+        if (stack.getItem() instanceof BlockItem blockItem) {
+            return isTorchLike(blockItem.getBlock());
+        }
+        ResourceLocation id = ForgeRegistries.ITEMS.getKey(stack.getItem());
+        return id != null && id.getPath().contains("torch");
+    }
+
+    public static boolean isOuvrierMineSupportBlock(BlockState state) {
+        if (state == null) {
+            return false;
+        }
+        if (isTorchLike(state)) {
+            return true;
+        }
+        Block block = state.getBlock();
+        if (block == Blocks.OAK_PLANKS || block == Blocks.SPRUCE_PLANKS || block == Blocks.BIRCH_PLANKS) {
+            return true;
+        }
+        if (block == Blocks.OAK_FENCE || block == Blocks.SPRUCE_FENCE || block == Blocks.BIRCH_FENCE) {
+            return true;
+        }
+        if (block == Blocks.LADDER) {
+            return true;
+        }
+        ResourceLocation id = ForgeRegistries.BLOCKS.getKey(block);
+        return id != null && OUVRIER_MINE_SUPPORT_BLOCKS.contains(id.toString());
     }
 
     public static boolean canPlayerPlaceBlock(Player player, BlockState blockToPlace, BlockPos pos) {
@@ -39,9 +138,6 @@ public final class BlockPlacementRules {
         if (placedBlock instanceof JobTableBlock || placedBlock instanceof MetierTisserBlock) {
             return true;
         }
-        if (placedBlock == Blocks.DIRT) {
-            return true;
-        }
         if (JobPermissionService.isUnrestrictedVentrysJobBlock(blockToPlace, pos)) {
             return true;
         }
@@ -55,6 +151,21 @@ public final class BlockPlacementRules {
             return ok;
         }
 
+        // Meubles : tout le monde (vanilla + mods)
+        if (FurnitureAccess.isFurniture(blockToPlace)) {
+            return true;
+        }
+
+        // Torches : pose libre (ouvrier en mine, tout le monde hors métier)
+        if (isTorchLike(blockToPlace)) {
+            return true;
+        }
+
+        // Texte HRP VentrysChat : tout le monde, sans métier
+        if (BlockBreakRules.isNarrationTextBlock(blockToPlace)) {
+            return true;
+        }
+
         if (JobPermissionService.isPaysan(player)) {
             if (notify) {
                 deny(player, "ventrysjob.message.block.placement.paysan.restricted");
@@ -65,23 +176,22 @@ public final class BlockPlacementRules {
             if (JobActions.isExtractableLog(blockToPlace, pos)) {
                 return true;
             }
-            boolean ok = blockToPlace.getBlock() == Blocks.OAK_PLANKS;
+            boolean ok = isOuvrierMineSupportBlock(blockToPlace);
             if (!ok && notify) {
                 deny(player, "ventrysjob.message.block.placement.ouvrier.restricted");
             }
             return ok;
         }
         if (JobPermissionService.isBatisseur(player)) {
-            if (!(player instanceof ServerPlayer serverPlayer)) {
-                return false;
-            }
-            if (!MalletUsage.hasMalletInOffhand(serverPlayer)) {
+            // Client : ne pas exiger ServerPlayer (prédiction pose)
+            if (!MalletUsage.hasUsableMallet(player)) {
                 if (notify) {
                     deny(player, "ventrysjob.message.block.placement.batisseur.no_mallet");
                 }
                 return false;
             }
-            if (VentrysSurvivalBridge.isAvailable()
+            if (player instanceof ServerPlayer serverPlayer
+                    && VentrysSurvivalBridge.isAvailable()
                     && VentrysSurvivalBridge.getJobEnergy(serverPlayer) < JobActionEnergyCosts.PLACE_BLOCK) {
                 if (notify) {
                     VentrysSurvivalBridge.sendInsufficientEnergy(serverPlayer);
@@ -90,13 +200,12 @@ public final class BlockPlacementRules {
             }
             return true;
         }
-        if (playerJob != null && !playerJob.isEmpty()) {
-            if (notify) {
-                deny(player, "ventrysjob.message.block.placement.restricted");
-            }
-            return false;
+
+        // Joueur lambda / autres métiers : pas de construction
+        if (notify) {
+            deny(player, "ventrysjob.message.block.placement.restricted");
         }
-        return true;
+        return false;
     }
 
     private static void deny(Player player, String translationKey) {
@@ -104,19 +213,48 @@ public final class BlockPlacementRules {
     }
 
     /**
-     * Rend un bloc consommé alors que la pose a été refusée (filet de sécurité côté serveur).
+     * Resync inventaire client après un refus de pose (évite un item « fantôme » disparu).
      */
-    public static void refundPlacedBlockItem(Player player, BlockState placedState) {
-        if (player.getAbilities().instabuild) {
+    public static void syncInventory(Player player) {
+        if (player instanceof ServerPlayer serverPlayer) {
+            serverPlayer.inventoryMenu.broadcastChanges();
+            if (serverPlayer.containerMenu != serverPlayer.inventoryMenu) {
+                serverPlayer.containerMenu.broadcastChanges();
+            }
+        }
+    }
+
+    /**
+     * Filet si un chemin custom a consommé l'item alors que la pose a été annulée
+     * (hors flux ForgeHooks normal, qui restaure déjà le stack).
+     * <p>
+     * Préférer {@link #syncInventory} après un simple cancel EntityPlaceEvent.
+     */
+    public static void ensurePlacementItemRestored(Player player, BlockState placedState) {
+        if (player.getAbilities().instabuild || placedState == null) {
             return;
         }
-        Item blockItem = placedState.getBlock().asItem();
-        if (blockItem == Items.AIR) {
+        Item expected = placedState.getBlock().asItem();
+        if (expected == null || expected == Items.AIR) {
             return;
         }
-        ItemStack refund = new ItemStack(blockItem, 1);
+
+        // Si une main tient encore le BlockItem correspondant, rien à faire
+        for (InteractionHand hand : InteractionHand.values()) {
+            ItemStack stack = player.getItemInHand(hand);
+            if (stack.getItem() instanceof BlockItem bi && bi.getBlock() == placedState.getBlock()) {
+                return;
+            }
+            if (stack.is(expected)) {
+                return;
+            }
+        }
+
+        // Stack totalement consommé à tort → rendre 1
+        ItemStack refund = new ItemStack(expected, 1);
         if (!player.getInventory().add(refund)) {
             player.drop(refund, false);
         }
+        syncInventory(player);
     }
 }

@@ -17,7 +17,7 @@ plugins {
 
 apply plugin: 'org.spongepowered.mixin'
 
-version = '1.0.3'
+version = '1.0.34'
 group = 'com.ventrys.job'
 
 base {
@@ -140,8 +140,12 @@ def sonsJobCraftSounds = [
 tasks.register('generateVentrysjobSoundsJson') {
     def sfxPack = file("${rootDir}/ventrysjobsfx/Nouveau dossier")
     def outFile = layout.buildDirectory.file('generatedVentrysSounds/assets/ventrysjob/sounds.json')
-    inputs.dir(sfxPack).optional()
-    inputs.dir(sonsJobDir).optional()
+    if (sfxPack.directory) {
+        inputs.dir(sfxPack)
+    }
+    if (sonsJobDir.directory) {
+        inputs.dir(sonsJobDir)
+    }
     outputs.file(outFile)
 
     def mappings = [

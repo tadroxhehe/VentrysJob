@@ -6,11 +6,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 18
+        "count": 2
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 18
+        "count": 2
       }
     ],
     "output": {
@@ -25,11 +25,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 20
+        "count": 2
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 18
+        "count": 2
       }
     ],
     "output": {
@@ -44,11 +44,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 12
+        "count": 1
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 12
+        "count": 1
       }
     ],
     "output": {
@@ -63,11 +63,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 9
+        "count": 1
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 9
+        "count": 1
       }
     ],
     "output": {
@@ -82,11 +82,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 9
+        "count": 3
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 9
+        "count": 3
       }
     ],
     "output": {
@@ -101,11 +101,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 10
+        "count": 2
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 9
+        "count": 2
       }
     ],
     "output": {
@@ -120,11 +120,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 12
+        "count": 4
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 12
+        "count": 4
       }
     ],
     "output": {
@@ -139,11 +139,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 12
+        "count": 4
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 12
+        "count": 4
       }
     ],
     "output": {
@@ -158,11 +158,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 4
+        "count": 1
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 4
+        "count": 1
       }
     ],
     "output": {
@@ -177,11 +177,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 6
+        "count": 1
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 4
+        "count": 1
       }
     ],
     "output": {
@@ -196,15 +196,15 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 4
+        "count": 1
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 6
+        "count": 1
       },
       {
         "itemId": "minecraft:stick",
-        "count": 6
+        "count": 1
       }
     ],
     "output": {
@@ -219,11 +219,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 18
+        "count": 2
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 18
+        "count": 2
       }
     ],
     "output": {
@@ -238,11 +238,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 12
+        "count": 1
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 12
+        "count": 1
       }
     ],
     "output": {
@@ -257,11 +257,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 9
+        "count": 1
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 9
+        "count": 1
       }
     ],
     "output": {
@@ -276,11 +276,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 9
+        "count": 2
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 9
+        "count": 2
       }
     ],
     "output": {
@@ -295,11 +295,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 12
+        "count": 2
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 12
+        "count": 2
       }
     ],
     "output": {
@@ -314,11 +314,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 12
+        "count": 2
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 12
+        "count": 2
       }
     ],
     "output": {
@@ -333,11 +333,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 6
+        "count": 1
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 4
+        "count": 1
       }
     ],
     "output": {
@@ -352,11 +352,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 12
+        "count": 1
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 12
+        "count": 1
       }
     ],
     "output": {
@@ -375,7 +375,7 @@
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 2
+        "count": 1
       }
     ],
     "output": {
@@ -390,11 +390,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 9
+        "count": 1
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 8
+        "count": 1
       }
     ],
     "output": {
@@ -409,11 +409,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 9
+        "count": 3
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 9
+        "count": 3
       }
     ],
     "output": {
@@ -428,11 +428,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 4
+        "count": 2
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 8
+        "count": 3
       }
     ],
     "output": {
@@ -447,11 +447,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 4
+        "count": 1
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 8
+        "count": 3
       }
     ],
     "output": {
@@ -466,15 +466,15 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 4
+        "count": 1
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 3
+        "count": 1
       },
       {
         "itemId": "minecraft:stick",
-        "count": 4
+        "count": 1
       }
     ],
     "output": {
@@ -489,11 +489,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 5
+        "count": 2
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 8
+        "count": 3
       }
     ],
     "output": {
@@ -508,11 +508,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 3
+        "count": 1
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 6
+        "count": 2
       }
     ],
     "output": {
@@ -546,15 +546,15 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 16
+        "count": 4
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 36
+        "count": 9
       },
       {
         "itemId": "minecraft:stick",
-        "count": 5
+        "count": 1
       }
     ],
     "output": {
@@ -569,15 +569,15 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 45
+        "count": 11
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 84
+        "count": 21
       },
       {
         "itemId": "minecraft:stick",
-        "count": 16
+        "count": 4
       }
     ],
     "output": {
@@ -592,15 +592,15 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 24
+        "count": 6
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 48
+        "count": 12
       },
       {
         "itemId": "minecraft:stick",
-        "count": 5
+        "count": 1
       }
     ],
     "output": {
@@ -615,15 +615,15 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 24
+        "count": 6
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 48
+        "count": 12
       },
       {
         "itemId": "minecraft:stick",
-        "count": 5
+        "count": 1
       }
     ],
     "output": {
@@ -638,15 +638,15 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 28
+        "count": 7
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 64
+        "count": 16
       },
       {
         "itemId": "minecraft:stick",
-        "count": 4
+        "count": 1
       }
     ],
     "output": {
@@ -661,15 +661,15 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 48
+        "count": 16
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 128
+        "count": 42
       },
       {
         "itemId": "minecraft:stick",
-        "count": 8
+        "count": 3
       }
     ],
     "output": {
@@ -684,15 +684,15 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 42
+        "count": 10
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 96
+        "count": 24
       },
       {
         "itemId": "minecraft:stick",
-        "count": 6
+        "count": 2
       }
     ],
     "output": {
@@ -707,15 +707,15 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 70
+        "count": 23
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 148
+        "count": 49
       },
       {
         "itemId": "minecraft:stick",
-        "count": 12
+        "count": 4
       }
     ],
     "output": {
@@ -730,11 +730,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 40
+        "count": 10
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 48
+        "count": 12
       }
     ],
     "output": {
@@ -749,11 +749,11 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 40
+        "count": 13
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 48
+        "count": 16
       },
       {
         "itemId": "minecraft:iron_nugget",
@@ -772,15 +772,15 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 64
+        "count": 21
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 128
+        "count": 42
       },
       {
         "itemId": "minecraft:stick",
-        "count": 8
+        "count": 3
       }
     ],
     "output": {
@@ -795,15 +795,15 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 14
+        "count": 3
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 32
+        "count": 8
       },
       {
         "itemId": "minecraft:stick",
-        "count": 3
+        "count": 1
       }
     ],
     "output": {
@@ -818,15 +818,15 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 34
+        "count": 11
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 52
+        "count": 17
       },
       {
         "itemId": "minecraft:stick",
-        "count": 4
+        "count": 1
       }
     ],
     "output": {
@@ -841,15 +841,15 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 54
+        "count": 18
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 84
+        "count": 28
       },
       {
         "itemId": "minecraft:stick",
-        "count": 8
+        "count": 3
       }
     ],
     "output": {
@@ -864,15 +864,15 @@
     "inputs": [
       {
         "itemId": "ventrysitem:res_planche_sapin",
-        "count": 96
+        "count": 32
       },
       {
         "itemId": "ventrysitem:res_clou",
-        "count": 152
+        "count": 50
       },
       {
         "itemId": "minecraft:stick",
-        "count": 16
+        "count": 5
       }
     ],
     "output": {

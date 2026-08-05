@@ -9,6 +9,7 @@ import com.ventrys.job.data.Job;
 import com.ventrys.job.data.JobManager;
 import com.ventrys.job.data.JobActions;
 import com.ventrys.job.data.JobRecipe;
+import com.ventrys.job.data.PlankCraftAccess;
 import com.ventrys.job.data.RecipeIngredient;
 import com.ventrys.job.data.PlayerJobData;
 import com.ventrys.job.audio.JobCraftSounds;
@@ -191,9 +192,12 @@ public class CraftJobRecipePacket {
                 return;
             }
 
-            // Verifier les ingredients
+            // Verifier les ingredients (planches chêne/sapin/bouleau interchangeables si autorisé)
             for (RecipeIngredient ingredient : recipe.getInputs()) {
-                if (!hasItem(player, ingredient.getItemId(), ingredient.getCount())) {
+                boolean ok = PlankCraftAccess.isPlancheResource(ingredient.getItemId())
+                        ? PlankCraftAccess.hasEnough(player, recipe, ingredient.getItemId(), ingredient.getCount())
+                        : hasItem(player, ingredient.getItemId(), ingredient.getCount());
+                if (!ok) {
                     player.sendMessage(new TranslatableComponent("ventrysjob.message.craft.insufficient_ingredients"), player.getUUID());
                     return;
                 }
@@ -204,7 +208,10 @@ public class CraftJobRecipePacket {
             boolean allConsumed = true;
             
             for (RecipeIngredient ingredient : recipe.getInputs()) {
-                if (consumeItem(player, ingredient.getItemId(), ingredient.getCount())) {
+                boolean ok = PlankCraftAccess.isPlancheResource(ingredient.getItemId())
+                        ? PlankCraftAccess.consume(player, recipe, ingredient.getItemId(), ingredient.getCount())
+                        : consumeItem(player, ingredient.getItemId(), ingredient.getCount());
+                if (ok) {
                     consumedIngredients.add(ingredient);
                 } else {
                     allConsumed = false;

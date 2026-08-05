@@ -199,6 +199,13 @@ public class JobManager {
             List<JobRecipe> validRecipesList = new ArrayList<>();
             for (JobRecipe recipe : job.getRecipes()) {
                 totalRecipes++;
+                // Farine = meule uniquement (ignore anciennes recettes cuisinier type cuis_farine_ble)
+                if (isFlourJobTableRecipe(recipe)) {
+                    VentrysJob.LOGGER.info(
+                        "Recette farine ignoree (meule uniquement): {} pour le metier {}",
+                        recipe.getId(), job.getId());
+                    continue;
+                }
                 if (isRecipeValid(recipe)) {
                     validRecipesList.add(recipe);
                     validRecipes++;
@@ -218,6 +225,23 @@ public class JobManager {
         
         VentrysJob.LOGGER.info("Métiers: {} chargés depuis « {} » — {}/{} recettes valides", 
             validJobs, source, validRecipes, totalRecipes);
+    }
+
+    /** Farine produite à la meule — pas sur l'établi cuisinier (ni autre table métier). */
+    private static boolean isFlourJobTableRecipe(JobRecipe recipe) {
+        if (recipe == null) {
+            return false;
+        }
+        String id = recipe.getId() != null ? recipe.getId() : "";
+        if (id.contains("farine")) {
+            return true;
+        }
+        for (RecipeIngredient out : recipe.getOutputsForCraft()) {
+            if (out != null && "ventrysitem:res_farine".equals(out.getItemId())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private static boolean isRecipeValid(JobRecipe recipe) {
@@ -349,8 +373,8 @@ public class JobManager {
         // Ouvrier - extraction et transformation
         Job worker = new Job("ouvrier", "Ouvrier", "Specialiste de l'extraction et de la transformation");
         JobRecipe workerRecipe = new JobRecipe("charcoal_craft", "Charbon");
-        workerRecipe.setDescription("Transforme les planches en charbon");
-        workerRecipe.addInput(new RecipeIngredient("minecraft:oak_planks", 1));
+        workerRecipe.setDescription("Transforme les buches en charbon de bois");
+        workerRecipe.addInput(new RecipeIngredient("minecraft:oak_log", 1));
         workerRecipe.setOutput(new RecipeIngredient("minecraft:charcoal", 1));
         workerRecipe.setCraftTime(100); // 5 secondes
         worker.addRecipe(workerRecipe);
