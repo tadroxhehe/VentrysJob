@@ -17,7 +17,7 @@ config="mixins.ventrysjob.json"
 [[dependencies.ventrysjob]]
     modId="forge"
     mandatory=true
-    versionRange="[40.2.21,)"
+    versionRange="[40.2.14,)"
     ordering="NONE"
     side="BOTH"
 
