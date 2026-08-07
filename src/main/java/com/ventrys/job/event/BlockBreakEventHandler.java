@@ -102,7 +102,15 @@ public class BlockBreakEventHandler {
         if (CropGrowthConfig.isConfiguredCrop(state.getBlock())) {
             event.setCanceled(true);
             if (player instanceof ServerPlayer serverPlayer && !level.isClientSide) {
-                JobActions.handleBlockInteraction(serverPlayer, level, pos, state, InteractionHand.MAIN_HAND);
+                InteractionHand harvestHand = InteractionHand.MAIN_HAND;
+                ItemStack main = player.getItemInHand(InteractionHand.MAIN_HAND);
+                ItemStack off = player.getItemInHand(InteractionHand.OFF_HAND);
+                if (!com.ventrys.job.data.ForkConfig.isFork(main.getItem())
+                        && com.ventrys.job.data.ForkConfig.isFork(off.getItem())
+                        && ToolDurability.isUsable(off)) {
+                    harvestHand = InteractionHand.OFF_HAND;
+                }
+                JobActions.handleBlockInteraction(serverPlayer, level, pos, state, harvestHand);
                 // Les messages d'erreur (pas paysan / pas fourche / immature) sont déjà
                 // envoyés par ExtractionInteractionHandler — ne pas en renvoyer un second.
             }

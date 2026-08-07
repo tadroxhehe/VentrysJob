@@ -4,6 +4,15 @@ Historique des passes (du plus récent au plus ancien).
 
 ---
 
+## Survival 1.0.10 — Marteaux de forge
+
+Durabilité : bronze **30 → 150**, fer **84 → 250** (1 usure / craft enclume). Rentabilité forgeron vs coût matière du marteau.
+
+## 1.0.38 — Bâti constructible ÷2
+
+Coûts artisan des blocs constructibles (bois planche+clou, pierre) **divisés par 2** pour sorties `minecraft` / `westerosblocks` / `ventrys_blocs`.  
+Ex. planche **6+2 → 3+1** ; cobble **18+2 → 9+1**. Stations / pantins / chariots inchangés.
+
 ## 1.0.15 — Bâti : planches / pierre ×3 (pas ×6)
 
 Recalibrage : `res_planche_*` et `res_pierre_fragmente` constructibles à **×3** vs grille « 2+2 / cobble 6 ».  

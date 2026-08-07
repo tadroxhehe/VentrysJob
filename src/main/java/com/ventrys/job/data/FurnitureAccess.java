@@ -57,7 +57,6 @@ public final class FurnitureAccess {
             "drawer", "chest", "coffre", "crate", "caisse", "barrel", "tonneau",
             "carpet", "rug", "tapis", "mat", "curtain", "rideau", "tapestry", "tapisserie",
             "candle", "bougie", "candlestick", "lantern", "lanterne", "chandelier",
-            "torch", "torche",
             "pillow", "coussin", "cushion",
             "vase", "urn", "poterie", "flowerpot", "flower_pot",
             "painting", "tableau", "mirror", "miroir", "frame", "cadre",

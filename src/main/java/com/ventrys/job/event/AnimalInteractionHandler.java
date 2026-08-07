@@ -9,6 +9,7 @@ import com.ventrys.job.entity.CustomCow;
 import com.ventrys.job.entity.CustomPig;
 import com.ventrys.job.entity.CustomSheep;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -18,6 +19,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -25,7 +27,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 @Mod.EventBusSubscriber
 public class AnimalInteractionHandler {
     
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.HIGH)
     public static void onRightClickEntity(PlayerInteractEvent.EntityInteract event) {
         if (event.getTarget() instanceof CustomAnimal animal) {
             // L'event se déclenche une fois par main : on ne traite que la main principale.
@@ -94,6 +96,10 @@ public class AnimalInteractionHandler {
             if (canFeed(animal, heldItem.getItem())) {
                 String playerJob = PlayerJobData.getPlayerJob(player);
                 if (!"paysan".equals(playerJob)) {
+                    if (!player.level.isClientSide) {
+                        player.sendMessage(new TranslatableComponent("ventrysjob.message.animal.feed.restricted"),
+                                player.getUUID());
+                    }
                     event.setCancellationResult(InteractionResult.FAIL);
                     event.setCanceled(true);
                     return;
@@ -121,6 +127,10 @@ public class AnimalInteractionHandler {
             if (heldItem.getItem() == Items.WATER_BUCKET) {
                 String playerJob = PlayerJobData.getPlayerJob(player);
                 if (!"paysan".equals(playerJob)) {
+                    if (!player.level.isClientSide) {
+                        player.sendMessage(new TranslatableComponent("ventrysjob.message.animal.hydrate.restricted"),
+                                player.getUUID());
+                    }
                     event.setCancellationResult(InteractionResult.FAIL);
                     event.setCanceled(true);
                     return;
@@ -178,27 +188,26 @@ public class AnimalInteractionHandler {
     private static final int BREEDING_COST = 40;
 
     private static boolean canFeed(CustomAnimal animal, Item item) {
-        // Poule : graines VentrysItem uniquement
         if (animal instanceof CustomChicken) {
-            return isVentrysSeed(item);
+            return isVentrysSeed(item) || item == Items.WHEAT_SEEDS || item == Items.BEETROOT_SEEDS;
         }
-        // Mouton : légumes / fourrage Ventrys (pas seulement les graines)
         if (animal instanceof CustomSheep) {
             return isSheepFood(item);
         }
-        // Porc : patate VentrysItem
         if (animal instanceof CustomPig) {
-            return isVentrysItem(item, "item_patate");
+            return isVentrysItem(item, "item_patate") || item == Items.POTATO || item == Items.CARROT;
         }
-        // Vache : blé vanilla
         if (animal instanceof CustomCow) {
-            return item == Items.WHEAT;
+            return item == Items.WHEAT || isVentrysItem(item, "res_orge");
         }
         return item == Items.WHEAT || item == Items.CARROT || item == Items.POTATO || item == Items.BEETROOT;
     }
 
-    /** Choux, betterave, salade, carotte, orge, graines Ventrys. */
+    /** Choux, betterave, salade, carotte, oignon, tomate, orge, graines Ventrys. */
     private static boolean isSheepFood(Item item) {
+        if (item == Items.WHEAT) {
+            return true;
+        }
         ResourceLocation id = ForgeRegistries.ITEMS.getKey(item);
         if (id == null || !"ventrysitem".equals(id.getNamespace())) {
             return false;
@@ -211,6 +220,8 @@ public class AnimalInteractionHandler {
                 || "item_betrave".equals(path)
                 || "item_salade".equals(path)
                 || "item_carotte".equals(path)
+                || "item_oignon".equals(path)
+                || "item_tomate".equals(path)
                 || "res_orge".equals(path);
     }
 
@@ -231,15 +242,14 @@ public class AnimalInteractionHandler {
     }
     
     private static Animal findMate(CustomAnimal animal) {
-        // Chercher dans un rayon de 10 blocs pour la reproduction
         double radius = 10.0D;
-        return animal.level.getEntitiesOfClass(Animal.class, 
+        // Filtrer déjà sexe opposé + seuils + timer (évite de prendre un voisin du même sexe).
+        return animal.level.getEntitiesOfClass(CustomAnimal.class,
             animal.getBoundingBox().inflate(radius),
-            entity -> entity != animal && 
-                     entity.getClass() == animal.getClass() &&
-                     entity instanceof CustomAnimal).stream()
+            other -> other != animal
+                    && other.getClass() == animal.getClass()
+                    && animal.isReproductionReadyWith(other)).stream()
             .findFirst()
             .orElse(null);
     }
 }
-

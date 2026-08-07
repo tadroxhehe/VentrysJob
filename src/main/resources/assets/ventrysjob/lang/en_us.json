@@ -52,7 +52,7 @@
   
   "ventrysjob.message.vase.empty": "The planting vase is empty, nothing to water!",
   "ventrysjob.message.vase.already_watered": "The planting vase has already been watered!",
-  "ventrysjob.message.vase.watered": "The planting vase has been watered, growth begins!",
+  "ventrysjob.message.vase.watered": "The vase has been watered. The plant will be ready in about 4 hours.",
   "ventrysjob.message.vase.already_planted": "The planting vase already contains a plant!",
   "ventrysjob.message.vase.empty_vase": "The planting vase is empty.",
   "ventrysjob.message.vase.cannot_plant": "This item cannot be planted in this vase!",

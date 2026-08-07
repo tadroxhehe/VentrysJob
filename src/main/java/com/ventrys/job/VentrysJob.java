@@ -78,6 +78,7 @@ public class VentrysJob {
             com.ventrys.job.data.JobActions.loadExtractionToolsConfig();
             MeuleConfig.load();
             CropGrowthConfig.loadConfig();
+            com.ventrys.job.data.ForkConfig.validateAgainstGrowthConfig();
             com.ventrys.job.data.MobConfig.load();
             com.ventrys.job.data.OreConfig.loadConfig();
             com.ventrys.job.data.WeatherConfig.load();
@@ -106,6 +107,8 @@ public class VentrysJob {
     @SubscribeEvent
     public void onServerStarted(ServerStartedEvent event) {
         CropGrowthConfig.loadConfig();
+        com.ventrys.job.data.ForkConfig.loadConfig();
+        com.ventrys.job.data.ForkConfig.validateAgainstGrowthConfig();
         LOGGER.info("VentrysJob — chargement des données joueurs (dossier {}/ventrysjob/)",
             event.getServer().getWorldPath(net.minecraft.world.level.storage.LevelResource.ROOT));
         JobActions.loadExtractedPositions();

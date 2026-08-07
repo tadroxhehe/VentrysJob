@@ -243,6 +243,12 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
     public boolean isMale() {
         return this.entityData.get(IS_MALE);
     }
+
+    @Override
+    public boolean isFood(ItemStack stack) {
+        // Pas d'alimentation / love-mode vanilla : nutrition via AnimalInteractionHandler uniquement.
+        return false;
+    }
     
     public int getNutrition() {
         return this.entityData.get(NUTRITION);
@@ -262,10 +268,19 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
     
     public void addNutrition(int amount) {
         setNutrition(getNutrition() + amount);
+        persistLivestockProgress();
     }
     
     public void addHydration(int amount) {
         setHydration(getHydration() + amount);
+        persistLivestockProgress();
+    }
+
+    /** Pousse immédiatement nutrition/hydratation dans le SavedData (évite un écrasement au prochain tick). */
+    private void persistLivestockProgress() {
+        if (!this.level.isClientSide && this.level instanceof ServerLevel) {
+            LivestockProgressManager.persistFromEntity(this);
+        }
     }
     
     public AnimalNutritionStatus getNutritionStatus() {

@@ -59,7 +59,7 @@
   "ventrysjob.message.job.progress_reset": "Vos progressions d'extraction ont été réinitialisées",
   "ventrysjob.message.vase.empty": "§cLe vase de plantation est vide, rien à arroser !",
   "ventrysjob.message.vase.already_watered": "§eLe vase de plantation a déjà été arrosé !",
-  "ventrysjob.message.vase.watered": "§aLe vase de plantation a été arrosé, la croissance commence !",
+  "ventrysjob.message.vase.watered": "§aLe vase a été arrosé. La plante sera prête dans environ 4 heures.",
   "ventrysjob.message.vase.already_planted": "§eLe vase de plantation contient déjà une plante !",
   "ventrysjob.message.vase.empty_vase": "§cLe vase de plantation est vide.",
   "ventrysjob.message.vase.cannot_plant": "§cCet item ne peut pas être planté dans ce vase !",

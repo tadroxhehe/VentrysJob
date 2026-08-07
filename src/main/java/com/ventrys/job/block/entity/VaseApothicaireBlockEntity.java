@@ -26,6 +26,12 @@ public class VaseApothicaireBlockEntity extends BlockEntity {
     
     // Configuration des items supportés pour la plantation
     private static final Set<String> SUPPORTED_PLANT_ITEMS = new HashSet<>();
+
+    /**
+     * Délai wall-clock après arrosage avant récolte (même pour toutes les espèces).
+     * Ancien défaut TEST = 10 s — trop court RP / économie (farm AFK devant les pots).
+     */
+    public static final long GROWTH_TIME_MS = 4L * 60L * 60L * 1000L; // 4 heures
     
     static {
         initializeSupportedItems();
@@ -34,8 +40,8 @@ public class VaseApothicaireBlockEntity extends BlockEntity {
     // État du vase
     private String plantedItemId = null;
     private boolean isWatered = false;
-    private long plantedTime = 0; // Timestamp Unix en millisecondes
-    private long growthTimeMs = 10 * 1000; // 10 secondes en millisecondes (TEST)
+    /** Instant d'arrosage (epoch ms) — la croissance démarre à l'arrosage, pas à la plantation. */
+    private long plantedTime = 0;
     /** Aligné sur {@link com.ventrys.job.block.VaseApothicaireBlock#GROWTH_STAGE} : 0 = base, 1 = mature. */
     private int currentStage = 0;
     private long lastStageCheckTimeMs = 0; // Limite les recalculs de stage (anti jitter perf)
@@ -173,22 +179,12 @@ public class VaseApothicaireBlockEntity extends BlockEntity {
     }
     
     private boolean canHarvest() {
-        if (plantedItemId == null) {
+        if (plantedItemId == null || !isWatered || plantedTime <= 0) {
             return false;
         }
-        // Stade mature (BE ou blockstate) = récoltable, même si un reload a corrompu isWatered/plantedTime
-        if (currentStage >= 1) {
-            return true;
-        }
-        BlockState state = getBlockState();
-        if (state.hasProperty(com.ventrys.job.block.VaseApothicaireBlock.GROWTH_STAGE)
-                && state.getValue(com.ventrys.job.block.VaseApothicaireBlock.GROWTH_STAGE) >= 1) {
-            return true;
-        }
-        if (!isWatered || plantedTime == 0) {
-            return false;
-        }
-        return (System.currentTimeMillis() - plantedTime) >= growthTimeMs;
+        // Uniquement le timer wall-clock (pas le blockstate : l'ancien TEST 10 s
+        // laissait des pots « matures » visuellement récoltables tout de suite).
+        return (System.currentTimeMillis() - plantedTime) >= GROWTH_TIME_MS;
     }
     
     private InteractionResult harvestPlant(Player player) {
@@ -257,7 +253,7 @@ public class VaseApothicaireBlockEntity extends BlockEntity {
         entity.lastStageCheckTimeMs = currentTime;
 
         long elapsed = currentTime - entity.plantedTime;
-        int newStage = elapsed >= entity.growthTimeMs ? 1 : 0;
+        int newStage = elapsed >= GROWTH_TIME_MS ? 1 : 0;
 
         if (newStage != entity.currentStage) {
             entity.currentStage = newStage;
@@ -302,42 +298,34 @@ public class VaseApothicaireBlockEntity extends BlockEntity {
         lastStageCheckTimeMs = tag.contains("last_stage_check_time_ms") ? tag.getLong("last_stage_check_time_ms") : 0;
 
         long currentTime = System.currentTimeMillis();
-        // Horloge serveur dans le futur uniquement : ne plus reset isWatered (ça bloquait la récolte
-        // avec un vase encore en stade final visuel → message "déjà une plante").
+        // Horloge serveur dans le futur : ramener plantedTime, sans forcer la maturité.
         if (plantedTime > currentTime) {
             plantedTime = currentTime;
         }
-        if (plantedItemId != null && isWatered && plantedTime > 0
-                && (currentTime - plantedTime) >= growthTimeMs) {
-            currentStage = 1;
-        }
+        syncStageFromTimer(currentTime);
     }
 
     @Override
     public void onLoad() {
         super.onLoad();
-        // level est dispo ici (pas pendant load()) : resync blockstate + récupération états cassés
+        // level est dispo ici (pas pendant load()) : resync blockstate depuis le timer réel
         if (level == null || level.isClientSide) {
             return;
         }
-        BlockState state = getBlockState();
-        if (plantedItemId != null
-                && state.hasProperty(com.ventrys.job.block.VaseApothicaireBlock.GROWTH_STAGE)
-                && state.getValue(com.ventrys.job.block.VaseApothicaireBlock.GROWTH_STAGE) >= 1) {
-            currentStage = 1;
-            // Anciennes saves corrompues : mature visuellement mais plus marqué arrosé
-            if (!isWatered) {
-                isWatered = true;
-            }
-            if (plantedTime == 0) {
-                plantedTime = System.currentTimeMillis() - growthTimeMs;
-            }
-            setChanged();
-        } else if (plantedItemId != null && isWatered && plantedTime > 0
-                && (System.currentTimeMillis() - plantedTime) >= growthTimeMs) {
-            currentStage = 1;
-        }
+        // Ne plus croire le growth_stage NBT/blockstate seul (pots passés en mature
+        // pendant le délai TEST 10 s restaient farmables instantanément).
+        syncStageFromTimer(System.currentTimeMillis());
         updateBlockState();
+        setChanged();
+    }
+
+    /** Aligne currentStage sur le délai d'arrosage (source de vérité). */
+    private void syncStageFromTimer(long nowMs) {
+        if (plantedItemId == null || !isWatered || plantedTime <= 0) {
+            currentStage = 0;
+            return;
+        }
+        currentStage = (nowMs - plantedTime) >= GROWTH_TIME_MS ? 1 : 0;
     }
     
     // Getters pour l'état du vase
@@ -360,6 +348,6 @@ public class VaseApothicaireBlockEntity extends BlockEntity {
         }
         
         long elapsed = System.currentTimeMillis() - plantedTime;
-        return Math.max(0, growthTimeMs - elapsed);
+        return Math.max(0, GROWTH_TIME_MS - elapsed);
     }
 }

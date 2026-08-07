@@ -123,6 +123,26 @@ public final class LivestockProgressManager {
         animal.applyLivestockEntry(entry);
     }
 
+    /**
+     * Écrit la nutrition/hydratation courante de l'entité dans le SavedData sans attendre le tick.
+     * À appeler après feed / hydrate / coût de reproduction.
+     */
+    public static void persistFromEntity(CustomAnimal animal) {
+        if (animal == null || animal.level.isClientSide || !(animal.level instanceof ServerLevel level)) {
+            return;
+        }
+        LivestockProgressSavedData saved = LivestockProgressSavedData.get(level);
+        UUID uuid = animal.getUUID();
+        LivestockProgressSavedData.Entry entry = saved.get(uuid);
+        long now = System.currentTimeMillis();
+        if (entry == null) {
+            entry = createEntryFromEntity(animal, now);
+        } else {
+            copyEntityDynamicState(entry, animal);
+        }
+        saved.put(uuid, entry);
+    }
+
     public static void handleServerTick(MinecraftServer server) {
         if (server == null) {
             return;

@@ -105,7 +105,21 @@ public class ForkConfig {
             loadDefaults();
         }
         
-        VentrysJob.LOGGER.debug("Fourches — {} outils, {} cultures", FORK_TOOLS.size(), CROP_CONFIGS.size());
+        VentrysJob.LOGGER.info("Fourches — {} outils, {} cultures récoltables", FORK_TOOLS.size(), CROP_CONFIGS.size());
+    }
+
+    /**
+     * Vérifie que chaque culture de {@code crop_growth.json} a une entrée de récolte.
+     * À appeler après le chargement des deux configs.
+     */
+    public static void validateAgainstGrowthConfig() {
+        for (String blockId : CropGrowthConfig.getConfiguredBlockIds()) {
+            if (!CROP_CONFIGS.containsKey(blockId)) {
+                VentrysJob.LOGGER.error(
+                    "Culture {} dans crop_growth.json SANS crop_configs — récolte = « configuration invalide » !",
+                    blockId);
+            }
+        }
     }
     
     private static void loadDefaults() {

@@ -19,6 +19,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import java.util.Locale;
 import java.util.Set;
 
 /**
@@ -119,7 +120,21 @@ public final class BlockPlacementRules {
             return true;
         }
         ResourceLocation id = ForgeRegistries.BLOCKS.getKey(block);
-        return id != null && OUVRIER_MINE_SUPPORT_BLOCKS.contains(id.toString());
+        if (id == null) {
+            return false;
+        }
+        if (OUVRIER_MINE_SUPPORT_BLOCKS.contains(id.toString())) {
+            return true;
+        }
+        // Westeros / variantes : planches & barrières oak/spruce/birch
+        String path = id.getPath().toLowerCase(Locale.ROOT);
+        boolean woodSpecies = path.contains("oak") || path.contains("spruce") || path.contains("birch")
+                || path.contains("sapin") || path.contains("chene") || path.contains("bouleau");
+        if (!woodSpecies) {
+            return false;
+        }
+        return path.contains("plank") || path.contains("fence") || path.contains("barrier")
+                || path.contains("barriere") || path.contains("wall") && path.contains("plank");
     }
 
     public static boolean canPlayerPlaceBlock(Player player, BlockState blockToPlace, BlockPos pos) {

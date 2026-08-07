@@ -1,3730 +1,3730 @@
 [
-  {
-    "id": "art_artisan_table",
-    "name": "Établi d'artisan",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 17
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 34
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 5
-      }
-    ],
-    "output": {
-      "itemId": "ventrysjob:artisan_table",
-      "count": 1
+    {
+        "id": "art_artisan_table",
+        "name": "Établi d'artisan",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 51
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 34
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 5
+            }
+        ],
+        "output": {
+            "itemId": "ventrysjob:artisan_table",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_couturier",
+        "name": "Couturier",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 39
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 21
+            },
+            {
+                "itemId": "ventrysitem:res_fils",
+                "count": 32
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 5
+            }
+        ],
+        "output": {
+            "itemId": "ventrysjob:metier_tisser",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_wood_ladder",
+        "name": "Wood ladder",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 1
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            },
+            {
+                "itemId": "ventrysitem:res_corde",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:wood_ladder",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_rope_ladder",
+        "name": "Rope ladder",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 1
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            },
+            {
+                "itemId": "ventrysitem:res_corde",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:rope_ladder",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_closed_barrel",
+        "name": "Closed barrel",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 6
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:closed_barrel",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_empty_barrel",
+        "name": "Empty barrel",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 4
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 6
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:empty_barrel",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_straw_bed",
+        "name": "Straw bed",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 4
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 5
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:straw_bed",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_northern_bed",
+        "name": "Northern bed",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 19
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_peau_dours",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:northern_bed",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_itchy_straw_bed",
+        "name": "Itchy straw bed",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 19
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_peau_de_loup",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:itchy_straw_bed",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_nights_watch_bed",
+        "name": "Nights watch bed",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 30
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_laine_blanche",
+                "count": 6
+            },
+            {
+                "itemId": "minecraft:black_dye",
+                "count": 4
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:nights_watch_bed",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_pale_red_bed",
+        "name": "Pale red bed",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 30
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_laine_blanche",
+                "count": 6
+            },
+            {
+                "itemId": "minecraft:red_dye",
+                "count": 1
+            },
+            {
+                "itemId": "minecraft:brown_dye",
+                "count": 1
+            },
+            {
+                "itemId": "minecraft:white_dye",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:pale_red_bed",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_pale_green_bed",
+        "name": "Pale green bed",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 30
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_laine_blanche",
+                "count": 6
+            },
+            {
+                "itemId": "minecraft:yellow_dye",
+                "count": 1
+            },
+            {
+                "itemId": "minecraft:blue_dye",
+                "count": 1
+            },
+            {
+                "itemId": "minecraft:brown_dye",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:pale_green_bed",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_noble_red_bed",
+        "name": "Noble red bed",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 39
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 10
+            },
+            {
+                "itemId": "ventrysitem:res_laine_blanche",
+                "count": 10
+            },
+            {
+                "itemId": "minecraft:red_dye",
+                "count": 4
+            },
+            {
+                "itemId": "minecraft:gold_ingot",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:noble_red_bed",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_noble_blue_bed",
+        "name": "Noble blue bed",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 39
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 10
+            },
+            {
+                "itemId": "ventrysitem:res_laine_blanche",
+                "count": 10
+            },
+            {
+                "itemId": "minecraft:blue_dye",
+                "count": 4
+            },
+            {
+                "itemId": "minecraft:gold_ingot",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:noble_blue_bed",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_stool",
+        "name": "Stool",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 12
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 4
+            },
+            {
+                "itemId": "ventrysitem:res_laine_blanche",
+                "count": 1
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:stool",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_stool_cushion",
+        "name": "Stool cushion",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 18
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 5
+            },
+            {
+                "itemId": "ventrysitem:res_laine_blanche",
+                "count": 3
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 1
+            },
+            {
+                "itemId": "minecraft:iron_nugget",
+                "count": 2
+            },
+            {
+                "itemId": "minecraft:red_dye",
+                "count": 2
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:stool_cushion",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_res_enduit_de_chaux",
+        "name": "Res enduit de chaux",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            },
+            {
+                "itemId": "ventrysitem:res_chaux",
+                "count": 3
+            }
+        ],
+        "output": {
+            "itemId": "ventrysitem:res_enduit_de_chaux",
+            "count": 4
+        }
+    },
+    {
+        "id": "art_cobblestone",
+        "name": "Cobblestone",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 9
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:cobblestone",
+            "count": 4
+        }
+    },
+    {
+        "id": "art_cobblestone_stairs",
+        "name": "Cobblestone stairs",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:cobblestone_stairs",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_cobblestone_slab",
+        "name": "Cobblestone slab",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:cobblestone_slab",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_cobblestone_wall",
+        "name": "Cobblestone wall",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:cobblestone_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_cobblestone_tip",
+        "name": "Cobblestone tip",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:cobblestone_tip",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_cobblestone_hopper",
+        "name": "Cobblestone hopper",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:cobblestone_hopper",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_cobblestone_fence",
+        "name": "Cobblestone fence",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:cobblestone_fence",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_grey_granite",
+        "name": "Grey granite",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "westerosblocks:cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:grey_granite",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_grey_granite_stairs",
+        "name": "Grey granite stairs",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_stairs",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:grey_granite_stairs",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_grey_granite_slab",
+        "name": "Grey granite slab",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_slab",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:grey_granite_slab",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_grey_granite_fence",
+        "name": "Grey granite fence",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 1
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_fence",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:grey_granite_fence",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_grey_granite_tip",
+        "name": "Grey granite tip",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_tip",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:grey_granite_tip",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_grey_granite_hopper",
+        "name": "Grey granite hopper",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_hopper",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:grey_granite_hopper",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_grey_granite_wall",
+        "name": "Grey granite wall",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_wall",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:grey_granite_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_light_grey_brick",
+        "name": "Light grey brick",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "westerosblocks:cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:light_grey_brick",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_light_grey_brick_stairs",
+        "name": "Light grey brick stairs",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_stairs",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:light_grey_brick_stairs",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_light_grey_brick_slab",
+        "name": "Light grey brick slab",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_slab",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:light_grey_brick_slab",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_light_grey_brick_fence",
+        "name": "Light grey brick fence",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 1
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_fence",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:light_grey_brick_fence",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_light_grey_brick_tip",
+        "name": "Light grey brick tip",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_tip",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:light_grey_brick_tip",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_light_grey_brick_hopper",
+        "name": "Light grey brick hopper",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_hopper",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:light_grey_brick_hopper",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_light_grey_brick_wall",
+        "name": "Light grey brick wall",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_wall",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:light_grey_brick_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_grey_granite_arrow_slit",
+        "name": "Grey granite arrow slit",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:grey_granite_arrow_slit",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_grey_granite_arrow_slit_window",
+        "name": "Grey granite arrow slit window",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:grey_granite_arrow_slit_window",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_grey_granite_arrow_slit_ornate",
+        "name": "Grey granite arrow slit ornate",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:grey_granite_arrow_slit_ornate",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_smooth_stone_brick",
+        "name": "Small smooth stone brick",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "westerosblocks:cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_smooth_stone_brick",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_smooth_stone_brick_stairs",
+        "name": "Small smooth stone brick stairs",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_stairs",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_smooth_stone_brick_stairs",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_smooth_stone_brick_slab",
+        "name": "Small smooth stone brick slab",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_slab",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_smooth_stone_brick_slab",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_smooth_stone_brick_fence",
+        "name": "Small smooth stone brick fence",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 1
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_fence",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_smooth_stone_brick_fence",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_smooth_stone_brick_tip",
+        "name": "Small smooth stone brick tip",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_tip",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_smooth_stone_brick_tip",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_smooth_stone_brick_hopper",
+        "name": "Small smooth stone brick hopper",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_hopper",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_smooth_stone_brick_hopper",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_smooth_stone_brick_wall",
+        "name": "Small smooth stone brick wall",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_wall",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_smooth_stone_brick_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_grey_granite_polished",
+        "name": "Grey granite polished",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 12
+            },
+            {
+                "itemId": "westerosblocks:cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:grey_granite_polished",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_grey_granite_polished_stairs",
+        "name": "Grey granite polished stairs",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 9
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_stairs",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:grey_granite_polished_stairs",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_grey_granite_polished_slab",
+        "name": "Grey granite polished slab",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_slab",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:grey_granite_polished_slab",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_grey_granite_polished_wall",
+        "name": "Grey granite polished wall",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_wall",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:grey_granite_polished_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_grey_brick_engraved",
+        "name": "Grey brick engraved",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 12
+            },
+            {
+                "itemId": "westerosblocks:cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:grey_brick_engraved",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_grey_brick_engraved_wall",
+        "name": "Grey brick engraved wall",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "westerosblocks:cobblestone_wall",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:grey_brick_engraved_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_faith_carved_grey_brick",
+        "name": "Faith carved grey brick",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "westerosblocks:cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:faith_carved_grey_brick",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_dark_cobblestone",
+        "name": "Dark cobblestone",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 9
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:dark_cobblestone",
+            "count": 4
+        }
+    },
+    {
+        "id": "art_dark_cobblestone_stairs",
+        "name": "Dark cobblestone stairs",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:dark_cobblestone_stairs",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_dark_cobblestone_slab",
+        "name": "Dark cobblestone slab",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:dark_cobblestone_slab",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_dark_cobblestone_wall",
+        "name": "Dark cobblestone wall",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:dark_cobblestone_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_dark_cobblestone_tip",
+        "name": "Dark cobblestone tip",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:dark_cobblestone_tip",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_dark_cobblestone_hopper",
+        "name": "Dark cobblestone hopper",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:dark_cobblestone_hopper",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_dark_cobblestone_fence",
+        "name": "Dark cobblestone fence",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:dark_cobblestone_fence",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_winterfell_granite",
+        "name": "Winterfell granite",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "westerosblocks:dark_cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:winterfell_granite",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_winterfell_granite_stairs",
+        "name": "Winterfell granite stairs",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:dark_cobblestone_stairs",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:winterfell_granite_stairs",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_winterfell_granite_slab",
+        "name": "Winterfell granite slab",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:dark_cobblestone_slab",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:winterfell_granite_slab",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_winterfell_granite_fence",
+        "name": "Winterfell granite fence",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 1
+            },
+            {
+                "itemId": "westerosblocks:dark_cobblestone_fence",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:winterfell_granite_fence",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_winterfell_granite_tip",
+        "name": "Winterfell granite tip",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:dark_cobblestone_tip",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:winterfell_granite_tip",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_winterfell_granite_hopper",
+        "name": "Winterfell granite hopper",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:dark_cobblestone_hopper",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:winterfell_granite_hopper",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_winterfell_granite_wall",
+        "name": "Winterfell granite wall",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:dark_cobblestone_wall",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:winterfell_granite_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_winterfell_granite_arrow_slit",
+        "name": "Winterfell granite arrow slit",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:dark_cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:winterfell_granite_arrow_slit",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_winterfell_granite_arrow_slit_window",
+        "name": "Winterfell granite arrow slit window",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:dark_cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:winterfell_granite_arrow_slit_window",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_winterfell_granite_arrow_slit_ornate",
+        "name": "Winterfell granite arrow slit ornate",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:dark_cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:winterfell_granite_arrow_slit_ornate",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_dark_grey_brick",
+        "name": "Small dark grey brick",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "westerosblocks:dark_cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_dark_grey_brick",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_dark_grey_brick_stairs",
+        "name": "Small dark grey brick stairs",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:dark_cobblestone_stairs",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_dark_grey_brick_stairs",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_dark_grey_brick_slab",
+        "name": "Small dark grey brick slab",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:dark_cobblestone_slab",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_dark_grey_brick_slab",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_dark_grey_brick_fence",
+        "name": "Small dark grey brick fence",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 1
+            },
+            {
+                "itemId": "westerosblocks:dark_cobblestone_fence",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_dark_grey_brick_fence",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_dark_grey_brick_tip",
+        "name": "Small dark grey brick tip",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:dark_cobblestone_tip",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_dark_grey_brick_tip",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_dark_grey_brick_hopper",
+        "name": "Small dark grey brick hopper",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:dark_cobblestone_hopper",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_dark_grey_brick_hopper",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_dark_grey_brick_wall",
+        "name": "Small dark grey brick wall",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:dark_cobblestone_wall",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_dark_grey_brick_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_dark_grey_brick_engraved",
+        "name": "Dark grey brick engraved",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 12
+            },
+            {
+                "itemId": "westerosblocks:dark_cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:dark_grey_brick_engraved",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_dark_grey_brick_engraved_wall",
+        "name": "Dark grey brick engraved wall",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "westerosblocks:dark_cobblestone_wall",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:dark_grey_brick_engraved_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_faith_carved_dark_grey_brick",
+        "name": "Faith carved dark grey brick",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "westerosblocks:dark_cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:faith_carved_dark_grey_brick",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_cobblestone",
+        "name": "Green grey cobblestone",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 9
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_cobblestone",
+            "count": 4
+        }
+    },
+    {
+        "id": "art_green_grey_cobblestone_stairs",
+        "name": "Green grey cobblestone stairs",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_cobblestone_stairs",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_cobblestone_slab",
+        "name": "Green grey cobblestone slab",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_cobblestone_slab",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_cobblestone_wall",
+        "name": "Green grey cobblestone wall",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_cobblestone_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_cobblestone_tip",
+        "name": "Green grey cobblestone tip",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_cobblestone_tip",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_cobblestone_hopper",
+        "name": "Green grey cobblestone hopper",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_cobblestone_hopper",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_cobblestone_fence",
+        "name": "Green grey cobblestone fence",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_cobblestone_fence",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_granite",
+        "name": "Green grey granite",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_granite",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_granite_stairs",
+        "name": "Green grey granite stairs",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone_stairs",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_granite_stairs",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_granite_slab",
+        "name": "Green grey granite slab",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone_slab",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_granite_slab",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_granite_fence",
+        "name": "Green grey granite fence",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 1
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone_fence",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_granite_fence",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_granite_tip",
+        "name": "Green grey granite tip",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone_tip",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_granite_tip",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_granite_hopper",
+        "name": "Green grey granite hopper",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone_hopper",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_granite_hopper",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_granite_wall",
+        "name": "Green grey granite wall",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone_wall",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_granite_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_granite_arrow_slit",
+        "name": "Green grey granite arrow slit",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_granite_arrow_slit",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_granite_arrow_slit_window",
+        "name": "Green grey granite arrow slit window",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_granite_arrow_slit_window",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_granite_arrow_slit_ornate",
+        "name": "Green grey granite arrow slit ornate",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_granite_arrow_slit_ornate",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_stone_brick",
+        "name": "Small stone brick",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_stone_brick",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_stone_brick_stairs",
+        "name": "Small stone brick stairs",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone_stairs",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_stone_brick_stairs",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_stone_brick_slab",
+        "name": "Small stone brick slab",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone_slab",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_stone_brick_slab",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_stone_brick_fence",
+        "name": "Small stone brick fence",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 1
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone_fence",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_stone_brick_fence",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_stone_brick_tip",
+        "name": "Small stone brick tip",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone_tip",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_stone_brick_tip",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_stone_brick_hopper",
+        "name": "Small stone brick hopper",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 4
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone_hopper",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_stone_brick_hopper",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_small_stone_brick_wall",
+        "name": "Small stone brick wall",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 3
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone_wall",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:small_stone_brick_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_granite_polished",
+        "name": "Green grey granite polished",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 12
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_granite_polished",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_granite_polished_stairs",
+        "name": "Green grey granite polished stairs",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 9
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone_stairs",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_granite_polished_stairs",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_granite_polished_slab",
+        "name": "Green grey granite polished slab",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone_slab",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_granite_polished_slab",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_granite_polished_wall",
+        "name": "Green grey granite polished wall",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone_wall",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_granite_polished_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_brick_engraved",
+        "name": "Green grey brick engraved",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 12
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_brick_engraved",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_green_grey_brick_engraved_wall",
+        "name": "Green grey brick engraved wall",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone_wall",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:green_grey_brick_engraved_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_faith_carved_small_stone_brick",
+        "name": "Faith carved small stone brick",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "westerosblocks:green_grey_cobblestone",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:faith_carved_small_stone_brick",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_white_frame",
+        "name": "Timber oak white frame",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 6
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_white_frame",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_white_vertical",
+        "name": "Timber oak white vertical",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 6
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_white_vertical",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_white_crosshatch",
+        "name": "Timber oak white crosshatch",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 9
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_white_crosshatch",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_white_righthatch",
+        "name": "Timber oak white righthatch",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 7
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_white_righthatch",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_white_lefthatch",
+        "name": "Timber oak white lefthatch",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 7
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_white_lefthatch",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_white_close_studding",
+        "name": "Timber oak white close studding",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 7
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_white_close_studding",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_white_lefthatch_large",
+        "name": "Timber oak white lefthatch large",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 9
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_white_lefthatch_large",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_white_righthatch_large",
+        "name": "Timber oak white righthatch large",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 9
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_white_righthatch_large",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_white_righthatch_studded",
+        "name": "Timber oak white righthatch studded",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 10
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_white_righthatch_studded",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_white_lefthatch_studded",
+        "name": "Timber oak white lefthatch studded",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 10
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_white_lefthatch_studded",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_white_bressumer",
+        "name": "Timber oak white bressumer",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 10
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_white_bressummer",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_brown_frame",
+        "name": "Timber oak brown frame",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 6
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_brown_frame",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_brown_vertical",
+        "name": "Timber oak brown vertical",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 6
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_brown_vertical",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_brown_crosshatch",
+        "name": "Timber oak brown crosshatch",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 9
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_brown_crosshatch",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_brown_righthatch",
+        "name": "Timber oak brown righthatch",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 7
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_brown_righthatch",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_brown_lefthatch",
+        "name": "Timber oak brown lefthatch",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 7
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_brown_lefthatch",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_brown_close_studding",
+        "name": "Timber oak brown close studding",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 7
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_brown_close_studding",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_brown_lefthatch_large",
+        "name": "Timber oak brown lefthatch large",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 9
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_brown_lefthatch_large",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_brown_righthatch_large",
+        "name": "Timber oak brown righthatch large",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 9
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_brown_righthatch_large",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_brown_righthatch_studded",
+        "name": "Timber oak brown righthatch studded",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 10
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_brown_righthatch_studded",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_brown_lefthatch_studded",
+        "name": "Timber oak brown lefthatch studded",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 10
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_brown_lefthatch_studded",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_timber_oak_brown_bressumer",
+        "name": "Timber oak brown bressumer",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:wheat",
+                "count": 2
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 10
+            },
+            {
+                "itemId": "minecraft:red_sand",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:timber_oak_brown_bressummer",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_brown_slate",
+        "name": "Brown slate",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_brun",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 3
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:brown_slate",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_brown_slate_slab",
+        "name": "Brown slate slab",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_brun",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:brown_slate_slab",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_brown_slate_stairs",
+        "name": "Brown slate stairs",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_brun",
+                "count": 4
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 2
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:brown_slate_stairs",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_brown_slate_tip",
+        "name": "Brown slate tip",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_brun",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:brown_slate_tip",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_brown_slate_hopper",
+        "name": "Brown slate hopper",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_brun",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:brown_slate_hopper",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_brown_slate_fence",
+        "name": "Brown slate fence",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_brun",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:brown_slate_fence",
+            "count": 2
+        }
+    },
+    {
+        "id": "art_brown_slate_wall",
+        "name": "Brown slate wall",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_brun",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:brown_slate_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_orange_slate",
+        "name": "Orange slate",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_orange",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 3
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:orange_slate",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_orange_slate_slab",
+        "name": "Orange slate slab",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_orange",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:orange_slate_slab",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_orange_slate_stairs",
+        "name": "Orange slate stairs",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_orange",
+                "count": 4
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 2
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:orange_slate_stairs",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_orange_slate_tip",
+        "name": "Orange slate tip",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_orange",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:orange_slate_tip",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_orange_slate_hopper",
+        "name": "Orange slate hopper",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_orange",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:orange_slate_hopper",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_orange_slate_fence",
+        "name": "Orange slate fence",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_orange",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:orange_slate_fence",
+            "count": 2
+        }
+    },
+    {
+        "id": "art_orange_slate_wall",
+        "name": "Orange slate wall",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_orange",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:orange_slate_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_blue_slate",
+        "name": "Blue slate",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_bleu",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 3
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:blue_slate",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_blue_slate_slab",
+        "name": "Blue slate slab",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_bleu",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:blue_slate_slab",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_blue_slate_stairs",
+        "name": "Blue slate stairs",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_bleu",
+                "count": 4
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 2
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:blue_slate_stairs",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_blue_slate_tip",
+        "name": "Blue slate tip",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_bleu",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:blue_slate_tip",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_blue_slate_hopper",
+        "name": "Blue slate hopper",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_bleu",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:blue_slate_hopper",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_blue_slate_fence",
+        "name": "Blue slate fence",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_bleu",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:blue_slate_fence",
+            "count": 2
+        }
+    },
+    {
+        "id": "art_blue_slate_wall",
+        "name": "Blue slate wall",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_bleu",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_calcaire",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:blue_slate_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_stone_button_2",
+        "name": "Stone button",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 9
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "minecraft:stone_button",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_animal_cart",
+        "name": "Animal cart",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 32
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 138
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 5
+            }
+        ],
+        "output": {
+            "itemId": "astikorcarts:animal_cart",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_supply_cart",
+        "name": "Supply cart",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 32
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 138
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 5
+            }
+        ],
+        "output": {
+            "itemId": "astikorcarts:supply_cart",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_bench_drawers",
+        "name": "Bench drawers",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_bouleau",
+                "count": 24
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 12
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:bench_drawers",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_bench_butcher_knives",
+        "name": "Bench butcher knives",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_bouleau",
+                "count": 24
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 12
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:bench_butcher_knives",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_bench_carpentry_hammer_saw",
+        "name": "Bench carpentry hammer saw",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_bouleau",
+                "count": 24
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 12
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:bench_carpentry_hammer_saw",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_wattle_fence",
+        "name": "Wattle fence",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:stick",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:wattle_fence",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_table",
+        "name": "Table",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_bouleau",
+                "count": 9
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 4
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:table",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_thatch_light_fur",
+        "name": "Chaume fourrure claire",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:stick",
+                "count": 10
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:thatch_light_fur",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_thatch_light_fur_stairs",
+        "name": "Escalier chaume clair",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:stick",
+                "count": 3
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:thatch_light_fur_stairs",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_thatch_light_fur_slab",
+        "name": "Dalle chaume clair",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:stick",
+                "count": 2
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:thatch_light_fur_slab",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_thatch_light_fur_tip",
+        "name": "Pointe chaume clair",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:stick",
+                "count": 8
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:thatch_light_fur_tip",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_thatch_light_fur_fence",
+        "name": "Barriere chaume clair",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:stick",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:thatch_light_fur_fence",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_thatch_light_fur_carpet",
+        "name": "Tapis chaume clair",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:stick",
+                "count": 2
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:thatch_light_fur_carpet",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_thatch_dark_fur",
+        "name": "Chaume fourrure foncee",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:stick",
+                "count": 10
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:thatch_dark_fur",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_thatch_dark_fur_stairs",
+        "name": "Escalier chaume fonce",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:stick",
+                "count": 3
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:thatch_dark_fur_stairs",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_thatch_dark_fur_slab",
+        "name": "Dalle chaume fonce",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:stick",
+                "count": 2
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:thatch_dark_fur_slab",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_thatch_dark_fur_tip",
+        "name": "Pointe chaume fonce",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:stick",
+                "count": 8
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:thatch_dark_fur_tip",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_thatch_dark_fur_fence",
+        "name": "Barriere chaume fonce",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:stick",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:thatch_dark_fur_fence",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_thatch_dark_fur_carpet",
+        "name": "Tapis chaume fonce",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:stick",
+                "count": 2
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:thatch_dark_fur_carpet",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_bancpierretaille",
+        "name": "Banc pierre taillee",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 13
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:bancpierretaillee",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_banc_riche_pierre_taille",
+        "name": "Banc riche pierre taillee",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 28
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 2
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:banc_riche_pierre_taillee",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_banclongpierretaille",
+        "name": "Banc long pierre taillee",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 21
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:banclongpierretaillee",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_banc_riche_long_pierre_taille",
+        "name": "Banc riche long pierre taillee",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 36
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 4
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:banc_riche_long_pierre_taillee",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_tablepierretaille",
+        "name": "Table pierre taillee",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 12
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:tablepierretaille",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_table_ronde_pierretaille",
+        "name": "Table ronde pierre taillee",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 12
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:table_ronde_pierretaille",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_chaise_pierre_taille",
+        "name": "Chaise pierre taillee",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 7
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:chaise_pierre_taille",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_tabouretpierretaille",
+        "name": "Tabouret pierre taillee",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:tabouretpierretaille",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_chaisehautepierretaille",
+        "name": "Chaise haute pierre taillee",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 9
+            },
+            {
+                "itemId": "ventrysitem:res_enduit_de_chaux",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:chaisehautepierretaille",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_meule",
+        "name": "Meule",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 11
+            },
+            {
+                "itemId": "ventrysitem:res_planche_chene",
+                "count": 5
+            }
+        ],
+        "output": {
+            "itemId": "ventrysjob:meule",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_ouvrier_four",
+        "name": "Four a charbon de bois",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_pierre_fragmente",
+                "count": 21
+            }
+        ],
+        "output": {
+            "itemId": "ventrysjob:ouvrier_four",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_vase_apothicaire",
+        "name": "Vase de plantation",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_argile_brun",
+                "count": 12
+            },
+            {
+                "itemId": "minecraft:dirt",
+                "count": 6
+            }
+        ],
+        "output": {
+            "itemId": "ventrysjob:vase_apothicaire",
+            "count": 1
+        }
     }
-  },
-  {
-    "id": "art_couturier",
-    "name": "Couturier",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 13
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 21
-      },
-      {
-        "itemId": "ventrysitem:res_fils",
-        "count": 32
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 5
-      }
-    ],
-    "output": {
-      "itemId": "ventrysjob:metier_tisser",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_wood_ladder",
-    "name": "Wood ladder",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 1
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_corde",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:wood_ladder",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_rope_ladder",
-    "name": "Rope ladder",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 1
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_corde",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:rope_ladder",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_closed_barrel",
-    "name": "Closed barrel",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 4
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 12
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:closed_barrel",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_empty_barrel",
-    "name": "Empty barrel",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 3
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 12
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:empty_barrel",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_straw_bed",
-    "name": "Straw bed",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 3
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 10
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:straw_bed",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_northern_bed",
-    "name": "Northern bed",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 13
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 4
-      },
-      {
-        "itemId": "ventrysitem:res_peau_dours",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:northern_bed",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_itchy_straw_bed",
-    "name": "Itchy straw bed",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 13
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 4
-      },
-      {
-        "itemId": "ventrysitem:res_peau_de_loup",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:itchy_straw_bed",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_nights_watch_bed",
-    "name": "Nights watch bed",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 20
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 13
-      },
-      {
-        "itemId": "ventrysitem:res_laine_blanche",
-        "count": 12
-      },
-      {
-        "itemId": "minecraft:black_dye",
-        "count": 8
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:nights_watch_bed",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_pale_red_bed",
-    "name": "Pale red bed",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 20
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 13
-      },
-      {
-        "itemId": "ventrysitem:res_laine_blanche",
-        "count": 12
-      },
-      {
-        "itemId": "minecraft:red_dye",
-        "count": 3
-      },
-      {
-        "itemId": "minecraft:brown_dye",
-        "count": 3
-      },
-      {
-        "itemId": "minecraft:white_dye",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:pale_red_bed",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_pale_green_bed",
-    "name": "Pale green bed",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 20
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 13
-      },
-      {
-        "itemId": "ventrysitem:res_laine_blanche",
-        "count": 12
-      },
-      {
-        "itemId": "minecraft:yellow_dye",
-        "count": 3
-      },
-      {
-        "itemId": "minecraft:blue_dye",
-        "count": 3
-      },
-      {
-        "itemId": "minecraft:brown_dye",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:pale_green_bed",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_noble_red_bed",
-    "name": "Noble red bed",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 26
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 21
-      },
-      {
-        "itemId": "ventrysitem:res_laine_blanche",
-        "count": 20
-      },
-      {
-        "itemId": "minecraft:red_dye",
-        "count": 8
-      },
-      {
-        "itemId": "minecraft:gold_ingot",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:noble_red_bed",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_noble_blue_bed",
-    "name": "Noble blue bed",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 26
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 21
-      },
-      {
-        "itemId": "ventrysitem:res_laine_blanche",
-        "count": 20
-      },
-      {
-        "itemId": "minecraft:blue_dye",
-        "count": 8
-      },
-      {
-        "itemId": "minecraft:gold_ingot",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:noble_blue_bed",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_stool",
-    "name": "Stool",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 8
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 8
-      },
-      {
-        "itemId": "ventrysitem:res_laine_blanche",
-        "count": 3
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:stool",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_stool_cushion",
-    "name": "Stool cushion",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 12
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 10
-      },
-      {
-        "itemId": "ventrysitem:res_laine_blanche",
-        "count": 6
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 3
-      },
-      {
-        "itemId": "minecraft:iron_nugget",
-        "count": 4
-      },
-      {
-        "itemId": "minecraft:red_dye",
-        "count": 4
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:stool_cushion",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_res_enduit_de_chaux",
-    "name": "Res enduit de chaux",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      },
-      {
-        "itemId": "ventrysitem:res_chaux",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "ventrysitem:res_enduit_de_chaux",
-      "count": 12
-    }
-  },
-  {
-    "id": "art_cobblestone",
-    "name": "Cobblestone",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 18
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 4
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:cobblestone",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_cobblestone_stairs",
-    "name": "Cobblestone stairs",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 12
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:cobblestone_stairs",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_cobblestone_slab",
-    "name": "Cobblestone slab",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 9
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:cobblestone_slab",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_cobblestone_wall",
-    "name": "Cobblestone wall",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 9
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:cobblestone_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_cobblestone_tip",
-    "name": "Cobblestone tip",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 12
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:cobblestone_tip",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_cobblestone_hopper",
-    "name": "Cobblestone hopper",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 12
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:cobblestone_hopper",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_cobblestone_fence",
-    "name": "Cobblestone fence",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 12
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:cobblestone_fence",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_grey_granite",
-    "name": "Grey granite",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 4
-      },
-      {
-        "itemId": "westerosblocks:cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:grey_granite",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_grey_granite_stairs",
-    "name": "Grey granite stairs",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_stairs",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:grey_granite_stairs",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_grey_granite_slab",
-    "name": "Grey granite slab",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_slab",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:grey_granite_slab",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_grey_granite_fence",
-    "name": "Grey granite fence",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 1
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_fence",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:grey_granite_fence",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_grey_granite_tip",
-    "name": "Grey granite tip",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_tip",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:grey_granite_tip",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_grey_granite_hopper",
-    "name": "Grey granite hopper",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_hopper",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:grey_granite_hopper",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_grey_granite_wall",
-    "name": "Grey granite wall",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_wall",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:grey_granite_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_light_grey_brick",
-    "name": "Light grey brick",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 4
-      },
-      {
-        "itemId": "westerosblocks:cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:light_grey_brick",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_light_grey_brick_stairs",
-    "name": "Light grey brick stairs",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_stairs",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:light_grey_brick_stairs",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_light_grey_brick_slab",
-    "name": "Light grey brick slab",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_slab",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:light_grey_brick_slab",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_light_grey_brick_fence",
-    "name": "Light grey brick fence",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 1
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_fence",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:light_grey_brick_fence",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_light_grey_brick_tip",
-    "name": "Light grey brick tip",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_tip",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:light_grey_brick_tip",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_light_grey_brick_hopper",
-    "name": "Light grey brick hopper",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_hopper",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:light_grey_brick_hopper",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_light_grey_brick_wall",
-    "name": "Light grey brick wall",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_wall",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:light_grey_brick_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_grey_granite_arrow_slit",
-    "name": "Grey granite arrow slit",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:grey_granite_arrow_slit",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_grey_granite_arrow_slit_window",
-    "name": "Grey granite arrow slit window",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:grey_granite_arrow_slit_window",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_grey_granite_arrow_slit_ornate",
-    "name": "Grey granite arrow slit ornate",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:grey_granite_arrow_slit_ornate",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_smooth_stone_brick",
-    "name": "Small smooth stone brick",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 4
-      },
-      {
-        "itemId": "westerosblocks:cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_smooth_stone_brick",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_smooth_stone_brick_stairs",
-    "name": "Small smooth stone brick stairs",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_stairs",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_smooth_stone_brick_stairs",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_smooth_stone_brick_slab",
-    "name": "Small smooth stone brick slab",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_slab",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_smooth_stone_brick_slab",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_smooth_stone_brick_fence",
-    "name": "Small smooth stone brick fence",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 1
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_fence",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_smooth_stone_brick_fence",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_smooth_stone_brick_tip",
-    "name": "Small smooth stone brick tip",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_tip",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_smooth_stone_brick_tip",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_smooth_stone_brick_hopper",
-    "name": "Small smooth stone brick hopper",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_hopper",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_smooth_stone_brick_hopper",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_smooth_stone_brick_wall",
-    "name": "Small smooth stone brick wall",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_wall",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_smooth_stone_brick_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_grey_granite_polished",
-    "name": "Grey granite polished",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 8
-      },
-      {
-        "itemId": "westerosblocks:cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:grey_granite_polished",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_grey_granite_polished_stairs",
-    "name": "Grey granite polished stairs",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 6
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_stairs",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:grey_granite_polished_stairs",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_grey_granite_polished_slab",
-    "name": "Grey granite polished slab",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 4
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_slab",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:grey_granite_polished_slab",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_grey_granite_polished_wall",
-    "name": "Grey granite polished wall",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 4
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_wall",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:grey_granite_polished_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_grey_brick_engraved",
-    "name": "Grey brick engraved",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 8
-      },
-      {
-        "itemId": "westerosblocks:cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:grey_brick_engraved",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_grey_brick_engraved_wall",
-    "name": "Grey brick engraved wall",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 4
-      },
-      {
-        "itemId": "westerosblocks:cobblestone_wall",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:grey_brick_engraved_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_faith_carved_grey_brick",
-    "name": "Faith carved grey brick",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 12
-      },
-      {
-        "itemId": "westerosblocks:cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:faith_carved_grey_brick",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_dark_cobblestone",
-    "name": "Dark cobblestone",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 18
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 4
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:dark_cobblestone",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_dark_cobblestone_stairs",
-    "name": "Dark cobblestone stairs",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 12
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:dark_cobblestone_stairs",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_dark_cobblestone_slab",
-    "name": "Dark cobblestone slab",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 9
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:dark_cobblestone_slab",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_dark_cobblestone_wall",
-    "name": "Dark cobblestone wall",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 9
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:dark_cobblestone_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_dark_cobblestone_tip",
-    "name": "Dark cobblestone tip",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 12
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:dark_cobblestone_tip",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_dark_cobblestone_hopper",
-    "name": "Dark cobblestone hopper",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 12
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:dark_cobblestone_hopper",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_dark_cobblestone_fence",
-    "name": "Dark cobblestone fence",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 12
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:dark_cobblestone_fence",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_winterfell_granite",
-    "name": "Winterfell granite",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 4
-      },
-      {
-        "itemId": "westerosblocks:dark_cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:winterfell_granite",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_winterfell_granite_stairs",
-    "name": "Winterfell granite stairs",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:dark_cobblestone_stairs",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:winterfell_granite_stairs",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_winterfell_granite_slab",
-    "name": "Winterfell granite slab",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:dark_cobblestone_slab",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:winterfell_granite_slab",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_winterfell_granite_fence",
-    "name": "Winterfell granite fence",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 1
-      },
-      {
-        "itemId": "westerosblocks:dark_cobblestone_fence",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:winterfell_granite_fence",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_winterfell_granite_tip",
-    "name": "Winterfell granite tip",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:dark_cobblestone_tip",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:winterfell_granite_tip",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_winterfell_granite_hopper",
-    "name": "Winterfell granite hopper",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:dark_cobblestone_hopper",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:winterfell_granite_hopper",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_winterfell_granite_wall",
-    "name": "Winterfell granite wall",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:dark_cobblestone_wall",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:winterfell_granite_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_winterfell_granite_arrow_slit",
-    "name": "Winterfell granite arrow slit",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:dark_cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:winterfell_granite_arrow_slit",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_winterfell_granite_arrow_slit_window",
-    "name": "Winterfell granite arrow slit window",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:dark_cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:winterfell_granite_arrow_slit_window",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_winterfell_granite_arrow_slit_ornate",
-    "name": "Winterfell granite arrow slit ornate",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:dark_cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:winterfell_granite_arrow_slit_ornate",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_dark_grey_brick",
-    "name": "Small dark grey brick",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 4
-      },
-      {
-        "itemId": "westerosblocks:dark_cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_dark_grey_brick",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_dark_grey_brick_stairs",
-    "name": "Small dark grey brick stairs",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:dark_cobblestone_stairs",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_dark_grey_brick_stairs",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_dark_grey_brick_slab",
-    "name": "Small dark grey brick slab",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:dark_cobblestone_slab",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_dark_grey_brick_slab",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_dark_grey_brick_fence",
-    "name": "Small dark grey brick fence",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 1
-      },
-      {
-        "itemId": "westerosblocks:dark_cobblestone_fence",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_dark_grey_brick_fence",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_dark_grey_brick_tip",
-    "name": "Small dark grey brick tip",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:dark_cobblestone_tip",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_dark_grey_brick_tip",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_dark_grey_brick_hopper",
-    "name": "Small dark grey brick hopper",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:dark_cobblestone_hopper",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_dark_grey_brick_hopper",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_dark_grey_brick_wall",
-    "name": "Small dark grey brick wall",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:dark_cobblestone_wall",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_dark_grey_brick_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_dark_grey_brick_engraved",
-    "name": "Dark grey brick engraved",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 8
-      },
-      {
-        "itemId": "westerosblocks:dark_cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:dark_grey_brick_engraved",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_dark_grey_brick_engraved_wall",
-    "name": "Dark grey brick engraved wall",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 4
-      },
-      {
-        "itemId": "westerosblocks:dark_cobblestone_wall",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:dark_grey_brick_engraved_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_faith_carved_dark_grey_brick",
-    "name": "Faith carved dark grey brick",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 12
-      },
-      {
-        "itemId": "westerosblocks:dark_cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:faith_carved_dark_grey_brick",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_cobblestone",
-    "name": "Green grey cobblestone",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 18
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 4
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_cobblestone",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_cobblestone_stairs",
-    "name": "Green grey cobblestone stairs",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 12
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_cobblestone_stairs",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_cobblestone_slab",
-    "name": "Green grey cobblestone slab",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 9
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_cobblestone_slab",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_cobblestone_wall",
-    "name": "Green grey cobblestone wall",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 9
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_cobblestone_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_cobblestone_tip",
-    "name": "Green grey cobblestone tip",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 12
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_cobblestone_tip",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_cobblestone_hopper",
-    "name": "Green grey cobblestone hopper",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 12
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_cobblestone_hopper",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_cobblestone_fence",
-    "name": "Green grey cobblestone fence",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 12
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_cobblestone_fence",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_granite",
-    "name": "Green grey granite",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 4
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_granite",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_granite_stairs",
-    "name": "Green grey granite stairs",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone_stairs",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_granite_stairs",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_granite_slab",
-    "name": "Green grey granite slab",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone_slab",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_granite_slab",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_granite_fence",
-    "name": "Green grey granite fence",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 1
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone_fence",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_granite_fence",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_granite_tip",
-    "name": "Green grey granite tip",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone_tip",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_granite_tip",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_granite_hopper",
-    "name": "Green grey granite hopper",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone_hopper",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_granite_hopper",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_granite_wall",
-    "name": "Green grey granite wall",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone_wall",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_granite_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_granite_arrow_slit",
-    "name": "Green grey granite arrow slit",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_granite_arrow_slit",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_granite_arrow_slit_window",
-    "name": "Green grey granite arrow slit window",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_granite_arrow_slit_window",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_granite_arrow_slit_ornate",
-    "name": "Green grey granite arrow slit ornate",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_granite_arrow_slit_ornate",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_stone_brick",
-    "name": "Small stone brick",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 4
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_stone_brick",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_stone_brick_stairs",
-    "name": "Small stone brick stairs",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone_stairs",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_stone_brick_stairs",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_stone_brick_slab",
-    "name": "Small stone brick slab",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone_slab",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_stone_brick_slab",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_stone_brick_fence",
-    "name": "Small stone brick fence",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 1
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone_fence",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_stone_brick_fence",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_stone_brick_tip",
-    "name": "Small stone brick tip",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone_tip",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_stone_brick_tip",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_stone_brick_hopper",
-    "name": "Small stone brick hopper",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 3
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone_hopper",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_stone_brick_hopper",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_small_stone_brick_wall",
-    "name": "Small stone brick wall",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 2
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone_wall",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:small_stone_brick_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_granite_polished",
-    "name": "Green grey granite polished",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 8
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_granite_polished",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_granite_polished_stairs",
-    "name": "Green grey granite polished stairs",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 6
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone_stairs",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_granite_polished_stairs",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_granite_polished_slab",
-    "name": "Green grey granite polished slab",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 4
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone_slab",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_granite_polished_slab",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_granite_polished_wall",
-    "name": "Green grey granite polished wall",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 4
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone_wall",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_granite_polished_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_brick_engraved",
-    "name": "Green grey brick engraved",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 8
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_brick_engraved",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_green_grey_brick_engraved_wall",
-    "name": "Green grey brick engraved wall",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 4
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone_wall",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:green_grey_brick_engraved_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_faith_carved_small_stone_brick",
-    "name": "Faith carved small stone brick",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 12
-      },
-      {
-        "itemId": "westerosblocks:green_grey_cobblestone",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:faith_carved_small_stone_brick",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_white_frame",
-    "name": "Timber oak white frame",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 4
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_white_frame",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_white_vertical",
-    "name": "Timber oak white vertical",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 4
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_white_vertical",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_white_crosshatch",
-    "name": "Timber oak white crosshatch",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 6
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_white_crosshatch",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_white_righthatch",
-    "name": "Timber oak white righthatch",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 5
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_white_righthatch",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_white_lefthatch",
-    "name": "Timber oak white lefthatch",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 5
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_white_lefthatch",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_white_close_studding",
-    "name": "Timber oak white close studding",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 5
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_white_close_studding",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_white_lefthatch_large",
-    "name": "Timber oak white lefthatch large",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 6
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_white_lefthatch_large",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_white_righthatch_large",
-    "name": "Timber oak white righthatch large",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 6
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_white_righthatch_large",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_white_righthatch_studded",
-    "name": "Timber oak white righthatch studded",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 7
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_white_righthatch_studded",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_white_lefthatch_studded",
-    "name": "Timber oak white lefthatch studded",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 7
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_white_lefthatch_studded",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_white_bressumer",
-    "name": "Timber oak white bressumer",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 7
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_white_bressummer",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_brown_frame",
-    "name": "Timber oak brown frame",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 4
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_brown_frame",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_brown_vertical",
-    "name": "Timber oak brown vertical",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 4
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_brown_vertical",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_brown_crosshatch",
-    "name": "Timber oak brown crosshatch",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 6
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_brown_crosshatch",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_brown_righthatch",
-    "name": "Timber oak brown righthatch",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 5
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_brown_righthatch",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_brown_lefthatch",
-    "name": "Timber oak brown lefthatch",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 5
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_brown_lefthatch",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_brown_close_studding",
-    "name": "Timber oak brown close studding",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 5
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_brown_close_studding",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_brown_lefthatch_large",
-    "name": "Timber oak brown lefthatch large",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 6
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_brown_lefthatch_large",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_brown_righthatch_large",
-    "name": "Timber oak brown righthatch large",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 6
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_brown_righthatch_large",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_brown_righthatch_studded",
-    "name": "Timber oak brown righthatch studded",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 7
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_brown_righthatch_studded",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_brown_lefthatch_studded",
-    "name": "Timber oak brown lefthatch studded",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 7
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_brown_lefthatch_studded",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_timber_oak_brown_bressumer",
-    "name": "Timber oak brown bressumer",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:wheat",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 7
-      },
-      {
-        "itemId": "minecraft:red_sand",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:timber_oak_brown_bressummer",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_brown_slate",
-    "name": "Brown slate",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_brun",
-        "count": 24
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 18
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:brown_slate",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_brown_slate_slab",
-    "name": "Brown slate slab",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_brun",
-        "count": 12
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 9
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:brown_slate_slab",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_brown_slate_stairs",
-    "name": "Brown slate stairs",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_brun",
-        "count": 18
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 12
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:brown_slate_stairs",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_brown_slate_tip",
-    "name": "Brown slate tip",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_brun",
-        "count": 18
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 12
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:brown_slate_tip",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_brown_slate_hopper",
-    "name": "Brown slate hopper",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_brun",
-        "count": 18
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 12
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:brown_slate_hopper",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_brown_slate_fence",
-    "name": "Brown slate fence",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_brun",
-        "count": 9
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:brown_slate_fence",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_brown_slate_wall",
-    "name": "Brown slate wall",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_brun",
-        "count": 12
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 9
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:brown_slate_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_orange_slate",
-    "name": "Orange slate",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_orange",
-        "count": 24
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 18
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:orange_slate",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_orange_slate_slab",
-    "name": "Orange slate slab",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_orange",
-        "count": 12
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 9
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:orange_slate_slab",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_orange_slate_stairs",
-    "name": "Orange slate stairs",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_orange",
-        "count": 18
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 12
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:orange_slate_stairs",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_orange_slate_tip",
-    "name": "Orange slate tip",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_orange",
-        "count": 18
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 12
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:orange_slate_tip",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_orange_slate_hopper",
-    "name": "Orange slate hopper",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_orange",
-        "count": 18
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 12
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:orange_slate_hopper",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_orange_slate_fence",
-    "name": "Orange slate fence",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_orange",
-        "count": 9
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:orange_slate_fence",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_orange_slate_wall",
-    "name": "Orange slate wall",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_orange",
-        "count": 12
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 9
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:orange_slate_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_blue_slate",
-    "name": "Blue slate",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_bleu",
-        "count": 24
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 18
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:blue_slate",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_blue_slate_slab",
-    "name": "Blue slate slab",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_bleu",
-        "count": 12
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 9
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:blue_slate_slab",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_blue_slate_stairs",
-    "name": "Blue slate stairs",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_bleu",
-        "count": 18
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 12
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:blue_slate_stairs",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_blue_slate_tip",
-    "name": "Blue slate tip",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_bleu",
-        "count": 18
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 12
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:blue_slate_tip",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_blue_slate_hopper",
-    "name": "Blue slate hopper",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_bleu",
-        "count": 18
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 12
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:blue_slate_hopper",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_blue_slate_fence",
-    "name": "Blue slate fence",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_bleu",
-        "count": 9
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:blue_slate_fence",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_blue_slate_wall",
-    "name": "Blue slate wall",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_bleu",
-        "count": 12
-      },
-      {
-        "itemId": "ventrysitem:res_calcaire",
-        "count": 9
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:blue_slate_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_stone_button_2",
-    "name": "Stone button",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 6
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "minecraft:stone_button",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_animal_cart",
-    "name": "Animal cart",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 32
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 46
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 5
-      }
-    ],
-    "output": {
-      "itemId": "astikorcarts:animal_cart",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_supply_cart",
-    "name": "Supply cart",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 32
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 46
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 5
-      }
-    ],
-    "output": {
-      "itemId": "astikorcarts:supply_cart",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_bench_drawers",
-    "name": "Bench drawers",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_bouleau",
-        "count": 16
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 24
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:bench_drawers",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_bench_butcher_knives",
-    "name": "Bench butcher knives",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_bouleau",
-        "count": 16
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 24
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:bench_butcher_knives",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_bench_carpentry_hammer_saw",
-    "name": "Bench carpentry hammer saw",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_bouleau",
-        "count": 16
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 24
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:bench_carpentry_hammer_saw",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_wattle_fence",
-    "name": "Wattle fence",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:stick",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:wattle_fence",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_table",
-    "name": "Table",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_bouleau",
-        "count": 6
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 9
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:table",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_thatch_light_fur",
-    "name": "Chaume fourrure claire",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:stick",
-        "count": 10
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:thatch_light_fur",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_thatch_light_fur_stairs",
-    "name": "Escalier chaume clair",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:stick",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:thatch_light_fur_stairs",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_thatch_light_fur_slab",
-    "name": "Dalle chaume clair",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:stick",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:thatch_light_fur_slab",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_thatch_light_fur_tip",
-    "name": "Pointe chaume clair",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:stick",
-        "count": 8
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:thatch_light_fur_tip",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_thatch_light_fur_fence",
-    "name": "Barriere chaume clair",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:stick",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:thatch_light_fur_fence",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_thatch_light_fur_carpet",
-    "name": "Tapis chaume clair",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:stick",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:thatch_light_fur_carpet",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_thatch_dark_fur",
-    "name": "Chaume fourrure foncee",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:stick",
-        "count": 10
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:thatch_dark_fur",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_thatch_dark_fur_stairs",
-    "name": "Escalier chaume fonce",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:stick",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:thatch_dark_fur_stairs",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_thatch_dark_fur_slab",
-    "name": "Dalle chaume fonce",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:stick",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:thatch_dark_fur_slab",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_thatch_dark_fur_tip",
-    "name": "Pointe chaume fonce",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:stick",
-        "count": 8
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:thatch_dark_fur_tip",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_thatch_dark_fur_fence",
-    "name": "Barriere chaume fonce",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:stick",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:thatch_dark_fur_fence",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_thatch_dark_fur_carpet",
-    "name": "Tapis chaume fonce",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:stick",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:thatch_dark_fur_carpet",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_bancpierretaille",
-    "name": "Banc pierre taillee",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 28
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:bancpierretaillee",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_banc_riche_pierre_taille",
-    "name": "Banc riche pierre taillee",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 58
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 12
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:banc_riche_pierre_taillee",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_banclongpierretaille",
-    "name": "Banc long pierre taillee",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 42
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 10
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:banclongpierretaillee",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_banc_riche_long_pierre_taille",
-    "name": "Banc riche long pierre taillee",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 72
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 24
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:banc_riche_long_pierre_taillee",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_tablepierretaille",
-    "name": "Table pierre taillee",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 24
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:tablepierretaille",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_table_ronde_pierretaille",
-    "name": "Table ronde pierre taillee",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 24
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:table_ronde_pierretaille",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_chaise_pierre_taille",
-    "name": "Chaise pierre taillee",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 14
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:chaise_pierre_taille",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_tabouretpierretaille",
-    "name": "Tabouret pierre taillee",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 12
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:tabouretpierretaille",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_chaisehautepierretaille",
-    "name": "Chaise haute pierre taillee",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 18
-      },
-      {
-        "itemId": "ventrysitem:res_enduit_de_chaux",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:chaisehautepierretaille",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_meule",
-    "name": "Meule",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 32
-      },
-      {
-        "itemId": "ventrysitem:res_planche_chene",
-        "count": 5
-      }
-    ],
-    "output": {
-      "itemId": "ventrysjob:meule",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_ouvrier_four",
-    "name": "Four a charbon de bois",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_pierre_fragmente",
-        "count": 64
-      }
-    ],
-    "output": {
-      "itemId": "ventrysjob:ouvrier_four",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_vase_apothicaire",
-    "name": "Vase de plantation",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_argile_brun",
-        "count": 12
-      },
-      {
-        "itemId": "minecraft:dirt",
-        "count": 6
-      }
-    ],
-    "output": {
-      "itemId": "ventrysjob:vase_apothicaire",
-      "count": 1
-    }
-  }
 ]

@@ -104,31 +104,28 @@ public class ToolRestrictionEvent {
                             return;
                         }
                         level.setBlock(pos, farmlandState, 11);
-                        ToolDurability.hurtAndBreak(heldItem, serverPlayer,
-                                net.minecraft.world.InteractionHand.MAIN_HAND);
+                        ToolDurability.hurtAndBreak(heldItem, serverPlayer, event.getHand());
                         event.setCanceled(true); // Empêcher l'interaction normale
                     }
                 }
+                return;
             }
+            // Fourche sur autre bloc (culture, etc.) : laisser passer — paysan / récolte
+            // gérés ailleurs. Ne PAS appliquer la restriction ouvrier (bug : bloquait le paysan).
+            return;
         }
 
-        // Vérifier si le joueur tient un outil
-        if (isRestrictedTool(heldItem)) {
-            // Si le joueur n'a pas le métier "ouvrier", empêcher l'utilisation
-            if (!JobPermissionService.isOuvrier(player)) {
-                event.setCanceled(true);
-            }
+        // Outils ouvrier uniquement (pas les fourches paysan)
+        if (isRestrictedOuvrierTool(heldItem) && !JobPermissionService.isOuvrier(player)) {
+            event.setCanceled(true);
         }
     }
 
-    /**
-     * Vérifie si l'item est un outil restreint (hache, pelle, pioche, houe)
-     */
-    private static boolean isRestrictedTool(ItemStack itemStack) {
-        return itemStack.canPerformAction(ToolActions.AXE_DIG) ||      // Haches
-               itemStack.canPerformAction(ToolActions.SHOVEL_DIG) ||   // Pelles
-               itemStack.canPerformAction(ToolActions.PICKAXE_DIG) ||  // Pioches
-               ForkConfig.isFork(itemStack.getItem()); // Fourches (liste configurable)
+    /** Hache / pelle / pioche — réservées à l'ouvrier. */
+    private static boolean isRestrictedOuvrierTool(ItemStack itemStack) {
+        return itemStack.canPerformAction(ToolActions.AXE_DIG)
+                || itemStack.canPerformAction(ToolActions.SHOVEL_DIG)
+                || itemStack.canPerformAction(ToolActions.PICKAXE_DIG);
     }
     
 }

@@ -42,7 +42,15 @@ public final class ExtractionInteractionHandler {
         if (player.isCreative()) return false;
 
         String playerJob = PlayerJobData.getPlayerJob(player);
-        if (playerJob == null) return false;
+        if (playerJob == null) {
+            // Ne pas échouer en silence sur une culture (casse déjà annulée côté LeftClick).
+            if (com.ventrys.job.data.CropGrowthConfig.isConfiguredCrop(state.getBlock())) {
+                player.sendMessage(new TranslatableComponent("ventrysjob.message.crop.harvest.require_fork"),
+                        player.getUUID());
+                return true;
+            }
+            return false;
+        }
 
         if (player instanceof ServerPlayer serverPlayer) {
             if (serverPlayer.gameMode.getGameModeForPlayer().isCreative()) {

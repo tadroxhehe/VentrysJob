@@ -161,6 +161,11 @@ public final class CropGrowthConfig {
         return CROP_CONFIG.containsKey(registryName.toString());
     }
 
+    /** IDs de blocs présents dans crop_growth.json (pour validation croisée). */
+    public static Set<String> getConfiguredBlockIds() {
+        return Collections.unmodifiableSet(CROP_CONFIG.keySet());
+    }
+
     public static long getStageDurationTicks(Block block, int currentAge) {
         if (block == null) {
             return defaultStageDuration;

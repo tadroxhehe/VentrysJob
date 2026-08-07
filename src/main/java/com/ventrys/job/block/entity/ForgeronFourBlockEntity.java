@@ -59,6 +59,7 @@ public class ForgeronFourBlockEntity extends BlockEntity implements MenuProvider
     // Configuration des combustibles et recettes
     private static final Map<String, Integer> FUEL_VALUES = new HashMap<>();
     private static final Map<String, String> SMELTING_RECIPES = new HashMap<>();
+    private static final Map<String, Integer> SMELTING_COUNTS = new HashMap<>();
     private static final Set<String> VALID_FUELS = new HashSet<>();
     private static final Set<String> VALID_ORES = new HashSet<>();
 
@@ -114,7 +115,8 @@ public class ForgeronFourBlockEntity extends BlockEntity implements MenuProvider
         addOreRecipe("minecraft:raw_gold", "minecraft:gold_ingot");
         addOreRecipe("minecraft:raw_copper", "minecraft:copper_ingot");
         addOreRecipe("minecraft:raw_iron", "minecraft:iron_ingot");
-        addOreRecipe("minecraft:red_sand", "ventrysitem:res_verre");
+        // 1 sable → 16 fragments : 2 sables cassés = 1 bloc de verre (32 fragments)
+        addOreRecipe("minecraft:red_sand", "ventrysitem:res_verre", 16);
 
         VentrysJob.LOGGER.debug("Four forgeron — {} recettes de cuisson", SMELTING_RECIPES.size());
         VentrysJob.LOGGER.debug("Combustible: {}", VALID_FUELS);
@@ -359,6 +361,7 @@ public class ForgeronFourBlockEntity extends BlockEntity implements MenuProvider
         // Vérifier si on peut placer le résultat
         String resultId = SMELTING_RECIPES.get(oreId);
         if (resultId == null) return false;
+        int resultCount = SMELTING_COUNTS.getOrDefault(oreId, 1);
         
         if (result.isEmpty()) return true;
         
@@ -368,7 +371,8 @@ public class ForgeronFourBlockEntity extends BlockEntity implements MenuProvider
         );
         if (resultItem == null) return false;
         
-        return result.getItem() == resultItem && result.getCount() < result.getMaxStackSize();
+        return result.getItem() == resultItem
+                && result.getCount() + resultCount <= result.getMaxStackSize();
     }
 
     private void craftItem() {
@@ -385,7 +389,8 @@ public class ForgeronFourBlockEntity extends BlockEntity implements MenuProvider
             );
             
             if (resultItem != null) {
-                ItemStack result = new ItemStack(resultItem, 1);
+                int resultCount = SMELTING_COUNTS.getOrDefault(oreId, 1);
+                ItemStack result = new ItemStack(resultItem, resultCount);
                 
                 // Consommer le minerai
                 ore.shrink(1);
@@ -395,7 +400,7 @@ public class ForgeronFourBlockEntity extends BlockEntity implements MenuProvider
                 if (currentResult.isEmpty()) {
                     itemHandler.setStackInSlot(2, result);
                 } else {
-                    currentResult.grow(1);
+                    currentResult.grow(resultCount);
                 }
                 
                 resetSmelting();
@@ -496,9 +501,14 @@ public class ForgeronFourBlockEntity extends BlockEntity implements MenuProvider
     }
     
     public static void addOreRecipe(String oreId, String resultId) {
+        addOreRecipe(oreId, resultId, 1);
+    }
+
+    public static void addOreRecipe(String oreId, String resultId, int resultCount) {
         VALID_ORES.add(oreId);
         SMELTING_RECIPES.put(oreId, resultId);
-        VentrysJob.LOGGER.debug("Four forgeron — recette: {} → {}", oreId, resultId);
+        SMELTING_COUNTS.put(oreId, Math.max(1, resultCount));
+        VentrysJob.LOGGER.debug("Four forgeron — recette: {} → {} x{}", oreId, resultId, resultCount);
     }
     
     public static void removeFuel(String itemId) {
@@ -510,6 +520,7 @@ public class ForgeronFourBlockEntity extends BlockEntity implements MenuProvider
     public static void removeOreRecipe(String oreId) {
         VALID_ORES.remove(oreId);
         SMELTING_RECIPES.remove(oreId);
+        SMELTING_COUNTS.remove(oreId);
         VentrysJob.LOGGER.debug("Four forgeron — recette retirée: {}", oreId);
     }
     

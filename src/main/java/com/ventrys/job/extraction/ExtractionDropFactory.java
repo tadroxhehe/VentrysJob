@@ -26,29 +26,24 @@ public final class ExtractionDropFactory {
         return createDropItem(itemId, count, displayName);
     }
 
-    static ItemStack createDropItem(String itemId, int count, String displayName) {
+        static ItemStack createDropItem(String itemId, int count, String displayName) {
         try {
             ResourceLocation resourceLocation = new ResourceLocation(itemId);
             Item item = ForgeRegistries.ITEMS.getValue(resourceLocation);
-            if (item != null) {
-                ItemStack stack = findCreativeStack(item);
-                if (!stack.isEmpty()) {
-                    stack.setCount(count);
-                    applyDisplayName(stack, displayName);
-                    return stack;
-                }
-                stack = item.getDefaultInstance();
-                if (!stack.isEmpty()) {
-                    stack.setCount(count);
-                    applyDisplayName(stack, displayName);
-                    return stack;
-                }
-                stack = new ItemStack(item, count);
-                applyDisplayName(stack, displayName);
-                return stack;
+            // Forge renvoie Items.AIR si l'id est inconnu — pas null
+            if (item == null || item == net.minecraft.world.item.Items.AIR) {
+                VentrysJob.LOGGER.warn("Drop introuvable au registre: {}", itemId);
+                return ItemStack.EMPTY;
             }
+            ItemStack stack = new ItemStack(item, Math.max(1, count));
+            if (stack.isEmpty()) {
+                VentrysJob.LOGGER.warn("Stack vide pour drop: {}", itemId);
+                return ItemStack.EMPTY;
+            }
+            applyDisplayName(stack, displayName);
+            return stack;
         } catch (Exception e) {
-            // L'item n'existe pas ou erreur de parsing
+            VentrysJob.LOGGER.warn("Erreur création drop {}: {}", itemId, e.getMessage());
         }
         return ItemStack.EMPTY;
     }

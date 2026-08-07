@@ -264,44 +264,44 @@
       {
         "block_id": "minecraft:stone",
         "drop_item": "ventrysitem:res_pierre_fragmente",
-        "drop_count": 3
+        "drop_count": 4
       },
       {
         "block_id": "minecraft:diorite",
         "drop_item": "ventrysitem:res_pierre_fragmente",
-        "drop_count": 3
+        "drop_count": 4
       },
       {
         "block_id": "minecraft:andesite",
         "drop_item": "ventrysitem:res_pierre_fragmente",
-        "drop_count": 3
+        "drop_count": 4
       },
       {
         "block_id": "minecraft:cobblestone",
         "drop_item": "ventrysitem:res_pierre_fragmente",
-        "drop_count": 3
+        "drop_count": 4
       },
       {
         "block_id": "minecraft:deepslate",
         "drop_item": "ventrysitem:res_pierre_fragmente",
-        "drop_count": 3
+        "drop_count": 4
       },
       {
         "block_id": "minecraft:cobbled_deepslate",
         "drop_item": "ventrysitem:res_pierre_fragmente",
-        "drop_count": 3
+        "drop_count": 4
       },
       {
         "block_id": "minecraft:tuff",
         "drop_item": "ventrysitem:res_pierre_fragmente",
-        "drop_count": 3
+        "drop_count": 4
       }
     ],
     "calcite_configs": [
       {
         "block_id": "minecraft:calcite",
         "drop_item": "ventrysitem:res_calcaire",
-        "drop_count": 1
+        "drop_count": 4
       }
     ],
     "sand_configs": [

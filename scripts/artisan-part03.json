@@ -1,883 +1,883 @@
 [
-  {
-    "id": "art_spruce_planks",
-    "name": "Planches de sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "minecraft:spruce_planks",
-      "count": 1
+    {
+        "id": "art_spruce_planks",
+        "name": "Planches de sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "minecraft:spruce_planks",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_reach_spruce_panelling",
+        "name": "Lambris sapin Reach",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:reach_spruce_wood_panelling",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_stairs",
+        "name": "Escaliers sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 1
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "minecraft:spruce_stairs",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_slab",
+        "name": "Dalle sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 1
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "minecraft:spruce_slab",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_wall",
+        "name": "Muret sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 4
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:spruce_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_reach_spruce_panelling_wall",
+        "name": "Muret lambris Reach",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:reach_spruce_wood_panelling_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_tip",
+        "name": "Pointe sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 2
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:spruce_tip",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_hopper",
+        "name": "Hopper sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 2
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:spruce_hopper",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_half_door",
+        "name": "Demi-porte sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 1
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:spruce_half_door",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_fence",
+        "name": "Barriere sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 1
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "minecraft:spruce_fence",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_fence_gate",
+        "name": "Portillon sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 1
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "minecraft:spruce_fence_gate",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_vertical_planks",
+        "name": "Planches verticales sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:spruce_vertical_planks",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_vert_stairs",
+        "name": "Escaliers planches vert. sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 1
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:spruce_vertical_planks_stairs",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_vert_slab",
+        "name": "Dalle planches vert. sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 1
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:spruce_vertical_planks_slab",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_vert_wall",
+        "name": "Muret planches vert. sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:spruce_vertical_planks_wall",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_vert_tip",
+        "name": "Pointe planches vert. sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:spruce_vertical_planks_tip",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_vert_hopper",
+        "name": "Hopper planches vert. sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:spruce_vertical_planks_hopper",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_vert_fence",
+        "name": "Barriere planches vert. sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 1
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:spruce_vertical_planks_fence",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_door",
+        "name": "Porte sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 1
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "minecraft:spruce_door",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_button",
+        "name": "Bouton sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 1
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "minecraft:spruce_button",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_trapdoor",
+        "name": "Trappe sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 1
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "minecraft:spruce_trapdoor",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_window_shutter",
+        "name": "Volet sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 4
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:spruce_window_shutters",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_timber_frame",
+        "name": "Cadre fenetre sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:spruce_timber_window_frame",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_dorne_carved_window_spruce",
+        "name": "Fenetre sculptee Dorne",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 1
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:dorne_carved_wooden_window",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_sign",
+        "name": "Panneau sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 1
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "minecraft:spruce_sign",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_timber_mullion",
+        "name": "Cadre fenetre meneaux sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 3
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:spruce_timber_window_frame_mullion",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_pressure_plate",
+        "name": "Plaque pression sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 1
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "minecraft:spruce_pressure_plate",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_spruce_log_rope",
+        "name": "Rondin sapin corde",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "minecraft:spruce_log",
+                "count": 1
+            },
+            {
+                "itemId": "ventrysitem:res_corde",
+                "count": 4
+            }
+        ],
+        "output": {
+            "itemId": "westerosblocks:spruce_log_rope",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_chaisesapin",
+        "name": "Chaise sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 6
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 4
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:chaise_sapin",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_chaisehautesapin",
+        "name": "Chaise haute sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 16
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 10
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 2
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:chaisehaute_sapin",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_tablesapin",
+        "name": "Table sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 9
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 6
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:tablesapin",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_table_ronde_sapin",
+        "name": "Table ronde sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 9
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 6
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:table_ronde_sapin",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_bancsapin",
+        "name": "Banc sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 10
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 8
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:bancsapin",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_banc_riche_sapin",
+        "name": "Banc riche sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 24
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 21
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:banc_riche_sapin",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_banclongsapin",
+        "name": "Banc long sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 15
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 12
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:banclongsapin",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_banc_riche_long_sapin",
+        "name": "Banc riche long sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 34
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 24
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 2
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:banc_riche_long_sapin",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_caissesapin",
+        "name": "Caisse sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 15
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 6
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:caisse_sapin",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_chest_sapin",
+        "name": "Coffre (sapin)",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 19
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 8
+            },
+            {
+                "itemId": "minecraft:iron_nugget",
+                "count": 2
+            }
+        ],
+        "output": {
+            "itemId": "minecraft:chest",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_armoiresapin",
+        "name": "Armoire sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 31
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 21
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:armoire_sapin",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_tabouretsapin",
+        "name": "Tabouret sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 4
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 4
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:tabouretsapin",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_petitecomodesapin",
+        "name": "Petite commode sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 16
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 8
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:petitecomodesapin",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_comodesapin",
+        "name": "Commode sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 27
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 14
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 1
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:comode_sapin",
+            "count": 1
+        }
+    },
+    {
+        "id": "art_comodedoublesapin",
+        "name": "Commode double sapin",
+        "description": "",
+        "inputs": [
+            {
+                "itemId": "ventrysitem:res_planche_sapin",
+                "count": 48
+            },
+            {
+                "itemId": "ventrysitem:res_clou",
+                "count": 25
+            },
+            {
+                "itemId": "minecraft:stick",
+                "count": 2
+            }
+        ],
+        "output": {
+            "itemId": "ventrys_blocs:comodedoublesapin",
+            "count": 1
+        }
     }
-  },
-  {
-    "id": "art_reach_spruce_panelling",
-    "name": "Lambris sapin Reach",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:reach_spruce_wood_panelling",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_stairs",
-    "name": "Escaliers sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 1
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "minecraft:spruce_stairs",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_slab",
-    "name": "Dalle sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 1
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "minecraft:spruce_slab",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_wall",
-    "name": "Muret sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 3
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:spruce_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_reach_spruce_panelling_wall",
-    "name": "Muret lambris Reach",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:reach_spruce_wood_panelling_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_tip",
-    "name": "Pointe sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 4
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 4
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:spruce_tip",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_hopper",
-    "name": "Hopper sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 4
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 4
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:spruce_hopper",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_half_door",
-    "name": "Demi-porte sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 1
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:spruce_half_door",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_fence",
-    "name": "Barriere sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 1
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "minecraft:spruce_fence",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_fence_gate",
-    "name": "Portillon sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 1
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 1
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "minecraft:spruce_fence_gate",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_vertical_planks",
-    "name": "Planches verticales sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:spruce_vertical_planks",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_vert_stairs",
-    "name": "Escaliers planches vert. sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 1
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:spruce_vertical_planks_stairs",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_vert_slab",
-    "name": "Dalle planches vert. sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 1
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:spruce_vertical_planks_slab",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_vert_wall",
-    "name": "Muret planches vert. sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:spruce_vertical_planks_wall",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_vert_tip",
-    "name": "Pointe planches vert. sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:spruce_vertical_planks_tip",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_vert_hopper",
-    "name": "Hopper planches vert. sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:spruce_vertical_planks_hopper",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_vert_fence",
-    "name": "Barriere planches vert. sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 1
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:spruce_vertical_planks_fence",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_door",
-    "name": "Porte sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 1
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "minecraft:spruce_door",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_button",
-    "name": "Bouton sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 1
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "minecraft:spruce_button",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_trapdoor",
-    "name": "Trappe sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 1
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "minecraft:spruce_trapdoor",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_window_shutter",
-    "name": "Volet sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 3
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:spruce_window_shutters",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_timber_frame",
-    "name": "Cadre fenetre sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:spruce_timber_window_frame",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_dorne_carved_window_spruce",
-    "name": "Fenetre sculptee Dorne",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 1
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:dorne_carved_wooden_window",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_sign",
-    "name": "Panneau sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 1
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 1
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "minecraft:spruce_sign",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_timber_mullion",
-    "name": "Cadre fenetre meneaux sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 2
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:spruce_timber_window_frame_mullion",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_pressure_plate",
-    "name": "Plaque pression sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 1
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "minecraft:spruce_pressure_plate",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_spruce_log_rope",
-    "name": "Rondin sapin corde",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "minecraft:spruce_log",
-        "count": 1
-      },
-      {
-        "itemId": "ventrysitem:res_corde",
-        "count": 4
-      }
-    ],
-    "output": {
-      "itemId": "westerosblocks:spruce_log_rope",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_chaisesapin",
-    "name": "Chaise sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 4
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 9
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:chaise_sapin",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_chaisehautesapin",
-    "name": "Chaise haute sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 11
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 21
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 4
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:chaisehaute_sapin",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_tablesapin",
-    "name": "Table sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 6
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 12
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:tablesapin",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_table_ronde_sapin",
-    "name": "Table ronde sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 6
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 12
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:table_ronde_sapin",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_bancsapin",
-    "name": "Banc sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 7
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 16
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:bancsapin",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_banc_riche_sapin",
-    "name": "Banc riche sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 16
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 42
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:banc_riche_sapin",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_banclongsapin",
-    "name": "Banc long sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 10
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 24
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 2
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:banclongsapin",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_banc_riche_long_sapin",
-    "name": "Banc riche long sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 23
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 49
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 4
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:banc_riche_long_sapin",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_caissesapin",
-    "name": "Caisse sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 10
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 12
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:caisse_sapin",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_chest_sapin",
-    "name": "Coffre (sapin)",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 13
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 16
-      },
-      {
-        "itemId": "minecraft:iron_nugget",
-        "count": 4
-      }
-    ],
-    "output": {
-      "itemId": "minecraft:chest",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_armoiresapin",
-    "name": "Armoire sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 21
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 42
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:armoire_sapin",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_tabouretsapin",
-    "name": "Tabouret sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 3
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 8
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:tabouretsapin",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_petitecomodesapin",
-    "name": "Petite commode sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 11
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 17
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 1
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:petitecomodesapin",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_comodesapin",
-    "name": "Commode sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 18
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 28
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 3
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:comode_sapin",
-      "count": 1
-    }
-  },
-  {
-    "id": "art_comodedoublesapin",
-    "name": "Commode double sapin",
-    "description": "",
-    "inputs": [
-      {
-        "itemId": "ventrysitem:res_planche_sapin",
-        "count": 32
-      },
-      {
-        "itemId": "ventrysitem:res_clou",
-        "count": 50
-      },
-      {
-        "itemId": "minecraft:stick",
-        "count": 5
-      }
-    ],
-    "output": {
-      "itemId": "ventrys_blocs:comodedoublesapin",
-      "count": 1
-    }
-  }
 ]

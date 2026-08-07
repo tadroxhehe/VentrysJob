@@ -1633,11 +1633,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -2617,11 +2617,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -2636,11 +2636,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -2655,11 +2655,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -2674,11 +2674,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -2693,11 +2693,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -2712,11 +2712,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -2731,11 +2731,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -2795,11 +2795,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -2814,7 +2814,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -2833,7 +2833,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -2852,11 +2852,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -2871,11 +2871,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -2890,11 +2890,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 4
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -2909,11 +2909,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 4
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -2928,7 +2928,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -2947,7 +2947,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -2966,7 +2966,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -2989,11 +2989,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3008,7 +3008,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3027,7 +3027,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3046,11 +3046,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3065,11 +3065,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3084,11 +3084,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3103,7 +3103,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3122,7 +3122,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3141,7 +3141,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3160,7 +3160,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3179,11 +3179,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3198,11 +3198,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3217,11 +3217,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3236,7 +3236,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3259,11 +3259,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3278,11 +3278,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3316,11 +3316,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "minecraft:stick",
@@ -3339,15 +3339,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 33
+                            "count": 16
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 21
+                            "count": 10
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 4
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -3362,11 +3362,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 18
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "minecraft:stick",
@@ -3385,11 +3385,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 18
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "minecraft:stick",
@@ -3408,11 +3408,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 21
+                            "count": 10
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 16
+                            "count": 8
                         },
                         {
                             "itemId": "minecraft:stick",
@@ -3431,15 +3431,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 48
+                            "count": 24
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 42
+                            "count": 21
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3454,15 +3454,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 30
+                            "count": 15
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 24
+                            "count": 12
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3477,15 +3477,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 69
+                            "count": 34
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 49
+                            "count": 24
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 4
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -3500,11 +3500,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 30
+                            "count": 15
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 12
+                            "count": 6
                         }
                     ],
                     "output": {
@@ -3519,15 +3519,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 39
+                            "count": 19
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 16
+                            "count": 8
                         },
                         {
                             "itemId": "minecraft:iron_nugget",
-                            "count": 4
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -3542,15 +3542,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 63
+                            "count": 31
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 42
+                            "count": 21
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3565,11 +3565,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 8
+                            "count": 4
                         },
                         {
                             "itemId": "minecraft:stick",
@@ -3588,11 +3588,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 33
+                            "count": 16
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 17
+                            "count": 8
                         },
                         {
                             "itemId": "minecraft:stick",
@@ -3611,15 +3611,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 54
+                            "count": 27
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 28
+                            "count": 14
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3634,15 +3634,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 96
+                            "count": 48
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 50
+                            "count": 25
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 5
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -3657,11 +3657,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3676,11 +3676,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3695,7 +3695,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3714,7 +3714,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3733,11 +3733,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3752,11 +3752,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3771,11 +3771,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 4
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -3790,11 +3790,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 4
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -3809,7 +3809,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3828,7 +3828,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3847,7 +3847,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3870,11 +3870,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3889,7 +3889,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3908,7 +3908,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3927,11 +3927,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3946,11 +3946,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3965,11 +3965,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3984,7 +3984,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4003,7 +4003,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4022,7 +4022,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4041,7 +4041,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4060,11 +4060,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -4079,11 +4079,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -4098,11 +4098,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -4117,7 +4117,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4140,11 +4140,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -4159,11 +4159,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -4197,11 +4197,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "minecraft:stick",
@@ -4220,15 +4220,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 33
+                            "count": 16
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 21
+                            "count": 10
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 4
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -4243,11 +4243,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 18
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "minecraft:stick",
@@ -4266,11 +4266,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 18
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "minecraft:stick",
@@ -4289,11 +4289,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 21
+                            "count": 10
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 16
+                            "count": 8
                         },
                         {
                             "itemId": "minecraft:stick",
@@ -4312,15 +4312,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 48
+                            "count": 24
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 42
+                            "count": 21
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -4335,15 +4335,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 30
+                            "count": 15
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 24
+                            "count": 12
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -4358,15 +4358,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 69
+                            "count": 34
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 49
+                            "count": 24
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 4
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -4381,11 +4381,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 30
+                            "count": 15
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 12
+                            "count": 6
                         }
                     ],
                     "output": {
@@ -4400,15 +4400,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 39
+                            "count": 19
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 16
+                            "count": 8
                         },
                         {
                             "itemId": "minecraft:iron_nugget",
-                            "count": 4
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -4423,15 +4423,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 63
+                            "count": 31
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 42
+                            "count": 21
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -4446,11 +4446,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 8
+                            "count": 4
                         },
                         {
                             "itemId": "minecraft:stick",
@@ -4469,11 +4469,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 33
+                            "count": 16
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 17
+                            "count": 8
                         },
                         {
                             "itemId": "minecraft:stick",
@@ -4492,15 +4492,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 54
+                            "count": 27
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 28
+                            "count": 14
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -4515,15 +4515,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 96
+                            "count": 48
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 50
+                            "count": 25
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 5
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -4538,11 +4538,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -4557,7 +4557,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4576,7 +4576,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4595,11 +4595,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -4614,11 +4614,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 4
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -4633,11 +4633,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 4
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -4652,7 +4652,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4671,7 +4671,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4690,7 +4690,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4713,11 +4713,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -4732,7 +4732,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4751,7 +4751,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4770,11 +4770,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -4789,11 +4789,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -4808,11 +4808,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -4827,7 +4827,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4846,7 +4846,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4865,7 +4865,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4884,7 +4884,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4903,11 +4903,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -4922,11 +4922,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -4941,11 +4941,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -4960,7 +4960,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4983,11 +4983,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -5002,11 +5002,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -5021,11 +5021,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "minecraft:stick",
@@ -5044,15 +5044,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 33
+                            "count": 16
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 21
+                            "count": 10
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 4
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -5067,11 +5067,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 18
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "minecraft:stick",
@@ -5090,11 +5090,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 18
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "minecraft:stick",
@@ -5113,11 +5113,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 21
+                            "count": 10
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 16
+                            "count": 8
                         },
                         {
                             "itemId": "minecraft:stick",
@@ -5136,15 +5136,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 48
+                            "count": 24
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 42
+                            "count": 21
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -5159,15 +5159,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 30
+                            "count": 15
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 24
+                            "count": 12
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -5182,15 +5182,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 69
+                            "count": 34
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 49
+                            "count": 24
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 4
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -5205,11 +5205,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 30
+                            "count": 15
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 12
+                            "count": 6
                         }
                     ],
                     "output": {
@@ -5224,15 +5224,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 39
+                            "count": 19
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 16
+                            "count": 8
                         },
                         {
                             "itemId": "minecraft:iron_nugget",
-                            "count": 4
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -5247,15 +5247,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 63
+                            "count": 31
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 42
+                            "count": 21
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -5270,11 +5270,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 8
+                            "count": 4
                         },
                         {
                             "itemId": "minecraft:stick",
@@ -5293,11 +5293,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 33
+                            "count": 16
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 17
+                            "count": 8
                         },
                         {
                             "itemId": "minecraft:stick",
@@ -5316,15 +5316,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 54
+                            "count": 27
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 28
+                            "count": 14
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -5339,15 +5339,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 96
+                            "count": 48
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 50
+                            "count": 25
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 5
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -5412,11 +5412,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_corde",
@@ -5435,15 +5435,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_corde",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -5458,11 +5458,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 12
+                            "count": 6
                         }
                     ],
                     "output": {
@@ -5477,11 +5477,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 12
+                            "count": 6
                         }
                     ],
                     "output": {
@@ -5496,11 +5496,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 10
+                            "count": 5
                         }
                     ],
                     "output": {
@@ -5515,11 +5515,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 39
+                            "count": 19
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 4
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_peau_dours",
@@ -5538,15 +5538,15 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 39
+                            "count": 19
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 4
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_peau_de_loup",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -5561,19 +5561,19 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 60
+                            "count": 30
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 13
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_laine_blanche",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "minecraft:black_dye",
-                            "count": 8
+                            "count": 4
                         }
                     ],
                     "output": {
@@ -5588,27 +5588,27 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 60
+                            "count": 30
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 13
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_laine_blanche",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "minecraft:red_dye",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "minecraft:brown_dye",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "minecraft:white_dye",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -5623,27 +5623,27 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 60
+                            "count": 30
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 13
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_laine_blanche",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "minecraft:yellow_dye",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "minecraft:blue_dye",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "minecraft:brown_dye",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -5658,19 +5658,19 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 78
+                            "count": 39
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 21
+                            "count": 10
                         },
                         {
                             "itemId": "ventrysitem:res_laine_blanche",
-                            "count": 20
+                            "count": 10
                         },
                         {
                             "itemId": "minecraft:red_dye",
-                            "count": 8
+                            "count": 4
                         },
                         {
                             "itemId": "minecraft:gold_ingot",
@@ -5689,19 +5689,19 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 78
+                            "count": 39
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 21
+                            "count": 10
                         },
                         {
                             "itemId": "ventrysitem:res_laine_blanche",
-                            "count": 20
+                            "count": 10
                         },
                         {
                             "itemId": "minecraft:blue_dye",
-                            "count": 8
+                            "count": 4
                         },
                         {
                             "itemId": "minecraft:gold_ingot",
@@ -5720,19 +5720,19 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 24
+                            "count": 12
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 8
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_laine_blanche",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -5747,27 +5747,27 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 36
+                            "count": 18
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 10
+                            "count": 5
                         },
                         {
                             "itemId": "ventrysitem:res_laine_blanche",
-                            "count": 6
-                        },
-                        {
-                            "itemId": "minecraft:stick",
                             "count": 3
                         },
                         {
+                            "itemId": "minecraft:stick",
+                            "count": 1
+                        },
+                        {
                             "itemId": "minecraft:iron_nugget",
-                            "count": 4
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_dye",
-                            "count": 4
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -5777,21 +5777,21 @@
                 },
                 {
                     "id": "art_res_enduit_de_chaux",
-                    "name": "Res enduit de chaux",
+                    "name": "Enduit de chaux",
                     "description": "",
                     "inputs": [
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_chaux",
-                            "count": 6
+                            "count": 3
                         }
                     ],
                     "output": {
                         "itemId": "ventrysitem:res_enduit_de_chaux",
-                        "count": 12
+                        "count": 4
                     }
                 },
                 {
@@ -5801,16 +5801,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 18
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:cobblestone",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -5820,7 +5820,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -5839,7 +5839,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -5858,7 +5858,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -5877,7 +5877,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -5896,7 +5896,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -5915,7 +5915,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -5934,7 +5934,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "westerosblocks:cobblestone",
@@ -5953,7 +5953,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_stairs",
@@ -5972,7 +5972,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_slab",
@@ -5991,7 +5991,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_fence",
@@ -6010,7 +6010,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_tip",
@@ -6029,7 +6029,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_hopper",
@@ -6048,7 +6048,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_wall",
@@ -6067,7 +6067,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "westerosblocks:cobblestone",
@@ -6086,7 +6086,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_stairs",
@@ -6105,7 +6105,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_slab",
@@ -6124,7 +6124,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_fence",
@@ -6143,7 +6143,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_tip",
@@ -6162,7 +6162,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_hopper",
@@ -6181,7 +6181,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_wall",
@@ -6200,7 +6200,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:cobblestone",
@@ -6219,7 +6219,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:cobblestone",
@@ -6238,7 +6238,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:cobblestone",
@@ -6257,7 +6257,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "westerosblocks:cobblestone",
@@ -6276,7 +6276,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_stairs",
@@ -6295,7 +6295,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_slab",
@@ -6314,7 +6314,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_fence",
@@ -6333,7 +6333,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_tip",
@@ -6352,7 +6352,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_hopper",
@@ -6371,7 +6371,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_wall",
@@ -6390,7 +6390,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 24
+                            "count": 12
                         },
                         {
                             "itemId": "westerosblocks:cobblestone",
@@ -6409,7 +6409,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 18
+                            "count": 9
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_stairs",
@@ -6428,7 +6428,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_slab",
@@ -6447,7 +6447,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_wall",
@@ -6466,7 +6466,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 24
+                            "count": 12
                         },
                         {
                             "itemId": "westerosblocks:cobblestone",
@@ -6485,7 +6485,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "westerosblocks:cobblestone_wall",
@@ -6504,7 +6504,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "westerosblocks:cobblestone",
@@ -6523,16 +6523,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 18
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:dark_cobblestone",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6542,7 +6542,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -6561,7 +6561,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -6580,7 +6580,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -6599,7 +6599,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -6618,7 +6618,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -6637,7 +6637,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -6656,7 +6656,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "westerosblocks:dark_cobblestone",
@@ -6675,7 +6675,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:dark_cobblestone_stairs",
@@ -6694,7 +6694,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:dark_cobblestone_slab",
@@ -6713,7 +6713,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "westerosblocks:dark_cobblestone_fence",
@@ -6732,7 +6732,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:dark_cobblestone_tip",
@@ -6751,7 +6751,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:dark_cobblestone_hopper",
@@ -6770,7 +6770,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:dark_cobblestone_wall",
@@ -6789,7 +6789,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:dark_cobblestone",
@@ -6808,7 +6808,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:dark_cobblestone",
@@ -6827,7 +6827,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:dark_cobblestone",
@@ -6846,7 +6846,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "westerosblocks:dark_cobblestone",
@@ -6865,7 +6865,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:dark_cobblestone_stairs",
@@ -6884,7 +6884,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:dark_cobblestone_slab",
@@ -6903,7 +6903,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "westerosblocks:dark_cobblestone_fence",
@@ -6922,7 +6922,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:dark_cobblestone_tip",
@@ -6941,7 +6941,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:dark_cobblestone_hopper",
@@ -6960,7 +6960,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:dark_cobblestone_wall",
@@ -6979,7 +6979,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 24
+                            "count": 12
                         },
                         {
                             "itemId": "westerosblocks:dark_cobblestone",
@@ -6998,7 +6998,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "westerosblocks:dark_cobblestone_wall",
@@ -7017,7 +7017,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "westerosblocks:dark_cobblestone",
@@ -7036,16 +7036,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 18
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_cobblestone",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7055,7 +7055,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -7074,7 +7074,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -7093,7 +7093,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -7112,7 +7112,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -7131,7 +7131,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -7150,7 +7150,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -7169,7 +7169,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone",
@@ -7188,7 +7188,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone_stairs",
@@ -7207,7 +7207,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone_slab",
@@ -7226,7 +7226,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone_fence",
@@ -7245,7 +7245,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone_tip",
@@ -7264,7 +7264,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone_hopper",
@@ -7283,7 +7283,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone_wall",
@@ -7302,7 +7302,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone",
@@ -7321,7 +7321,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone",
@@ -7340,7 +7340,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone",
@@ -7359,7 +7359,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone",
@@ -7378,7 +7378,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone_stairs",
@@ -7397,7 +7397,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone_slab",
@@ -7416,7 +7416,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone_fence",
@@ -7435,7 +7435,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone_tip",
@@ -7454,7 +7454,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 9
+                            "count": 4
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone_hopper",
@@ -7473,7 +7473,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 3
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone_wall",
@@ -7492,7 +7492,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 24
+                            "count": 12
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone",
@@ -7511,7 +7511,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 18
+                            "count": 9
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone_stairs",
@@ -7530,7 +7530,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone_slab",
@@ -7549,7 +7549,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone_wall",
@@ -7568,7 +7568,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 24
+                            "count": 12
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone",
@@ -7587,7 +7587,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone_wall",
@@ -7606,7 +7606,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "westerosblocks:green_grey_cobblestone",
@@ -7629,11 +7629,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -7652,11 +7652,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -7675,11 +7675,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 18
+                            "count": 9
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -7698,11 +7698,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 15
+                            "count": 7
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -7721,11 +7721,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 15
+                            "count": 7
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -7744,11 +7744,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 15
+                            "count": 7
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -7767,11 +7767,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 18
+                            "count": 9
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -7790,11 +7790,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 18
+                            "count": 9
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -7813,11 +7813,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 21
+                            "count": 10
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -7836,11 +7836,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 21
+                            "count": 10
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -7859,11 +7859,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 21
+                            "count": 10
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -7882,11 +7882,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -7905,11 +7905,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -7928,11 +7928,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 18
+                            "count": 9
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -7951,11 +7951,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 15
+                            "count": 7
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -7974,11 +7974,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 15
+                            "count": 7
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -7997,11 +7997,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 15
+                            "count": 7
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8020,11 +8020,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 18
+                            "count": 9
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8043,11 +8043,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 18
+                            "count": 9
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8066,11 +8066,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 21
+                            "count": 10
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8089,11 +8089,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 21
+                            "count": 10
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8112,11 +8112,11 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 21
+                            "count": 10
                         },
                         {
                             "itemId": "minecraft:red_sand",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8131,11 +8131,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_brun",
-                            "count": 24
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 18
+                            "count": 3
                         }
                     ],
                     "output": {
@@ -8150,11 +8150,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_brun",
-                            "count": 12
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 9
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8169,11 +8169,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_brun",
-                            "count": 18
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 12
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -8188,11 +8188,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_brun",
-                            "count": 18
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 12
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8207,11 +8207,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_brun",
-                            "count": 18
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 12
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8226,16 +8226,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_brun",
-                            "count": 9
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:brown_slate_fence",
-                        "count": 1
+                        "count": 2
                     }
                 },
                 {
@@ -8245,11 +8245,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_brun",
-                            "count": 12
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 9
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8264,11 +8264,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_orange",
-                            "count": 24
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 18
+                            "count": 3
                         }
                     ],
                     "output": {
@@ -8283,11 +8283,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_orange",
-                            "count": 12
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 9
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8302,11 +8302,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_orange",
-                            "count": 18
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 12
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -8321,11 +8321,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_orange",
-                            "count": 18
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 12
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8340,11 +8340,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_orange",
-                            "count": 18
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 12
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8359,16 +8359,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_orange",
-                            "count": 9
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:orange_slate_fence",
-                        "count": 1
+                        "count": 2
                     }
                 },
                 {
@@ -8378,11 +8378,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_orange",
-                            "count": 12
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 9
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8397,11 +8397,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_bleu",
-                            "count": 24
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 18
+                            "count": 3
                         }
                     ],
                     "output": {
@@ -8416,11 +8416,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_bleu",
-                            "count": 12
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 9
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8435,11 +8435,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_bleu",
-                            "count": 18
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 12
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -8454,11 +8454,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_bleu",
-                            "count": 18
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 12
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8473,11 +8473,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_bleu",
-                            "count": 18
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 12
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8492,16 +8492,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_bleu",
-                            "count": 9
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 6
+                            "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:blue_slate_fence",
-                        "count": 1
+                        "count": 2
                     }
                 },
                 {
@@ -8511,11 +8511,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_bleu",
-                            "count": 12
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_calcaire",
-                            "count": 9
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8530,11 +8530,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 18
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8595,11 +8595,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 48
+                            "count": 24
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 24
+                            "count": 12
                         }
                     ],
                     "output": {
@@ -8614,11 +8614,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 48
+                            "count": 24
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 24
+                            "count": 12
                         }
                     ],
                     "output": {
@@ -8633,11 +8633,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 48
+                            "count": 24
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 24
+                            "count": 12
                         }
                     ],
                     "output": {
@@ -8667,11 +8667,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 18
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 9
+                            "count": 4
                         }
                     ],
                     "output": {
@@ -8865,11 +8865,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 27
+                            "count": 13
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8884,11 +8884,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 57
+                            "count": 28
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
-                            "count": 4
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -8903,11 +8903,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 42
+                            "count": 21
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8922,11 +8922,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 72
+                            "count": 36
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
-                            "count": 8
+                            "count": 4
                         }
                     ],
                     "output": {
@@ -8941,11 +8941,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 24
+                            "count": 12
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8960,11 +8960,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 24
+                            "count": 12
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8979,11 +8979,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 15
+                            "count": 7
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -8998,11 +8998,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 6
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -9017,11 +9017,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 18
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -10218,12 +10218,12 @@
                     "description": "",
                     "inputs": [
                         {
-                            "itemId": "ventrysitem:item_pain",
+                            "itemId": "ventrysitem:res_patte_a_pain",
                             "count": 1
                         },
                         {
                             "itemId": "ventrysitem:item_raisin",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -10341,11 +10341,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:item_caramel",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "minecraft:stick",
-                            "count": 3
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -11812,6 +11812,81 @@
                     "output": {
                         "itemId": "ventrysitem:res_bourse",
                         "count": 1
+                    }
+                },
+                {
+                    "id": "tan_peau_loup_cuir",
+                    "name": "Cuir (peau de loup)",
+                    "description": "Transforme une peau sauvage en cuir utilisable",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_peau_de_loup",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "minecraft:leather",
+                        "count": 10
+                    }
+                },
+                {
+                    "id": "tan_peau_ours_cuir",
+                    "name": "Cuir (peau d'ours)",
+                    "description": "Transforme une peau sauvage en cuir utilisable",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_peau_dours",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "minecraft:leather",
+                        "count": 20
+                    }
+                },
+                {
+                    "id": "tan_peau_lion_cuir",
+                    "name": "Cuir (peau de lion)",
+                    "description": "Transforme une peau sauvage en cuir utilisable",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_peau_lion",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "minecraft:leather",
+                        "count": 15
+                    }
+                },
+                {
+                    "id": "tan_peau_lionne_cuir",
+                    "name": "Cuir (peau de lionne)",
+                    "description": "Transforme une peau sauvage en cuir utilisable",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_peau_lionne",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "minecraft:leather",
+                        "count": 15
+                    }
+                },
+                {
+                    "id": "tan_peau_lion_montagne_cuir",
+                    "name": "Cuir (peau de lion des montagnes)",
+                    "description": "Transforme une peau sauvage en cuir utilisable",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_peau_lion_des_montagne",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "minecraft:leather",
+                        "count": 15
                     }
                 }
             ]
