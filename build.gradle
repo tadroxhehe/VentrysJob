@@ -85,7 +85,7 @@ repositories {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.18.2-40.2.21'
+    minecraft 'net.minecraftforge:forge:1.18.2-40.2.14'
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     
     // GeckoLib - Version compatible avec Forge 40.2+ pour Minecraft 1.18.2
