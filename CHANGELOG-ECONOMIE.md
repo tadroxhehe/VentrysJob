@@ -4,6 +4,10 @@ Historique des passes (du plus récent au plus ancien).
 
 ---
 
+## 1.0.41 — Énergie bûches ↓
+
+`EXTRACT_LOG` **0,35 → 0,15** (~10 énergie / 64 bûches au lieu de ~22). Volume bois trop cher vs demande ouvrier.
+
 ## Survival 1.0.10 — Marteaux de forge
 
 Durabilité : bronze **30 → 150**, fer **84 → 250** (1 usure / craft enclume). Rentabilité forgeron vs coût matière du marteau.
