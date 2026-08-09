@@ -1582,6 +1582,25 @@
                     }
                 },
                 {
+                    "id": "art_nid_poule",
+                    "name": "Nid de poule",
+                    "description": "Nid pour la ponte des poules",
+                    "inputs": [
+                        {
+                            "itemId": "minecraft:wheat",
+                            "count": 4
+                        },
+                        {
+                            "itemId": "ventrysitem:res_planche_chene",
+                            "count": 4
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysjob:chicken_nest",
+                        "count": 1
+                    }
+                },
+                {
                     "id": "art_batons",
                     "name": "Batons",
                     "description": "1 buche → 6 batons",

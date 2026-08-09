@@ -54,6 +54,9 @@ public class CustomSheep extends CustomAnimal implements IForgeShearable, Livest
     /** Modèle GeckoLib synchronisé (mouton / mouton_sans_laine) — évite un client désynchronisé. */
     private static final EntityDataAccessor<String> GEO_MODEL =
         SynchedEntityData.defineId(CustomSheep.class, EntityDataSerializers.STRING);
+    /** Minutes avant repousse (0 = laine prête / présente). -2 = trop affamé pour repousser. */
+    private static final EntityDataAccessor<Integer> WOOL_READY_IN_MIN =
+        SynchedEntityData.defineId(CustomSheep.class, EntityDataSerializers.INT);
 
     private long woolRegrowStartTime;
 
@@ -67,6 +70,7 @@ public class CustomSheep extends CustomAnimal implements IForgeShearable, Livest
         this.entityData.define(HAS_WOOL, true);
         this.entityData.define(TEXTURE_VARIANT, DEFAULT_TEXTURE);
         this.entityData.define(GEO_MODEL, "mouton");
+        this.entityData.define(WOOL_READY_IN_MIN, 0);
     }
 
     private void syncGeoModel() {
@@ -85,16 +89,18 @@ public class CustomSheep extends CustomAnimal implements IForgeShearable, Livest
     @Override
     public void tick() {
         super.tick();
-        if (this.level.isClientSide || this.hasWool() || this.woolRegrowStartTime <= 0L) {
+        if (this.level.isClientSide) {
             return;
         }
-        if (!this.canRegrowWool()) {
-            return;
+        if (!this.hasWool() && this.woolRegrowStartTime > 0L && this.canRegrowWool()) {
+            if (System.currentTimeMillis() - this.woolRegrowStartTime >= WOOL_REGROW_INTERVAL_MS) {
+                this.setHasWool(true);
+                this.woolRegrowStartTime = 0L;
+                this.refreshDimensions();
+            }
         }
-        if (System.currentTimeMillis() - this.woolRegrowStartTime >= WOOL_REGROW_INTERVAL_MS) {
-            this.setHasWool(true);
-            this.woolRegrowStartTime = 0L;
-            this.refreshDimensions();
+        if (this.tickCount % 20 == 0) {
+            syncWoolHud();
         }
     }
 
@@ -102,6 +108,35 @@ public class CustomSheep extends CustomAnimal implements IForgeShearable, Livest
     private boolean canRegrowWool() {
         return getNutrition() >= MobConfig.getMinNutritionPercent()
             && getHydration() >= MobConfig.getMinHydrationPercent();
+    }
+
+    private void syncWoolHud() {
+        if (this.hasWool()) {
+            this.entityData.set(WOOL_READY_IN_MIN, 0);
+            return;
+        }
+        if (!this.canRegrowWool()) {
+            this.entityData.set(WOOL_READY_IN_MIN, -2);
+            return;
+        }
+        long remaining = getWoolRegrowRemainingMs();
+        int minutes = remaining <= 0L ? 0 : (int) Math.ceil(remaining / 60_000.0);
+        this.entityData.set(WOOL_READY_IN_MIN, minutes);
+    }
+
+    public long getWoolRegrowRemainingMs() {
+        if (this.hasWool()) {
+            return 0L;
+        }
+        if (this.woolRegrowStartTime <= 0L) {
+            return WOOL_REGROW_INTERVAL_MS;
+        }
+        return Math.max(0L, WOOL_REGROW_INTERVAL_MS - (System.currentTimeMillis() - this.woolRegrowStartTime));
+    }
+
+    /** 0 = laine prête, &gt;0 = minutes, -2 = trop affamé/assoiffé. */
+    public int getWoolReadyInMinutes() {
+        return this.entityData.get(WOOL_READY_IN_MIN);
     }
 
     @Override

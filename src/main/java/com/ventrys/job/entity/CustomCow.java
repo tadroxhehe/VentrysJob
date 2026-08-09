@@ -34,6 +34,9 @@ public class CustomCow extends CustomAnimal implements LivestockTextureHolder {
 
     private static final EntityDataAccessor<String> TEXTURE_VARIANT =
         SynchedEntityData.defineId(CustomCow.class, EntityDataSerializers.STRING);
+    /** Minutes restantes avant traite (0 = prêt). -1 = mâle / indisponible. */
+    private static final EntityDataAccessor<Integer> MILK_READY_IN_MIN =
+        SynchedEntityData.defineId(CustomCow.class, EntityDataSerializers.INT);
 
     private long milkProductionStartTime = 0;
 
@@ -45,6 +48,7 @@ public class CustomCow extends CustomAnimal implements LivestockTextureHolder {
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(TEXTURE_VARIANT, DEFAULT_TEXTURE);
+        this.entityData.define(MILK_READY_IN_MIN, -1);
     }
 
     @Override
@@ -99,24 +103,30 @@ public class CustomCow extends CustomAnimal implements LivestockTextureHolder {
     public void tick() {
         super.tick();
 
-        if (!this.level.isClientSide && !isMale()) {
-            long currentTime = System.currentTimeMillis();
-
-            if (milkProductionStartTime == 0) {
-                milkProductionStartTime = currentTime;
-            }
-
-            boolean canProduce = getNutrition() >= 30 && getHydration() >= 30;
-
-            if (!canProduce) {
-                return;
-            }
-
-            long interval = MobConfig.getMilkExtractionIntervalMs();
-            if (currentTime - milkProductionStartTime >= interval) {
-                // Lait prêt — extrait via canExtractMilk()
-            }
+        if (this.level.isClientSide || this.tickCount % 20 != 0) {
+            return;
         }
+        syncMilkHud();
+    }
+
+    private void syncMilkHud() {
+        if (isMale()) {
+            this.entityData.set(MILK_READY_IN_MIN, -1);
+            return;
+        }
+        if (getNutrition() < 30 || getHydration() < 30) {
+            // Indisponible faute de soins — affiché comme -2 côté client
+            this.entityData.set(MILK_READY_IN_MIN, -2);
+            return;
+        }
+        long remaining = getMilkCooldownRemainingMs();
+        int minutes = remaining <= 0L ? 0 : (int) Math.ceil(remaining / 60_000.0);
+        this.entityData.set(MILK_READY_IN_MIN, minutes);
+    }
+
+    /** 0 = prêt, &gt;0 = minutes, -1 = mâle, -2 = trop affamée/assoiffée. */
+    public int getMilkReadyInMinutes() {
+        return this.entityData.get(MILK_READY_IN_MIN);
     }
 
     @Override

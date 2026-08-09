@@ -4,7 +4,7 @@ license="All rights reserved"
 
 [[mods]]
 modId="ventrysjob"
-version="1.0.39"
+version="1.0.40"
 displayName="VentrysJob"
 description='''
 Système de métiers pour serveur RP médiéval.

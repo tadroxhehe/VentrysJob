@@ -57,7 +57,10 @@ public final class LivestockProgressManager {
             entry = createEntryFromEntity(animal, now);
             saved.put(uuid, entry);
         } else {
-            copyEntityDynamicState(entry, animal);
+            // SavedData = vérité wall-clock (chunks déchargés). Ne pas écraser
+            // nutrition/hydratation/repro avec le NBT stale de l'entité au reload.
+            refreshPoseAndIdentity(entry, animal);
+            ensureEntityTypeId(entry, animal);
             animal.applyLivestockEntry(entry);
             saved.put(uuid, entry);
         }
@@ -175,8 +178,10 @@ public final class LivestockProgressManager {
 
             Entity entity = level.getEntity(uuid);
             if (entity instanceof CustomAnimal animal && animal.isAlive()) {
+                // Entité chargée : pos/sexe/nutri depuis l'entité (feed immédiat), puis decay.
                 copyEntityDynamicState(entry, animal);
             }
+            ensureEntityTypeId(entry, null);
 
             long deltaMs = 0L;
             if (entry.lastProcessedWallMs > 0L) {
@@ -189,8 +194,13 @@ public final class LivestockProgressManager {
             applyHydrationDecay(entry, now);
             applyRegeneration(entry, now);
 
-            if (deltaMs > 0L && canReproduce(entry) && hasMateNearby(uuid, entry, spatial)) {
+            boolean eligibleMate = hasEligibleMateNearby(uuid, entry, spatial);
+            if (deltaMs > 0L && canReproduce(entry) && eligibleMate) {
                 entry.reproductionProgressMs += deltaMs;
+            }
+            long requiredMs = MobConfig.getRequiredTimeMinutes() * 60_000L;
+            if (entry.reproductionProgressMs > requiredMs) {
+                entry.reproductionProgressMs = requiredMs;
             }
 
             entry.lastProcessedWallMs = now;
@@ -204,6 +214,8 @@ public final class LivestockProgressManager {
                 // Chunk déchargé : garder l'entrée à 0 pour tuer au rechargement.
             } else if (entity instanceof CustomAnimal animal && animal.isAlive()) {
                 animal.applyLivestockEntry(entry);
+                boolean oppositeNearby = hasOppositeSexNearby(uuid, entry, spatial);
+                animal.updateReproductionHud(entry.reproductionProgressMs, oppositeNearby);
             }
         }
 
@@ -237,10 +249,31 @@ public final class LivestockProgressManager {
         return q;
     }
 
-    private static boolean hasMateNearby(
+    /** Partenaire sexe opposé, même espèce, dans le rayon — sans regarder sa faim/soif (HUD). */
+    private static boolean hasOppositeSexNearby(
             UUID selfUuid,
             LivestockProgressSavedData.Entry self,
             Map<Long, List<Map.Entry<UUID, LivestockProgressSavedData.Entry>>> spatial) {
+        return findNearbyMate(selfUuid, self, spatial, false) != null;
+    }
+
+    /** Partenaire éligible pour accumuler la jauge (doit aussi pouvoir se reproduire). */
+    private static boolean hasEligibleMateNearby(
+            UUID selfUuid,
+            LivestockProgressSavedData.Entry self,
+            Map<Long, List<Map.Entry<UUID, LivestockProgressSavedData.Entry>>> spatial) {
+        return findNearbyMate(selfUuid, self, spatial, true) != null;
+    }
+
+    private static LivestockProgressSavedData.Entry findNearbyMate(
+            UUID selfUuid,
+            LivestockProgressSavedData.Entry self,
+            Map<Long, List<Map.Entry<UUID, LivestockProgressSavedData.Entry>>> spatial,
+            boolean requireMateCanReproduce) {
+        String selfType = normalizedType(self.entityTypeId);
+        if (selfType.isEmpty()) {
+            return null;
+        }
         double radius = MobConfig.getDetectionRadiusBlocks();
         double radiusSq = radius * radius;
         int cell = Math.max(1, (int) Math.ceil(radius));
@@ -260,23 +293,28 @@ public final class LivestockProgressManager {
                         continue;
                     }
                     LivestockProgressSavedData.Entry mate = other.getValue();
-                    if (!self.entityTypeId.equals(mate.entityTypeId)) {
+                    String mateType = normalizedType(mate.entityTypeId);
+                    if (mateType.isEmpty() || !selfType.equals(mateType)) {
                         continue;
                     }
                     if (self.isMale == mate.isMale) {
                         continue;
                     }
-                    if (!canReproduce(mate)) {
+                    if (requireMateCanReproduce && !canReproduce(mate)) {
                         continue;
                     }
                     Vec3 posMate = new Vec3(mate.x, mate.y, mate.z);
                     if (posSelf.distanceToSqr(posMate) <= radiusSq) {
-                        return true;
+                        return mate;
                     }
                 }
             }
         }
-        return false;
+        return null;
+    }
+
+    private static String normalizedType(String typeId) {
+        return typeId == null ? "" : typeId;
     }
 
     private static void applyNutritionDecay(LivestockProgressSavedData.Entry entry, long now) {
@@ -387,7 +425,9 @@ public final class LivestockProgressManager {
                         if (entryB == null) {
                             continue;
                         }
-                        if (!entryA.entityTypeId.equals(entryB.entityTypeId)) {
+                        String typeA = normalizedType(entryA.entityTypeId);
+                        String typeB = normalizedType(entryB.entityTypeId);
+                        if (typeA.isEmpty() || !typeA.equals(typeB)) {
                             continue;
                         }
                         if (entryA.isMale == entryB.isMale) {
@@ -464,15 +504,30 @@ public final class LivestockProgressManager {
     }
 
     private static void copyEntityDynamicState(LivestockProgressSavedData.Entry entry, CustomAnimal animal) {
-        ResourceLocation typeId = ForgeRegistries.ENTITIES.getKey(animal.getType());
-        if (typeId != null) {
-            entry.entityTypeId = typeId.toString();
-        }
+        refreshPoseAndIdentity(entry, animal);
+        ensureEntityTypeId(entry, animal);
+        entry.nutrition = animal.getNutrition();
+        entry.hydration = animal.getHydration();
+    }
+
+    private static void refreshPoseAndIdentity(LivestockProgressSavedData.Entry entry, CustomAnimal animal) {
         entry.x = animal.getX();
         entry.y = animal.getY();
         entry.z = animal.getZ();
         entry.isMale = animal.isMale();
-        entry.nutrition = animal.getNutrition();
-        entry.hydration = animal.getHydration();
+        ensureEntityTypeId(entry, animal);
+    }
+
+    private static void ensureEntityTypeId(LivestockProgressSavedData.Entry entry, CustomAnimal animal) {
+        if (animal != null) {
+            ResourceLocation typeId = ForgeRegistries.ENTITIES.getKey(animal.getType());
+            if (typeId != null) {
+                entry.entityTypeId = typeId.toString();
+                return;
+            }
+        }
+        if (entry.entityTypeId == null) {
+            entry.entityTypeId = "";
+        }
     }
 }

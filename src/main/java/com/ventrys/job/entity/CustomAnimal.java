@@ -52,11 +52,25 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
     
     private final AnimationFactory factory = new AnimationFactory(this);
     
+    /** HUD gestation : mâle / pas concerné. */
+    public static final int REPRO_HUD_MALE = 0;
+    /** HUD : nutrition ou hydratation sous le seuil. */
+    public static final int REPRO_HUD_NEEDS_CARE = 1;
+    /** HUD : pas de partenaire sexe opposé à proximité. */
+    public static final int REPRO_HUD_NO_PARTNER = 2;
+    /** HUD : gestation en cours (jauge qui avance ou déjà entamée). */
+    public static final int REPRO_HUD_GESTATING = 3;
+    /** HUD : jauge pleine, prête à mettre bas. */
+    public static final int REPRO_HUD_READY = 4;
+
     // Données synchronisées
     private static final EntityDataAccessor<Boolean> IS_MALE = SynchedEntityData.defineId(CustomAnimal.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Integer> NUTRITION = SynchedEntityData.defineId(CustomAnimal.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> HYDRATION = SynchedEntityData.defineId(CustomAnimal.class, EntityDataSerializers.INT);
-    // Utiliser un CompoundTag pour stocker les données longues non synchronisées
+    private static final EntityDataAccessor<Integer> REPRO_PROGRESS_PERCENT =
+        SynchedEntityData.defineId(CustomAnimal.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> REPRO_HUD_STATE =
+        SynchedEntityData.defineId(CustomAnimal.class, EntityDataSerializers.INT);
     
     // Données non synchronisées (gérées côté serveur) - Utilisation de timestamps réels (ms)
     private long lastNutritionDecrease = 0;
@@ -89,6 +103,8 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
         this.entityData.define(IS_MALE, true);
         this.entityData.define(NUTRITION, 100);
         this.entityData.define(HYDRATION, 100);
+        this.entityData.define(REPRO_PROGRESS_PERCENT, 0);
+        this.entityData.define(REPRO_HUD_STATE, REPRO_HUD_MALE);
     }
     
     public static AttributeSupplier.Builder createAttributes() {
@@ -183,7 +199,25 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
 
         if (!this.level.isClientSide && this.tickCount % 20 == 0) {
             LivestockProgressManager.syncEntity(this);
+            refreshReproductionHudFromWorld();
         }
+    }
+
+    /** HUD gestation : scan local du partenaire (ne modifie pas la jauge SavedData). */
+    public void refreshReproductionHudFromWorld() {
+        if (this.level.isClientSide) {
+            return;
+        }
+        double radius = MobConfig.getDetectionRadiusBlocks();
+        boolean opposite = !this.level.getEntitiesOfClass(
+            CustomAnimal.class,
+            this.getBoundingBox().inflate(radius),
+            other -> other != this
+                && other.getClass() == this.getClass()
+                && other.isAlive()
+                && other.isMale() != this.isMale()
+        ).isEmpty();
+        updateReproductionHud(this.reproductionProgressMs, opposite);
     }
 
     public long getReproductionProgressMs() {
@@ -221,6 +255,42 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
             }
             entry.pendingHealHearts = 0;
         }
+    }
+
+    /**
+     * Met à jour le HUD gestation (sync client). Ne change pas les timers gameplay.
+     * @param progressMs jauge actuelle
+     * @param oppositeSexNearby partenaire sexe opposé dans le rayon (faim non exigée)
+     */
+    public void updateReproductionHud(long progressMs, boolean oppositeSexNearby) {
+        if (this.level.isClientSide) {
+            return;
+        }
+        long requiredMs = Math.max(1L, MobConfig.getRequiredTimeMinutes() * 60_000L);
+        int percent = (int) Math.min(100L, Math.max(0L, (progressMs * 100L) / requiredMs));
+        this.entityData.set(REPRO_PROGRESS_PERCENT, percent);
+
+        int state;
+        if (isMale()) {
+            state = REPRO_HUD_MALE;
+        } else if (!canReproduce()) {
+            state = REPRO_HUD_NEEDS_CARE;
+        } else if (!oppositeSexNearby) {
+            state = REPRO_HUD_NO_PARTNER;
+        } else if (percent >= 100) {
+            state = REPRO_HUD_READY;
+        } else {
+            state = REPRO_HUD_GESTATING;
+        }
+        this.entityData.set(REPRO_HUD_STATE, state);
+    }
+
+    public int getReproductionProgressPercent() {
+        return this.entityData.get(REPRO_PROGRESS_PERCENT);
+    }
+
+    public int getReproductionHudState() {
+        return this.entityData.get(REPRO_HUD_STATE);
     }
 
     public boolean isReproductionProgressComplete() {
