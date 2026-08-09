@@ -23,6 +23,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.item.ItemStack;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -77,6 +78,10 @@ public class JobTableScreen extends AbstractContainerScreen<JobTableMenu> {
     private final Map<String, String> itemDisplayNameCache = new HashMap<>();
     private String cachedDescSplitKey = "";
     private List<FormattedText> cachedDescLines = List.of();
+    /** Évite de recréer les ItemStack d'ingrédients/résultat à chaque frame pendant l'affichage des détails. */
+    private String cachedItemStacksKey = "";
+    private List<ItemStack> cachedIngredientStacks = List.of();
+    private List<ItemStack> cachedOutputStacks = List.of();
 
     // === Palette "parchemin" : encre brune lisible sur fond clair ===
     private static final int INK = 0xFF2E2012;          // texte principal
@@ -438,6 +443,22 @@ public class JobTableScreen extends AbstractContainerScreen<JobTableMenu> {
             currentY += 3;
         }
 
+        // Construit les ItemStack d'ingrédients/résultat une seule fois par recette selectionnee
+        // (createDropItemPublic fait un lookup registre + NBT, coûteux à refaire chaque frame).
+        if (!recipe.getId().equals(cachedItemStacksKey)) {
+            cachedItemStacksKey = recipe.getId();
+            List<ItemStack> ingredients = new ArrayList<>();
+            for (RecipeIngredient input : recipe.getInputs()) {
+                ingredients.add(createIngredientStack(input));
+            }
+            cachedIngredientStacks = ingredients;
+            List<ItemStack> outputs = new ArrayList<>();
+            for (RecipeIngredient outIng : recipe.getOutputsForCraft()) {
+                outputs.add(createOutputStack(outIng));
+            }
+            cachedOutputStacks = outputs;
+        }
+
         // Section ingrédients - icône + quantité "xN" (le nom apparaît au survol)
         if (currentY < PANEL_END_Y - 22) {
             poseStack.pushPose();
@@ -453,6 +474,7 @@ public class JobTableScreen extends AbstractContainerScreen<JobTableMenu> {
             int col = 0;
 
             ItemRenderer itemRenderer = this.minecraft != null ? this.minecraft.getItemRenderer() : null;
+            int ingredientIndex = 0;
 
             for (RecipeIngredient input : recipe.getInputs()) {
                 if (currentY > PANEL_END_Y - ICON) break;
@@ -461,7 +483,9 @@ public class JobTableScreen extends AbstractContainerScreen<JobTableMenu> {
                 int absX = leftPos + relX;
                 int absY = topPos + relY;
 
-                ItemStack stack = createIngredientStack(input);
+                ItemStack stack = ingredientIndex < cachedIngredientStacks.size()
+                    ? cachedIngredientStacks.get(ingredientIndex) : ItemStack.EMPTY;
+                ingredientIndex++;
                 if (!stack.isEmpty() && itemRenderer != null) {
                     // IMPORTANT : renderGuiItem utilise le ModelViewStack (origine écran),
                     // il faut donc lui passer des coordonnées ABSOLUES, pas le PoseStack translaté.
@@ -516,6 +540,7 @@ public class JobTableScreen extends AbstractContainerScreen<JobTableMenu> {
             int col = 0;
 
             ItemRenderer itemRenderer = this.minecraft != null ? this.minecraft.getItemRenderer() : null;
+            int outputIndex = 0;
 
             for (RecipeIngredient outIng : resultList) {
                 if (currentY > PANEL_END_Y - ICON) break;
@@ -524,7 +549,9 @@ public class JobTableScreen extends AbstractContainerScreen<JobTableMenu> {
                 int absX = leftPos + relX;
                 int absY = topPos + relY;
 
-                ItemStack outputStack = createOutputStack(outIng);
+                ItemStack outputStack = outputIndex < cachedOutputStacks.size()
+                    ? cachedOutputStacks.get(outputIndex) : ItemStack.EMPTY;
+                outputIndex++;
                 if (!outputStack.isEmpty() && itemRenderer != null) {
                     // Coordonnées ABSOLUES (renderGuiItem utilise le ModelViewStack)
                     RenderSystem.enableBlend();
