@@ -214,12 +214,27 @@ public final class LivestockProgressManager {
                 // Chunk déchargé : garder l'entrée à 0 pour tuer au rechargement.
             } else if (entity instanceof CustomAnimal animal && animal.isAlive()) {
                 animal.applyLivestockEntry(entry);
-                boolean oppositeNearby = hasOppositeSexNearby(uuid, entry, spatial);
+                // Partenaire chargé uniquement : évite "prête" alors que le mâle est hors chunk.
+                boolean oppositeNearby = hasLoadedOppositeSexNearby(animal);
                 animal.updateReproductionHud(entry.reproductionProgressMs, oppositeNearby);
             }
         }
 
         tryAutomaticBreeding(level, saved, snapshot, spatial);
+    }
+
+    /** Sexe opposé, même espèce, entité chargée dans le rayon. */
+    private static boolean hasLoadedOppositeSexNearby(CustomAnimal self) {
+        double radius = MobConfig.getDetectionRadiusBlocks();
+        return !self.level.getEntitiesOfClass(
+            CustomAnimal.class,
+            self.getBoundingBox().inflate(radius),
+            other -> other != self
+                && other.getClass() == self.getClass()
+                && other.isAlive()
+                && !other.isBaby()
+                && other.isMale() != self.isMale()
+        ).isEmpty();
     }
 
     private static Map<Long, List<Map.Entry<UUID, LivestockProgressSavedData.Entry>>> buildSpatialIndex(
@@ -247,14 +262,6 @@ public final class LivestockProgressManager {
             q--;
         }
         return q;
-    }
-
-    /** Partenaire sexe opposé, même espèce, dans le rayon — sans regarder sa faim/soif (HUD). */
-    private static boolean hasOppositeSexNearby(
-            UUID selfUuid,
-            LivestockProgressSavedData.Entry self,
-            Map<Long, List<Map.Entry<UUID, LivestockProgressSavedData.Entry>>> spatial) {
-        return findNearbyMate(selfUuid, self, spatial, false) != null;
     }
 
     /** Partenaire éligible pour accumuler la jauge (doit aussi pouvoir se reproduire). */
@@ -396,12 +403,13 @@ public final class LivestockProgressManager {
         for (int i = 0; i < snapshot.size(); i++) {
             Map.Entry<UUID, LivestockProgressSavedData.Entry> a = snapshot.get(i);
             LivestockProgressSavedData.Entry entryA = saved.get(a.getKey());
-            if (entryA == null || !canReproduce(entryA) || !isReproductionComplete(entryA)) {
+            // Seule la femelle "met bas" : jauge pleine + partenaire mâle en forme à proximité.
+            if (entryA == null || entryA.isMale || !canReproduce(entryA) || !isReproductionComplete(entryA)) {
                 continue;
             }
 
             Entity entityA = level.getEntity(a.getKey());
-            if (!(entityA instanceof CustomAnimal animalA) || !animalA.isAlive()) {
+            if (!(entityA instanceof CustomAnimal animalA) || !animalA.isAlive() || animalA.isBaby()) {
                 continue;
             }
 
@@ -422,7 +430,7 @@ public final class LivestockProgressManager {
                             continue;
                         }
                         LivestockProgressSavedData.Entry entryB = saved.get(b.getKey());
-                        if (entryB == null) {
+                        if (entryB == null || entryB.isMale == entryA.isMale) {
                             continue;
                         }
                         String typeA = normalizedType(entryA.entityTypeId);
@@ -430,10 +438,8 @@ public final class LivestockProgressManager {
                         if (typeA.isEmpty() || !typeA.equals(typeB)) {
                             continue;
                         }
-                        if (entryA.isMale == entryB.isMale) {
-                            continue;
-                        }
-                        if (!canReproduce(entryB) || !isReproductionComplete(entryB)) {
+                        // Le mâle doit être nourri/abreuuvé, mais n'a pas besoin d'avoir la jauge pleine.
+                        if (!canReproduce(entryB)) {
                             continue;
                         }
 
@@ -443,7 +449,7 @@ public final class LivestockProgressManager {
                         }
 
                         Entity entityB = level.getEntity(b.getKey());
-                        if (!(entityB instanceof CustomAnimal animalB) || !animalB.isAlive()) {
+                        if (!(entityB instanceof CustomAnimal animalB) || !animalB.isAlive() || animalB.isBaby()) {
                             continue;
                         }
 

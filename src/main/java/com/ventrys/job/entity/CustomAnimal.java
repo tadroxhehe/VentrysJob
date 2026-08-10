@@ -215,6 +215,7 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
             other -> other != this
                 && other.getClass() == this.getClass()
                 && other.isAlive()
+                && !other.isBaby()
                 && other.isMale() != this.isMale()
         ).isEmpty();
         updateReproductionHud(this.reproductionProgressMs, opposite);
@@ -298,16 +299,22 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
         return reproductionProgressMs >= requiredMs;
     }
 
-    /** Les deux parents doivent avoir accumulé le délai configuré (ex. 48 h). */
+    /** Les deux parents doivent pouvoir se reproduire ; seule la femelle doit avoir fini la gestation. */
     public boolean isReproductionReadyWith(CustomAnimal mate) {
         if (mate == null || mate == this) {
             return false;
         }
-        return canReproduce()
-            && mate.canReproduce()
-            && isMale() != mate.isMale()
-            && isReproductionProgressComplete()
-            && mate.isReproductionProgressComplete();
+        if (this.isBaby() || mate.isBaby()) {
+            return false;
+        }
+        if (!canReproduce() || !mate.canReproduce()) {
+            return false;
+        }
+        if (isMale() == mate.isMale()) {
+            return false;
+        }
+        CustomAnimal female = isMale() ? mate : this;
+        return female.isReproductionProgressComplete();
     }
     
     public boolean isMale() {
