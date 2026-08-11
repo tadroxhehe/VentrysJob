@@ -104,6 +104,9 @@ public final class JobEnergyCostCalculator {
 
         // Artisan meubles / blocs
         if ("artisan".equals(jobId)) {
+            if (id.contains("thin_") || outputId.contains("thin_") || id.contains("poutre")) {
+                return 1.2f; // ex-6 ÷ 5
+            }
             if (id.contains("vase_apothicaire") || outputId.contains("vase_apothicaire")) {
                 return 22f;
             }

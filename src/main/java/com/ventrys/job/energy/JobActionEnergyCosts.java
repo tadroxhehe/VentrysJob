@@ -9,8 +9,7 @@ public final class JobActionEnergyCosts {
     }
 
     // Ouvrier — extraction
-    /** ~10 énergie pour 64 bûches (demande élevée / volume mineur-ouvrier). */
-    public static final float EXTRACT_LOG = 0.15f;
+    public static final float EXTRACT_LOG = 0.35f;
     public static final float EXTRACT_SAW = 0.3f;
     public static final float EXTRACT_ORE = 0.7f;
     public static final float EXTRACT_VERDRAGON = 3.0f;

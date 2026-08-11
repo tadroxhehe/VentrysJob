@@ -2766,6 +2766,7 @@
                     "id": "art_thin_oak_log",
                     "name": "Poutres",
                     "description": "Poutres de chene (1 buche → 8)",
+                    "energyCost": 1.2,
                     "inputs": [
                         {
                             "itemId": "minecraft:oak_log",
@@ -2781,6 +2782,7 @@
                     "id": "art_thin_spruce_log",
                     "name": "Poutres",
                     "description": "Poutres de sapin (1 buche → 8)",
+                    "energyCost": 1.2,
                     "inputs": [
                         {
                             "itemId": "minecraft:spruce_log",
@@ -2796,6 +2798,7 @@
                     "id": "art_thin_birch_log",
                     "name": "Poutres",
                     "description": "Poutres de bouleau (1 buche → 8)",
+                    "energyCost": 1.2,
                     "inputs": [
                         {
                             "itemId": "minecraft:birch_log",

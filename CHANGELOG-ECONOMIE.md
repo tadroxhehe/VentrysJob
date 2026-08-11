@@ -4,6 +4,11 @@ Historique des passes (du plus récent au plus ancien).
 
 ---
 
+## 1.0.45 — Poutres énergie ÷5 ; bûches extract restauré
+
+- Poutres artisan (`thin_*`) : énergie craft **6 → 1,2** (÷5)
+- `EXTRACT_LOG` remis à **0,35** (annule la baisse 1.0.41)
+
 ## 1.0.44 — Four charbon ÷10
 
 Transformation ouvrier : **2 h → 12 min**.
