@@ -32,17 +32,13 @@ public class CustomCow extends CustomAnimal implements LivestockTextureHolder {
         return TEXTURE_VARIANTS;
     }
 
-    // defineId(CustomAnimal.class, ...) et non CustomCow.class : CustomCow, CustomSheep et
-    // CustomChicken sont tous des sous-classes directes de CustomAnimal, donc s'ils reservent
-    // leurs champs chacun sous leur propre classe, l'allocation d'ID de SynchedEntityData
-    // repart independamment de "dernier index de CustomAnimal + 1" pour chacun -> collision
-    // d'index entre especes (meme index, types differents -> crash cote client au decodage).
-    // Passer CustomAnimal.class fait partager le meme compteur a toutes les sous-classes.
+    // defineId sur la classe concrete (pattern vanilla) : des IDs numeriques partages
+    // entre especes soeurs sont normaux et sans danger (chaque entite n'enregistre que ses champs).
     private static final EntityDataAccessor<String> TEXTURE_VARIANT =
-        SynchedEntityData.defineId(CustomAnimal.class, EntityDataSerializers.STRING);
+        SynchedEntityData.defineId(CustomCow.class, EntityDataSerializers.STRING);
     /** Minutes restantes avant traite (0 = prêt). -1 = mâle / indisponible. */
     private static final EntityDataAccessor<Integer> MILK_READY_IN_MIN =
-        SynchedEntityData.defineId(CustomAnimal.class, EntityDataSerializers.INT);
+        SynchedEntityData.defineId(CustomCow.class, EntityDataSerializers.INT);
 
     private long milkProductionStartTime = 0;
 

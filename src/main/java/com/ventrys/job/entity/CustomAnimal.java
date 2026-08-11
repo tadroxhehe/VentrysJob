@@ -71,6 +71,13 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
         SynchedEntityData.defineId(CustomAnimal.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> REPRO_HUD_STATE =
         SynchedEntityData.defineId(CustomAnimal.class, EntityDataSerializers.INT);
+
+    /**
+     * Source de vérité locale du sexe (NBT / sync). Le défaut entityData est {@code true} :
+     * si la sync client échoue, le HUD affichait tous les animaux en mâle.
+     * On lit ce champ plutôt que de s'appuyer uniquement sur un get entityData fragile.
+     */
+    private boolean male = true;
     
     // Données non synchronisées (gérées côté serveur) - Utilisation de timestamps réels (ms)
     private long lastNutritionDecrease = 0;
@@ -83,7 +90,7 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
         super(entityType, level);
         if (!level.isClientSide) {
             // Initialiser aléatoirement le sexe
-            this.entityData.set(IS_MALE, new Random().nextBoolean());
+            setMale(new Random().nextBoolean());
             // Initialiser nutrition et hydratation à 100%
             this.entityData.set(NUTRITION, 100);
             this.entityData.set(HYDRATION, 100);
@@ -95,6 +102,21 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
             this.lastRegenerationTime = currentTime;
             this.reproductionProgressMs = 0L;
         }
+    }
+
+    @Override
+    public void onSyncedDataUpdated(EntityDataAccessor<?> key) {
+        super.onSyncedDataUpdated(key);
+        // Comparaison par référence : évite qu'un autre BOOLEAN au même id (si collision)
+        // ne réécrive le sexe via EntityDataAccessor.equals (basé sur l'id).
+        if (key == IS_MALE) {
+            this.male = this.entityData.get(IS_MALE);
+        }
+    }
+
+    public void setMale(boolean male) {
+        this.male = male;
+        this.entityData.set(IS_MALE, male);
     }
     
     @Override
@@ -318,7 +340,7 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
     }
     
     public boolean isMale() {
-        return this.entityData.get(IS_MALE);
+        return this.male;
     }
 
     @Override
@@ -452,7 +474,7 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
     public void readAdditionalSaveData(CompoundTag tag) {
         super.readAdditionalSaveData(tag);
         if (tag.contains("IsMale")) {
-            this.entityData.set(IS_MALE, tag.getBoolean("IsMale"));
+            setMale(tag.getBoolean("IsMale"));
         }
         if (tag.contains("Nutrition")) {
             setNutrition(tag.getInt("Nutrition"));

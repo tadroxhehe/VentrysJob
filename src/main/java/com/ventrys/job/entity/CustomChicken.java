@@ -45,11 +45,9 @@ public class CustomChicken extends CustomAnimal implements LivestockTextureHolde
         return TEXTURE_VARIANTS;
     }
 
-    // defineId(CustomAnimal.class, ...) : voir le commentaire equivalent dans CustomCow.java —
-    // CustomCow/CustomSheep/CustomChicken sont des soeurs directes de CustomAnimal, donc passer
-    // sa propre classe ici collisionnait avec les champs des autres especes sur les memes index.
+    // defineId sur la classe concrete (pattern vanilla) — voir CustomCow / CustomSheep.
     private static final EntityDataAccessor<String> TEXTURE_VARIANT =
-        SynchedEntityData.defineId(CustomAnimal.class, EntityDataSerializers.STRING);
+        SynchedEntityData.defineId(CustomChicken.class, EntityDataSerializers.STRING);
     
     private static final int NEST_SEARCH_RADIUS = 20;
     private static final int NEST_SEARCH_Y_RANGE = 5;
