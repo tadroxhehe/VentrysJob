@@ -48,13 +48,13 @@ public class ForgeronFourBlockEntity extends BlockEntity implements MenuProvider
     // Données pour la synchronisation client-serveur
     public final ContainerData data;
     private long smeltingStartTick = 0;
-    private static final long SMELTING_DURATION_TICKS = 20L * 20L; // 20 secondes
+    private static final long SMELTING_DURATION_TICKS = 8L * 20L; // 8 secondes
     private boolean isLit = false;
     private int particleTickCounter = 0;
     private long fuelStartTick = 0;
     private long fuelDurationTicks = 0;
     private long flintAndSteelFireStartTick = 0;
-    private static final long FLINT_AND_STEEL_FIRE_DURATION_TICKS = 60L * 20L; // 60 secondes
+    private static final long FLINT_AND_STEEL_FIRE_DURATION_TICKS = 5L * 60L * 20L; // 5 minutes
 
     // Configuration des combustibles et recettes
     private static final Map<String, Integer> FUEL_VALUES = new HashMap<>();
@@ -106,9 +106,9 @@ public class ForgeronFourBlockEntity extends BlockEntity implements MenuProvider
      */
     private static void initializeConfiguration() {
         VALID_FUELS.add("minecraft:charcoal");
-        FUEL_VALUES.put("minecraft:charcoal", 1200); // 60 secondes = 3 fontes (20s chacune)
+        FUEL_VALUES.put("minecraft:charcoal", 2400); // 2 minutes ≈ 15 fontes (8s)
         VALID_FUELS.add("minecraft:coal");
-        FUEL_VALUES.put("minecraft:coal", 1200); // 60 secondes = 3 fontes (20s chacune)
+        FUEL_VALUES.put("minecraft:coal", 2400); // 2 minutes ≈ 15 fontes (8s)
 
         addOreRecipe("ventrysitem:res_etain_brut", "ventrysitem:res_etain_lingot");
         addOreRecipe("ventrysitem:res_calcaire", "ventrysitem:res_chaux");

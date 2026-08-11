@@ -9087,14 +9087,15 @@
                     "id": "art_vase_apothicaire",
                     "name": "Vase de plantation",
                     "description": "",
+                    "energyCost": 22,
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_brun",
-                            "count": 12
+                            "count": 24
                         },
                         {
                             "itemId": "minecraft:dirt",
-                            "count": 6
+                            "count": 12
                         }
                     ],
                     "output": {
@@ -11648,10 +11649,6 @@
                     "name": "Livre vierge",
                     "description": "",
                     "inputs": [
-                        {
-                            "itemId": "minecraft:feather",
-                            "count": 1
-                        },
                         {
                             "itemId": "minecraft:paper",
                             "count": 30

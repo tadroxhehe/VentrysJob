@@ -31,7 +31,7 @@ public class VaseApothicaireBlockEntity extends BlockEntity {
      * Délai wall-clock après arrosage avant récolte (même pour toutes les espèces).
      * Ancien défaut TEST = 10 s — trop court RP / économie (farm AFK devant les pots).
      */
-    public static final long GROWTH_TIME_MS = 4L * 60L * 60L * 1000L; // 4 heures
+    public static final long GROWTH_TIME_MS = 5L * 60L * 60L * 1000L; // 5 heures
     
     static {
         initializeSupportedItems();

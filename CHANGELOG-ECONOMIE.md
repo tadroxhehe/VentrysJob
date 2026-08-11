@@ -4,6 +4,15 @@ Historique des passes (du plus récent au plus ancien).
 
 ---
 
+## 1.0.43 — Éco vase / cultures / argile / four / livre
+
+- Vase apo : **×2** matières (24 argile + 12 terre), `energyCost` **22**
+- Cultures : durée de stade **+20 %** (~48 h → ~57,6 h total)
+- Vase apo pousse : **4 h → 5 h**
+- Livre vierge : **plume retirée** du craft couturier
+- Argile : drop **1 → 4** / bloc
+- Four forgeron : fonte **20 s → 8 s**, feu briquet **1 → 5 min**, charbon **1 → 2 min**
+
 ## 1.0.41 — Énergie bûches ↓
 
 `EXTRACT_LOG` **0,35 → 0,15** (~10 énergie / 64 bûches au lieu de ~22). Volume bois trop cher vs demande ouvrier.
