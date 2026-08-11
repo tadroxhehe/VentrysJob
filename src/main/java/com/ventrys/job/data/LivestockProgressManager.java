@@ -57,9 +57,13 @@ public final class LivestockProgressManager {
             entry = createEntryFromEntity(animal, now);
             saved.put(uuid, entry);
         } else {
-            // SavedData = vérité wall-clock (chunks déchargés). Ne pas écraser
-            // nutrition/hydratation/repro avec le NBT stale de l'entité au reload.
-            refreshPoseAndIdentity(entry, animal);
+            // SavedData = vérité wall-clock pour nutri/hydro/repro.
+            // Sexe : toujours depuis l'entité (NBT) — le champ local "male" client avait
+            // corrompu l'affichage ; on resynchronise entry.isMale depuis l'entité ici.
+            entry.x = animal.getX();
+            entry.y = animal.getY();
+            entry.z = animal.getZ();
+            entry.isMale = animal.isMale();
             ensureEntityTypeId(entry, animal);
             animal.applyLivestockEntry(entry);
             saved.put(uuid, entry);

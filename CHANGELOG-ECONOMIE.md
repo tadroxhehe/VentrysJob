@@ -4,6 +4,10 @@ Historique des passes (du plus récent au plus ancien).
 
 ---
 
+## 1.0.49 — Fix sexe animaux (HUD mâle à tort)
+
+- Retrait du champ local `male` (défaut true) qui affichait **tous** les animaux en mâle côté client alors que gestation / NBT restaient corrects
+
 ## 1.0.48 — Couturier énergie ↓ ; temps 18h→2h
 
 - Couturier : coûts craft **−20 à −35 %** (fil/tissu/corde **4 → 2,5** ; gambison / cuir adoucis)

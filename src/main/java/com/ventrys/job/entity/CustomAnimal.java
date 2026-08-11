@@ -71,13 +71,6 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
         SynchedEntityData.defineId(CustomAnimal.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> REPRO_HUD_STATE =
         SynchedEntityData.defineId(CustomAnimal.class, EntityDataSerializers.INT);
-
-    /**
-     * Source de vérité locale du sexe (NBT / sync). Le défaut entityData est {@code true} :
-     * si la sync client échoue, le HUD affichait tous les animaux en mâle.
-     * On lit ce champ plutôt que de s'appuyer uniquement sur un get entityData fragile.
-     */
-    private boolean male = true;
     
     // Données non synchronisées (gérées côté serveur) - Utilisation de timestamps réels (ms)
     private long lastNutritionDecrease = 0;
@@ -104,18 +97,7 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
         }
     }
 
-    @Override
-    public void onSyncedDataUpdated(EntityDataAccessor<?> key) {
-        super.onSyncedDataUpdated(key);
-        // Comparaison par référence : évite qu'un autre BOOLEAN au même id (si collision)
-        // ne réécrive le sexe via EntityDataAccessor.equals (basé sur l'id).
-        if (key == IS_MALE) {
-            this.male = this.entityData.get(IS_MALE);
-        }
-    }
-
     public void setMale(boolean male) {
-        this.male = male;
         this.entityData.set(IS_MALE, male);
     }
     
@@ -264,6 +246,8 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
         if (entry == null || this.level.isClientSide) {
             return;
         }
+        // Sexe : si SavedData et entité divergent, on privilégie l'entité (NBT déjà lu).
+        // Ne jamais forcer "mâle" depuis une entrée stale.
         setNutrition(entry.nutrition);
         setHydration(entry.hydration);
         this.reproductionProgressMs = entry.reproductionProgressMs;
@@ -340,7 +324,7 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
     }
     
     public boolean isMale() {
-        return this.male;
+        return this.entityData.get(IS_MALE);
     }
 
     @Override
