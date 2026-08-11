@@ -4,6 +4,11 @@ Historique des passes (du plus récent au plus ancien).
 
 ---
 
+## 1.0.52 — Récolte vase à la cisaille
+
+- Fleurs plantées dans les vases : récolte **uniquement avec une cisaille** en main
+- Chaque récolte consomme **3** points de durabilité sur la cisaille
+
 ## 1.0.51 — Planches constructibles 3+1 → 2+1
 
 Famille bois artisan (chêne / sapin / bouleau), échelle ÷1,5 sur la grille :

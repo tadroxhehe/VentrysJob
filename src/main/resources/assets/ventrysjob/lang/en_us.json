@@ -59,6 +59,7 @@
   "ventrysjob.message.vase.planted": "You have planted your plant in the vase",
   "ventrysjob.message.vase.use_water": "Use a water bucket to water your plant!",
   "ventrysjob.message.vase.harvest.success": "Harvest successful!",
+  "ventrysjob.message.vase.need_shears": "You must hold shears to harvest the flower!",
   "ventrysjob.message.vase.wrong_job": "You must be an apothecary to use this planting vase!",
   
   "ventrysjob.message.furnace.must_be_worker": "You must be a worker to use this charcoal furnace!",

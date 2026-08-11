@@ -1,5 +1,6 @@
 package com.ventrys.job.block.entity;
 
+import com.ventrys.job.data.ToolDurability;
 import com.ventrys.job.energy.JobActionEnergyCosts;
 import com.ventrys.job.energy.JobEnergyHelper;
 import com.ventrys.job.audio.PositionalSounds;
@@ -9,10 +10,13 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -119,7 +123,7 @@ public class VaseApothicaireBlockEntity extends BlockEntity {
     }
     
     public InteractionResult handlePlantingOrHarvest(Player player, ItemStack heldItem) {
-        // Vérifier si on peut récolter (priorité à la récolte)
+        // Vérifier si on peut récolter (priorité à la récolte) — cisaille obligatoire
         if (canHarvest()) {
             return harvestPlant(player);
         }
@@ -187,26 +191,39 @@ public class VaseApothicaireBlockEntity extends BlockEntity {
         return (System.currentTimeMillis() - plantedTime) >= GROWTH_TIME_MS;
     }
     
+    /** Coût en durabilité de la cisaille par fleur récoltée dans un vase. */
+    private static final int SHEARS_HARVEST_DAMAGE = 3;
+
     private InteractionResult harvestPlant(Player player) {
         if (plantedItemId == null) {
             return InteractionResult.FAIL;
         }
 
-        if (player instanceof net.minecraft.server.level.ServerPlayer serverPlayer
+        InteractionHand shearsHand = findUsableShearsHand(player);
+        if (shearsHand == null) {
+            sendMessage(player, "ventrysjob.message.vase.need_shears");
+            return InteractionResult.FAIL;
+        }
+
+        if (player instanceof ServerPlayer serverPlayer
                 && !JobEnergyHelper.consumeForAction(serverPlayer, JobActionEnergyCosts.VASE_HARVEST)) {
             return InteractionResult.FAIL;
         }
-        
+
         // Créer 2 items de récolte (input x1 → output x2)
         Item item = ForgeRegistries.ITEMS.getValue(new net.minecraft.resources.ResourceLocation(plantedItemId));
         if (item != null) {
             ItemStack harvestStack = new ItemStack(item, 2);
             if (!player.getInventory().add(harvestStack)) {
-                // Si l'inventaire est plein, faire tomber l'item
                 player.drop(harvestStack, false);
             }
-            
+
             sendMessage(player, "ventrysjob.message.vase.harvest.success");
+        }
+
+        if (player instanceof ServerPlayer serverPlayer) {
+            ItemStack shears = serverPlayer.getItemInHand(shearsHand);
+            ToolDurability.hurtAndBreak(shears, serverPlayer, shearsHand, SHEARS_HARVEST_DAMAGE);
         }
 
         if (this.level instanceof ServerLevel serverLevel) {
@@ -214,18 +231,29 @@ public class VaseApothicaireBlockEntity extends BlockEntity {
                 PositionalSounds.VASE_SOUND_MAX_DISTANCE, 0.92f, 0.98f);
         }
 
-        // Réinitialiser complètement le vase après récolte
         plantedItemId = null;
         isWatered = false;
         plantedTime = 0;
         currentStage = 0;
         lastStageCheckTimeMs = 0;
-        
-        // Mettre à jour le blockstate AVANT setChanged pour s'assurer que la synchronisation est correcte
+
         updateBlockState();
         setChanged();
-        
+
         return InteractionResult.SUCCESS;
+    }
+
+    /** Main (principale puis secondaire) tenant une cisaille encore utilisable. */
+    private static InteractionHand findUsableShearsHand(Player player) {
+        ItemStack main = player.getItemInHand(InteractionHand.MAIN_HAND);
+        if (main.getItem() == Items.SHEARS && ToolDurability.isUsable(main)) {
+            return InteractionHand.MAIN_HAND;
+        }
+        ItemStack off = player.getItemInHand(InteractionHand.OFF_HAND);
+        if (off.getItem() == Items.SHEARS && ToolDurability.isUsable(off)) {
+            return InteractionHand.OFF_HAND;
+        }
+        return null;
     }
     
     private String getItemId(ItemStack itemStack) {

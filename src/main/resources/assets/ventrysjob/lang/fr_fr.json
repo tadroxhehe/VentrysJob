@@ -66,6 +66,7 @@
   "ventrysjob.message.vase.planted": "§aVous avez planté votre plante dans le vase",
   "ventrysjob.message.vase.use_water": "§7Utilisez un seau d'eau pour arroser votre plante !",
   "ventrysjob.message.vase.harvest.success": "§aRécolte réussie !",
+  "ventrysjob.message.vase.need_shears": "§cVous devez tenir une cisaille pour récolter la fleur !",
   "ventrysjob.message.vase.wrong_job": "§cVous devez être apothicaire pour utiliser ce vase de plantation !",
   "ventrysjob.message.furnace.must_be_worker": "§cVous devez être ouvrier pour utiliser ce four à charbon de bois !",
   "ventrysjob.message.furnace.lit": "§aLe four à charbon de bois est maintenant allumé !",

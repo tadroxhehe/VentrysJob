@@ -34,7 +34,11 @@ public final class ToolDurability {
     }
 
     public static void hurtAndBreak(ItemStack stack, ServerPlayer player, InteractionHand hand) {
-        if (stack == null || stack.isEmpty() || player == null) {
+        hurtAndBreak(stack, player, hand, 1);
+    }
+
+    public static void hurtAndBreak(ItemStack stack, ServerPlayer player, InteractionHand hand, int amount) {
+        if (stack == null || stack.isEmpty() || player == null || amount <= 0) {
             return;
         }
         if (isBroken(stack)) {
@@ -44,7 +48,7 @@ public final class ToolDurability {
         if (!stack.getItem().canBeDepleted() && stack.getItem().getMaxDamage(stack) <= 0) {
             return;
         }
-        stack.hurtAndBreak(1, player, broken -> broken.broadcastBreakEvent(hand));
+        stack.hurtAndBreak(amount, player, broken -> broken.broadcastBreakEvent(hand));
         ItemStack after = player.getItemInHand(hand);
         if (isBroken(after)) {
             destroyBroken(after, player, hand);
