@@ -111,7 +111,7 @@ public final class JobEnergyCostCalculator {
                 return 1.2f; // ex-6 ÷ 5
             }
             if (id.contains("vase_apothicaire") || outputId.contains("vase_apothicaire")) {
-                return 22f;
+                return 66f;
             }
             if (inputTotal >= 40) return 22f;
             if (inputTotal >= 20) return 14f;

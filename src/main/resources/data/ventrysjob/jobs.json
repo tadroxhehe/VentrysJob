@@ -9090,15 +9090,15 @@
                     "id": "art_vase_apothicaire",
                     "name": "Vase de plantation",
                     "description": "",
-                    "energyCost": 22,
+                    "energyCost": 66,
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_argile_brun",
-                            "count": 24
+                            "count": 72
                         },
                         {
                             "itemId": "minecraft:dirt",
-                            "count": 12
+                            "count": 36
                         }
                     ],
                     "output": {

@@ -4,6 +4,10 @@ Historique des passes (du plus récent au plus ancien).
 
 ---
 
+## 1.0.50 — Vase apo ×3
+
+- Vase de plantation : **72** argile + **36** terre (était 24+12), énergie **66**
+
 ## 1.0.49 — Fix sexe animaux (HUD mâle à tort)
 
 - Retrait du champ local `male` (défaut true) qui affichait **tous** les animaux en mâle côté client alors que gestation / NBT restaient corrects
