@@ -4,6 +4,14 @@ Historique des passes (du plus récent au plus ancien).
 
 ---
 
+## 1.0.51 — Planches constructibles 3+1 → 2+1
+
+Famille bois artisan (chêne / sapin / bouleau), échelle ÷1,5 sur la grille :
+- Bloc / vertical / lambris / cadres : **3+1 → 2+1**
+- Muret / volet : **4+1 → 3+1**
+- Pointe / hopper : **6+2 → 4+1**
+- Dalle / escalier / tapis / porte / barrière : **1+1** (inchangé)
+
 ## 1.0.50 — Vase apo ×3
 
 - Vase de plantation : **72** argile + **36** terre (était 24+12), énergie **66**

@@ -2750,7 +2750,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -2817,7 +2817,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -2874,7 +2874,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 4
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -2893,7 +2893,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -2912,11 +2912,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 6
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -2931,11 +2931,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 6
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3011,7 +3011,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3068,7 +3068,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3087,7 +3087,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3106,7 +3106,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3201,7 +3201,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 4
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3220,7 +3220,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3281,7 +3281,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3679,7 +3679,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3698,7 +3698,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3755,7 +3755,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 4
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3774,7 +3774,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3793,11 +3793,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 6
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3812,11 +3812,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 6
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -3892,7 +3892,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3949,7 +3949,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3968,7 +3968,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -3987,7 +3987,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4082,7 +4082,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 4
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4101,7 +4101,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4162,7 +4162,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_sapin",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4560,7 +4560,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4617,7 +4617,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 4
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4636,11 +4636,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 6
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -4655,11 +4655,11 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 6
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -4735,7 +4735,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4792,7 +4792,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4811,7 +4811,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4830,7 +4830,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4925,7 +4925,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 4
+                            "count": 3
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -4944,7 +4944,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
@@ -5005,7 +5005,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_bouleau",
-                            "count": 3
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:res_clou",
