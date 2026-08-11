@@ -72,8 +72,8 @@ public class TimeDebugCommand {
         boolean running = RealTimeManager.isTimeRunning(parisTime);
         source.sendSuccess(new TranslatableComponent(
                 running ? "ventrysjob.command.time.window.active" : "ventrysjob.command.time.window.frozen",
-                "17:00",
-                "02:00",
+                String.format("%02d:00", RealTimeManager.WINDOW_START_HOUR),
+                String.format("%02d:00", RealTimeManager.WINDOW_END_HOUR),
                 String.format("%.3f", RealTimeManager.gameHoursPerIrlHour())
         ), false);
         if (running) {
