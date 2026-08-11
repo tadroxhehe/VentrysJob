@@ -8,29 +8,31 @@ import java.time.ZonedDateTime;
 /**
  * Temps de jeu synchronisé sur l'horloge de Paris, avec freeze hors session.
  *
- * <p>Fenêtre active (défreeze) : {@code 17:00} → {@code 02:00} (9 heures IRL).
+ * <p>Fenêtre active (défreeze) : {@code 18:00} → {@code 02:00} (8 heures IRL).
  * Dans cette fenêtre, exactement {@code 24 h} de jeu (24000 ticks) s'écoulent.
  *
  * <pre>
- * Ratio = 24 h jeu / 9 h IRL = 8/3 ≈ 2,667 h jeu par heure IRL
- *       = 24000 ticks / 32400 s IRL ≈ 0,7407 tick / seconde IRL
+ * Ratio = 24 h jeu / 8 h IRL = 3 h jeu par heure IRL
+ *       = 24000 ticks / 28800 s IRL ≈ 0,833 tick / seconde IRL
  *
- * Progression t ∈ [0, 1] = secondes_depuis_17h / 32400
+ * Progression t ∈ [0, 1] = secondes_depuis_18h / 28800
  * dayTime               = floor(t × 24000)  (0 = aube Minecraft)
+ *
+ * Ex. 18h → 6h IG · 20h → 12h IG (midi) · 02h → figé à l'aube
  * </pre>
  *
- * <p>Hors fenêtre ({@code 02:00} → {@code 17:00}) : le temps reste figé en fin de cycle (aube).
+ * <p>Hors fenêtre ({@code 02:00} → {@code 18:00}) : le temps reste figé en fin de cycle (aube).
  */
 public class RealTimeManager {
     public static final ZoneId PARIS_ZONE = ZoneId.of("Europe/Paris");
 
-    /** Début de la fenêtre (inclus) — 17h00 Paris. */
-    public static final int WINDOW_START_HOUR = 17;
+    /** Début de la fenêtre (inclus) — 18h00 Paris. */
+    public static final int WINDOW_START_HOUR = 18;
     /** Fin de la fenêtre (exclus) — 02h00 Paris. */
     public static final int WINDOW_END_HOUR = 2;
 
-    /** 17h → 2h = 9 heures IRL. */
-    public static final int WINDOW_HOURS = 9;
+    /** 18h → 2h = 8 heures IRL. */
+    public static final int WINDOW_HOURS = 8;
     public static final long WINDOW_SECONDS = WINDOW_HOURS * 3600L;
 
     /** Un jour Minecraft complet. */
@@ -45,7 +47,7 @@ public class RealTimeManager {
     }
 
     /**
-     * {@code true} si l'horloge Paris est dans {@code [17:00, 02:00)} (wrap minuit).
+     * {@code true} si l'horloge Paris est dans {@code [18:00, 02:00)} (wrap minuit).
      */
     public static boolean isTimeRunning(ZonedDateTime parisTime) {
         if (parisTime == null) {
@@ -56,7 +58,7 @@ public class RealTimeManager {
     }
 
     /**
-     * Secondes écoulées depuis 17:00 dans la fenêtre (0 … 32400).
+     * Secondes écoulées depuis 18:00 dans la fenêtre (0 … 28800).
      * Hors fenêtre : -1.
      */
     public static long secondsIntoWindow(ZonedDateTime parisTime) {
@@ -71,10 +73,10 @@ public class RealTimeManager {
         int second = parisTime.getSecond();
         long secondsOfHour = minute * 60L + second;
         if (hour >= WINDOW_START_HOUR) {
-            // 17:00 → 24:00
+            // 18:00 → 24:00
             return (hour - WINDOW_START_HOUR) * 3600L + secondsOfHour;
         }
-        // 00:00 → 02:00 : 7 h déjà écoulées (17→00) + heure actuelle
+        // 00:00 → 02:00 : 6 h déjà écoulées (18→00) + heure actuelle
         return (hour + (24 - WINDOW_START_HOUR)) * 3600L + secondsOfHour;
     }
 
@@ -134,11 +136,11 @@ public class RealTimeManager {
         if (seconds >= WINDOW_SECONDS) {
             return 0L;
         }
-        // (s * 24000) / 32400 — exact en arithmétique entière
+        // (s * 24000) / 28800 — exact en arithmétique entière
         return (seconds * TICKS_PER_GAME_DAY) / WINDOW_SECONDS;
     }
 
-    /** Heures de jeu qui passent pour 1 heure IRL dans la fenêtre (24/9 = 8/3). */
+    /** Heures de jeu qui passent pour 1 heure IRL dans la fenêtre (24/8 = 3). */
     public static double gameHoursPerIrlHour() {
         return 24.0D / (double) WINDOW_HOURS;
     }

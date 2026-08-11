@@ -46,12 +46,15 @@ public final class JobEnergyCostCalculator {
         if (id.contains("maillebas")) return 36f;
         if (id.contains("mailletete")) return 26f;
 
-        // Couturier armures
-        if (id.contains("gambison_corp") || id.contains("gambisoncorps")) return 30f;
-        if (id.contains("gambison_bas")) return 22f;
-        if (id.contains("gambison_tete")) return 18f;
-        if (id.contains("cuir") && id.contains("corps")) return 38f;
-        if (id.contains("cuir") && (id.contains("bas") || id.contains("haut"))) return 29f;
+        // Couturier armures (~−20 % vs grille précédente)
+        if (id.contains("gambison_corp") || id.contains("gambisoncorps")) return 24f;
+        if (id.contains("gambison_bas")) return 18f;
+        if (id.contains("gambison_tete")) return 14f;
+        if (id.contains("hdskin_corp") || (id.contains("cuir") && id.contains("corps"))) return 30f;
+        if (id.contains("hdskin_bas") || id.contains("hdskin_haut")
+                || (id.contains("cuir") && (id.contains("bas") || id.contains("haut")))) {
+            return 22f;
+        }
 
         // Armes
         if (id.contains("flamberge") || id.contains("espadon")) return 46f;
@@ -116,10 +119,17 @@ public final class JobEnergyCostCalculator {
             return 6f;
         }
 
-        // Couturier textile
+        // Couturier textile / base (~−30 % chaîne fil→tissu, fallbacks adoucis)
         if ("couturier".equals(jobId)) {
-            if (id.contains("fil") || id.contains("tissu") || id.contains("corde")) return 4f;
-            if (id.contains("gourde") || id.contains("laisse") || id.contains("sel")) return 12f;
+            if (id.contains("fil") || id.contains("tissu") || id.contains("corde")) return 2.5f;
+            if (id.contains("gourde") || id.contains("laisse") || id.contains("sel")) return 8f;
+            if (id.contains("paper") || id.contains("book") || id.contains("livre")) return 10f;
+            if (inputTotal >= 100) return 32f;
+            if (inputTotal >= 60) return 22f;
+            if (inputTotal >= 30) return 12f;
+            if (inputTotal >= 10) return 6f;
+            if (inputTotal >= 4) return 3.5f;
+            return 2.5f;
         }
 
         // Forgeron : petits objets bas ; outils restent 10/14 ; gros crafts armures au fallback

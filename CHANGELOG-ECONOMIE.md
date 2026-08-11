@@ -4,6 +4,11 @@ Historique des passes (du plus récent au plus ancien).
 
 ---
 
+## 1.0.48 — Couturier énergie ↓ ; temps 18h→2h
+
+- Couturier : coûts craft **−20 à −35 %** (fil/tissu/corde **4 → 2,5** ; gambison / cuir adoucis)
+- Temps IRL : fenêtre **18h → 2h** (8 h, ratio **3 h IG / h IRL**) — à **20h IRL ≈ midi IG**
+
 ## 1.0.47 — Livre sans fiole
 
 - Livre vierge : **fiole en verre retirée** (reste papier ×30, charbon ×1, cuir tanné ×8)
