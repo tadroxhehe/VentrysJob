@@ -47,16 +47,19 @@ public class CustomSheep extends CustomAnimal implements IForgeShearable, Livest
 
     private static final ResourceLocation WOOL_ITEM = new ResourceLocation("ventrysitem", "res_laine_blanche");
 
+    // defineId(CustomAnimal.class, ...) : voir le commentaire equivalent dans CustomCow.java —
+    // CustomCow/CustomSheep/CustomChicken sont des soeurs directes de CustomAnimal, donc passer
+    // sa propre classe ici collisionnait avec les champs des autres especes sur les memes index.
     private static final EntityDataAccessor<Boolean> HAS_WOOL =
-        SynchedEntityData.defineId(CustomSheep.class, EntityDataSerializers.BOOLEAN);
+        SynchedEntityData.defineId(CustomAnimal.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<String> TEXTURE_VARIANT =
-        SynchedEntityData.defineId(CustomSheep.class, EntityDataSerializers.STRING);
+        SynchedEntityData.defineId(CustomAnimal.class, EntityDataSerializers.STRING);
     /** Modèle GeckoLib synchronisé (mouton / mouton_sans_laine) — évite un client désynchronisé. */
     private static final EntityDataAccessor<String> GEO_MODEL =
-        SynchedEntityData.defineId(CustomSheep.class, EntityDataSerializers.STRING);
+        SynchedEntityData.defineId(CustomAnimal.class, EntityDataSerializers.STRING);
     /** Minutes avant repousse (0 = laine prête / présente). -2 = trop affamé pour repousser. */
     private static final EntityDataAccessor<Integer> WOOL_READY_IN_MIN =
-        SynchedEntityData.defineId(CustomSheep.class, EntityDataSerializers.INT);
+        SynchedEntityData.defineId(CustomAnimal.class, EntityDataSerializers.INT);
 
     private long woolRegrowStartTime;
 
