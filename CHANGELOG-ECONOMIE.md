@@ -4,6 +4,10 @@ Historique des passes (du plus récent au plus ancien).
 
 ---
 
+## 1.0.47 — Livre sans fiole
+
+- Livre vierge : **fiole en verre retirée** (reste papier ×30, charbon ×1, cuir tanné ×8)
+
 ## 1.0.45 — Poutres énergie ÷5 ; bûches extract restauré
 
 - Poutres artisan (`thin_*`) : énergie craft **6 → 1,2** (÷5)
