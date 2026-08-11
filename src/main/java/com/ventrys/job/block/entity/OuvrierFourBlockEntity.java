@@ -105,14 +105,14 @@ public class OuvrierFourBlockEntity extends BlockEntity implements MenuProvider 
     // Données pour le menu (progression de la transformation)
     public final ContainerData data;
     private long startTick = 0;
-    private static final long TRANSFORMATION_DURATION_TICKS = 2L * 60L * 60L * 20L; // 2 heures
+    private static final long TRANSFORMATION_DURATION_TICKS = 12L * 60L * 20L; // 12 minutes (ex-2 h ÷ 10)
     private boolean isLit = false; // État d'allumage du four
     private int particleTickCounter = 0; // Compteur pour les particules
     private boolean isTransforming = false; // État de transformation
     private long flintAndSteelFireStartTick = 0;
-    // Le feu dure un peu plus longtemps que la transformation (2 h + 5 min)
+    // Le feu dure un peu plus longtemps que la transformation (+ 5 min)
     // pour garantir que la fournée se termine avant l'extinction du feu.
-    private static final long FLINT_AND_STEEL_FIRE_DURATION_TICKS = TRANSFORMATION_DURATION_TICKS + (5L * 60L * 20L); // 2 h 05
+    private static final long FLINT_AND_STEEL_FIRE_DURATION_TICKS = TRANSFORMATION_DURATION_TICKS + (5L * 60L * 20L); // 17 min
     
     public OuvrierFourBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.OUVRIER_FOUR.get(), pos, state);

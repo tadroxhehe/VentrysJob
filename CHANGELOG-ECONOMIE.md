@@ -4,6 +4,10 @@ Historique des passes (du plus récent au plus ancien).
 
 ---
 
+## 1.0.44 — Four charbon ÷10
+
+Transformation ouvrier : **2 h → 12 min**.
+
 ## 1.0.43 — Éco vase / cultures / argile / four / livre
 
 - Vase apo : **×2** matières (24 argile + 12 terre), `energyCost` **22**
