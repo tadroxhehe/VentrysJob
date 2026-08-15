@@ -105,14 +105,37 @@ public final class JobEnergyCostCalculator {
             }
         }
 
-        // Artisan meubles / blocs
+        // Artisan : construction (pierre/bois) allégée — le plafond réel = énergie du bâtisseur à la pose.
+        // Meubles / armes / gros crafts restent sur la grille inputTotal.
         if ("artisan".equals(jobId)) {
             if (id.contains("thin_") || outputId.contains("thin_") || id.contains("poutre")) {
-                return 1.2f; // ex-6 ÷ 5
+                return 1.2f;
             }
             if (id.contains("vase_apothicaire") || outputId.contains("vase_apothicaire")) {
                 return 66f;
             }
+
+            int outCount = sumOutputs(recipe);
+
+            // Bois de construction : moins cher que la pierre (planches, colombages, clôtures…)
+            if (isWoodConstruction(id, outputId)) {
+                if (outputId.contains("timber") || id.contains("timber")) {
+                    return 3f; // était ~10 via inputTotal≥8
+                }
+                if (outCount >= 4) {
+                    return 2f;
+                }
+                return 1.5f; // planche unitaire : était 6
+            }
+
+            // Pierre de construction : ex. cobble 10 énergie / 4 blocs → trop bas pour bâtir en ~1 semaine
+            if (isStoneConstruction(id, outputId)) {
+                if (outCount >= 4) {
+                    return 3f; // ~0.75 / bloc (était 10 → 2.5 / bloc)
+                }
+                return 2f; // stairs / slab / wall unitaires (était 6)
+            }
+
             if (inputTotal >= 40) return 22f;
             if (inputTotal >= 20) return 14f;
             if (inputTotal >= 8) return 10f;
@@ -123,7 +146,9 @@ public final class JobEnergyCostCalculator {
         if ("couturier".equals(jobId)) {
             if (id.contains("fil") || id.contains("tissu") || id.contains("corde")) return 2.5f;
             if (id.contains("gourde") || id.contains("laisse") || id.contains("sel")) return 8f;
-            if (id.contains("paper") || id.contains("book") || id.contains("livre")) return 10f;
+            // Papier = intermédiaire bas (3 planches) ; ne plus le coller au bucket livre (10)
+            if (id.contains("paper") || outputId.contains("paper")) return 2.5f;
+            if (id.contains("book") || id.contains("livre") || outputId.contains("book")) return 10f;
             if (inputTotal >= 100) return 32f;
             if (inputTotal >= 60) return 22f;
             if (inputTotal >= 30) return 12f;
@@ -203,6 +228,54 @@ public final class JobEnergyCostCalculator {
             total += in.getCount();
         }
         return total;
+    }
+
+    private static int sumOutputs(JobRecipe recipe) {
+        int total = 0;
+        for (RecipeIngredient out : recipe.getOutputsForCraft()) {
+            total += out.getCount();
+        }
+        return Math.max(1, total);
+    }
+
+    /** Blocs structure bois (pas meubles / armes / vaisselle). */
+    private static boolean isWoodConstruction(String id, String outputId) {
+        if (id.contains("assiette") || id.contains("chope") || id.contains("bol")
+                || id.contains("epee") || id.contains("dague") || id.contains("hache")
+                || id.contains("lance") || id.contains("masse") || id.contains("fleau")
+                || id.contains("bouclier") || id.contains("bocle") || id.contains("ecu")
+                || id.contains("pavois") || id.contains("table") || id.contains("chaise")
+                || id.contains("banc") || id.contains("armoire") || id.contains("coffre")
+                || id.contains("nid") || id.contains("statue")) {
+            return false;
+        }
+        if (outputId.contains("plank") || outputId.contains("timber")
+                || outputId.contains("thin_") || outputId.contains("wood_ladder")
+                || outputId.contains("rope_ladder")) {
+            return true;
+        }
+        boolean woodSpecies = outputId.contains("oak") || outputId.contains("spruce")
+                || outputId.contains("birch") || outputId.contains("jungle")
+                || outputId.contains("acacia") || outputId.contains("dark_oak");
+        boolean shape = outputId.contains("stairs") || outputId.contains("slab")
+                || outputId.contains("wall") || outputId.contains("fence")
+                || outputId.contains("tip") || outputId.contains("hopper")
+                || outputId.contains("log");
+        return woodSpecies && shape;
+    }
+
+    /** Blocs structure pierre (pas bancs / statues). */
+    private static boolean isStoneConstruction(String id, String outputId) {
+        if (id.contains("banc") || id.contains("statue") || id.contains("meuble")
+                || id.contains("table") || id.contains("chaise")) {
+            return false;
+        }
+        return outputId.contains("cobble") || outputId.contains("stone")
+                || outputId.contains("granite") || outputId.contains("slate")
+                || outputId.contains("brick") || outputId.contains("sandstone")
+                || outputId.contains("basalt") || outputId.contains("marble")
+                || outputId.contains("limestone") || outputId.contains("andesite")
+                || outputId.contains("diorite");
     }
 
     private static String primaryOutputId(JobRecipe recipe) {

@@ -11636,6 +11636,7 @@
                     "id": "tan_paper",
                     "name": "Papier (planche chene)",
                     "description": "",
+                    "energyCost": 2.5,
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_planche_chene",

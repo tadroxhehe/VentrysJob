@@ -17,7 +17,7 @@ plugins {
 
 apply plugin: 'org.spongepowered.mixin'
 
-version = '1.0.52'
+version = '1.0.53'
 group = 'com.ventrys.job'
 
 base {

@@ -4,6 +4,11 @@ Historique des passes (du plus récent au plus ancien).
 
 ---
 
+## 1.0.53 — Papier énergie ↓
+
+- Craft papier (couturier) : énergie **10 → 2,5** (aligné fil/tissu ; plus dans le bucket livre)
+- Livre vierge reste à **10**
+
 ## 1.0.52 — Récolte vase à la cisaille
 
 - Fleurs plantées dans les vases : récolte **uniquement avec une cisaille** en main

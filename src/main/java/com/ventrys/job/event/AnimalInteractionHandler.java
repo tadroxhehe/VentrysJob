@@ -195,7 +195,13 @@ public class AnimalInteractionHandler {
             return isSheepFood(item);
         }
         if (animal instanceof CustomPig) {
-            return isVentrysItem(item, "item_patate") || item == Items.POTATO || item == Items.CARROT;
+            // Patate / carotte vanilla + items Ventrys (récolte paysan)
+            return item == Items.POTATO
+                    || item == Items.CARROT
+                    || item == Items.BEETROOT
+                    || isVentrysItem(item, "item_patate")
+                    || isVentrysItem(item, "item_carotte")
+                    || isVentrysItem(item, "item_betrave");
         }
         if (animal instanceof CustomCow) {
             return item == Items.WHEAT || isVentrysItem(item, "res_orge");
