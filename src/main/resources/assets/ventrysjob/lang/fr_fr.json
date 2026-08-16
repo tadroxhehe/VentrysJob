@@ -161,5 +161,9 @@
   "ventrysjob.command.time.debug.enabled": "Debug temps: ACTIVÉ",
   "ventrysjob.command.time.debug.disabled": "Debug temps: DÉSACTIVÉ",
   "ventrysjob.command.time.sync.forced": "Synchronisation forcée: %d -> %d ticks",
-  "ventrysjob.command.time.do_daylight_cycle": "doDaylightCycle = %s"
+  "ventrysjob.command.time.do_daylight_cycle": "doDaylightCycle = %s",
+  "item.ventrysjob.porc_carcasse": "Carcasse de cochon",
+  "item.ventrysjob.mouton_carcasse": "Carcasse de mouton",
+  "item.ventrysjob.poule_carcasse": "Carcasse de poule",
+  "item.ventrysjob.vache_carcasse": "Carcasse de vache"
 }
