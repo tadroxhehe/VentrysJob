@@ -7,7 +7,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityDimensions;
@@ -21,11 +20,9 @@ import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -35,7 +32,6 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
-import java.util.Optional;
 import java.util.Random;
 
 /**
@@ -412,33 +408,8 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
     
     @Override
     protected void dropCustomDeathLoot(net.minecraft.world.damagesource.DamageSource source, int looting, boolean recentlyHitIn) {
-        super.dropCustomDeathLoot(source, looting, recentlyHitIn);
-        
-        ResourceLocation entityKey = ForgeRegistries.ENTITIES.getKey(this.getType());
-        if (entityKey == null) {
-            return;
-        }
-        String animalId = entityKey.toString();
-        Optional<MobConfig.AnimalConfig> cfg = MobConfig.getAnimalConfig(animalId);
-        if (cfg.isEmpty()) {
-            com.ventrys.job.VentrysJob.LOGGER.debug(
-                "MobConfig: aucune entrée pour l'entité {} — les ids dans mobs_config.json doivent correspondre (ex. ventrysjob:custom_cow)",
-                animalId);
-            return;
-        }
-        cfg.ifPresent(config -> {
-            Random random = new Random();
-            for (MobConfig.DropConfig drop : config.drops()) {
-                Item item = ForgeRegistries.ITEMS.getValue(new ResourceLocation(drop.itemId()));
-                if (item != null) {
-                    int count = drop.minCount() + random.nextInt(drop.maxCount() - drop.minCount() + 1);
-                    this.spawnAtLocation(new ItemStack(item, count));
-                } else {
-                    com.ventrys.job.VentrysJob.LOGGER.warn(
-                        "MobConfig: item de drop introuvable {} pour {}", drop.itemId(), animalId);
-                }
-            }
-        });
+        // Viande / peaux élevage : gérées par Skript (job/activité/chasse/chasse.sk).
+        // Ne pas spawnAtLocation ici — ça double les drops (Skript clear drops + loot mod).
     }
     
     @Override

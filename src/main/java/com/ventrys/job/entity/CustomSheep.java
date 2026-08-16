@@ -265,7 +265,7 @@ public class CustomSheep extends CustomAnimal implements IForgeShearable, Livest
 
     @Override
     protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHitIn) {
-        super.dropCustomDeathLoot(source, looting, recentlyHitIn);
+        // Viande mouton : Skript chasse.sk. On ne droppe que la laine (hors table Skript).
         if (this.hasWool()) {
             this.spawnAtLocation(this.createWoolStack());
         }

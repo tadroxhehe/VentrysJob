@@ -9739,142 +9739,7 @@
             "id": "cuisinier",
             "name": "Cuisinier",
             "description": "Expert en cuisine et nutrition",
-            "recipes": [
-                {
-                    "id": "cuis_carotte_cuite",
-                    "name": "Carotte cuite",
-                    "description": "",
-                    "inputs": [
-                        {
-                            "itemId": "ventrysitem:item_carotte",
-                            "count": 1
-                        }
-                    ],
-                    "output": {
-                        "itemId": "ventrysitem:item_carotte_cuite",
-                        "count": 1
-                    }
-                },
-                {
-                    "id": "cuis_bacon",
-                    "name": "Bacon cuit",
-                    "description": "",
-                    "inputs": [
-                        {
-                            "itemId": "ventrysitem:item_lard_porc",
-                            "count": 1
-                        }
-                    ],
-                    "output": {
-                        "itemId": "ventrysitem:item_bacon_cuit",
-                        "count": 1
-                    }
-                },
-                {
-                    "id": "cuis_poulet_cuit",
-                    "name": "Filet de poulet cuit",
-                    "description": "",
-                    "inputs": [
-                        {
-                            "itemId": "ventrysitem:item_fillet_de_poulet_crue",
-                            "count": 1
-                        }
-                    ],
-                    "output": {
-                        "itemId": "ventrysitem:item_fillet_de_poulet_cuit",
-                        "count": 1
-                    }
-                },
-                {
-                    "id": "cuis_bouguignon_cuit",
-                    "name": "Boeuf bourguignon cuit",
-                    "description": "",
-                    "inputs": [
-                        {
-                            "itemId": "ventrysitem:item_bouguignon_boeuf",
-                            "count": 1
-                        }
-                    ],
-                    "output": {
-                        "itemId": "ventrysitem:item_bouguignon_boeuf_cuit",
-                        "count": 1
-                    }
-                },
-                {
-                    "id": "cuis_choux_cuit",
-                    "name": "Choux cuit",
-                    "description": "",
-                    "inputs": [
-                        {
-                            "itemId": "ventrysitem:item_choux",
-                            "count": 1
-                        }
-                    ],
-                    "output": {
-                        "itemId": "ventrysitem:item_choux_cuit",
-                        "count": 1
-                    }
-                },
-                {
-                    "id": "cuis_cotelette_cuite",
-                    "name": "Cotelette de porc cuite",
-                    "description": "",
-                    "inputs": [
-                        {
-                            "itemId": "ventrysitem:item_cotelette_de_porc",
-                            "count": 1
-                        }
-                    ],
-                    "output": {
-                        "itemId": "ventrysitem:item_cotelette_de_porc_cuit",
-                        "count": 1
-                    }
-                },
-                {
-                    "id": "cuis_crabe_cuit",
-                    "name": "Crabe cuit",
-                    "description": "",
-                    "inputs": [
-                        {
-                            "itemId": "ventrysitem:item_crabe",
-                            "count": 1
-                        }
-                    ],
-                    "output": {
-                        "itemId": "ventrysitem:item_crabe_cuit",
-                        "count": 1
-                    }
-                },
-                {
-                    "id": "cuis_dorade_cuite",
-                    "name": "Dorade cuite",
-                    "description": "",
-                    "inputs": [
-                        {
-                            "itemId": "ventrysitem:item_dorade",
-                            "count": 1
-                        }
-                    ],
-                    "output": {
-                        "itemId": "ventrysitem:item_dorade_cuite",
-                        "count": 1
-                    }
-                },
-                {
-                    "id": "cuis_epaule_sanglier",
-                    "name": "Epaule de sanglier cuite",
-                    "description": "",
-                    "inputs": [
-                        {
-                            "itemId": "ventrysitem:item_epaule_sanglier",
-                            "count": 1
-                        }
-                    ],
-                    "output": {
-                        "itemId": "ventrysitem:item_epaule_sanglier_cuite",
-                        "count": 1
-                    }
-                },
+            "recipes":                         [
                 {
                     "id": "cuis_faux_filet_cuit",
                     "name": "Faux-filet cuit",
@@ -9937,7 +9802,7 @@
                 },
                 {
                     "id": "cuis_homar_cuit",
-                    "name": "Homar cuit",
+                    "name": "Homard cuit",
                     "description": "",
                     "inputs": [
                         {
@@ -9962,6 +9827,21 @@
                     ],
                     "output": {
                         "itemId": "ventrysitem:item_oeuf_cuit",
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "cuis_carotte_cuite",
+                    "name": "Carotte cuite",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:item_carotte",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:item_carotte_cuite",
                         "count": 1
                     }
                 },
@@ -10011,17 +9891,92 @@
                     }
                 },
                 {
-                    "id": "cuis_saumon_cuit",
-                    "name": "Saumon cuit",
+                    "id": "cuis_bacon",
+                    "name": "Bacon cuit",
                     "description": "",
                     "inputs": [
                         {
-                            "itemId": "ventrysitem:item_saumon",
+                            "itemId": "ventrysitem:item_lard_porc",
                             "count": 1
                         }
                     ],
                     "output": {
-                        "itemId": "ventrysitem:item_saumon_cuit",
+                        "itemId": "ventrysitem:item_bacon_cuit",
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "cuis_choux_cuit",
+                    "name": "Chou cuit",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:item_choux",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:item_choux_cuit",
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "cuis_bouguignon_cuit",
+                    "name": "Boeuf biefois cuit",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:item_bouguignon_boeuf",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:item_bouguignon_boeuf_cuit",
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "cuis_crabe_cuit",
+                    "name": "Crabe cuit",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:item_crabe",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:item_crabe_cuit",
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "cuis_dorade_cuite",
+                    "name": "Dorade cuite",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:item_dorade",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:item_dorade_cuite",
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "cuis_epaule_sanglier",
+                    "name": "Epaule de sanglier cuite",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:item_epaule_sanglier",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:item_epaule_sanglier_cuite",
                         "count": 1
                     }
                 },
@@ -10037,6 +9992,51 @@
                     ],
                     "output": {
                         "itemId": "ventrysitem:item_tomate_cuite",
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "cuis_saumon_cuit",
+                    "name": "Saumon cuit",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:item_saumon",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:item_saumon_cuit",
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "cuis_poulet_cuit",
+                    "name": "Filet de poulet cuit",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:item_fillet_de_poulet_crue",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:item_fillet_de_poulet_cuit",
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "cuis_cotelette_cuite",
+                    "name": "Cotelette de porc cuite",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:item_cotelette_de_porc",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:item_cotelette_de_porc_cuit",
                         "count": 1
                     }
                 },
@@ -10057,7 +10057,7 @@
                 },
                 {
                     "id": "cuis_sucre_betrave",
-                    "name": "Sucre (betterave)",
+                    "name": "Sucre",
                     "description": "",
                     "inputs": [
                         {
@@ -10077,27 +10077,17 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_farine",
-                            "count": 3
-                        },
-                        {
-                            "itemId": "ventrysitem:item_gourde_deau",
-                            "count": 1
+                            "count": 4
                         },
                         {
                             "itemId": "ventrysitem:res_sel",
                             "count": 1
                         }
                     ],
-                    "outputs": [
-                        {
-                            "itemId": "ventrysitem:res_patte_a_pain",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_gourde_en_cuir_vide",
-                            "count": 1
-                        }
-                    ]
+                    "output": {
+                        "itemId": "ventrysitem:res_patte_a_pain",
+                        "count": 4
+                    }
                 },
                 {
                     "id": "cuis_bol_huile",
@@ -10124,12 +10114,12 @@
                     "description": "",
                     "inputs": [
                         {
-                            "itemId": "ventrysitem:res_malt_concasse",
-                            "count": 3
-                        },
-                        {
                             "itemId": "ventrysitem:res_chope_vide",
                             "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:res_malt_concasse",
+                            "count": 3
                         }
                     ],
                     "output": {
@@ -10143,12 +10133,12 @@
                     "description": "",
                     "inputs": [
                         {
-                            "itemId": "ventrysitem:res_malt_concasse",
-                            "count": 9
-                        },
-                        {
                             "itemId": "ventrysitem:res_chope_vide",
                             "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:res_malt_concasse",
+                            "count": 9
                         }
                     ],
                     "output": {
@@ -10169,13 +10159,49 @@
                     "outputs": [
                         {
                             "itemId": "ventrysitem:item_fromage_de_scarnfell",
-                            "count": 1
+                            "count": 4
                         },
                         {
                             "itemId": "minecraft:bucket",
                             "count": 1
                         }
                     ]
+                },
+                {
+                    "id": "cuis_beurre_seau",
+                    "name": "Beurre",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "minecraft:milk_bucket",
+                            "count": 1
+                        }
+                    ],
+                    "outputs": [
+                        {
+                            "itemId": "ventrysitem:res_beurre",
+                            "count": 4
+                        },
+                        {
+                            "itemId": "minecraft:bucket",
+                            "count": 1
+                        }
+                    ]
+                },
+                {
+                    "id": "cuis_malt_orge",
+                    "name": "Malt prepare",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_orge",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:res_malt_concasse",
+                        "count": 1
+                    }
                 },
                 {
                     "id": "cuis_gateaux_secs",
@@ -10188,20 +10214,16 @@
                         },
                         {
                             "itemId": "ventrysitem:res_farine",
-                            "count": 6
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_beurre",
                             "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_sucre",
-                            "count": 2
                         }
                     ],
                     "output": {
                         "itemId": "ventrysitem:item_gateaux_secs",
-                        "count": 6
+                        "count": 1
                     }
                 },
                 {
@@ -10215,14 +10237,10 @@
                         },
                         {
                             "itemId": "ventrysitem:res_farine",
-                            "count": 6
-                        },
-                        {
-                            "itemId": "ventrysitem:res_beurre",
                             "count": 1
                         },
                         {
-                            "itemId": "ventrysitem:item_sucre",
+                            "itemId": "ventrysitem:res_beurre",
                             "count": 1
                         },
                         {
@@ -10232,7 +10250,7 @@
                     ],
                     "output": {
                         "itemId": "ventrysitem:item_gateaux_moelleux_au_miel",
-                        "count": 6
+                        "count": 1
                     }
                 },
                 {
@@ -10265,7 +10283,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_farine",
-                            "count": 10
+                            "count": 5
                         },
                         {
                             "itemId": "ventrysitem:res_beurre",
@@ -10325,7 +10343,7 @@
                 },
                 {
                     "id": "cuis_vin_parfaite",
-                    "name": "Vin parfait",
+                    "name": "Grand Cru",
                     "description": "",
                     "inputs": [
                         {
@@ -10377,29 +10395,78 @@
                     }
                 },
                 {
-                    "id": "cuis_salade_fruit",
-                    "name": "Bol de salade de fruits",
+                    "id": "cuis_soupe_poisson_dorade",
+                    "name": "Soupe de poisson (dorade)",
                     "description": "",
                     "inputs": [
                         {
-                            "itemId": "ventrysitem:item_sucre",
-                            "count": 2
-                        },
-                        {
-                            "itemId": "ventrysitem:item_abricot",
-                            "count": 2
-                        },
-                        {
-                            "itemId": "ventrysitem:res_bol",
+                            "itemId": "ventrysitem:res_bol_deau",
                             "count": 1
                         },
                         {
-                            "itemId": "ventrysitem:item_pomme",
-                            "count": 2
+                            "itemId": "ventrysitem:item_dorade",
+                            "count": 1
                         }
                     ],
                     "output": {
-                        "itemId": "ventrysitem:item_bol_de_salade_de_fruit",
+                        "itemId": "ventrysitem:item_bol_de_soupe_de_poisson",
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "cuis_soupe_poisson_saumon",
+                    "name": "Soupe de poisson (saumon)",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_bol_deau",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:item_saumon",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:item_bol_de_soupe_de_poisson",
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "cuis_soupe_poisson_oblade",
+                    "name": "Soupe de poisson (oblade)",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_bol_deau",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:item_oblade",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:item_bol_de_soupe_de_poisson",
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "cuis_soupe_champignon",
+                    "name": "Soupe de champignon",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_bol_deau",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:item_mousserons",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:item_bol_de_soupe_de_champignon",
                         "count": 1
                     }
                 },
@@ -10424,7 +10491,7 @@
                 },
                 {
                     "id": "cuis_soupe_legume",
-                    "name": "Soupe de legumes",
+                    "name": "Soupe de legume",
                     "description": "",
                     "inputs": [
                         {
@@ -10450,8 +10517,8 @@
                     }
                 },
                 {
-                    "id": "cuis_soupe_poisson_dorade",
-                    "name": "Soupe de poisson",
+                    "id": "cuis_soupe_oignon",
+                    "name": "Soupe d'oignon",
                     "description": "",
                     "inputs": [
                         {
@@ -10459,75 +10526,37 @@
                             "count": 1
                         },
                         {
-                            "itemId": "ventrysitem:item_dorade",
-                            "count": 1
-                        }
-                    ],
-                    "output": {
-                        "itemId": "ventrysitem:item_bol_de_soupe_de_poisson",
-                        "count": 1
-                    }
-                },
-                {
-                    "id": "cuis_soupe_poisson_oblade",
-                    "name": "Soupe de poisson",
-                    "description": "",
-                    "inputs": [
-                        {
-                            "itemId": "ventrysitem:res_bol_deau",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_oblade",
-                            "count": 1
-                        }
-                    ],
-                    "output": {
-                        "itemId": "ventrysitem:item_bol_de_soupe_de_poisson",
-                        "count": 1
-                    }
-                },
-                {
-                    "id": "cuis_soupe_poisson_saumon",
-                    "name": "Soupe de poisson",
-                    "description": "",
-                    "inputs": [
-                        {
-                            "itemId": "ventrysitem:res_bol_deau",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_saumon",
-                            "count": 1
-                        }
-                    ],
-                    "output": {
-                        "itemId": "ventrysitem:item_bol_de_soupe_de_poisson",
-                        "count": 1
-                    }
-                },
-                {
-                    "id": "cuis_soupe_champignon",
-                    "name": "Soupe de champignons",
-                    "description": "",
-                    "inputs": [
-                        {
-                            "itemId": "ventrysitem:res_bol_deau",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_mousserons",
+                            "itemId": "ventrysitem:item_oignon",
                             "count": 3
                         }
                     ],
                     "output": {
-                        "itemId": "ventrysitem:item_bol_de_soupe_de_champignon",
+                        "itemId": "ventrysitem:item_bol_de_soupe_doignon",
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "cuis_soupe_carotte",
+                    "name": "Soupe de carotte",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_bol_deau",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:item_carotte",
+                            "count": 3
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:item_bol_de_soupe_de_carotte",
                         "count": 1
                     }
                 },
                 {
                     "id": "cuis_ecrase_pdt",
-                    "name": "Ecrase de pommes de terre",
+                    "name": "Ecrasee de pomme de terre",
                     "description": "",
                     "inputs": [
                         {
@@ -10546,7 +10575,7 @@
                 },
                 {
                     "id": "cuis_ecrase_carotte",
-                    "name": "Ecrase de carottes",
+                    "name": "Ecrasee de carotte",
                     "description": "",
                     "inputs": [
                         {
@@ -10600,15 +10629,11 @@
                             "count": 3
                         },
                         {
-                            "itemId": "ventrysitem:item_tomate",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_fillet_de_poulet_crue",
-                            "count": 1
-                        },
-                        {
                             "itemId": "ventrysitem:item_pain",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:item_fillet_de_poulet_cuit",
                             "count": 1
                         }
                     ],
@@ -10618,8 +10643,31 @@
                     }
                 },
                 {
-                    "id": "cuis_tomates_farcies",
-                    "name": "Tomates farcies",
+                    "id": "cuis_salade_fruit",
+                    "name": "Salade de fruit",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_bol",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:item_abricot",
+                            "count": 2
+                        },
+                        {
+                            "itemId": "ventrysitem:item_pomme",
+                            "count": 2
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:item_bol_de_salade_de_fruit",
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "cuis_salade_saumon",
+                    "name": "Salade au saumon",
                     "description": "",
                     "inputs": [
                         {
@@ -10627,15 +10675,69 @@
                             "count": 1
                         },
                         {
+                            "itemId": "ventrysitem:item_saumon",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:item_salade",
+                            "count": 3
+                        },
+                        {
+                            "itemId": "ventrysitem:item_tomate",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:item_bol_de_salade_de_saumon_fume",
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "cuis_salade_dorade",
+                    "name": "Salade a la dorade",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_bol_dhuile",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:item_dorade",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:item_salade",
+                            "count": 3
+                        },
+                        {
+                            "itemId": "ventrysitem:item_tomate",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:item_bol_de_salade_de_daurade",
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "cuis_tomates_farcies",
+                    "name": "Tomates farcies",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_bol",
+                            "count": 1
+                        },
+                        {
                             "itemId": "ventrysitem:item_tomate",
                             "count": 3
                         },
                         {
-                            "itemId": "ventrysitem:item_faux_fillet_boeuf",
+                            "itemId": "ventrysitem:item_oignon",
                             "count": 1
                         },
                         {
-                            "itemId": "ventrysitem:item_oignon",
+                            "itemId": "ventrysitem:item_faux_fillet_boeuf",
                             "count": 1
                         }
                     ],
@@ -10654,10 +10756,6 @@
                             "count": 1
                         },
                         {
-                            "itemId": "ventrysitem:item_carotte",
-                            "count": 3
-                        },
-                        {
                             "itemId": "ventrysitem:item_cotelette_de_porc",
                             "count": 1
                         },
@@ -10666,16 +10764,12 @@
                             "count": 1
                         },
                         {
-                            "itemId": "ventrysitem:item_lard_porc",
-                            "count": 1
-                        },
-                        {
                             "itemId": "ventrysitem:item_choux",
-                            "count": 2
+                            "count": 3
                         },
                         {
-                            "itemId": "ventrysitem:item_patate",
-                            "count": 2
+                            "itemId": "ventrysitem:item_carotte",
+                            "count": 3
                         }
                     ],
                     "output": {
@@ -10689,7 +10783,7 @@
                     "description": "",
                     "inputs": [
                         {
-                            "itemId": "ventrysitem:res_bol_dhuile",
+                            "itemId": "ventrysitem:res_bol",
                             "count": 1
                         },
                         {
@@ -10697,11 +10791,11 @@
                             "count": 3
                         },
                         {
-                            "itemId": "ventrysitem:item_oignon",
+                            "itemId": "ventrysitem:item_fromage_de_scarnfell",
                             "count": 1
                         },
                         {
-                            "itemId": "ventrysitem:item_fromage_de_scarnfell",
+                            "itemId": "ventrysitem:item_oignon",
                             "count": 1
                         }
                     ],
@@ -10716,35 +10810,16 @@
                     "description": "",
                     "inputs": [
                         {
-                            "itemId": "ventrysitem:item_gourde_deau",
+                            "itemId": "ventrysitem:item_gourde_en_cuir_vide",
                             "count": 1
                         },
                         {
                             "itemId": "ventrysitem:item_pomme",
-                            "count": 2
+                            "count": 3
                         }
                     ],
                     "output": {
                         "itemId": "ventrysitem:item_jus_de_pomme",
-                        "count": 1
-                    }
-                },
-                {
-                    "id": "cuis_jus_raisin",
-                    "name": "Jus de raisin",
-                    "description": "",
-                    "inputs": [
-                        {
-                            "itemId": "ventrysitem:item_gourde_deau",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_raisin",
-                            "count": 2
-                        }
-                    ],
-                    "output": {
-                        "itemId": "ventrysitem:item_gourde_de_jus_de_raisin",
                         "count": 1
                     }
                 },
@@ -10754,12 +10829,12 @@
                     "description": "",
                     "inputs": [
                         {
-                            "itemId": "ventrysitem:item_gourde_deau",
+                            "itemId": "ventrysitem:item_gourde_en_cuir_vide",
                             "count": 1
                         },
                         {
                             "itemId": "ventrysitem:item_abricot",
-                            "count": 2
+                            "count": 3
                         }
                     ],
                     "output": {
@@ -10768,16 +10843,35 @@
                     }
                 },
                 {
+                    "id": "cuis_jus_raisin",
+                    "name": "Jus de raisin",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:item_gourde_en_cuir_vide",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:item_raisin",
+                            "count": 3
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:item_gourde_de_jus_de_raisin",
+                        "count": 1
+                    }
+                },
+                {
                     "id": "cuis_boeuf_bourguignon",
-                    "name": "Boeuf bourguignon (3 bols)",
+                    "name": "Boeuf biefois",
                     "description": "",
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_bol",
-                            "count": 3
+                            "count": 1
                         },
                         {
-                            "itemId": "ventrysitem:res_beurre",
+                            "itemId": "ventrysitem:item_bouguignon_boeuf",
                             "count": 3
                         },
                         {
@@ -10785,30 +10879,22 @@
                             "count": 3
                         },
                         {
-                            "itemId": "ventrysitem:item_bouguignon_boeuf",
-                            "count": 3
-                        },
-                        {
                             "itemId": "ventrysitem:item_carotte",
-                            "count": 6
-                        },
-                        {
-                            "itemId": "ventrysitem:item_mousserons",
-                            "count": 6
-                        },
-                        {
-                            "itemId": "ventrysitem:item_patate",
                             "count": 6
                         },
                         {
                             "itemId": "ventrysitem:item_bouteille_de_vin_superieur",
                             "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:item_mousserons",
+                            "count": 3
                         }
                     ],
                     "outputs": [
                         {
                             "itemId": "ventrysitem:item_bol_de_boeuf_bourgignon",
-                            "count": 3
+                            "count": 1
                         },
                         {
                             "itemId": "ventrysitem:res_bouteille_de_vin_vide",
@@ -10880,12 +10966,12 @@
                             "count": 1
                         },
                         {
-                            "itemId": "ventrysitem:res_oeuf",
-                            "count": 2
-                        },
-                        {
                             "itemId": "ventrysitem:item_fromage_de_scarnfell",
                             "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:res_oeuf",
+                            "count": 2
                         },
                         {
                             "itemId": "ventrysitem:item_lard_porc",
@@ -10898,10 +10984,37 @@
                     }
                 },
                 {
+                    "id": "cuis_omelette_champignon",
+                    "name": "Omelette au champignon",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_bol",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:res_oeuf",
+                            "count": 2
+                        },
+                        {
+                            "itemId": "ventrysitem:item_mousserons",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:item_bol_domelette_aux_champignons",
+                        "count": 1
+                    }
+                },
+                {
                     "id": "cuis_marmelade_mer",
                     "name": "Marmelade de la mer",
                     "description": "",
                     "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_bol_deau",
+                            "count": 1
+                        },
                         {
                             "itemId": "ventrysitem:item_dorade",
                             "count": 1
@@ -10915,10 +11028,6 @@
                             "count": 1
                         },
                         {
-                            "itemId": "ventrysitem:res_bol_deau",
-                            "count": 1
-                        },
-                        {
                             "itemId": "ventrysitem:item_patate",
                             "count": 3
                         }
@@ -10929,72 +11038,14 @@
                     }
                 },
                 {
-                    "id": "cuis_salade_saumon",
-                    "name": "Salade au saumon",
-                    "description": "",
-                    "inputs": [
-                        {
-                            "itemId": "ventrysitem:res_bol_dhuile",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_salade",
-                            "count": 3
-                        },
-                        {
-                            "itemId": "ventrysitem:item_tomate",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_pain",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_saumon",
-                            "count": 1
-                        }
-                    ],
-                    "output": {
-                        "itemId": "ventrysitem:item_bol_de_salade_de_saumon_fume",
-                        "count": 1
-                    }
-                },
-                {
-                    "id": "cuis_salade_dorade",
-                    "name": "Salade a la dorade",
-                    "description": "",
-                    "inputs": [
-                        {
-                            "itemId": "ventrysitem:res_bol_dhuile",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_salade",
-                            "count": 3
-                        },
-                        {
-                            "itemId": "ventrysitem:item_tomate",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_pain",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_dorade",
-                            "count": 1
-                        }
-                    ],
-                    "output": {
-                        "itemId": "ventrysitem:item_bol_de_salade_de_daurade",
-                        "count": 1
-                    }
-                },
-                {
                     "id": "cuis_cotelettes_caramel",
                     "name": "Cotelettes caramelisees",
                     "description": "",
                     "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_bol",
+                            "count": 1
+                        },
                         {
                             "itemId": "ventrysitem:res_beurre",
                             "count": 1
@@ -11006,10 +11057,6 @@
                         {
                             "itemId": "ventrysitem:item_cotelette_de_porc",
                             "count": 3
-                        },
-                        {
-                            "itemId": "ventrysitem:res_bol",
-                            "count": 1
                         }
                     ],
                     "output": {
@@ -11023,19 +11070,19 @@
                     "description": "",
                     "inputs": [
                         {
-                            "itemId": "ventrysitem:res_beurre",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_pomme",
-                            "count": 2
-                        },
-                        {
                             "itemId": "ventrysitem:res_bol",
                             "count": 1
                         },
                         {
+                            "itemId": "ventrysitem:res_beurre",
+                            "count": 1
+                        },
+                        {
                             "itemId": "ventrysitem:item_gigot_dagneau_cru",
+                            "count": 3
+                        },
+                        {
+                            "itemId": "ventrysitem:item_pomme",
                             "count": 3
                         }
                     ],
@@ -11050,20 +11097,20 @@
                     "description": "",
                     "inputs": [
                         {
-                            "itemId": "ventrysitem:res_beurre",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_raisin",
-                            "count": 2
-                        },
-                        {
                             "itemId": "ventrysitem:res_bol",
                             "count": 1
                         },
                         {
                             "itemId": "ventrysitem:item_faux_fillet_boeuf",
                             "count": 3
+                        },
+                        {
+                            "itemId": "ventrysitem:item_raisin",
+                            "count": 2
+                        },
+                        {
+                            "itemId": "ventrysitem:res_beurre",
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -11073,24 +11120,24 @@
                 },
                 {
                     "id": "cuis_sanglier_abricots",
-                    "name": "Epaule sanglier aux abricots",
+                    "name": "Epaule de sanglier aux abricots",
                     "description": "",
                     "inputs": [
-                        {
-                            "itemId": "ventrysitem:res_beurre",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_abricot",
-                            "count": 2
-                        },
                         {
                             "itemId": "ventrysitem:res_bol",
                             "count": 1
                         },
                         {
                             "itemId": "ventrysitem:item_epaule_sanglier",
-                            "count": 3
+                            "count": 2
+                        },
+                        {
+                            "itemId": "ventrysitem:item_abricot",
+                            "count": 2
+                        },
+                        {
+                            "itemId": "ventrysitem:res_beurre",
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -11104,7 +11151,11 @@
                     "description": "",
                     "inputs": [
                         {
-                            "itemId": "ventrysitem:res_beurre",
+                            "itemId": "ventrysitem:res_bol",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:item_gigot_de_lievre_crue",
                             "count": 1
                         },
                         {
@@ -11112,12 +11163,8 @@
                             "count": 2
                         },
                         {
-                            "itemId": "ventrysitem:res_bol",
+                            "itemId": "ventrysitem:res_beurre",
                             "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_gigot_de_lievre_crue",
-                            "count": 3
                         }
                     ],
                     "output": {
@@ -11131,20 +11178,20 @@
                     "description": "",
                     "inputs": [
                         {
+                            "itemId": "ventrysitem:res_bol",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:item_fillet_mignon_cerf",
+                            "count": 2
+                        },
+                        {
                             "itemId": "ventrysitem:res_beurre",
                             "count": 1
                         },
                         {
                             "itemId": "ventrysitem:item_mousserons",
                             "count": 2
-                        },
-                        {
-                            "itemId": "ventrysitem:res_bol",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_fillet_mignon_cerf",
-                            "count": 3
                         }
                     ],
                     "output": {
@@ -11158,30 +11205,30 @@
                     "description": "",
                     "inputs": [
                         {
-                            "itemId": "ventrysitem:res_beurre",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_crabe",
-                            "count": 2
-                        },
-                        {
                             "itemId": "ventrysitem:res_farine",
                             "count": 2
                         },
                         {
+                            "itemId": "ventrysitem:item_crabe",
+                            "count": 1
+                        },
+                        {
                             "itemId": "ventrysitem:item_fromage_de_scarnfell",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:res_beurre",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "ventrysitem:item_pinces_de_crabes_au_fromage_panne",
-                        "count": 4
+                        "count": 1
                     }
                 },
                 {
                     "id": "cuis_battonets_crabe",
-                    "name": "Batonnets de crabes",
+                    "name": "Battonets de crabe",
                     "description": "",
                     "inputs": [
                         {
@@ -11191,7 +11238,7 @@
                     ],
                     "output": {
                         "itemId": "ventrysitem:item_battonets_de_crabes",
-                        "count": 6
+                        "count": 1
                     }
                 },
                 {
@@ -11200,20 +11247,20 @@
                     "description": "",
                     "inputs": [
                         {
-                            "itemId": "ventrysitem:res_beurre",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_morilles",
-                            "count": 2
-                        },
-                        {
                             "itemId": "ventrysitem:res_bol",
                             "count": 1
                         },
                         {
                             "itemId": "ventrysitem:item_fillet_de_poulet_crue",
                             "count": 3
+                        },
+                        {
+                            "itemId": "ventrysitem:res_beurre",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:item_morilles",
+                            "count": 2
                         }
                     ],
                     "output": {
@@ -11223,11 +11270,15 @@
                 },
                 {
                     "id": "cuis_homar_fraises",
-                    "name": "Homar aux fraises",
+                    "name": "Homard aux fraises",
                     "description": "",
                     "inputs": [
                         {
-                            "itemId": "ventrysitem:res_beurre",
+                            "itemId": "ventrysitem:item_homar",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:res_bol",
                             "count": 1
                         },
                         {
@@ -11235,11 +11286,7 @@
                             "count": 2
                         },
                         {
-                            "itemId": "ventrysitem:res_bol",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_homar",
+                            "itemId": "ventrysitem:res_beurre",
                             "count": 1
                         }
                     ],
@@ -11250,15 +11297,15 @@
                 },
                 {
                     "id": "cuis_jardiniere",
-                    "name": "Jardiniere de legumes",
+                    "name": "Jardiniere de legume",
                     "description": "",
                     "inputs": [
                         {
-                            "itemId": "ventrysitem:item_oignon",
+                            "itemId": "ventrysitem:res_bol",
                             "count": 1
                         },
                         {
-                            "itemId": "ventrysitem:res_bol",
+                            "itemId": "ventrysitem:item_patate",
                             "count": 1
                         },
                         {
@@ -11266,11 +11313,11 @@
                             "count": 1
                         },
                         {
-                            "itemId": "ventrysitem:item_choux",
+                            "itemId": "ventrysitem:item_oignon",
                             "count": 1
                         },
                         {
-                            "itemId": "ventrysitem:item_patate",
+                            "itemId": "ventrysitem:item_choux",
                             "count": 1
                         }
                     ],
@@ -11280,51 +11327,12 @@
                     }
                 },
                 {
-                    "id": "cuis_bol_viande",
-                    "name": "Bol de viande",
-                    "description": "",
-                    "inputs": [
-                        {
-                            "itemId": "ventrysitem:item_gigot_dagneau_cru",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:res_beurre",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_cotelette_de_porc",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_faux_fillet_boeuf",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:res_bol",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_fillet_de_poulet_crue",
-                            "count": 1
-                        }
-                    ],
-                    "output": {
-                        "itemId": "ventrysitem:item_bol_de_viande",
-                        "count": 1
-                    }
-                },
-                {
                     "id": "cuis_scarnfell",
-                    "name": "Bol de Skarnfell",
+                    "name": "Bol de Scarnfell",
                     "description": "",
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_bol_dhuile",
-                            "count": 1
-                        },
-                        {
-                            "itemId": "ventrysitem:item_oignon",
                             "count": 1
                         },
                         {
@@ -11334,6 +11342,10 @@
                         {
                             "itemId": "ventrysitem:item_patate",
                             "count": 2
+                        },
+                        {
+                            "itemId": "ventrysitem:item_oignon",
+                            "count": 1
                         }
                     ],
                     "output": {
@@ -11342,17 +11354,71 @@
                     }
                 },
                 {
-                    "id": "cuis_malt_orge",
-                    "name": "Malt concasse",
+                    "id": "cuis_trouble_legume",
+                    "name": "Trouble de legume",
                     "description": "",
                     "inputs": [
                         {
-                            "itemId": "ventrysitem:res_orge",
+                            "itemId": "ventrysitem:res_bol_deau",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:item_carotte",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:res_farine",
                             "count": 1
                         }
                     ],
                     "output": {
-                        "itemId": "ventrysitem:res_malt_concasse",
+                        "itemId": "ventrysitem:item_bol_de_trouble_de_legume",
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "cuis_trouble_viande",
+                    "name": "Trouble de viande",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_bol_deau",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:item_faux_fillet_boeuf",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:res_farine",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:item_bol_de_trouble_de_viande",
+                        "count": 1
+                    }
+                },
+                {
+                    "id": "cuis_gruau",
+                    "name": "Gruau",
+                    "description": "",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_bol",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:res_beurre",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:res_farine",
+                            "count": 3
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:item_bol_de_gruau",
                         "count": 1
                     }
                 }
