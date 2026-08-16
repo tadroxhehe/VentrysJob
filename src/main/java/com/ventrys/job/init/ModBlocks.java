@@ -6,6 +6,7 @@ import com.ventrys.job.block.OreBlock;
 import com.ventrys.job.block.SacSelBlock;
 import com.ventrys.job.block.MeuleBlock;
 import com.ventrys.job.item.MoutonCarcasseItem;
+import com.ventrys.job.item.MoutonSansLaineCarcasseItem;
 import com.ventrys.job.item.PorcCarcasseItem;
 import com.ventrys.job.item.PouleCarcasseItem;
 import com.ventrys.job.item.VacheCarcasseItem;
@@ -282,6 +283,7 @@ public class ModBlocks {
     // Carcasses (systeme de chasse) : items GeckoLib statiques a poser en tete d'armor stand.
     public static final RegistryObject<Item> PORC_CARCASSE = ITEMS.register("porc_carcasse", () -> new PorcCarcasseItem());
     public static final RegistryObject<Item> MOUTON_CARCASSE = ITEMS.register("mouton_carcasse", () -> new MoutonCarcasseItem());
+    public static final RegistryObject<Item> MOUTON_SANS_LAINE_CARCASSE = ITEMS.register("mouton_sans_laine_carcasse", () -> new MoutonSansLaineCarcasseItem());
     public static final RegistryObject<Item> POULE_CARCASSE = ITEMS.register("poule_carcasse", () -> new PouleCarcasseItem());
     public static final RegistryObject<Item> VACHE_CARCASSE = ITEMS.register("vache_carcasse", () -> new VacheCarcasseItem());
 }

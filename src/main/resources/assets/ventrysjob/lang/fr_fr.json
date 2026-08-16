@@ -164,6 +164,7 @@
   "ventrysjob.command.time.do_daylight_cycle": "doDaylightCycle = %s",
   "item.ventrysjob.porc_carcasse": "Carcasse de cochon",
   "item.ventrysjob.mouton_carcasse": "Carcasse de mouton",
+  "item.ventrysjob.mouton_sans_laine_carcasse": "Carcasse de mouton tondu",
   "item.ventrysjob.poule_carcasse": "Carcasse de poule",
   "item.ventrysjob.vache_carcasse": "Carcasse de vache"
 }
