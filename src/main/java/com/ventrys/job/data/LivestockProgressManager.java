@@ -44,15 +44,6 @@ public final class LivestockProgressManager {
         long now = System.currentTimeMillis();
 
         LivestockProgressSavedData.Entry entry = saved.get(uuid);
-        if (entry != null && (entry.nutrition <= 0 || entry.hydration <= 0)) {
-            // Mort différée pendant le chunk était déchargé.
-            if (animal.isAlive() && !animal.isDeadOrDying()) {
-                animal.hurt(net.minecraft.world.damagesource.DamageSource.STARVE, Float.MAX_VALUE);
-            }
-            saved.remove(uuid);
-            return;
-        }
-
         if (entry == null) {
             entry = createEntryFromEntity(animal, now);
             saved.put(uuid, entry);
@@ -112,14 +103,6 @@ public final class LivestockProgressManager {
         LivestockProgressSavedData.Entry entry = saved.get(uuid);
         if (entry == null) {
             registerFromEntity(animal);
-            return;
-        }
-
-        if (entry.nutrition <= 0 || entry.hydration <= 0) {
-            if (animal.isAlive() && !animal.isDeadOrDying()) {
-                animal.hurt(net.minecraft.world.damagesource.DamageSource.STARVE, Float.MAX_VALUE);
-            }
-            saved.remove(uuid);
             return;
         }
 
@@ -210,13 +193,7 @@ public final class LivestockProgressManager {
             entry.lastProcessedWallMs = now;
             saved.put(uuid, entry);
 
-            if (entry.nutrition <= 0 || entry.hydration <= 0) {
-                if (entity instanceof CustomAnimal animal && animal.isAlive()) {
-                    animal.hurt(net.minecraft.world.damagesource.DamageSource.STARVE, Float.MAX_VALUE);
-                    saved.remove(uuid);
-                }
-                // Chunk déchargé : garder l'entrée à 0 pour tuer au rechargement.
-            } else if (entity instanceof CustomAnimal animal && animal.isAlive()) {
+            if (entity instanceof CustomAnimal animal && animal.isAlive()) {
                 animal.applyLivestockEntry(entry);
                 // Partenaire chargé uniquement : évite "prête" alors que le mâle est hors chunk.
                 boolean oppositeNearby = hasLoadedOppositeSexNearby(animal);

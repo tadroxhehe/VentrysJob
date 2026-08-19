@@ -480,12 +480,17 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
     
     @Override
     public boolean removeWhenFarAway(double distanceToClosestPlayer) {
-        return false; // Ne jamais supprimer automatiquement
+        return false;
     }
-    
+
     @Override
     public boolean requiresCustomPersistence() {
-        return true; // Toujours persister
+        return true;
+    }
+
+    @Override
+    public void checkDespawn() {
+        // Élevage : jamais de despawn vanilla (distance / paisible).
     }
     
     @Override

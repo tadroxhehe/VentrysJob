@@ -3,6 +3,8 @@ package com.ventrys.job.event;
 import com.ventrys.job.VentrysJob;
 import com.ventrys.job.entity.CustomAnimal;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import net.minecraftforge.event.entity.living.LivingSpawnEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -23,6 +25,13 @@ public final class EntityPersistenceHandler {
 
         if (event.getEntity() instanceof CustomAnimal animal) {
             animal.setPersistenceRequired();
+        }
+    }
+
+    @SubscribeEvent
+    public static void onAllowDespawn(LivingSpawnEvent.AllowDespawn event) {
+        if (event.getEntityLiving() instanceof CustomAnimal) {
+            event.setResult(Event.Result.DENY);
         }
     }
 }
