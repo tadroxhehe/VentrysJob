@@ -71,11 +71,11 @@ const recipes = [
     "Armure cuir (corps)",
     "",
     [ing("ventrysitem:res_cuir_tanne", 70), ing("ventrysitem:res_clou", 48), ing("ventrysitem:res_fils", 24)],
-    out("hdskinmod:skin_cuircorp1", 1)
+    out("hdskinmod:skin_cuircorps1", 1)
   ),
   R("cou_hdskin_bas", "Armure cuir (bas)", "", [ing("ventrysitem:res_cuir_tanne", 40), ing("ventrysitem:res_fils", 18)], out("hdskinmod:skin_cuirbas1", 1)),
   R("cou_gambison_tete", "Gambison (tete)", "", [ing("ventrysitem:res_tissu", 30)], out("hdskinmod:skin_gambisontete", 1)),
-  R("cou_gambison_corp", "Gambison (corps)", "", [ing("ventrysitem:res_tissu", 70)], out("hdskinmod:skin_gambisoncorp", 1)),
+  R("cou_gambison_corp", "Gambison (corps)", "", [ing("ventrysitem:res_tissu", 70)], out("hdskinmod:skin_gambisoncorps", 1)),
   R("cou_gambison_bas", "Gambison (bas)", "", [ing("ventrysitem:res_tissu", 40)], out("hdskinmod:skin_gambisonbas", 1)),
 ];
 

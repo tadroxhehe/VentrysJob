@@ -26,7 +26,7 @@ public final class ExtractionDropFactory {
         return createDropItem(itemId, count, displayName);
     }
 
-        static ItemStack createDropItem(String itemId, int count, String displayName) {
+    static ItemStack createDropItem(String itemId, int count, String displayName) {
         try {
             ResourceLocation resourceLocation = new ResourceLocation(itemId);
             Item item = ForgeRegistries.ITEMS.getValue(resourceLocation);
@@ -35,7 +35,18 @@ public final class ExtractionDropFactory {
                 VentrysJob.LOGGER.warn("Drop introuvable au registre: {}", itemId);
                 return ItemStack.EMPTY;
             }
-            ItemStack stack = new ItemStack(item, Math.max(1, count));
+            // Préférer getDefaultInstance() / onglet créatif : les SkinItem HD
+            // (PreconfiguredSkinItem) y mettent SkinType/SkinUrl — sans ça la garde-robe refuse l'item.
+            ItemStack stack = item.getDefaultInstance();
+            if (stack.isEmpty() || stack.getItem() != item) {
+                stack = findCreativeStack(item);
+            }
+            if (stack.isEmpty()) {
+                stack = new ItemStack(item, Math.max(1, count));
+            } else {
+                stack = stack.copy();
+                stack.setCount(Math.max(1, count));
+            }
             if (stack.isEmpty()) {
                 VentrysJob.LOGGER.warn("Stack vide pour drop: {}", itemId);
                 return ItemStack.EMPTY;

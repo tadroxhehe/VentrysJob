@@ -338,6 +338,33 @@
                     }
                 },
                 {
+                    "id": "voliere",
+                    "name": "Volière",
+                    "description": "Cage de courrier pour le service par corbeau",
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_planche_chene",
+                            "count": 4
+                        },
+                        {
+                            "itemId": "westerosblocks:iron_bars",
+                            "count": 4
+                        },
+                        {
+                            "itemId": "ventrysitem:res_plume_corbeau",
+                            "count": 1
+                        },
+                        {
+                            "itemId": "ventrysitem:res_clou",
+                            "count": 2
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysletter:voliere",
+                        "count": 1
+                    }
+                },
+                {
                     "id": "brazier",
                     "name": "Brasero",
                     "description": "Brasero de forge",
