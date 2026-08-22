@@ -37,8 +37,17 @@ public final class PlankCraftAccess {
             return false;
         }
         String out = primaryOutputId(recipe).toLowerCase(Locale.ROOT);
+        String recipeId = recipe.getId() != null ? recipe.getId().toLowerCase(Locale.ROOT) : "";
         if (out.isEmpty()) {
             return false;
+        }
+        // Colombage / cadres bois : planches interchangeables (chêne, sapin, bouleau)
+        if (isTimberFrameCraft(recipeId, out)) {
+            return true;
+        }
+        // Ruche domestique et autres props sans essence imposée
+        if ("minecraft:beehive".equals(out) || recipeId.contains("ruche")) {
+            return true;
         }
         // Bois imposé par le résultat (bloc / meuble d'essence)
         if (hasSpecificWoodToken(out)) {
@@ -140,6 +149,13 @@ public final class PlankCraftAccess {
             }
         }
         return remaining <= 0;
+    }
+
+    private static boolean isTimberFrameCraft(String recipeId, String outputId) {
+        if (outputId.contains("timber")) {
+            return true;
+        }
+        return recipeId.contains("timber") && (recipeId.startsWith("art_") || recipeId.contains("artisan"));
     }
 
     private static boolean hasSpecificWoodToken(String outputId) {

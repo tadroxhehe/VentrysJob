@@ -108,6 +108,9 @@ public final class JobEnergyCostCalculator {
         // Artisan : construction (pierre/bois) allégée — le plafond réel = énergie du bâtisseur à la pose.
         // Meubles / armes / gros crafts restent sur la grille inputTotal.
         if ("artisan".equals(jobId)) {
+            if (id.contains("batons")) {
+                return 2f;
+            }
             if (id.contains("thin_") || outputId.contains("thin_") || id.contains("poutre")) {
                 return 1.2f;
             }
@@ -120,7 +123,7 @@ public final class JobEnergyCostCalculator {
             // Bois de construction : moins cher que la pierre (planches, colombages, clôtures…)
             if (isWoodConstruction(id, outputId)) {
                 if (outputId.contains("timber") || id.contains("timber")) {
-                    return 3f; // était ~10 via inputTotal≥8
+                    return 2f;
                 }
                 if (outCount >= 4) {
                     return 2f;
@@ -128,12 +131,12 @@ public final class JobEnergyCostCalculator {
                 return 1.5f; // planche unitaire : était 6
             }
 
-            // Pierre de construction : ex. cobble 10 énergie / 4 blocs → trop bas pour bâtir en ~1 semaine
+            // Pierre de construction : coût total du craft, pas par bloc affiché en %
             if (isStoneConstruction(id, outputId)) {
                 if (outCount >= 4) {
-                    return 3f; // ~0.75 / bloc (était 10 → 2.5 / bloc)
+                    return 2f;
                 }
-                return 2f; // stairs / slab / wall unitaires (était 6)
+                return 1f;
             }
 
             if (inputTotal >= 40) return 22f;

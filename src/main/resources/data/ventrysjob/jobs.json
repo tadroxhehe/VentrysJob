@@ -1640,7 +1640,8 @@
                     "output": {
                         "itemId": "minecraft:stick",
                         "count": 6
-                    }
+                    },
+                    "energyCost": 2
                 },
                 {
                     "id": "art_batons_sapin",
@@ -1655,7 +1656,8 @@
                     "output": {
                         "itemId": "minecraft:stick",
                         "count": 6
-                    }
+                    },
+                    "energyCost": 2
                 },
                 {
                     "id": "art_batons_bouleau",
@@ -1670,7 +1672,8 @@
                     "output": {
                         "itemId": "minecraft:stick",
                         "count": 6
-                    }
+                    },
+                    "energyCost": 2
                 },
                 {
                     "id": "art_seau",
@@ -5859,7 +5862,7 @@
                     ],
                     "output": {
                         "itemId": "westerosblocks:cobblestone",
-                        "count": 4
+                        "count": 8
                     }
                 },
                 {
@@ -5869,7 +5872,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -5878,7 +5881,7 @@
                     ],
                     "output": {
                         "itemId": "westerosblocks:cobblestone_stairs",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -5888,7 +5891,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -5897,7 +5900,7 @@
                     ],
                     "output": {
                         "itemId": "westerosblocks:cobblestone_slab",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -5907,7 +5910,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -5916,7 +5919,7 @@
                     ],
                     "output": {
                         "itemId": "westerosblocks:cobblestone_wall",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -5926,7 +5929,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -5935,7 +5938,7 @@
                     ],
                     "output": {
                         "itemId": "westerosblocks:cobblestone_tip",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -5945,7 +5948,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -5954,7 +5957,7 @@
                     ],
                     "output": {
                         "itemId": "westerosblocks:cobblestone_hopper",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -5964,7 +5967,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -5973,7 +5976,7 @@
                     ],
                     "output": {
                         "itemId": "westerosblocks:cobblestone_fence",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -5983,16 +5986,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:grey_granite",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6002,16 +6005,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_stairs",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:grey_granite_stairs",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6021,16 +6024,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_slab",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:grey_granite_slab",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6040,16 +6043,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 1
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_fence",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:grey_granite_fence",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6059,16 +6062,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_tip",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:grey_granite_tip",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6078,16 +6081,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_hopper",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:grey_granite_hopper",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6097,16 +6100,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_wall",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:grey_granite_wall",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6116,16 +6119,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:light_grey_brick",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6135,16 +6138,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_stairs",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:light_grey_brick_stairs",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6154,16 +6157,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_slab",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:light_grey_brick_slab",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6173,16 +6176,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 1
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_fence",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:light_grey_brick_fence",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6192,16 +6195,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_tip",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:light_grey_brick_tip",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6211,16 +6214,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_hopper",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:light_grey_brick_hopper",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6230,16 +6233,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_wall",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:light_grey_brick_wall",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6249,16 +6252,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:grey_granite_arrow_slit",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6268,16 +6271,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:grey_granite_arrow_slit_window",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6287,16 +6290,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:grey_granite_arrow_slit_ornate",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6306,16 +6309,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_smooth_stone_brick",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6325,16 +6328,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_stairs",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_smooth_stone_brick_stairs",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6344,16 +6347,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_slab",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_smooth_stone_brick_slab",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6363,16 +6366,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 1
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_fence",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_smooth_stone_brick_fence",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6382,16 +6385,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_tip",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_smooth_stone_brick_tip",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6401,16 +6404,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_hopper",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_smooth_stone_brick_hopper",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6420,16 +6423,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_wall",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_smooth_stone_brick_wall",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6439,16 +6442,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:grey_granite_polished",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6461,13 +6464,13 @@
                             "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_stairs",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:grey_granite_polished_stairs",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6477,16 +6480,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_slab",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:grey_granite_polished_slab",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6496,16 +6499,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_wall",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:grey_granite_polished_wall",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6515,16 +6518,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:grey_brick_engraved",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6534,16 +6537,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone_wall",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:grey_brick_engraved_wall",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6553,16 +6556,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:faith_carved_grey_brick",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6591,7 +6594,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -6600,7 +6603,7 @@
                     ],
                     "output": {
                         "itemId": "westerosblocks:dark_cobblestone_stairs",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6610,7 +6613,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -6619,7 +6622,7 @@
                     ],
                     "output": {
                         "itemId": "westerosblocks:dark_cobblestone_slab",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6629,7 +6632,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -6638,7 +6641,7 @@
                     ],
                     "output": {
                         "itemId": "westerosblocks:dark_cobblestone_wall",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6648,7 +6651,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -6657,7 +6660,7 @@
                     ],
                     "output": {
                         "itemId": "westerosblocks:dark_cobblestone_tip",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6667,7 +6670,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -6676,7 +6679,7 @@
                     ],
                     "output": {
                         "itemId": "westerosblocks:dark_cobblestone_hopper",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6686,7 +6689,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -6695,7 +6698,7 @@
                     ],
                     "output": {
                         "itemId": "westerosblocks:dark_cobblestone_fence",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6705,16 +6708,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:dark_cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:winterfell_granite",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6724,16 +6727,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:dark_cobblestone_stairs",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:winterfell_granite_stairs",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6743,16 +6746,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:dark_cobblestone_slab",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:winterfell_granite_slab",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6762,16 +6765,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 1
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:dark_cobblestone_fence",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:winterfell_granite_fence",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6781,16 +6784,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:dark_cobblestone_tip",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:winterfell_granite_tip",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6800,16 +6803,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:dark_cobblestone_hopper",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:winterfell_granite_hopper",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6819,16 +6822,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:dark_cobblestone_wall",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:winterfell_granite_wall",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6838,16 +6841,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:dark_cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:winterfell_granite_arrow_slit",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6857,16 +6860,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:dark_cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:winterfell_granite_arrow_slit_window",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6876,16 +6879,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:dark_cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:winterfell_granite_arrow_slit_ornate",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6895,16 +6898,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:dark_cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_dark_grey_brick",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6914,16 +6917,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:dark_cobblestone_stairs",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_dark_grey_brick_stairs",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6933,16 +6936,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:dark_cobblestone_slab",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_dark_grey_brick_slab",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6952,16 +6955,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 1
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:dark_cobblestone_fence",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_dark_grey_brick_fence",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6971,16 +6974,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:dark_cobblestone_tip",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_dark_grey_brick_tip",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -6990,16 +6993,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:dark_cobblestone_hopper",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_dark_grey_brick_hopper",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7009,16 +7012,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:dark_cobblestone_wall",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_dark_grey_brick_wall",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7028,16 +7031,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:dark_cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:dark_grey_brick_engraved",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7047,16 +7050,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:dark_cobblestone_wall",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:dark_grey_brick_engraved_wall",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7066,16 +7069,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:dark_cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:faith_carved_dark_grey_brick",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7104,7 +7107,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -7113,7 +7116,7 @@
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_cobblestone_stairs",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7123,7 +7126,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -7132,7 +7135,7 @@
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_cobblestone_slab",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7142,7 +7145,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -7151,7 +7154,7 @@
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_cobblestone_wall",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7161,7 +7164,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -7170,7 +7173,7 @@
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_cobblestone_tip",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7180,7 +7183,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -7189,7 +7192,7 @@
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_cobblestone_hopper",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7199,7 +7202,7 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
                             "itemId": "ventrysitem:res_enduit_de_chaux",
@@ -7208,7 +7211,7 @@
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_cobblestone_fence",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7218,16 +7221,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7237,16 +7240,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone_stairs",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_stairs",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7256,16 +7259,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone_slab",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_slab",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7275,16 +7278,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 1
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone_fence",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_fence",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7294,16 +7297,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone_tip",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_tip",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7313,16 +7316,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone_hopper",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_hopper",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7332,16 +7335,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone_wall",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_wall",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7351,16 +7354,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_arrow_slit",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7370,16 +7373,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_arrow_slit_window",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7389,16 +7392,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_arrow_slit_ornate",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7408,16 +7411,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_stone_brick",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7427,16 +7430,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone_stairs",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_stone_brick_stairs",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7446,16 +7449,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone_slab",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_stone_brick_slab",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7465,16 +7468,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 1
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone_fence",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_stone_brick_fence",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7484,16 +7487,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone_tip",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_stone_brick_tip",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7503,16 +7506,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 4
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone_hopper",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_stone_brick_hopper",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7522,16 +7525,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 3
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone_wall",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:small_stone_brick_wall",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7541,16 +7544,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_polished",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7563,13 +7566,13 @@
                             "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone_stairs",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_polished_stairs",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7579,16 +7582,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone_slab",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_polished_slab",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7598,16 +7601,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone_wall",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_polished_wall",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7617,16 +7620,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 12
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_brick_engraved",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7636,16 +7639,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone_wall",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:green_grey_brick_engraved_wall",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7655,16 +7658,16 @@
                     "inputs": [
                         {
                             "itemId": "ventrysitem:res_pierre_fragmente",
-                            "count": 6
+                            "count": 9
                         },
                         {
-                            "itemId": "westerosblocks:green_grey_cobblestone",
+                            "itemId": "ventrysitem:res_enduit_de_chaux",
                             "count": 1
                         }
                     ],
                     "output": {
                         "itemId": "westerosblocks:faith_carved_small_stone_brick",
-                        "count": 1
+                        "count": 4
                     }
                 },
                 {
@@ -7678,7 +7681,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 6
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -7701,7 +7704,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 6
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -7724,7 +7727,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 9
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -7747,7 +7750,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 7
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -7770,7 +7773,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 7
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -7793,7 +7796,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 7
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -7816,7 +7819,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 9
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -7839,7 +7842,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 9
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -7862,7 +7865,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 10
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -7885,7 +7888,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 10
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -7908,7 +7911,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 10
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -7931,7 +7934,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 6
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -7954,7 +7957,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 6
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -7977,7 +7980,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 9
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -8000,7 +8003,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 7
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -8023,7 +8026,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 7
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -8046,7 +8049,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 7
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -8069,7 +8072,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 9
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -8092,7 +8095,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 9
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -8115,7 +8118,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 10
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -8138,7 +8141,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 10
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -8161,7 +8164,7 @@
                         },
                         {
                             "itemId": "ventrysitem:res_planche_chene",
-                            "count": 10
+                            "count": 2
                         },
                         {
                             "itemId": "minecraft:red_sand",
@@ -9132,6 +9135,30 @@
                         "itemId": "ventrysjob:vase_apothicaire",
                         "count": 1
                     }
+                },
+                {
+                    "id": "art_ruche_domestique",
+                    "name": "Ruche domestique",
+                    "description": "Ruche en bois pour élever des abeilles",
+                    "inputs": [
+                        {
+                            "itemId": "minecraft:honeycomb",
+                            "count": 5
+                        },
+                        {
+                            "itemId": "ventrysitem:res_planche_chene",
+                            "count": 20
+                        },
+                        {
+                            "itemId": "ventrysitem:res_clou",
+                            "count": 5
+                        }
+                    ],
+                    "output": {
+                        "itemId": "minecraft:beehive",
+                        "count": 1
+                    },
+                    "energyCost": 8
                 }
             ]
         },
@@ -9766,7 +9793,7 @@
             "id": "cuisinier",
             "name": "Cuisinier",
             "description": "Expert en cuisine et nutrition",
-            "recipes":                         [
+            "recipes": [
                 {
                     "id": "cuis_faux_filet_cuit",
                     "name": "Faux-filet cuit",
