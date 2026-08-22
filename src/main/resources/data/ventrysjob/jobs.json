@@ -11769,6 +11769,22 @@
                     }
                 },
                 {
+                    "id": "tan_missive_rp",
+                    "name": "Missive RP",
+                    "description": "Enveloppe pour le courrier par corbeau",
+                    "energyCost": 1.5,
+                    "inputs": [
+                        {
+                            "itemId": "ventrysitem:res_fils",
+                            "count": 1
+                        }
+                    ],
+                    "output": {
+                        "itemId": "ventrysitem:res_missive_rp",
+                        "count": 8
+                    }
+                },
+                {
                     "id": "tan_writable_book",
                     "name": "Livre vierge",
                     "description": "",
