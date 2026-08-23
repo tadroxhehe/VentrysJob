@@ -253,7 +253,7 @@ tasks.named('processResources') {
 }
 
 jar {
-    archiveFileName = 'VentrysJob.Jar'
+    archiveFileName = 'VentrysJob.jar'
     manifest {
         attributes([
             "Specification-Title": "VentrysJob",
