@@ -151,41 +151,45 @@
       }
     ],
     "saw_configs": [
-      {
-        "block_id": "minecraft:oak_log",
-        "drop_item": "ventrysitem:res_planche_chene",
-        "drop_count": 2
-      },
-      {
-        "block_id": "minecraft:birch_log",
-        "drop_item": "ventrysitem:res_planche_bouleau",
-        "drop_count": 2
-      },
-      {
-        "block_id": "minecraft:spruce_log",
-        "drop_item": "ventrysitem:res_planche_sapin",
-        "drop_count": 2
-      },
-      {
-        "block_id": "minecraft:acacia_log",
-        "drop_item": "minecraft:acacia_planks",
-        "drop_count": 4
-      },
-      {
-        "block_id": "minecraft:dark_oak_log",
-        "drop_item": "minecraft:dark_oak_planks",
-        "drop_count": 4
-      },
-      {
-        "block_id": "minecraft:mangrove_log",
-        "drop_item": "minecraft:mangrove_planks",
-        "drop_count": 4
-      },
-      {
-        "block_id": "minecraft:cherry_log",
-        "drop_item": "minecraft:cherry_planks",
-        "drop_count": 4
-      }
+      { "block_id": "minecraft:oak_log", "drop_item": "ventrysitem:res_planche_chene", "drop_count": 2 },
+      { "block_id": "minecraft:oak_wood", "drop_item": "ventrysitem:res_planche_chene", "drop_count": 2 },
+      { "block_id": "minecraft:stripped_oak_log", "drop_item": "ventrysitem:res_planche_chene", "drop_count": 2 },
+      { "block_id": "minecraft:stripped_oak_wood", "drop_item": "ventrysitem:res_planche_chene", "drop_count": 2 },
+
+      { "block_id": "minecraft:birch_log", "drop_item": "ventrysitem:res_planche_bouleau", "drop_count": 2 },
+      { "block_id": "minecraft:birch_wood", "drop_item": "ventrysitem:res_planche_bouleau", "drop_count": 2 },
+      { "block_id": "minecraft:stripped_birch_log", "drop_item": "ventrysitem:res_planche_bouleau", "drop_count": 2 },
+      { "block_id": "minecraft:stripped_birch_wood", "drop_item": "ventrysitem:res_planche_bouleau", "drop_count": 2 },
+
+      { "block_id": "minecraft:spruce_log", "drop_item": "ventrysitem:res_planche_sapin", "drop_count": 2 },
+      { "block_id": "minecraft:spruce_wood", "drop_item": "ventrysitem:res_planche_sapin", "drop_count": 2 },
+      { "block_id": "minecraft:stripped_spruce_log", "drop_item": "ventrysitem:res_planche_sapin", "drop_count": 2 },
+      { "block_id": "minecraft:stripped_spruce_wood", "drop_item": "ventrysitem:res_planche_sapin", "drop_count": 2 },
+
+      { "block_id": "minecraft:acacia_log", "drop_item": "minecraft:acacia_planks", "drop_count": 4 },
+      { "block_id": "minecraft:acacia_wood", "drop_item": "minecraft:acacia_planks", "drop_count": 4 },
+      { "block_id": "minecraft:stripped_acacia_log", "drop_item": "minecraft:acacia_planks", "drop_count": 4 },
+      { "block_id": "minecraft:stripped_acacia_wood", "drop_item": "minecraft:acacia_planks", "drop_count": 4 },
+
+      { "block_id": "minecraft:dark_oak_log", "drop_item": "minecraft:dark_oak_planks", "drop_count": 4 },
+      { "block_id": "minecraft:dark_oak_wood", "drop_item": "minecraft:dark_oak_planks", "drop_count": 4 },
+      { "block_id": "minecraft:stripped_dark_oak_log", "drop_item": "minecraft:dark_oak_planks", "drop_count": 4 },
+      { "block_id": "minecraft:stripped_dark_oak_wood", "drop_item": "minecraft:dark_oak_planks", "drop_count": 4 },
+
+      { "block_id": "minecraft:mangrove_log", "drop_item": "minecraft:mangrove_planks", "drop_count": 4 },
+      { "block_id": "minecraft:mangrove_wood", "drop_item": "minecraft:mangrove_planks", "drop_count": 4 },
+      { "block_id": "minecraft:stripped_mangrove_log", "drop_item": "minecraft:mangrove_planks", "drop_count": 4 },
+      { "block_id": "minecraft:stripped_mangrove_wood", "drop_item": "minecraft:mangrove_planks", "drop_count": 4 },
+
+      { "block_id": "minecraft:cherry_log", "drop_item": "minecraft:cherry_planks", "drop_count": 4 },
+      { "block_id": "minecraft:cherry_wood", "drop_item": "minecraft:cherry_planks", "drop_count": 4 },
+      { "block_id": "minecraft:stripped_cherry_log", "drop_item": "minecraft:cherry_planks", "drop_count": 4 },
+      { "block_id": "minecraft:stripped_cherry_wood", "drop_item": "minecraft:cherry_planks", "drop_count": 4 },
+
+      { "block_id": "minecraft:jungle_log", "drop_item": "minecraft:jungle_planks", "drop_count": 4 },
+      { "block_id": "minecraft:jungle_wood", "drop_item": "minecraft:jungle_planks", "drop_count": 4 },
+      { "block_id": "minecraft:stripped_jungle_log", "drop_item": "minecraft:jungle_planks", "drop_count": 4 },
+      { "block_id": "minecraft:stripped_jungle_wood", "drop_item": "minecraft:jungle_planks", "drop_count": 4 }
     ],
     "mining_configs": [
       {

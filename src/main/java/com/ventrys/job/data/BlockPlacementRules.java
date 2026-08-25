@@ -1,11 +1,6 @@
 package com.ventrys.job.data;
 
-import com.ventrys.job.block.JobTableBlock;
-import com.ventrys.job.block.MetierTisserBlock;
-import com.ventrys.job.compat.VentrysSurvivalBridge;
-import com.ventrys.job.energy.JobActionEnergyCosts;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
@@ -143,88 +138,12 @@ public final class BlockPlacementRules {
 
     /**
      * @param notify si true, envoie le message d'erreur au joueur en cas de refus
+     * @deprecated plus de restriction de métier sur la pose (gérée côté plugin désormais) —
+     * la pose de bloc suit maintenant purement les règles vanilla.
      */
+    @Deprecated
     public static boolean canPlayerPlaceBlock(Player player, BlockState blockToPlace, BlockPos pos, boolean notify) {
-        if (player.isCreative()) {
-            return true;
-        }
-
-        Block placedBlock = blockToPlace.getBlock();
-        if (placedBlock instanceof JobTableBlock || placedBlock instanceof MetierTisserBlock) {
-            return true;
-        }
-        if (JobPermissionService.isUnrestrictedVentrysJobBlock(blockToPlace, pos)) {
-            return true;
-        }
-
-        String playerJob = JobPermissionService.getJob(player);
-        if (CropGrowthConfig.isConfiguredCrop(placedBlock)) {
-            boolean ok = "paysan".equals(playerJob);
-            if (!ok && notify) {
-                deny(player, "ventrysjob.message.block.placement.paysan.restricted");
-            }
-            return ok;
-        }
-
-        // Meubles : tout le monde (vanilla + mods)
-        if (FurnitureAccess.isFurniture(blockToPlace)) {
-            return true;
-        }
-
-        // Torches : pose libre (ouvrier en mine, tout le monde hors métier)
-        if (isTorchLike(blockToPlace)) {
-            return true;
-        }
-
-        // Texte HRP VentrysChat : tout le monde, sans métier
-        if (BlockBreakRules.isNarrationTextBlock(blockToPlace)) {
-            return true;
-        }
-
-        if (JobPermissionService.isPaysan(player)) {
-            if (notify) {
-                deny(player, "ventrysjob.message.block.placement.paysan.restricted");
-            }
-            return false;
-        }
-        if (JobPermissionService.isOuvrier(player)) {
-            if (JobActions.isExtractableLog(blockToPlace, pos)) {
-                return true;
-            }
-            boolean ok = isOuvrierMineSupportBlock(blockToPlace);
-            if (!ok && notify) {
-                deny(player, "ventrysjob.message.block.placement.ouvrier.restricted");
-            }
-            return ok;
-        }
-        if (JobPermissionService.isBatisseur(player)) {
-            // Client : ne pas exiger ServerPlayer (prédiction pose)
-            if (!MalletUsage.hasUsableMallet(player)) {
-                if (notify) {
-                    deny(player, "ventrysjob.message.block.placement.batisseur.no_mallet");
-                }
-                return false;
-            }
-            if (player instanceof ServerPlayer serverPlayer
-                    && VentrysSurvivalBridge.isAvailable()
-                    && VentrysSurvivalBridge.getJobEnergy(serverPlayer) < JobActionEnergyCosts.PLACE_BLOCK) {
-                if (notify) {
-                    VentrysSurvivalBridge.sendInsufficientEnergy(serverPlayer);
-                }
-                return false;
-            }
-            return true;
-        }
-
-        // Joueur lambda / autres métiers : pas de construction
-        if (notify) {
-            deny(player, "ventrysjob.message.block.placement.restricted");
-        }
-        return false;
-    }
-
-    private static void deny(Player player, String translationKey) {
-        player.sendMessage(new TranslatableComponent(translationKey), player.getUUID());
+        return true;
     }
 
     /**

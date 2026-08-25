@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "ventrysjob:argent_ore",
+    "ventrysjob:charbon_ore",
+    "ventrysjob:cuivre_ore",
+    "ventrysjob:diamant_ore",
+    "ventrysjob:emeraude_ore",
+    "ventrysjob:etain_ore",
+    "ventrysjob:fer_ore",
+    "ventrysjob:or_ore",
+    "ventrysjob:rubis_ore",
+    "ventrysjob:saphire_ore",
+    "ventrysjob:verdragon_ore"
+  ]
+}

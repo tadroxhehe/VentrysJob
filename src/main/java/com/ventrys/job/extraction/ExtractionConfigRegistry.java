@@ -139,7 +139,7 @@ public final class ExtractionConfigRegistry {
         return SAW_CONFIGS.containsKey(blockId);
     }
 
-    static boolean isSaw(ItemStack itemStack) {
+    public static boolean isSaw(ItemStack itemStack) {
         if (!ToolDurability.isUsable(itemStack)) return false;
 
         String itemId = ForgeRegistries.ITEMS.getKey(itemStack.getItem()).toString();

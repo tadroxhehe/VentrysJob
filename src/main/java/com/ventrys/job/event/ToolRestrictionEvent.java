@@ -114,18 +114,6 @@ public class ToolRestrictionEvent {
             // gérés ailleurs. Ne PAS appliquer la restriction ouvrier (bug : bloquait le paysan).
             return;
         }
-
-        // Outils ouvrier uniquement (pas les fourches paysan)
-        if (isRestrictedOuvrierTool(heldItem) && !JobPermissionService.isOuvrier(player)) {
-            event.setCanceled(true);
-        }
     }
 
-    /** Hache / pelle / pioche — réservées à l'ouvrier. */
-    private static boolean isRestrictedOuvrierTool(ItemStack itemStack) {
-        return itemStack.canPerformAction(ToolActions.AXE_DIG)
-                || itemStack.canPerformAction(ToolActions.SHOVEL_DIG)
-                || itemStack.canPerformAction(ToolActions.PICKAXE_DIG);
-    }
-    
 }

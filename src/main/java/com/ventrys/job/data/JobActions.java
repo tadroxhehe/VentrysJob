@@ -128,6 +128,10 @@ public class JobActions {
         return ExtractionConfigRegistry.isChiselTool(item);
     }
 
+    public static boolean isSaw(ItemStack item) {
+        return ExtractionConfigRegistry.isSaw(item);
+    }
+
     public static boolean isAnyExtractableBlock(BlockState state, BlockPos pos) {
         return ExtractionConfigRegistry.isAnyExtractableBlock(state, pos);
     }

@@ -58,23 +58,13 @@ public final class ExtractionInteractionHandler {
             }
         }
 
-        if ("ouvrier".equals(playerJob)) {
-            if (ExtractionConfigRegistry.isExtractableLog(state, pos) && ExtractionConfigRegistry.isAxe(player.getItemInHand(hand))) {
-                return handleOakExtraction((ServerPlayer) player, level, pos, hand);
-            } else if (isSawableLog(level, state, pos) && ExtractionConfigRegistry.isSaw(player.getItemInHand(hand))) {
-                return handleSawing((ServerPlayer) player, level, pos, hand);
-            } else if (ExtractionConfigRegistry.isExtractableOre(state, pos) && ExtractionConfigRegistry.isPickaxe(player.getItemInHand(hand))) {
-                return handleMining((ServerPlayer) player, level, pos, hand);
-            } else if (ExtractionConfigRegistry.isExtractableStone(state, pos) && isChisel(player.getItemInHand(hand))) {
-                return handleStoneExtraction((ServerPlayer) player, level, pos, hand);
-            } else if (ExtractionConfigRegistry.isExtractableCalcite(state, pos) && isChisel(player.getItemInHand(hand))) {
-                return handleCalciteExtraction((ServerPlayer) player, level, pos, hand);
-            } else if (ExtractionConfigRegistry.isExtractableSand(state, pos) && ExtractionConfigRegistry.isShovel(player.getItemInHand(hand))) {
-                return handleSandExtraction((ServerPlayer) player, level, pos, hand);
-            } else if (ExtractionConfigRegistry.isExtractableClay(state, pos) && ExtractionConfigRegistry.isShovel(player.getItemInHand(hand))) {
-                return handleClayExtraction((ServerPlayer) player, level, pos, hand);
-            }
-        } else if ("paysan".equals(playerJob)) {
+        // Scie : seule interaction "extraction" encore utilisée (le reste casse en vanilla,
+        // voir BlockBreakEventHandler) — plus de restriction de métier, juste l'outil.
+        if (isSawableLog(level, state, pos) && ExtractionConfigRegistry.isSaw(player.getItemInHand(hand))) {
+            return handleSawing((ServerPlayer) player, level, pos, hand);
+        }
+
+        if ("paysan".equals(playerJob)) {
             if (com.ventrys.job.data.CropGrowthConfig.isConfiguredCrop(state.getBlock())) {
                 return handleCropHarvest((ServerPlayer) player, level, pos, state, hand);
             }
@@ -304,14 +294,12 @@ public final class ExtractionInteractionHandler {
     }
 
     private static boolean isSawableLog(Level level, BlockState state, BlockPos pos) {
+        // L'ancien garde-fou "hasExtractedTag" exigeait d'être passé par l'extraction à la hache
+        // (qui posait le tag). Cette extraction n'existe plus (bûches cassées en vanilla), donc
+        // plus rien ne pose jamais ce tag — la scie ne matchait plus aucune bûche. On ne garde
+        // que la vérification "ce type de bloc est configuré comme sciable".
         String blockId = ForgeRegistries.BLOCKS.getKey(state.getBlock()).toString();
-        boolean isConfigured = ExtractionConfigRegistry.isSawableBlockConfigured(blockId);
-        boolean hasTag = hasExtractedTag(level, pos);
-        return isConfigured && hasTag;
-    }
-
-    private static boolean hasExtractedTag(Level level, BlockPos pos) {
-        return ExtractedPositionsStore.isExtractedPosition(level, pos);
+        return ExtractionConfigRegistry.isSawableBlockConfigured(blockId);
     }
 
     private static boolean isChisel(ItemStack item) {
@@ -336,12 +324,7 @@ public final class ExtractionInteractionHandler {
             return;
         }
 
-        if (!hasExtractedTag(level, pos)) {
-            return;
-        }
-
         level.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
-        ExtractedPositionsStore.unmarkPositionAsExtracted(level, pos);
 
         ItemStack dropItem = ExtractionDropFactory.createDropItem(config.getDropItem(), config.getDropCount(), null);
         if (!dropItem.isEmpty()) {
@@ -350,7 +333,6 @@ public final class ExtractionInteractionHandler {
             ExtractionSounds.play(level, pos, ExtractionSounds.Kind.SAW);
         } else {
             level.setBlock(pos, state, 3);
-            ExtractedPositionsStore.markPositionAsExtracted(level, pos);
             return;
         }
 

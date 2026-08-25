@@ -5,13 +5,8 @@ import com.ventrys.job.data.BlockPlacementRules;
 import com.ventrys.job.data.CropGrowthConfig;
 import com.ventrys.job.data.CropGrowthManager;
 import com.ventrys.job.data.JobActions;
-import com.ventrys.job.data.JobPermissionService;
-import com.ventrys.job.data.MalletUsage;
-import com.ventrys.job.energy.JobActionEnergyCosts;
-import com.ventrys.job.energy.JobEnergyHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
@@ -144,21 +139,6 @@ public class BlockPlacementEvent {
             if (tag != null && tag.getBoolean("ventrysjob:extracted")) {
                 JobActions.markPositionAsExtracted(player.level, pos);
             }
-        }
-
-        if (JobPermissionService.isBatisseur(player) && player instanceof ServerPlayer serverPlayer) {
-            // Re-check (filet) : sans maillet utilisable → annuler (Forge restaure l'item)
-            if (!MalletUsage.hasUsableMallet(serverPlayer)) {
-                event.setCanceled(true);
-                BlockPlacementRules.syncInventory(player);
-                return;
-            }
-            if (!JobEnergyHelper.consumeForAction(serverPlayer, JobActionEnergyCosts.PLACE_BLOCK)) {
-                event.setCanceled(true);
-                BlockPlacementRules.syncInventory(player);
-                return;
-            }
-            MalletUsage.applyWearToHeldMallet(serverPlayer);
         }
 
         if (event.getWorld() instanceof ServerLevel serverLevel) {
