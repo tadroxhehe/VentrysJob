@@ -13,7 +13,6 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -154,38 +153,10 @@ public class AnimalInteractionHandler {
                 return;
             }
             
-            // Reproduction manuelle : uniquement si le délai (ex. 48 h) est déjà accumulé
-            if (heldItem.isEmpty() && animal.canReproduce()) {
-                Animal mate = findMate(animal);
-                if (mate instanceof CustomAnimal customMate
-                        && animal.isReproductionReadyWith(customMate)) {
-                    if (!player.level.isClientSide && player.level instanceof net.minecraft.server.level.ServerLevel serverLevel) {
-                        if (!(player instanceof net.minecraft.server.level.ServerPlayer serverPlayer)
-                                || !JobEnergyHelper.consumeForAction(serverPlayer, JobActionEnergyCosts.BREED_ANIMAL)) {
-                            event.setCancellationResult(InteractionResult.FAIL);
-                            event.setCanceled(true);
-                            return;
-                        }
-                        net.minecraft.world.entity.AgeableMob offspring = animal.getBreedOffspring(serverLevel, customMate);
-                        if (offspring != null) {
-                            offspring.setAge(-24000);
-                            offspring.moveTo(animal.getX(), animal.getY(), animal.getZ(), 0.0F, 0.0F);
-                            player.level.addFreshEntity(offspring);
-                            animal.addNutrition(-BREEDING_COST);
-                            animal.addHydration(-BREEDING_COST);
-                            customMate.addNutrition(-BREEDING_COST);
-                            customMate.addHydration(-BREEDING_COST);
-                        }
-                    }
-                    event.setCancellationResult(InteractionResult.SUCCESS);
-                    event.setCanceled(true);
-                }
-            }
+            // Reproduction : uniquement automatique via LivestockProgressManager
+            // (évite un double spawn si clic main vide + tick auto sur jauge pleine).
         }
     }
-    
-    /** Nutrition/hydratation retirée à chaque parent après une reproduction (anti-spam). */
-    private static final int BREEDING_COST = 40;
 
     private static boolean canFeed(CustomAnimal animal, Item item) {
         if (animal instanceof CustomChicken) {
@@ -247,15 +218,4 @@ public class AnimalInteractionHandler {
             && path.equals(id.getPath());
     }
     
-    private static Animal findMate(CustomAnimal animal) {
-        double radius = 10.0D;
-        // Filtrer déjà sexe opposé + seuils + timer (évite de prendre un voisin du même sexe).
-        return animal.level.getEntitiesOfClass(CustomAnimal.class,
-            animal.getBoundingBox().inflate(radius),
-            other -> other != animal
-                    && other.getClass() == animal.getClass()
-                    && animal.isReproductionReadyWith(other)).stream()
-            .findFirst()
-            .orElse(null);
-    }
 }

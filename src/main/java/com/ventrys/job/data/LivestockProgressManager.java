@@ -438,6 +438,15 @@ public final class LivestockProgressManager {
                             continue;
                         }
 
+                        // Claim atomique : reset jauges AVANT spawn pour empêcher un second
+                        // tryBreed (manuel ou auto) dans le même cycle.
+                        animalA.resetReproductionTimer();
+                        animalB.resetReproductionTimer();
+                        entryA.reproductionProgressMs = 0L;
+                        entryB.reproductionProgressMs = 0L;
+                        saved.put(a.getKey(), entryA);
+                        saved.put(b.getKey(), entryB);
+
                         var offspring = animalA.getBreedOffspring(level, animalB);
                         if (offspring != null) {
                             offspring.setAge(-24000);
@@ -446,13 +455,11 @@ public final class LivestockProgressManager {
                             double midZ = (entryA.z + entryB.z) / 2.0;
                             offspring.moveTo(midX, midY, midZ, 0.0F, 0.0F);
                             level.addFreshEntity(offspring);
-
-                            entryA.reproductionProgressMs = 0L;
-                            entryB.reproductionProgressMs = 0L;
-                            saved.put(a.getKey(), entryA);
-                            saved.put(b.getKey(), entryB);
-                            animalA.resetReproductionTimer();
-                            animalB.resetReproductionTimer();
+                            // Coût anti-spam (aligné ancien breed manuel)
+                            animalA.addNutrition(-40);
+                            animalA.addHydration(-40);
+                            animalB.addNutrition(-40);
+                            animalB.addHydration(-40);
                             bred = true;
                             break;
                         }

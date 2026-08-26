@@ -127,7 +127,7 @@
   "ventrysjob.animal.repro.male": "Breeding: male",
   "ventrysjob.animal.repro.needs_care": "Pregnancy: too hungry / thirsty",
   "ventrysjob.animal.repro.no_partner": "Pregnancy: no mate nearby",
-  "ventrysjob.animal.repro.gestating": "Pregnant: %s%% (48 h)",
+  "ventrysjob.animal.repro.gestating": "Pregnant: %s%% (96 h)",
   "ventrysjob.animal.repro.ready": "Ready to give birth",
   "ventrysjob.animal.milk.male": "Milk: male",
   "ventrysjob.animal.milk.needs_care": "Milk: too hungry / thirsty",
