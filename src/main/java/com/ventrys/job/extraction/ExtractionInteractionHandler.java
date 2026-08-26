@@ -58,12 +58,6 @@ public final class ExtractionInteractionHandler {
             }
         }
 
-        // Scie : seule interaction "extraction" encore utilisée (le reste casse en vanilla,
-        // voir BlockBreakEventHandler) — plus de restriction de métier, juste l'outil.
-        if (isSawableLog(level, state, pos) && ExtractionConfigRegistry.isSaw(player.getItemInHand(hand))) {
-            return handleSawing((ServerPlayer) player, level, pos, hand);
-        }
-
         if ("paysan".equals(playerJob)) {
             if (com.ventrys.job.data.CropGrowthConfig.isConfiguredCrop(state.getBlock())) {
                 return handleCropHarvest((ServerPlayer) player, level, pos, state, hand);

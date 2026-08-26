@@ -25,8 +25,8 @@ import net.minecraftforge.fml.common.Mod;
 /**
  * Casse de blocs : plus aucune restriction de métier (gérée côté plugin désormais).
  * Les blocs cassent en vanilla (tag de bloc + tier d'outil). Seuls les meubles, le texte HRP,
- * les blocs protégés staff, les cultures (récolte multi-clics fourche) et la scie (bûche → planche)
- * gardent un traitement spécial, indépendant de tout métier.
+ * les blocs protégés staff et les cultures (récolte multi-clics fourche) gardent un traitement
+ * spécial. La scie (bûche → planche) est désormais entièrement gérée côté plugin (Skript).
  */
 @Mod.EventBusSubscriber(modid = VentrysJob.MOD_ID)
 public class BlockBreakEventHandler {
@@ -54,11 +54,6 @@ public class BlockBreakEventHandler {
             return;
         }
         if (JobActions.isMineGranite(st)) {
-            event.setNewSpeed(0.0f);
-            return;
-        }
-        // Scie : seule interaction "extraction" encore réservée (clic multiple, bûche + scie en main).
-        if (JobActions.isExtractableSaw(st) && JobActions.isSaw(p.getItemInHand(InteractionHand.MAIN_HAND))) {
             event.setNewSpeed(0.0f);
         }
     }
@@ -112,16 +107,6 @@ public class BlockBreakEventHandler {
             return;
         }
 
-        // Scie : seule interaction "extraction" encore réservée (clic multiple, bûche + scie en main).
-        // Tout le reste (minerai, bûche à la hache, pierre, calcite, sable, argile, déco) casse en vanilla.
-        if (JobActions.isExtractableSaw(state) && JobActions.isSaw(heldItem)) {
-            event.setCanceled(true);
-            if (player instanceof ServerPlayer serverPlayer && !level.isClientSide) {
-                JobActions.handleBlockInteraction(serverPlayer, level, pos, state, InteractionHand.MAIN_HAND);
-            }
-            return;
-        }
-
         if (JobActions.isExtractedBlock(level, pos)) {
             event.setCanceled(true);
         }
@@ -154,12 +139,6 @@ public class BlockBreakEventHandler {
             return;
         }
         if (JobActions.isMineGranite(state)) {
-            event.setNewSpeed(0.0f);
-            return;
-        }
-
-        // Scie : seule interaction encore réservée (clic multiple), reste bloquée en casse vanilla.
-        if (JobActions.isExtractableSaw(state) && JobActions.isSaw(player.getItemInHand(InteractionHand.MAIN_HAND))) {
             event.setNewSpeed(0.0f);
         }
     }
@@ -199,6 +178,8 @@ public class BlockBreakEventHandler {
 
         // Meubles : casse libre + drop item-bloc (loot Westeros souvent vide)
         if (FurnitureAccess.isFurniture(state)) {
+            VentrysJob.LOGGER.info("[DEBUG-FURNITURE] forceDropBlockAsItem appele pour {} en {} par {}",
+                    state.getBlock(), pos, player.getName().getString());
             forceDropBlockAsItem(event, player, state, pos);
             return;
         }
