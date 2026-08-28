@@ -24,8 +24,8 @@ public final class CropGrowthConfig {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private static final Map<String, CropConfigEntry> CROP_CONFIG = new HashMap<>();
 
-    /** 48 h réelles pour la maturité totale (réparties entre les stades, 20 ticks/s). */
-    public static final long MATURITY_DURATION_48H_TICKS = 48L * 3600L * 20L;
+    /** 96 h réelles pour la maturité totale (réparties entre les stades, 20 ticks/s). */
+    public static final long MATURITY_DURATION_48H_TICKS = 96L * 3600L * 20L;
 
     /** Fallback ~48 h / 7 stades (blé). */
     private static long defaultStageDuration = MATURITY_DURATION_48H_TICKS / 7L;

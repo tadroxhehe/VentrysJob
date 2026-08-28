@@ -34,7 +34,7 @@ import java.util.Random;
 
 public class CustomSheep extends CustomAnimal implements IForgeShearable, LivestockTextureHolder {
     /** Apport laine par tonte (nerfé : 5 → 2). */
-    public static final int WOOL_DROP_COUNT = 2;
+    public static final int WOOL_DROP_COUNT = 3;
     public static final long WOOL_REGROW_INTERVAL_MS = 86_400_000L; // 24 heures
     public static final String DEFAULT_TEXTURE = "mouton_parfais";
 

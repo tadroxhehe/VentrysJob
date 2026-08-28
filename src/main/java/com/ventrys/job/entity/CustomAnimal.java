@@ -54,10 +54,12 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
     public static final int REPRO_HUD_NEEDS_CARE = 1;
     /** HUD : pas de partenaire sexe opposé à proximité. */
     public static final int REPRO_HUD_NO_PARTNER = 2;
-    /** HUD : gestation en cours (jauge qui avance ou déjà entamée). */
+    /** HUD : accouplement en cours (jauge partenaire, timer 1). */
     public static final int REPRO_HUD_GESTATING = 3;
-    /** HUD : jauge pleine, prête à mettre bas. */
+    /** HUD : jauge accouplement pleine (transition courte). */
     public static final int REPRO_HUD_READY = 4;
+    /** HUD : enceinte (timer 2 grossesse 48 h) — seul état avec % enceinte. */
+    public static final int REPRO_HUD_PREGNANT = 5;
 
     // Données synchronisées
     private static final EntityDataAccessor<Boolean> IS_MALE = SynchedEntityData.defineId(CustomAnimal.class, EntityDataSerializers.BOOLEAN);
@@ -73,6 +75,8 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
     private long lastHydrationDecrease = 0;
     private long lastMilkExtraction = 0;
     private long reproductionProgressMs = 0L;
+    private long pregnancyProgressMs = 0L;
+    private boolean pregnant = false;
     private long lastRegenerationTime = 0;
     
     protected CustomAnimal(EntityType<? extends Animal> entityType, Level level) {
@@ -90,6 +94,8 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
             this.lastMilkExtraction = currentTime;
             this.lastRegenerationTime = currentTime;
             this.reproductionProgressMs = 0L;
+            this.pregnancyProgressMs = 0L;
+            this.pregnant = false;
         }
     }
 
@@ -203,7 +209,7 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
         }
     }
 
-    /** HUD gestation : scan local du partenaire (ne modifie pas la jauge SavedData). */
+    /** HUD reproduction : scan local du partenaire (ne modifie pas la jauge SavedData). */
     public void refreshReproductionHudFromWorld() {
         if (this.level.isClientSide) {
             return;
@@ -218,11 +224,34 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
                 && !other.isBaby()
                 && other.isMale() != this.isMale()
         ).isEmpty();
-        updateReproductionHud(this.reproductionProgressMs, opposite);
+        LivestockProgressSavedData.Entry fake = new LivestockProgressSavedData.Entry();
+        fake.reproductionProgressMs = this.reproductionProgressMs;
+        fake.pregnancyProgressMs = this.pregnancyProgressMs;
+        fake.pregnant = this.pregnant;
+        fake.isMale = this.isMale();
+        fake.nutrition = this.getNutrition();
+        fake.hydration = this.getHydration();
+        updateReproductionHud(fake, opposite);
     }
 
     public long getReproductionProgressMs() {
         return reproductionProgressMs;
+    }
+
+    public long getPregnancyProgressMs() {
+        return pregnancyProgressMs;
+    }
+
+    public boolean isPregnant() {
+        return pregnant;
+    }
+
+    public void setPregnant(boolean pregnant, long progressMs) {
+        this.pregnant = pregnant;
+        this.pregnancyProgressMs = Math.max(0L, progressMs);
+        if (!pregnant) {
+            this.pregnancyProgressMs = 0L;
+        }
     }
 
     public long getLastNutritionDecreaseMs() {
@@ -247,6 +276,8 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
         setNutrition(entry.nutrition);
         setHydration(entry.hydration);
         this.reproductionProgressMs = entry.reproductionProgressMs;
+        this.pregnancyProgressMs = entry.pregnancyProgressMs;
+        this.pregnant = entry.pregnant;
         this.lastNutritionDecrease = entry.lastNutritionDecreaseMs;
         this.lastHydrationDecrease = entry.lastHydrationDecreaseMs;
         this.lastRegenerationTime = entry.lastRegenerationMs;
@@ -261,31 +292,49 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
     }
 
     /**
-     * Met à jour le HUD gestation (sync client). Ne change pas les timers gameplay.
-     * @param progressMs jauge actuelle
-     * @param oppositeSexNearby partenaire sexe opposé dans le rayon (faim non exigée)
+     * Met à jour le HUD reproduction (sync client).
+     * Le % « enceinte » n'est affiché que pendant la grossesse (timer 2).
      */
-    public void updateReproductionHud(long progressMs, boolean oppositeSexNearby) {
-        if (this.level.isClientSide) {
+    public void updateReproductionHud(LivestockProgressSavedData.Entry entry, boolean oppositeSexNearby) {
+        if (this.level.isClientSide || entry == null) {
             return;
         }
-        long requiredMs = Math.max(1L, MobConfig.getRequiredTimeMinutes() * 60_000L);
-        int percent = (int) Math.min(100L, Math.max(0L, (progressMs * 100L) / requiredMs));
-        this.entityData.set(REPRO_PROGRESS_PERCENT, percent);
 
         int state;
+        int percent;
+
         if (isMale()) {
             state = REPRO_HUD_MALE;
+            percent = 0;
+        } else if (entry.pregnant) {
+            long pregRequired = Math.max(1L, MobConfig.getPregnancyTimeMinutes() * 60_000L);
+            percent = (int) Math.min(100L, Math.max(0L, (entry.pregnancyProgressMs * 100L) / pregRequired));
+            state = REPRO_HUD_PREGNANT;
         } else if (!canReproduce()) {
             state = REPRO_HUD_NEEDS_CARE;
+            percent = 0;
         } else if (!oppositeSexNearby) {
             state = REPRO_HUD_NO_PARTNER;
-        } else if (percent >= 100) {
-            state = REPRO_HUD_READY;
+            long matingRequired = Math.max(1L, MobConfig.getRequiredTimeMinutes() * 60_000L);
+            percent = (int) Math.min(100L, Math.max(0L, (entry.reproductionProgressMs * 100L) / matingRequired));
         } else {
-            state = REPRO_HUD_GESTATING;
+            long matingRequired = Math.max(1L, MobConfig.getRequiredTimeMinutes() * 60_000L);
+            percent = (int) Math.min(100L, Math.max(0L, (entry.reproductionProgressMs * 100L) / matingRequired));
+            state = percent >= 100 ? REPRO_HUD_READY : REPRO_HUD_GESTATING;
         }
+
+        this.entityData.set(REPRO_PROGRESS_PERCENT, percent);
         this.entityData.set(REPRO_HUD_STATE, state);
+    }
+
+    /** @deprecated use {@link #updateReproductionHud(LivestockProgressSavedData.Entry, boolean)} */
+    @Deprecated
+    public void updateReproductionHud(long progressMs, boolean oppositeSexNearby) {
+        LivestockProgressSavedData.Entry fake = new LivestockProgressSavedData.Entry();
+        fake.reproductionProgressMs = progressMs;
+        fake.pregnancyProgressMs = this.pregnancyProgressMs;
+        fake.pregnant = this.pregnant;
+        updateReproductionHud(fake, oppositeSexNearby);
     }
 
     public int getReproductionProgressPercent() {
@@ -297,16 +346,22 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
     }
 
     public boolean isReproductionProgressComplete() {
+        if (pregnant) {
+            return false;
+        }
         long requiredMs = MobConfig.getRequiredTimeMinutes() * 60_000L;
         return reproductionProgressMs >= requiredMs;
     }
 
-    /** Les deux parents doivent pouvoir se reproduire ; seule la femelle doit avoir fini la gestation. */
+    /** Les deux parents doivent pouvoir se reproduire ; seule la femelle doit avoir fini l'accouplement. */
     public boolean isReproductionReadyWith(CustomAnimal mate) {
         if (mate == null || mate == this) {
             return false;
         }
         if (this.isBaby() || mate.isBaby()) {
+            return false;
+        }
+        if (this.pregnant) {
             return false;
         }
         if (!canReproduce() || !mate.canReproduce()) {
@@ -316,6 +371,9 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
             return false;
         }
         CustomAnimal female = isMale() ? mate : this;
+        if (female.pregnant) {
+            return false;
+        }
         return female.isReproductionProgressComplete();
     }
     
@@ -419,6 +477,8 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
         tag.putInt("Nutrition", getNutrition());
         tag.putInt("Hydration", getHydration());
         tag.putLong("ReproductionProgressMs", this.reproductionProgressMs);
+        tag.putLong("PregnancyProgressMs", this.pregnancyProgressMs);
+        tag.putBoolean("Pregnant", this.pregnant);
         tag.putLong("LastNutritionDecrease", lastNutritionDecrease);
         tag.putLong("LastHydrationDecrease", lastHydrationDecrease);
         tag.putLong("LastMilkExtraction", lastMilkExtraction);
@@ -448,6 +508,15 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
                 long requiredMs = MobConfig.getRequiredTimeMinutes() * 60_000L;
                 this.reproductionProgressMs = Math.min(requiredMs, Math.max(0L, currentTime - legacyStart));
             }
+        }
+        if (tag.contains("PregnancyProgressMs")) {
+            this.pregnancyProgressMs = Math.max(0L, tag.getLong("PregnancyProgressMs"));
+        }
+        if (tag.contains("Pregnant")) {
+            this.pregnant = tag.getBoolean("Pregnant");
+        } else {
+            this.pregnant = false;
+            this.pregnancyProgressMs = 0L;
         }
 
         if (tag.contains("LastNutritionDecrease")) {

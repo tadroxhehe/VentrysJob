@@ -26,6 +26,9 @@ public final class LivestockProgressSavedData extends SavedData {
         public int nutrition;
         public int hydration;
         public long reproductionProgressMs;
+        /** Progression grossesse (après accouplement), 0 si pas enceinte. */
+        public long pregnancyProgressMs;
+        public boolean pregnant;
         public long lastNutritionDecreaseMs;
         public long lastHydrationDecreaseMs;
         public long lastRegenerationMs;
@@ -42,6 +45,8 @@ public final class LivestockProgressSavedData extends SavedData {
             e.nutrition = nutrition;
             e.hydration = hydration;
             e.reproductionProgressMs = reproductionProgressMs;
+            e.pregnancyProgressMs = pregnancyProgressMs;
+            e.pregnant = pregnant;
             e.lastNutritionDecreaseMs = lastNutritionDecreaseMs;
             e.lastHydrationDecreaseMs = lastHydrationDecreaseMs;
             e.lastRegenerationMs = lastRegenerationMs;
@@ -76,6 +81,8 @@ public final class LivestockProgressSavedData extends SavedData {
             entry.nutrition = c.getInt("nutrition");
             entry.hydration = c.getInt("hydration");
             entry.reproductionProgressMs = c.getLong("reproMs");
+            entry.pregnancyProgressMs = c.contains("pregMs") ? c.getLong("pregMs") : 0L;
+            entry.pregnant = c.contains("pregnant") && c.getBoolean("pregnant");
             entry.lastNutritionDecreaseMs = c.getLong("lastNutrition");
             entry.lastHydrationDecreaseMs = c.getLong("lastHydration");
             entry.lastRegenerationMs = c.getLong("lastRegen");
@@ -101,6 +108,8 @@ public final class LivestockProgressSavedData extends SavedData {
             c.putInt("nutrition", entry.nutrition);
             c.putInt("hydration", entry.hydration);
             c.putLong("reproMs", entry.reproductionProgressMs);
+            c.putLong("pregMs", entry.pregnancyProgressMs);
+            c.putBoolean("pregnant", entry.pregnant);
             c.putLong("lastNutrition", entry.lastNutritionDecreaseMs);
             c.putLong("lastHydration", entry.lastHydrationDecreaseMs);
             c.putLong("lastRegen", entry.lastRegenerationMs);

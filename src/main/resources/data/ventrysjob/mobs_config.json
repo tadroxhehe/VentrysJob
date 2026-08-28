@@ -3,6 +3,7 @@
     "min_nutrition_percent": 20,
     "min_hydration_percent": 20,
     "required_time_minutes": 5760,
+    "pregnancy_time_minutes": 2880,
     "detection_radius_blocks": 10
   },
   "milk_extraction_interval_ms": 43200000,

@@ -26,6 +26,7 @@ public final class MobConfig {
     private static int minNutritionPercent = 30;
     private static int minHydrationPercent = 30;
     private static int requiredTimeMinutes = 15;
+    private static int pregnancyTimeMinutes = 2880; // 48 h
     private static long milkExtractionIntervalMs = 60_000L; // 1 minute
     private static double detectionRadiusBlocks = 16.0D; // Rayon de détection pour la reproduction
     
@@ -60,6 +61,9 @@ public final class MobConfig {
                     }
                     if (repro.has("required_time_minutes")) {
                         requiredTimeMinutes = Math.max(1, repro.get("required_time_minutes").getAsInt());
+                    }
+                    if (repro.has("pregnancy_time_minutes")) {
+                        pregnancyTimeMinutes = Math.max(1, repro.get("pregnancy_time_minutes").getAsInt());
                     }
                     if (repro.has("detection_radius_blocks")) {
                         detectionRadiusBlocks = Math.max(1.0D, repro.get("detection_radius_blocks").getAsDouble());
@@ -134,6 +138,7 @@ public final class MobConfig {
         minNutritionPercent = 20;
         minHydrationPercent = 20;
         requiredTimeMinutes = 5760; // 96 h
+        pregnancyTimeMinutes = 2880; // 48 h
         milkExtractionIntervalMs = 43_200_000L; // 12 h
         detectionRadiusBlocks = 16.0D;
     }
@@ -153,7 +158,11 @@ public final class MobConfig {
     public static int getRequiredTimeMinutes() {
         return requiredTimeMinutes;
     }
-    
+
+    public static int getPregnancyTimeMinutes() {
+        return pregnancyTimeMinutes;
+    }
+
     public static long getMilkExtractionIntervalMs() {
         return milkExtractionIntervalMs;
     }

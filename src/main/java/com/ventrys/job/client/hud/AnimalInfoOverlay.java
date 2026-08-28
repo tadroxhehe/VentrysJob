@@ -160,9 +160,11 @@ public class AnimalInfoOverlay {
             case CustomAnimal.REPRO_HUD_NO_PARTNER ->
                 new TranslatableComponent("ventrysjob.animal.repro.no_partner");
             case CustomAnimal.REPRO_HUD_GESTATING ->
-                new TranslatableComponent("ventrysjob.animal.repro.gestating", pct);
+                new TranslatableComponent("ventrysjob.animal.repro.mating", pct);
             case CustomAnimal.REPRO_HUD_READY ->
                 new TranslatableComponent("ventrysjob.animal.repro.ready");
+            case CustomAnimal.REPRO_HUD_PREGNANT ->
+                new TranslatableComponent("ventrysjob.animal.repro.pregnant", pct);
             default -> null;
         };
     }
@@ -170,8 +172,9 @@ public class AnimalInfoOverlay {
     private static int reproColor(int state) {
         return switch (state) {
             case CustomAnimal.REPRO_HUD_NEEDS_CARE, CustomAnimal.REPRO_HUD_NO_PARTNER -> 0xFFFFAA00;
-            case CustomAnimal.REPRO_HUD_GESTATING -> 0xFFFF88CC;
+            case CustomAnimal.REPRO_HUD_GESTATING -> 0xFF88AAFF;
             case CustomAnimal.REPRO_HUD_READY -> 0xFF55FF55;
+            case CustomAnimal.REPRO_HUD_PREGNANT -> 0xFFFF88CC;
             default -> 0xFFAAAAAA;
         };
     }

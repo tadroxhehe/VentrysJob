@@ -6,12 +6,14 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySelector;
+import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.chunk.LevelChunk;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -83,6 +85,19 @@ public final class LivestockProgressManager {
         LivestockProgressSavedData.Entry entry = saved.get(uuid);
         if (entry != null) {
             entry.reproductionProgressMs = 0L;
+            saved.put(uuid, entry);
+        }
+    }
+
+    public static void resetPregnancy(UUID uuid, ServerLevel level) {
+        if (uuid == null || level == null) {
+            return;
+        }
+        LivestockProgressSavedData saved = LivestockProgressSavedData.get(level);
+        LivestockProgressSavedData.Entry entry = saved.get(uuid);
+        if (entry != null) {
+            entry.pregnant = false;
+            entry.pregnancyProgressMs = 0L;
             saved.put(uuid, entry);
         }
     }
@@ -182,12 +197,24 @@ public final class LivestockProgressManager {
             applyRegeneration(entry, now);
 
             boolean eligibleMate = hasEligibleMateNearby(uuid, entry, spatial);
-            if (deltaMs > 0L && canReproduce(entry) && eligibleMate) {
+            long requiredMatingMs = MobConfig.getRequiredTimeMinutes() * 60_000L;
+            long requiredPregnancyMs = MobConfig.getPregnancyTimeMinutes() * 60_000L;
+
+            if (entry.pregnant) {
+                // Phase 2 : gestation — plus besoin de partenaire, juste les soins.
+                if (deltaMs > 0L && canReproduce(entry) && !entry.isMale) {
+                    entry.pregnancyProgressMs += deltaMs;
+                }
+                if (entry.pregnancyProgressMs > requiredPregnancyMs) {
+                    entry.pregnancyProgressMs = requiredPregnancyMs;
+                }
+                entry.reproductionProgressMs = 0L;
+            } else if (deltaMs > 0L && canReproduce(entry) && eligibleMate) {
+                // Phase 1 : jauge d'accouplement (timer existant)
                 entry.reproductionProgressMs += deltaMs;
-            }
-            long requiredMs = MobConfig.getRequiredTimeMinutes() * 60_000L;
-            if (entry.reproductionProgressMs > requiredMs) {
-                entry.reproductionProgressMs = requiredMs;
+                if (entry.reproductionProgressMs > requiredMatingMs) {
+                    entry.reproductionProgressMs = requiredMatingMs;
+                }
             }
 
             entry.lastProcessedWallMs = now;
@@ -195,13 +222,13 @@ public final class LivestockProgressManager {
 
             if (entity instanceof CustomAnimal animal && animal.isAlive()) {
                 animal.applyLivestockEntry(entry);
-                // Partenaire chargé uniquement : évite "prête" alors que le mâle est hors chunk.
                 boolean oppositeNearby = hasLoadedOppositeSexNearby(animal);
-                animal.updateReproductionHud(entry.reproductionProgressMs, oppositeNearby);
+                animal.updateReproductionHud(entry, oppositeNearby);
             }
         }
 
-        tryAutomaticBreeding(level, saved, snapshot, spatial);
+        tryStartPregnancies(level, saved, snapshot, spatial);
+        tryBirths(level, saved, snapshot);
     }
 
     /** Sexe opposé, même espèce, entité chargée dans le rayon. */
@@ -288,6 +315,9 @@ public final class LivestockProgressManager {
                     if (self.isMale == mate.isMale) {
                         continue;
                     }
+                    if (self.pregnant || mate.pregnant) {
+                        continue;
+                    }
                     if (requireMateCanReproduce && !canReproduce(mate)) {
                         continue;
                     }
@@ -367,12 +397,20 @@ public final class LivestockProgressManager {
         return entry.nutrition >= minNutrition && entry.hydration >= minHydration;
     }
 
-    private static boolean isReproductionComplete(LivestockProgressSavedData.Entry entry) {
+    private static boolean isMatingComplete(LivestockProgressSavedData.Entry entry) {
         long requiredMs = MobConfig.getRequiredTimeMinutes() * 60_000L;
         return entry.reproductionProgressMs >= requiredMs;
     }
 
-    private static void tryAutomaticBreeding(
+    private static boolean isPregnancyComplete(LivestockProgressSavedData.Entry entry) {
+        long requiredMs = MobConfig.getPregnancyTimeMinutes() * 60_000L;
+        return entry.pregnant && entry.pregnancyProgressMs >= requiredMs;
+    }
+
+    /**
+     * Fin du timer d'accouplement → démarre la grossesse 48 h (pas de spawn immédiat).
+     */
+    private static void tryStartPregnancies(
             ServerLevel level,
             LivestockProgressSavedData saved,
             List<Map.Entry<UUID, LivestockProgressSavedData.Entry>> snapshot,
@@ -384,8 +422,8 @@ public final class LivestockProgressManager {
         for (int i = 0; i < snapshot.size(); i++) {
             Map.Entry<UUID, LivestockProgressSavedData.Entry> a = snapshot.get(i);
             LivestockProgressSavedData.Entry entryA = saved.get(a.getKey());
-            // Seule la femelle "met bas" : jauge pleine + partenaire mâle en forme à proximité.
-            if (entryA == null || entryA.isMale || !canReproduce(entryA) || !isReproductionComplete(entryA)) {
+            if (entryA == null || entryA.isMale || entryA.pregnant
+                    || !canReproduce(entryA) || !isMatingComplete(entryA)) {
                 continue;
             }
 
@@ -397,10 +435,10 @@ public final class LivestockProgressManager {
             int cx = floorDiv((int) Math.floor(entryA.x), cell);
             int cz = floorDiv((int) Math.floor(entryA.z), cell);
             Vec3 posA = new Vec3(entryA.x, entryA.y, entryA.z);
-            boolean bred = false;
+            boolean conceived = false;
 
-            for (int dx = -1; dx <= 1 && !bred; dx++) {
-                for (int dz = -1; dz <= 1 && !bred; dz++) {
+            for (int dx = -1; dx <= 1 && !conceived; dx++) {
+                for (int dz = -1; dz <= 1 && !conceived; dz++) {
                     long key = (((long) (cx + dx)) << 32) ^ ((cz + dz) & 0xffffffffL);
                     List<Map.Entry<UUID, LivestockProgressSavedData.Entry>> bucket = spatial.get(key);
                     if (bucket == null) {
@@ -419,7 +457,6 @@ public final class LivestockProgressManager {
                         if (typeA.isEmpty() || !typeA.equals(typeB)) {
                             continue;
                         }
-                        // Le mâle doit être nourri/abreuuvé, mais n'a pas besoin d'avoir la jauge pleine.
                         if (!canReproduce(entryB)) {
                             continue;
                         }
@@ -438,35 +475,104 @@ public final class LivestockProgressManager {
                             continue;
                         }
 
-                        // Claim atomique : reset jauges AVANT spawn pour empêcher un second
-                        // tryBreed (manuel ou auto) dans le même cycle.
-                        animalA.resetReproductionTimer();
-                        animalB.resetReproductionTimer();
+                        // Conception : reset jauge accouplement, démarre grossesse.
                         entryA.reproductionProgressMs = 0L;
                         entryB.reproductionProgressMs = 0L;
+                        entryA.pregnant = true;
+                        entryA.pregnancyProgressMs = 0L;
+                        animalA.resetReproductionTimer();
+                        animalB.resetReproductionTimer();
+                        animalA.setPregnant(true, 0L);
                         saved.put(a.getKey(), entryA);
                         saved.put(b.getKey(), entryB);
 
-                        var offspring = animalA.getBreedOffspring(level, animalB);
-                        if (offspring != null) {
-                            offspring.setAge(-24000);
-                            double midX = (entryA.x + entryB.x) / 2.0;
-                            double midY = Math.max(entryA.y, entryB.y);
-                            double midZ = (entryA.z + entryB.z) / 2.0;
-                            offspring.moveTo(midX, midY, midZ, 0.0F, 0.0F);
-                            level.addFreshEntity(offspring);
-                            // Coût anti-spam (aligné ancien breed manuel)
-                            animalA.addNutrition(-40);
-                            animalA.addHydration(-40);
-                            animalB.addNutrition(-40);
-                            animalB.addHydration(-40);
-                            bred = true;
-                            break;
-                        }
+                        animalA.addNutrition(-40);
+                        animalA.addHydration(-40);
+                        animalB.addNutrition(-40);
+                        animalB.addHydration(-40);
+                        LivestockProgressManager.persistFromEntity(animalA);
+                        LivestockProgressManager.persistFromEntity(animalB);
+                        conceived = true;
+                        break;
                     }
                 }
             }
         }
+    }
+
+    /** Fin des 48 h de grossesse → spawn du bébé. */
+    private static void tryBirths(
+            ServerLevel level,
+            LivestockProgressSavedData saved,
+            List<Map.Entry<UUID, LivestockProgressSavedData.Entry>> snapshot) {
+        for (Map.Entry<UUID, LivestockProgressSavedData.Entry> a : snapshot) {
+            LivestockProgressSavedData.Entry entryA = saved.get(a.getKey());
+            if (entryA == null || entryA.isMale || !isPregnancyComplete(entryA)) {
+                continue;
+            }
+
+            Entity entityA = level.getEntity(a.getKey());
+            if (!(entityA instanceof CustomAnimal animalA) || !animalA.isAlive() || animalA.isBaby()) {
+                continue;
+            }
+
+            // Claim atomique avant spawn
+            entryA.pregnant = false;
+            entryA.pregnancyProgressMs = 0L;
+            entryA.reproductionProgressMs = 0L;
+            animalA.setPregnant(false, 0L);
+            animalA.resetReproductionTimer();
+            saved.put(a.getKey(), entryA);
+
+            CustomAnimal mate = findLoadedMateForBirth(animalA);
+            AgeableMob offspring = null;
+            if (mate != null) {
+                // Bypass temporaire du check faim pour la mise bas (conception déjà validée)
+                int nA = animalA.getNutrition();
+                int hA = animalA.getHydration();
+                int nB = mate.getNutrition();
+                int hB = mate.getHydration();
+                animalA.setNutrition(100);
+                animalA.setHydration(100);
+                mate.setNutrition(100);
+                mate.setHydration(100);
+                offspring = animalA.getBreedOffspring(level, mate);
+                animalA.setNutrition(nA);
+                animalA.setHydration(hA);
+                mate.setNutrition(nB);
+                mate.setHydration(hB);
+            }
+            if (offspring == null) {
+                Entity created = animalA.getType().create(level);
+                if (created instanceof CustomAnimal baby) {
+                    offspring = baby;
+                }
+            }
+            if (offspring != null) {
+                offspring.setAge(-24000);
+                offspring.moveTo(animalA.getX(), animalA.getY(), animalA.getZ(), 0.0F, 0.0F);
+                level.addFreshEntity(offspring);
+            }
+        }
+    }
+
+    @Nullable
+    private static CustomAnimal findLoadedMateForBirth(CustomAnimal mother) {
+        double radius = MobConfig.getDetectionRadiusBlocks();
+        List<CustomAnimal> males = mother.level.getEntitiesOfClass(
+            CustomAnimal.class,
+            mother.getBoundingBox().inflate(radius),
+            other -> other != mother
+                && other.getClass() == mother.getClass()
+                && other.isAlive()
+                && !other.isBaby()
+                && other.isMale()
+        );
+        return males.isEmpty() ? null : males.get(0);
+    }
+
+    private static boolean isReproductionComplete(LivestockProgressSavedData.Entry entry) {
+        return isMatingComplete(entry);
     }
 
     private static boolean dynamicStateChanged(LivestockProgressSavedData.Entry entry, CustomAnimal animal) {
@@ -492,6 +598,8 @@ public final class LivestockProgressManager {
         entry.lastHydrationDecreaseMs = animal.getLastHydrationDecreaseMs();
         entry.lastRegenerationMs = animal.getLastRegenerationTimeMs();
         entry.reproductionProgressMs = animal.getReproductionProgressMs();
+        entry.pregnancyProgressMs = animal.getPregnancyProgressMs();
+        entry.pregnant = animal.isPregnant();
         entry.lastProcessedWallMs = now;
         copyEntityDynamicState(entry, animal);
         return entry;
