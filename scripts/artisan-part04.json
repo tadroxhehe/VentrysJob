@@ -16,7 +16,8 @@
         "output": {
             "itemId": "minecraft:birch_planks",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_stairs",
@@ -35,7 +36,8 @@
         "output": {
             "itemId": "minecraft:birch_stairs",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_slab",
@@ -54,7 +56,8 @@
         "output": {
             "itemId": "minecraft:birch_slab",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_wall",
@@ -73,7 +76,8 @@
         "output": {
             "itemId": "westerosblocks:birch_wall",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_tip",
@@ -92,7 +96,8 @@
         "output": {
             "itemId": "westerosblocks:birch_tip",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_hopper",
@@ -111,7 +116,8 @@
         "output": {
             "itemId": "westerosblocks:birch_hopper",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_half_door",
@@ -130,7 +136,8 @@
         "output": {
             "itemId": "westerosblocks:birch_half_door",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_fence",
@@ -149,7 +156,8 @@
         "output": {
             "itemId": "minecraft:birch_fence",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_fence_gate",
@@ -172,7 +180,8 @@
         "output": {
             "itemId": "minecraft:birch_fence_gate",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_vertical_planks",
@@ -191,7 +200,8 @@
         "output": {
             "itemId": "westerosblocks:birch_vertical_planks",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_vert_stairs",
@@ -210,7 +220,8 @@
         "output": {
             "itemId": "westerosblocks:birch_vertical_planks_stairs",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_vert_slab",
@@ -229,7 +240,8 @@
         "output": {
             "itemId": "westerosblocks:birch_vertical_planks_slab",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_vert_wall",
@@ -248,7 +260,8 @@
         "output": {
             "itemId": "westerosblocks:birch_vertical_planks_wall",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_vert_tip",
@@ -267,7 +280,8 @@
         "output": {
             "itemId": "westerosblocks:birch_vertical_planks_tip",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_vert_hopper",
@@ -286,7 +300,8 @@
         "output": {
             "itemId": "westerosblocks:birch_vertical_planks_hopper",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_vert_fence",
@@ -305,7 +320,8 @@
         "output": {
             "itemId": "westerosblocks:birch_vertical_planks_fence",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_door",
@@ -324,7 +340,8 @@
         "output": {
             "itemId": "minecraft:birch_door",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_button",
@@ -343,7 +360,8 @@
         "output": {
             "itemId": "minecraft:birch_button",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_trapdoor",
@@ -362,7 +380,8 @@
         "output": {
             "itemId": "minecraft:birch_trapdoor",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_window_shutter",
@@ -400,7 +419,8 @@
         "output": {
             "itemId": "westerosblocks:birch_timber_window_frame",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_dorne_carved_window_birch",
@@ -442,7 +462,8 @@
         "output": {
             "itemId": "minecraft:birch_sign",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_timber_mullion",
@@ -461,7 +482,8 @@
         "output": {
             "itemId": "westerosblocks:birch_timber_window_frame_mullion",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_birch_pressure_plate",
@@ -480,7 +502,8 @@
         "output": {
             "itemId": "minecraft:birch_pressure_plate",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_chaisebouleau",

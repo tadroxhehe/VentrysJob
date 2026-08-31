@@ -105,14 +105,14 @@ public final class JobEnergyCostCalculator {
             }
         }
 
-        // Artisan : construction (pierre/bois) allégée — le plafond réel = énergie du bâtisseur à la pose.
-        // Meubles / armes / gros crafts restent sur la grille inputTotal.
+        // Artisan : construction volume (stairs/slabs/cobble…) très légère — grosses commandes.
+        // Meubles / armes / gros crafts restent sur une grille adoucie.
         if ("artisan".equals(jobId)) {
             if (id.contains("batons")) {
-                return 2f;
+                return 1f;
             }
             if (id.contains("thin_") || outputId.contains("thin_") || id.contains("poutre")) {
-                return 1.2f;
+                return 0.4f;
             }
             if (id.contains("vase_apothicaire") || outputId.contains("vase_apothicaire")) {
                 return 66f;
@@ -120,29 +120,30 @@ public final class JobEnergyCostCalculator {
 
             int outCount = sumOutputs(recipe);
 
-            // Bois de construction : moins cher que la pierre (planches, colombages, clôtures…)
+            // Bois de construction : escaliers / dalles / planches / clôtures…
+            // Ex. 16 escaliers ≈ 4 énergie (au lieu de ~24–100).
             if (isWoodConstruction(id, outputId)) {
                 if (outputId.contains("timber") || id.contains("timber")) {
-                    return 2f;
+                    return 0.4f;
                 }
                 if (outCount >= 4) {
-                    return 2f;
+                    return 0.4f;
                 }
-                return 1.5f; // planche unitaire : était 6
+                return 0.25f;
             }
 
-            // Pierre de construction : coût total du craft, pas par bloc affiché en %
+            // Pierre de construction : ex. 5 crafts ×8 cobble (40) ≈ 2 énergie.
             if (isStoneConstruction(id, outputId)) {
                 if (outCount >= 4) {
-                    return 2f;
+                    return 0.4f;
                 }
-                return 1f;
+                return 0.2f;
             }
 
-            if (inputTotal >= 40) return 22f;
-            if (inputTotal >= 20) return 14f;
-            if (inputTotal >= 8) return 10f;
-            return 6f;
+            if (inputTotal >= 40) return 12f;
+            if (inputTotal >= 20) return 8f;
+            if (inputTotal >= 8) return 5f;
+            return 3.5f;
         }
 
         // Couturier textile / base (~−30 % chaîne fil→tissu, fallbacks adoucis)
@@ -249,28 +250,36 @@ public final class JobEnergyCostCalculator {
                 || id.contains("bouclier") || id.contains("bocle") || id.contains("ecu")
                 || id.contains("pavois") || id.contains("table") || id.contains("chaise")
                 || id.contains("banc") || id.contains("armoire") || id.contains("coffre")
-                || id.contains("nid") || id.contains("statue")) {
+                || id.contains("nid") || id.contains("statue") || id.contains("commode")
+                || id.contains("fauteuil") || id.contains("tabouret") || id.contains("buffet")
+                || id.contains("chariot") || id.contains("tonneau") || id.contains("cart")) {
             return false;
         }
         if (outputId.contains("plank") || outputId.contains("timber")
                 || outputId.contains("thin_") || outputId.contains("wood_ladder")
-                || outputId.contains("rope_ladder")) {
+                || outputId.contains("rope_ladder") || outputId.contains("panelling")
+                || outputId.contains("wattle") || outputId.contains("thatch")) {
             return true;
         }
         boolean woodSpecies = outputId.contains("oak") || outputId.contains("spruce")
                 || outputId.contains("birch") || outputId.contains("jungle")
-                || outputId.contains("acacia") || outputId.contains("dark_oak");
+                || outputId.contains("acacia") || outputId.contains("dark_oak")
+                || outputId.contains("reach_oak") || outputId.contains("reach_spruce");
         boolean shape = outputId.contains("stairs") || outputId.contains("slab")
                 || outputId.contains("wall") || outputId.contains("fence")
                 || outputId.contains("tip") || outputId.contains("hopper")
-                || outputId.contains("log");
+                || outputId.contains("log") || outputId.contains("door")
+                || outputId.contains("trapdoor") || outputId.contains("pressure_plate")
+                || outputId.contains("button") || outputId.contains("sign")
+                || outputId.contains("fence_gate");
         return woodSpecies && shape;
     }
 
     /** Blocs structure pierre (pas bancs / statues). */
     private static boolean isStoneConstruction(String id, String outputId) {
         if (id.contains("banc") || id.contains("statue") || id.contains("meuble")
-                || id.contains("table") || id.contains("chaise")) {
+                || id.contains("table") || id.contains("chaise") || id.contains("commode")
+                || id.contains("armoire") || id.contains("coffre")) {
             return false;
         }
         return outputId.contains("cobble") || outputId.contains("stone")
@@ -278,7 +287,10 @@ public final class JobEnergyCostCalculator {
                 || outputId.contains("brick") || outputId.contains("sandstone")
                 || outputId.contains("basalt") || outputId.contains("marble")
                 || outputId.contains("limestone") || outputId.contains("andesite")
-                || outputId.contains("diorite");
+                || outputId.contains("diorite") || outputId.contains("calcaire")
+                || outputId.contains("enduit") || outputId.contains("chaux")
+                || outputId.contains("mud") || outputId.contains("daub")
+                || outputId.contains("plaster") || outputId.contains("frame");
     }
 
     private static String primaryOutputId(JobRecipe recipe) {

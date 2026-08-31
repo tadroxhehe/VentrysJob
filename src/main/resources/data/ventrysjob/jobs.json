@@ -2676,7 +2676,8 @@
                     "output": {
                         "itemId": "westerosblocks:oak_vertical_planks_carpet",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_carpet_birch_vert",
@@ -2695,7 +2696,8 @@
                     "output": {
                         "itemId": "westerosblocks:birch_vertical_planks_carpet",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_carpet_spruce_vert",
@@ -2714,7 +2716,8 @@
                     "output": {
                         "itemId": "westerosblocks:spruce_vertical_planks_carpet",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_carpet_oak",
@@ -2790,13 +2793,14 @@
                     "output": {
                         "itemId": "minecraft:oak_planks",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_thin_oak_log",
                     "name": "Poutres",
                     "description": "Poutres de chene (1 buche → 8)",
-                    "energyCost": 1.2,
+                    "energyCost": 0.4,
                     "inputs": [
                         {
                             "itemId": "minecraft:oak_log",
@@ -2812,7 +2816,7 @@
                     "id": "art_thin_spruce_log",
                     "name": "Poutres",
                     "description": "Poutres de sapin (1 buche → 8)",
-                    "energyCost": 1.2,
+                    "energyCost": 0.4,
                     "inputs": [
                         {
                             "itemId": "minecraft:spruce_log",
@@ -2828,7 +2832,7 @@
                     "id": "art_thin_birch_log",
                     "name": "Poutres",
                     "description": "Poutres de bouleau (1 buche → 8)",
-                    "energyCost": 1.2,
+                    "energyCost": 0.4,
                     "inputs": [
                         {
                             "itemId": "minecraft:birch_log",
@@ -2857,7 +2861,8 @@
                     "output": {
                         "itemId": "westerosblocks:reach_oak_wood_panelling",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_stairs",
@@ -2876,7 +2881,8 @@
                     "output": {
                         "itemId": "minecraft:oak_stairs",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_slab",
@@ -2895,7 +2901,8 @@
                     "output": {
                         "itemId": "minecraft:oak_slab",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_wall",
@@ -2914,7 +2921,8 @@
                     "output": {
                         "itemId": "westerosblocks:oak_wall",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_reach_oak_panelling_wall",
@@ -2933,7 +2941,8 @@
                     "output": {
                         "itemId": "westerosblocks:reach_oak_wood_panelling_wall",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_tip",
@@ -2952,7 +2961,8 @@
                     "output": {
                         "itemId": "westerosblocks:oak_tip",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_hopper",
@@ -2971,7 +2981,8 @@
                     "output": {
                         "itemId": "westerosblocks:oak_hopper",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_half_door",
@@ -2990,7 +3001,8 @@
                     "output": {
                         "itemId": "westerosblocks:oak_half_door",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_fence",
@@ -3009,7 +3021,8 @@
                     "output": {
                         "itemId": "minecraft:oak_fence",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_fence_gate",
@@ -3032,7 +3045,8 @@
                     "output": {
                         "itemId": "minecraft:oak_fence_gate",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_vertical_planks",
@@ -3051,7 +3065,8 @@
                     "output": {
                         "itemId": "westerosblocks:oak_vertical_planks",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_vert_stairs",
@@ -3070,7 +3085,8 @@
                     "output": {
                         "itemId": "westerosblocks:oak_vertical_planks_stairs",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_vert_slab",
@@ -3089,7 +3105,8 @@
                     "output": {
                         "itemId": "westerosblocks:oak_vertical_planks_slab",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_vert_wall",
@@ -3108,7 +3125,8 @@
                     "output": {
                         "itemId": "westerosblocks:oak_vertical_planks_wall",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_vert_tip",
@@ -3127,7 +3145,8 @@
                     "output": {
                         "itemId": "westerosblocks:oak_vertical_planks_tip",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_vert_hopper",
@@ -3146,7 +3165,8 @@
                     "output": {
                         "itemId": "westerosblocks:oak_vertical_planks_hopper",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_vert_fence",
@@ -3165,7 +3185,8 @@
                     "output": {
                         "itemId": "westerosblocks:oak_vertical_planks_fence",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_door",
@@ -3184,7 +3205,8 @@
                     "output": {
                         "itemId": "minecraft:oak_door",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_button",
@@ -3203,7 +3225,8 @@
                     "output": {
                         "itemId": "minecraft:oak_button",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_trapdoor",
@@ -3222,7 +3245,8 @@
                     "output": {
                         "itemId": "minecraft:oak_trapdoor",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_window_shutter",
@@ -3260,7 +3284,8 @@
                     "output": {
                         "itemId": "westerosblocks:oak_timber_window_frame",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_dorne_carved_window",
@@ -3302,7 +3327,8 @@
                     "output": {
                         "itemId": "minecraft:oak_sign",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_timber_mullion",
@@ -3321,7 +3347,8 @@
                     "output": {
                         "itemId": "westerosblocks:oak_timber_window_frame_mullion",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_pressure_plate",
@@ -3340,7 +3367,8 @@
                     "output": {
                         "itemId": "minecraft:oak_pressure_plate",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_oak_log_rope",
@@ -3359,7 +3387,8 @@
                     "output": {
                         "itemId": "westerosblocks:oak_log_rope",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_chaisechene",
@@ -3719,7 +3748,8 @@
                     "output": {
                         "itemId": "minecraft:spruce_planks",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_reach_spruce_panelling",
@@ -3738,7 +3768,8 @@
                     "output": {
                         "itemId": "westerosblocks:reach_spruce_wood_panelling",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_stairs",
@@ -3757,7 +3788,8 @@
                     "output": {
                         "itemId": "minecraft:spruce_stairs",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_slab",
@@ -3776,7 +3808,8 @@
                     "output": {
                         "itemId": "minecraft:spruce_slab",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_wall",
@@ -3795,7 +3828,8 @@
                     "output": {
                         "itemId": "westerosblocks:spruce_wall",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_reach_spruce_panelling_wall",
@@ -3814,7 +3848,8 @@
                     "output": {
                         "itemId": "westerosblocks:reach_spruce_wood_panelling_wall",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_tip",
@@ -3833,7 +3868,8 @@
                     "output": {
                         "itemId": "westerosblocks:spruce_tip",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_hopper",
@@ -3852,7 +3888,8 @@
                     "output": {
                         "itemId": "westerosblocks:spruce_hopper",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_half_door",
@@ -3871,7 +3908,8 @@
                     "output": {
                         "itemId": "westerosblocks:spruce_half_door",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_fence",
@@ -3890,7 +3928,8 @@
                     "output": {
                         "itemId": "minecraft:spruce_fence",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_fence_gate",
@@ -3913,7 +3952,8 @@
                     "output": {
                         "itemId": "minecraft:spruce_fence_gate",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_vertical_planks",
@@ -3932,7 +3972,8 @@
                     "output": {
                         "itemId": "westerosblocks:spruce_vertical_planks",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_vert_stairs",
@@ -3951,7 +3992,8 @@
                     "output": {
                         "itemId": "westerosblocks:spruce_vertical_planks_stairs",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_vert_slab",
@@ -3970,7 +4012,8 @@
                     "output": {
                         "itemId": "westerosblocks:spruce_vertical_planks_slab",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_vert_wall",
@@ -3989,7 +4032,8 @@
                     "output": {
                         "itemId": "westerosblocks:spruce_vertical_planks_wall",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_vert_tip",
@@ -4008,7 +4052,8 @@
                     "output": {
                         "itemId": "westerosblocks:spruce_vertical_planks_tip",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_vert_hopper",
@@ -4027,7 +4072,8 @@
                     "output": {
                         "itemId": "westerosblocks:spruce_vertical_planks_hopper",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_vert_fence",
@@ -4046,7 +4092,8 @@
                     "output": {
                         "itemId": "westerosblocks:spruce_vertical_planks_fence",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_door",
@@ -4065,7 +4112,8 @@
                     "output": {
                         "itemId": "minecraft:spruce_door",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_button",
@@ -4084,7 +4132,8 @@
                     "output": {
                         "itemId": "minecraft:spruce_button",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_trapdoor",
@@ -4103,7 +4152,8 @@
                     "output": {
                         "itemId": "minecraft:spruce_trapdoor",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_window_shutter",
@@ -4141,7 +4191,8 @@
                     "output": {
                         "itemId": "westerosblocks:spruce_timber_window_frame",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_dorne_carved_window_spruce",
@@ -4183,7 +4234,8 @@
                     "output": {
                         "itemId": "minecraft:spruce_sign",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_timber_mullion",
@@ -4202,7 +4254,8 @@
                     "output": {
                         "itemId": "westerosblocks:spruce_timber_window_frame_mullion",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_pressure_plate",
@@ -4221,7 +4274,8 @@
                     "output": {
                         "itemId": "minecraft:spruce_pressure_plate",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_spruce_log_rope",
@@ -4240,7 +4294,8 @@
                     "output": {
                         "itemId": "westerosblocks:spruce_log_rope",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_chaisesapin",
@@ -4600,7 +4655,8 @@
                     "output": {
                         "itemId": "minecraft:birch_planks",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_stairs",
@@ -4619,7 +4675,8 @@
                     "output": {
                         "itemId": "minecraft:birch_stairs",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_slab",
@@ -4638,7 +4695,8 @@
                     "output": {
                         "itemId": "minecraft:birch_slab",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_wall",
@@ -4657,7 +4715,8 @@
                     "output": {
                         "itemId": "westerosblocks:birch_wall",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_tip",
@@ -4676,7 +4735,8 @@
                     "output": {
                         "itemId": "westerosblocks:birch_tip",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_hopper",
@@ -4695,7 +4755,8 @@
                     "output": {
                         "itemId": "westerosblocks:birch_hopper",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_half_door",
@@ -4714,7 +4775,8 @@
                     "output": {
                         "itemId": "westerosblocks:birch_half_door",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_fence",
@@ -4733,7 +4795,8 @@
                     "output": {
                         "itemId": "minecraft:birch_fence",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_fence_gate",
@@ -4756,7 +4819,8 @@
                     "output": {
                         "itemId": "minecraft:birch_fence_gate",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_vertical_planks",
@@ -4775,7 +4839,8 @@
                     "output": {
                         "itemId": "westerosblocks:birch_vertical_planks",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_vert_stairs",
@@ -4794,7 +4859,8 @@
                     "output": {
                         "itemId": "westerosblocks:birch_vertical_planks_stairs",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_vert_slab",
@@ -4813,7 +4879,8 @@
                     "output": {
                         "itemId": "westerosblocks:birch_vertical_planks_slab",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_vert_wall",
@@ -4832,7 +4899,8 @@
                     "output": {
                         "itemId": "westerosblocks:birch_vertical_planks_wall",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_vert_tip",
@@ -4851,7 +4919,8 @@
                     "output": {
                         "itemId": "westerosblocks:birch_vertical_planks_tip",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_vert_hopper",
@@ -4870,7 +4939,8 @@
                     "output": {
                         "itemId": "westerosblocks:birch_vertical_planks_hopper",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_vert_fence",
@@ -4889,7 +4959,8 @@
                     "output": {
                         "itemId": "westerosblocks:birch_vertical_planks_fence",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_door",
@@ -4908,7 +4979,8 @@
                     "output": {
                         "itemId": "minecraft:birch_door",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_button",
@@ -4927,7 +4999,8 @@
                     "output": {
                         "itemId": "minecraft:birch_button",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_trapdoor",
@@ -4946,7 +5019,8 @@
                     "output": {
                         "itemId": "minecraft:birch_trapdoor",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_window_shutter",
@@ -4984,7 +5058,8 @@
                     "output": {
                         "itemId": "westerosblocks:birch_timber_window_frame",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_dorne_carved_window_birch",
@@ -5026,7 +5101,8 @@
                     "output": {
                         "itemId": "minecraft:birch_sign",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_timber_mullion",
@@ -5045,7 +5121,8 @@
                     "output": {
                         "itemId": "westerosblocks:birch_timber_window_frame_mullion",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_birch_pressure_plate",
@@ -5064,7 +5141,8 @@
                     "output": {
                         "itemId": "minecraft:birch_pressure_plate",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_chaisebouleau",
@@ -5478,7 +5556,8 @@
                     "output": {
                         "itemId": "westerosblocks:wood_ladder",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_rope_ladder",
@@ -5501,7 +5580,8 @@
                     "output": {
                         "itemId": "westerosblocks:rope_ladder",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_closed_barrel",
@@ -5844,7 +5924,8 @@
                     "output": {
                         "itemId": "ventrysitem:res_enduit_de_chaux",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_cobblestone",
@@ -5863,7 +5944,8 @@
                     "output": {
                         "itemId": "westerosblocks:cobblestone",
                         "count": 8
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_cobblestone_stairs",
@@ -5882,7 +5964,8 @@
                     "output": {
                         "itemId": "westerosblocks:cobblestone_stairs",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_cobblestone_slab",
@@ -5901,7 +5984,8 @@
                     "output": {
                         "itemId": "westerosblocks:cobblestone_slab",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_cobblestone_wall",
@@ -5920,7 +6004,8 @@
                     "output": {
                         "itemId": "westerosblocks:cobblestone_wall",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_cobblestone_tip",
@@ -5939,7 +6024,8 @@
                     "output": {
                         "itemId": "westerosblocks:cobblestone_tip",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_cobblestone_hopper",
@@ -5958,7 +6044,8 @@
                     "output": {
                         "itemId": "westerosblocks:cobblestone_hopper",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_cobblestone_fence",
@@ -5977,7 +6064,8 @@
                     "output": {
                         "itemId": "westerosblocks:cobblestone_fence",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_grey_granite",
@@ -5996,7 +6084,8 @@
                     "output": {
                         "itemId": "westerosblocks:grey_granite",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_grey_granite_stairs",
@@ -6015,7 +6104,8 @@
                     "output": {
                         "itemId": "westerosblocks:grey_granite_stairs",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_grey_granite_slab",
@@ -6034,7 +6124,8 @@
                     "output": {
                         "itemId": "westerosblocks:grey_granite_slab",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_grey_granite_fence",
@@ -6053,7 +6144,8 @@
                     "output": {
                         "itemId": "westerosblocks:grey_granite_fence",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_grey_granite_tip",
@@ -6072,7 +6164,8 @@
                     "output": {
                         "itemId": "westerosblocks:grey_granite_tip",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_grey_granite_hopper",
@@ -6091,7 +6184,8 @@
                     "output": {
                         "itemId": "westerosblocks:grey_granite_hopper",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_grey_granite_wall",
@@ -6110,7 +6204,8 @@
                     "output": {
                         "itemId": "westerosblocks:grey_granite_wall",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_light_grey_brick",
@@ -6129,7 +6224,8 @@
                     "output": {
                         "itemId": "westerosblocks:light_grey_brick",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_light_grey_brick_stairs",
@@ -6148,7 +6244,8 @@
                     "output": {
                         "itemId": "westerosblocks:light_grey_brick_stairs",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_light_grey_brick_slab",
@@ -6167,7 +6264,8 @@
                     "output": {
                         "itemId": "westerosblocks:light_grey_brick_slab",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_light_grey_brick_fence",
@@ -6186,7 +6284,8 @@
                     "output": {
                         "itemId": "westerosblocks:light_grey_brick_fence",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_light_grey_brick_tip",
@@ -6205,7 +6304,8 @@
                     "output": {
                         "itemId": "westerosblocks:light_grey_brick_tip",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_light_grey_brick_hopper",
@@ -6224,7 +6324,8 @@
                     "output": {
                         "itemId": "westerosblocks:light_grey_brick_hopper",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_light_grey_brick_wall",
@@ -6243,7 +6344,8 @@
                     "output": {
                         "itemId": "westerosblocks:light_grey_brick_wall",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_grey_granite_arrow_slit",
@@ -6319,7 +6421,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_smooth_stone_brick",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_small_smooth_stone_brick_stairs",
@@ -6338,7 +6441,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_smooth_stone_brick_stairs",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_small_smooth_stone_brick_slab",
@@ -6357,7 +6461,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_smooth_stone_brick_slab",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_small_smooth_stone_brick_fence",
@@ -6376,7 +6481,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_smooth_stone_brick_fence",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_small_smooth_stone_brick_tip",
@@ -6395,7 +6501,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_smooth_stone_brick_tip",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_small_smooth_stone_brick_hopper",
@@ -6414,7 +6521,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_smooth_stone_brick_hopper",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_small_smooth_stone_brick_wall",
@@ -6433,7 +6541,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_smooth_stone_brick_wall",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_grey_granite_polished",
@@ -6452,7 +6561,8 @@
                     "output": {
                         "itemId": "westerosblocks:grey_granite_polished",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_grey_granite_polished_stairs",
@@ -6471,7 +6581,8 @@
                     "output": {
                         "itemId": "westerosblocks:grey_granite_polished_stairs",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_grey_granite_polished_slab",
@@ -6490,7 +6601,8 @@
                     "output": {
                         "itemId": "westerosblocks:grey_granite_polished_slab",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_grey_granite_polished_wall",
@@ -6509,7 +6621,8 @@
                     "output": {
                         "itemId": "westerosblocks:grey_granite_polished_wall",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_grey_brick_engraved",
@@ -6528,7 +6641,8 @@
                     "output": {
                         "itemId": "westerosblocks:grey_brick_engraved",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_grey_brick_engraved_wall",
@@ -6547,7 +6661,8 @@
                     "output": {
                         "itemId": "westerosblocks:grey_brick_engraved_wall",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_faith_carved_grey_brick",
@@ -6566,7 +6681,8 @@
                     "output": {
                         "itemId": "westerosblocks:faith_carved_grey_brick",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_dark_cobblestone",
@@ -6585,7 +6701,8 @@
                     "output": {
                         "itemId": "westerosblocks:dark_cobblestone",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_dark_cobblestone_stairs",
@@ -6604,7 +6721,8 @@
                     "output": {
                         "itemId": "westerosblocks:dark_cobblestone_stairs",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_dark_cobblestone_slab",
@@ -6623,7 +6741,8 @@
                     "output": {
                         "itemId": "westerosblocks:dark_cobblestone_slab",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_dark_cobblestone_wall",
@@ -6642,7 +6761,8 @@
                     "output": {
                         "itemId": "westerosblocks:dark_cobblestone_wall",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_dark_cobblestone_tip",
@@ -6661,7 +6781,8 @@
                     "output": {
                         "itemId": "westerosblocks:dark_cobblestone_tip",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_dark_cobblestone_hopper",
@@ -6680,7 +6801,8 @@
                     "output": {
                         "itemId": "westerosblocks:dark_cobblestone_hopper",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_dark_cobblestone_fence",
@@ -6699,7 +6821,8 @@
                     "output": {
                         "itemId": "westerosblocks:dark_cobblestone_fence",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_winterfell_granite",
@@ -6718,7 +6841,8 @@
                     "output": {
                         "itemId": "westerosblocks:winterfell_granite",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_winterfell_granite_stairs",
@@ -6737,7 +6861,8 @@
                     "output": {
                         "itemId": "westerosblocks:winterfell_granite_stairs",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_winterfell_granite_slab",
@@ -6756,7 +6881,8 @@
                     "output": {
                         "itemId": "westerosblocks:winterfell_granite_slab",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_winterfell_granite_fence",
@@ -6775,7 +6901,8 @@
                     "output": {
                         "itemId": "westerosblocks:winterfell_granite_fence",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_winterfell_granite_tip",
@@ -6794,7 +6921,8 @@
                     "output": {
                         "itemId": "westerosblocks:winterfell_granite_tip",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_winterfell_granite_hopper",
@@ -6813,7 +6941,8 @@
                     "output": {
                         "itemId": "westerosblocks:winterfell_granite_hopper",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_winterfell_granite_wall",
@@ -6832,7 +6961,8 @@
                     "output": {
                         "itemId": "westerosblocks:winterfell_granite_wall",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_winterfell_granite_arrow_slit",
@@ -6908,7 +7038,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_dark_grey_brick",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_small_dark_grey_brick_stairs",
@@ -6927,7 +7058,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_dark_grey_brick_stairs",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_small_dark_grey_brick_slab",
@@ -6946,7 +7078,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_dark_grey_brick_slab",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_small_dark_grey_brick_fence",
@@ -6965,7 +7098,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_dark_grey_brick_fence",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_small_dark_grey_brick_tip",
@@ -6984,7 +7118,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_dark_grey_brick_tip",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_small_dark_grey_brick_hopper",
@@ -7003,7 +7138,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_dark_grey_brick_hopper",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_small_dark_grey_brick_wall",
@@ -7022,7 +7158,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_dark_grey_brick_wall",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_dark_grey_brick_engraved",
@@ -7041,7 +7178,8 @@
                     "output": {
                         "itemId": "westerosblocks:dark_grey_brick_engraved",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_dark_grey_brick_engraved_wall",
@@ -7060,7 +7198,8 @@
                     "output": {
                         "itemId": "westerosblocks:dark_grey_brick_engraved_wall",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_faith_carved_dark_grey_brick",
@@ -7079,7 +7218,8 @@
                     "output": {
                         "itemId": "westerosblocks:faith_carved_dark_grey_brick",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_cobblestone",
@@ -7098,7 +7238,8 @@
                     "output": {
                         "itemId": "westerosblocks:green_grey_cobblestone",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_cobblestone_stairs",
@@ -7117,7 +7258,8 @@
                     "output": {
                         "itemId": "westerosblocks:green_grey_cobblestone_stairs",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_cobblestone_slab",
@@ -7136,7 +7278,8 @@
                     "output": {
                         "itemId": "westerosblocks:green_grey_cobblestone_slab",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_cobblestone_wall",
@@ -7155,7 +7298,8 @@
                     "output": {
                         "itemId": "westerosblocks:green_grey_cobblestone_wall",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_cobblestone_tip",
@@ -7174,7 +7318,8 @@
                     "output": {
                         "itemId": "westerosblocks:green_grey_cobblestone_tip",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_cobblestone_hopper",
@@ -7193,7 +7338,8 @@
                     "output": {
                         "itemId": "westerosblocks:green_grey_cobblestone_hopper",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_cobblestone_fence",
@@ -7212,7 +7358,8 @@
                     "output": {
                         "itemId": "westerosblocks:green_grey_cobblestone_fence",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_granite",
@@ -7231,7 +7378,8 @@
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_granite_stairs",
@@ -7250,7 +7398,8 @@
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_stairs",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_granite_slab",
@@ -7269,7 +7418,8 @@
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_slab",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_granite_fence",
@@ -7288,7 +7438,8 @@
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_fence",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_granite_tip",
@@ -7307,7 +7458,8 @@
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_tip",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_granite_hopper",
@@ -7326,7 +7478,8 @@
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_hopper",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_granite_wall",
@@ -7345,7 +7498,8 @@
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_wall",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_granite_arrow_slit",
@@ -7421,7 +7575,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_stone_brick",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_small_stone_brick_stairs",
@@ -7440,7 +7595,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_stone_brick_stairs",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_small_stone_brick_slab",
@@ -7459,7 +7615,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_stone_brick_slab",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_small_stone_brick_fence",
@@ -7478,7 +7635,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_stone_brick_fence",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_small_stone_brick_tip",
@@ -7497,7 +7655,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_stone_brick_tip",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_small_stone_brick_hopper",
@@ -7516,7 +7675,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_stone_brick_hopper",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_small_stone_brick_wall",
@@ -7535,7 +7695,8 @@
                     "output": {
                         "itemId": "westerosblocks:small_stone_brick_wall",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_granite_polished",
@@ -7554,7 +7715,8 @@
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_polished",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_granite_polished_stairs",
@@ -7573,7 +7735,8 @@
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_polished_stairs",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_granite_polished_slab",
@@ -7592,7 +7755,8 @@
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_polished_slab",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_granite_polished_wall",
@@ -7611,7 +7775,8 @@
                     "output": {
                         "itemId": "westerosblocks:green_grey_granite_polished_wall",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_brick_engraved",
@@ -7630,7 +7795,8 @@
                     "output": {
                         "itemId": "westerosblocks:green_grey_brick_engraved",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_green_grey_brick_engraved_wall",
@@ -7649,7 +7815,8 @@
                     "output": {
                         "itemId": "westerosblocks:green_grey_brick_engraved_wall",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_faith_carved_small_stone_brick",
@@ -7668,7 +7835,8 @@
                     "output": {
                         "itemId": "westerosblocks:faith_carved_small_stone_brick",
                         "count": 4
-                    }
+                    },
+                    "energyCost": 0.4
                 },
                 {
                     "id": "art_timber_oak_white_frame",
@@ -7691,7 +7859,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_white_frame",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_white_vertical",
@@ -7714,7 +7883,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_white_vertical",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_white_crosshatch",
@@ -7737,7 +7907,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_white_crosshatch",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_white_righthatch",
@@ -7760,7 +7931,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_white_righthatch",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_white_lefthatch",
@@ -7783,7 +7955,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_white_lefthatch",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_white_close_studding",
@@ -7806,7 +7979,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_white_close_studding",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_white_lefthatch_large",
@@ -7829,7 +8003,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_white_lefthatch_large",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_white_righthatch_large",
@@ -7852,7 +8027,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_white_righthatch_large",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_white_righthatch_studded",
@@ -7875,7 +8051,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_white_righthatch_studded",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_white_lefthatch_studded",
@@ -7898,7 +8075,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_white_lefthatch_studded",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_white_bressumer",
@@ -7921,7 +8099,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_white_bressummer",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_brown_frame",
@@ -7944,7 +8123,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_brown_frame",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_brown_vertical",
@@ -7967,7 +8147,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_brown_vertical",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_brown_crosshatch",
@@ -7990,7 +8171,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_brown_crosshatch",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_brown_righthatch",
@@ -8013,7 +8195,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_brown_righthatch",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_brown_lefthatch",
@@ -8036,7 +8219,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_brown_lefthatch",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_brown_close_studding",
@@ -8059,7 +8243,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_brown_close_studding",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_brown_lefthatch_large",
@@ -8082,7 +8267,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_brown_lefthatch_large",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_brown_righthatch_large",
@@ -8105,7 +8291,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_brown_righthatch_large",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_brown_righthatch_studded",
@@ -8128,7 +8315,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_brown_righthatch_studded",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_brown_lefthatch_studded",
@@ -8151,7 +8339,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_brown_lefthatch_studded",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_timber_oak_brown_bressumer",
@@ -8174,7 +8363,8 @@
                     "output": {
                         "itemId": "westerosblocks:timber_oak_brown_bressummer",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_brown_slate",
@@ -8193,7 +8383,8 @@
                     "output": {
                         "itemId": "westerosblocks:brown_slate",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_brown_slate_slab",
@@ -8212,7 +8403,8 @@
                     "output": {
                         "itemId": "westerosblocks:brown_slate_slab",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_brown_slate_stairs",
@@ -8231,7 +8423,8 @@
                     "output": {
                         "itemId": "westerosblocks:brown_slate_stairs",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_brown_slate_tip",
@@ -8250,7 +8443,8 @@
                     "output": {
                         "itemId": "westerosblocks:brown_slate_tip",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_brown_slate_hopper",
@@ -8269,7 +8463,8 @@
                     "output": {
                         "itemId": "westerosblocks:brown_slate_hopper",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_brown_slate_fence",
@@ -8288,7 +8483,8 @@
                     "output": {
                         "itemId": "westerosblocks:brown_slate_fence",
                         "count": 2
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_brown_slate_wall",
@@ -8307,7 +8503,8 @@
                     "output": {
                         "itemId": "westerosblocks:brown_slate_wall",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_orange_slate",
@@ -8326,7 +8523,8 @@
                     "output": {
                         "itemId": "westerosblocks:orange_slate",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_orange_slate_slab",
@@ -8345,7 +8543,8 @@
                     "output": {
                         "itemId": "westerosblocks:orange_slate_slab",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_orange_slate_stairs",
@@ -8364,7 +8563,8 @@
                     "output": {
                         "itemId": "westerosblocks:orange_slate_stairs",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_orange_slate_tip",
@@ -8383,7 +8583,8 @@
                     "output": {
                         "itemId": "westerosblocks:orange_slate_tip",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_orange_slate_hopper",
@@ -8402,7 +8603,8 @@
                     "output": {
                         "itemId": "westerosblocks:orange_slate_hopper",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_orange_slate_fence",
@@ -8421,7 +8623,8 @@
                     "output": {
                         "itemId": "westerosblocks:orange_slate_fence",
                         "count": 2
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_orange_slate_wall",
@@ -8440,7 +8643,8 @@
                     "output": {
                         "itemId": "westerosblocks:orange_slate_wall",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_blue_slate",
@@ -8459,7 +8663,8 @@
                     "output": {
                         "itemId": "westerosblocks:blue_slate",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_blue_slate_slab",
@@ -8478,7 +8683,8 @@
                     "output": {
                         "itemId": "westerosblocks:blue_slate_slab",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_blue_slate_stairs",
@@ -8497,7 +8703,8 @@
                     "output": {
                         "itemId": "westerosblocks:blue_slate_stairs",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_blue_slate_tip",
@@ -8516,7 +8723,8 @@
                     "output": {
                         "itemId": "westerosblocks:blue_slate_tip",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_blue_slate_hopper",
@@ -8535,7 +8743,8 @@
                     "output": {
                         "itemId": "westerosblocks:blue_slate_hopper",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_blue_slate_fence",
@@ -8554,7 +8763,8 @@
                     "output": {
                         "itemId": "westerosblocks:blue_slate_fence",
                         "count": 2
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_blue_slate_wall",
@@ -8573,7 +8783,8 @@
                     "output": {
                         "itemId": "westerosblocks:blue_slate_wall",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_stone_button_2",
@@ -8592,7 +8803,8 @@
                     "output": {
                         "itemId": "minecraft:stone_button",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.2
                 },
                 {
                     "id": "art_animal_cart",
@@ -8710,7 +8922,8 @@
                     "output": {
                         "itemId": "westerosblocks:wattle_fence",
                         "count": 1
-                    }
+                    },
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_table",
@@ -8744,7 +8957,8 @@
                         "itemId": "westerosblocks:thatch_light_fur",
                         "count": 1
                     },
-                    "description": ""
+                    "description": "",
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_thatch_light_fur_stairs",
@@ -8759,7 +8973,8 @@
                         "itemId": "westerosblocks:thatch_light_fur_stairs",
                         "count": 1
                     },
-                    "description": ""
+                    "description": "",
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_thatch_light_fur_slab",
@@ -8774,7 +8989,8 @@
                         "itemId": "westerosblocks:thatch_light_fur_slab",
                         "count": 1
                     },
-                    "description": ""
+                    "description": "",
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_thatch_light_fur_tip",
@@ -8789,7 +9005,8 @@
                         "itemId": "westerosblocks:thatch_light_fur_tip",
                         "count": 1
                     },
-                    "description": ""
+                    "description": "",
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_thatch_light_fur_fence",
@@ -8804,7 +9021,8 @@
                         "itemId": "westerosblocks:thatch_light_fur_fence",
                         "count": 1
                     },
-                    "description": ""
+                    "description": "",
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_thatch_light_fur_carpet",
@@ -8819,7 +9037,8 @@
                         "itemId": "westerosblocks:thatch_light_fur_carpet",
                         "count": 1
                     },
-                    "description": ""
+                    "description": "",
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_thatch_dark_fur",
@@ -8834,7 +9053,8 @@
                         "itemId": "westerosblocks:thatch_dark_fur",
                         "count": 1
                     },
-                    "description": ""
+                    "description": "",
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_thatch_dark_fur_stairs",
@@ -8849,7 +9069,8 @@
                         "itemId": "westerosblocks:thatch_dark_fur_stairs",
                         "count": 1
                     },
-                    "description": ""
+                    "description": "",
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_thatch_dark_fur_slab",
@@ -8864,7 +9085,8 @@
                         "itemId": "westerosblocks:thatch_dark_fur_slab",
                         "count": 1
                     },
-                    "description": ""
+                    "description": "",
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_thatch_dark_fur_tip",
@@ -8879,7 +9101,8 @@
                         "itemId": "westerosblocks:thatch_dark_fur_tip",
                         "count": 1
                     },
-                    "description": ""
+                    "description": "",
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_thatch_dark_fur_fence",
@@ -8894,7 +9117,8 @@
                         "itemId": "westerosblocks:thatch_dark_fur_fence",
                         "count": 1
                     },
-                    "description": ""
+                    "description": "",
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_thatch_dark_fur_carpet",
@@ -8909,7 +9133,8 @@
                         "itemId": "westerosblocks:thatch_dark_fur_carpet",
                         "count": 1
                     },
-                    "description": ""
+                    "description": "",
+                    "energyCost": 0.25
                 },
                 {
                     "id": "art_bancpierretaille",

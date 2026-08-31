@@ -935,7 +935,8 @@
         "output": {
             "itemId": "westerosblocks:oak_vertical_planks_carpet",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_carpet_birch_vert",
@@ -954,7 +955,8 @@
         "output": {
             "itemId": "westerosblocks:birch_vertical_planks_carpet",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_carpet_spruce_vert",
@@ -973,7 +975,8 @@
         "output": {
             "itemId": "westerosblocks:spruce_vertical_planks_carpet",
             "count": 1
-        }
+        },
+        "energyCost": 0.25
     },
     {
         "id": "art_carpet_oak",
