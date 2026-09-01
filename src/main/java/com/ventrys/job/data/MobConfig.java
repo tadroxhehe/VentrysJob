@@ -25,6 +25,10 @@ public final class MobConfig {
     
     private static int minNutritionPercent = 30;
     private static int minHydrationPercent = 30;
+    /** Nutrition minimale pour que accouplement / grossesse avancent (sinon pause). */
+    private static int sustainNutritionPercent = 50;
+    /** Points de nutrition gagnés par action nourrir (descente inchangée). */
+    private static int feedNutritionGain = 12;
     private static int requiredTimeMinutes = 15;
     private static int pregnancyTimeMinutes = 2880; // 48 h
     private static long milkExtractionIntervalMs = 60_000L; // 1 minute
@@ -58,6 +62,12 @@ public final class MobConfig {
                     }
                     if (repro.has("min_hydration_percent")) {
                         minHydrationPercent = Math.max(0, Math.min(100, repro.get("min_hydration_percent").getAsInt()));
+                    }
+                    if (repro.has("sustain_nutrition_percent")) {
+                        sustainNutritionPercent = Math.max(0, Math.min(100, repro.get("sustain_nutrition_percent").getAsInt()));
+                    }
+                    if (repro.has("feed_nutrition_gain")) {
+                        feedNutritionGain = Math.max(1, Math.min(100, repro.get("feed_nutrition_gain").getAsInt()));
                     }
                     if (repro.has("required_time_minutes")) {
                         requiredTimeMinutes = Math.max(1, repro.get("required_time_minutes").getAsInt());
@@ -137,6 +147,8 @@ public final class MobConfig {
         ANIMALS.clear();
         minNutritionPercent = 20;
         minHydrationPercent = 20;
+        sustainNutritionPercent = 50;
+        feedNutritionGain = 12;
         requiredTimeMinutes = 5760; // 96 h
         pregnancyTimeMinutes = 2880; // 48 h
         milkExtractionIntervalMs = 43_200_000L; // 12 h
@@ -153,6 +165,16 @@ public final class MobConfig {
     
     public static int getMinHydrationPercent() {
         return minHydrationPercent;
+    }
+
+    /** Seuil nutrition pour faire avancer accouplement / grossesse (≥ sinon pause). */
+    public static int getSustainNutritionPercent() {
+        return sustainNutritionPercent;
+    }
+
+    /** Points ajoutés par nourrissage (descente nutrition / temps inchangée). */
+    public static int getFeedNutritionGain() {
+        return feedNutritionGain;
     }
     
     public static int getRequiredTimeMinutes() {

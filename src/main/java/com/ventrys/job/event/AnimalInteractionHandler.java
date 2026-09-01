@@ -1,5 +1,6 @@
 package com.ventrys.job.event;
 
+import com.ventrys.job.data.MobConfig;
 import com.ventrys.job.data.PlayerJobData;
 import com.ventrys.job.energy.JobActionEnergyCosts;
 import com.ventrys.job.energy.JobEnergyHelper;
@@ -111,7 +112,7 @@ public class AnimalInteractionHandler {
                         event.setCanceled(true);
                         return;
                     }
-                    animal.addNutrition(20);
+                    animal.addNutrition(MobConfig.getFeedNutritionGain());
                     if (!player.isCreative()) {
                         heldItem.shrink(1);
                     }

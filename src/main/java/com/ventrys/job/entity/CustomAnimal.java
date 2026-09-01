@@ -435,12 +435,19 @@ public abstract class CustomAnimal extends Animal implements IAnimatable {
     }
     
     /**
-     * Vérifie si cet animal peut accumuler du temps de reproduction (faim/soif au-dessus du seuil).
+     * Éligibilité de base (démarrer / rester apparié) : seuils min config.
+     * La progression des jauges exige en plus {@link MobConfig#getSustainNutritionPercent()}.
      */
     public boolean canReproduce() {
         int minNutrition = MobConfig.getMinNutritionPercent();
         int minHydration = MobConfig.getMinHydrationPercent();
         return getNutrition() >= minNutrition && getHydration() >= minHydration;
+    }
+
+    /** Accouplement / grossesse peuvent avancer (nutrition sustain + soif min). */
+    public boolean canSustainReproductionProgress() {
+        return getNutrition() >= MobConfig.getSustainNutritionPercent()
+                && getHydration() >= MobConfig.getMinHydrationPercent();
     }
 
     public void resetReproductionTimer() {

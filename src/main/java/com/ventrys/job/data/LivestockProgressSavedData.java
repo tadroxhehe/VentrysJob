@@ -29,6 +29,12 @@ public final class LivestockProgressSavedData extends SavedData {
         /** Progression grossesse (après accouplement), 0 si pas enceinte. */
         public long pregnancyProgressMs;
         public boolean pregnant;
+        /**
+         * Partenaire d'accouplement exclusif (1 mâle ↔ 1 femelle).
+         * {@code null} = pas en cours d'accouplement.
+         */
+        @javax.annotation.Nullable
+        public java.util.UUID matingPartnerUuid;
         public long lastNutritionDecreaseMs;
         public long lastHydrationDecreaseMs;
         public long lastRegenerationMs;
@@ -47,6 +53,7 @@ public final class LivestockProgressSavedData extends SavedData {
             e.reproductionProgressMs = reproductionProgressMs;
             e.pregnancyProgressMs = pregnancyProgressMs;
             e.pregnant = pregnant;
+            e.matingPartnerUuid = matingPartnerUuid;
             e.lastNutritionDecreaseMs = lastNutritionDecreaseMs;
             e.lastHydrationDecreaseMs = lastHydrationDecreaseMs;
             e.lastRegenerationMs = lastRegenerationMs;
@@ -83,6 +90,9 @@ public final class LivestockProgressSavedData extends SavedData {
             entry.reproductionProgressMs = c.getLong("reproMs");
             entry.pregnancyProgressMs = c.contains("pregMs") ? c.getLong("pregMs") : 0L;
             entry.pregnant = c.contains("pregnant") && c.getBoolean("pregnant");
+            if (c.hasUUID("mateUuid")) {
+                entry.matingPartnerUuid = c.getUUID("mateUuid");
+            }
             entry.lastNutritionDecreaseMs = c.getLong("lastNutrition");
             entry.lastHydrationDecreaseMs = c.getLong("lastHydration");
             entry.lastRegenerationMs = c.getLong("lastRegen");
@@ -110,6 +120,9 @@ public final class LivestockProgressSavedData extends SavedData {
             c.putLong("reproMs", entry.reproductionProgressMs);
             c.putLong("pregMs", entry.pregnancyProgressMs);
             c.putBoolean("pregnant", entry.pregnant);
+            if (entry.matingPartnerUuid != null) {
+                c.putUUID("mateUuid", entry.matingPartnerUuid);
+            }
             c.putLong("lastNutrition", entry.lastNutritionDecreaseMs);
             c.putLong("lastHydration", entry.lastHydrationDecreaseMs);
             c.putLong("lastRegen", entry.lastRegenerationMs);

@@ -10,14 +10,16 @@ import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.chunk.LevelChunk;
 import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 
 /**
@@ -85,6 +87,7 @@ public final class LivestockProgressManager {
         LivestockProgressSavedData.Entry entry = saved.get(uuid);
         if (entry != null) {
             entry.reproductionProgressMs = 0L;
+            entry.matingPartnerUuid = null;
             saved.put(uuid, entry);
         }
     }
@@ -98,6 +101,7 @@ public final class LivestockProgressManager {
         if (entry != null) {
             entry.pregnant = false;
             entry.pregnancyProgressMs = 0L;
+            entry.matingPartnerUuid = null;
             saved.put(uuid, entry);
         }
     }
@@ -171,8 +175,9 @@ public final class LivestockProgressManager {
 
         List<Map.Entry<UUID, LivestockProgressSavedData.Entry>> snapshot =
             new ArrayList<>(saved.allEntries().entrySet());
-        Map<Long, List<Map.Entry<UUID, LivestockProgressSavedData.Entry>>> spatial =
-            buildSpatialIndex(snapshot, MobConfig.getDetectionRadiusBlocks());
+
+        // Appariement exclusif 1 mâle ↔ 1 femelle avant d'avancer les jauges.
+        Map<UUID, UUID> exclusivePairs = buildExclusiveMatingPairs(snapshot, saved);
 
         for (Map.Entry<UUID, LivestockProgressSavedData.Entry> mapEntry : snapshot) {
             UUID uuid = mapEntry.getKey();
@@ -196,24 +201,32 @@ public final class LivestockProgressManager {
             applyHydrationDecay(entry, now);
             applyRegeneration(entry, now);
 
-            boolean eligibleMate = hasEligibleMateNearby(uuid, entry, spatial);
+            UUID pairedMate = exclusivePairs.get(uuid);
+            applyExclusiveMateAssignment(entry, pairedMate);
+
             long requiredMatingMs = MobConfig.getRequiredTimeMinutes() * 60_000L;
             long requiredPregnancyMs = MobConfig.getPregnancyTimeMinutes() * 60_000L;
 
             if (entry.pregnant) {
-                // Phase 2 : gestation — plus besoin de partenaire, juste les soins.
-                if (deltaMs > 0L && canReproduce(entry) && !entry.isMale) {
+                // Phase 2 : gestation — pause si nutrition < seuil sustain (soif = seuil min inchangé).
+                entry.matingPartnerUuid = null;
+                if (deltaMs > 0L && !entry.isMale && canSustainReproductionProgress(entry)) {
                     entry.pregnancyProgressMs += deltaMs;
                 }
                 if (entry.pregnancyProgressMs > requiredPregnancyMs) {
                     entry.pregnancyProgressMs = requiredPregnancyMs;
                 }
                 entry.reproductionProgressMs = 0L;
-            } else if (deltaMs > 0L && canReproduce(entry) && eligibleMate) {
-                // Phase 1 : jauge d'accouplement (timer existant)
-                entry.reproductionProgressMs += deltaMs;
-                if (entry.reproductionProgressMs > requiredMatingMs) {
-                    entry.reproductionProgressMs = requiredMatingMs;
+            } else if (deltaMs > 0L && pairedMate != null) {
+                LivestockProgressSavedData.Entry mateEntry = saved.get(pairedMate);
+                // Phase 1 : les deux partenaires doivent tenir le seuil sustain pour avancer.
+                if (mateEntry != null
+                        && canSustainReproductionProgress(entry)
+                        && canSustainReproductionProgress(mateEntry)) {
+                    entry.reproductionProgressMs += deltaMs;
+                    if (entry.reproductionProgressMs > requiredMatingMs) {
+                        entry.reproductionProgressMs = requiredMatingMs;
+                    }
                 }
             }
 
@@ -222,13 +235,166 @@ public final class LivestockProgressManager {
 
             if (entity instanceof CustomAnimal animal && animal.isAlive()) {
                 animal.applyLivestockEntry(entry);
-                boolean oppositeNearby = hasLoadedOppositeSexNearby(animal);
+                boolean oppositeNearby = pairedMate != null || hasLoadedOppositeSexNearby(animal);
                 animal.updateReproductionHud(entry, oppositeNearby);
             }
         }
 
-        tryStartPregnancies(level, saved, snapshot, spatial);
+        tryStartPregnancies(level, saved, snapshot, exclusivePairs);
         tryBirths(level, saved, snapshot);
+    }
+
+    /**
+     * Met à jour le partenaire exclusif. Changement de partenaire → reset de la jauge
+     * (évite qu'un mâle « porte » la progression de plusieurs femelles).
+     */
+    private static void applyExclusiveMateAssignment(
+            LivestockProgressSavedData.Entry entry,
+            @Nullable UUID pairedMate) {
+        if (entry.pregnant) {
+            entry.matingPartnerUuid = null;
+            return;
+        }
+        if (pairedMate == null) {
+            if (entry.matingPartnerUuid != null) {
+                entry.matingPartnerUuid = null;
+                entry.reproductionProgressMs = 0L;
+            }
+            return;
+        }
+        if (!pairedMate.equals(entry.matingPartnerUuid)) {
+            entry.matingPartnerUuid = pairedMate;
+            entry.reproductionProgressMs = 0L;
+        }
+    }
+
+    /**
+     * Construit des paires exclusives 1↔1 (même espèce, sexe opposé, éligibles).
+     * Conserve d'abord les paires sticky encore valides, puis apparie le reste
+     * par proximité (plus proche d'abord).
+     */
+    private static Map<UUID, UUID> buildExclusiveMatingPairs(
+            List<Map.Entry<UUID, LivestockProgressSavedData.Entry>> snapshot,
+            LivestockProgressSavedData saved) {
+        Map<UUID, UUID> pairs = new HashMap<>();
+        Set<UUID> claimed = new HashSet<>();
+        double radius = MobConfig.getDetectionRadiusBlocks();
+        double radiusSq = radius * radius;
+
+        // 1) Conserver les paires mutuelles encore valides
+        for (Map.Entry<UUID, LivestockProgressSavedData.Entry> mapEntry : snapshot) {
+            UUID uuid = mapEntry.getKey();
+            if (claimed.contains(uuid)) {
+                continue;
+            }
+            LivestockProgressSavedData.Entry self = saved.get(uuid);
+            if (self == null || self.matingPartnerUuid == null || !isMatingCandidate(self)) {
+                continue;
+            }
+            UUID mateUuid = self.matingPartnerUuid;
+            if (claimed.contains(mateUuid)) {
+                continue;
+            }
+            LivestockProgressSavedData.Entry mate = saved.get(mateUuid);
+            if (mate == null || !isMatingCandidate(mate)) {
+                continue;
+            }
+            if (!areValidExclusiveMates(self, mate, radiusSq)) {
+                continue;
+            }
+            // Sticky seulement si le partenaire nous désigne encore (ou n'a plus de cible)
+            if (mate.matingPartnerUuid != null && !mate.matingPartnerUuid.equals(uuid)) {
+                continue;
+            }
+            pairs.put(uuid, mateUuid);
+            pairs.put(mateUuid, uuid);
+            claimed.add(uuid);
+            claimed.add(mateUuid);
+        }
+
+        // 2) Apparier le reste : arêtes mâle–femelle triées par distance
+        List<MateEdge> edges = new ArrayList<>();
+        for (Map.Entry<UUID, LivestockProgressSavedData.Entry> aEntry : snapshot) {
+            UUID aUuid = aEntry.getKey();
+            if (claimed.contains(aUuid)) {
+                continue;
+            }
+            LivestockProgressSavedData.Entry a = saved.get(aUuid);
+            if (a == null || !isMatingCandidate(a) || !a.isMale) {
+                continue;
+            }
+            String typeA = normalizedType(a.entityTypeId);
+            if (typeA.isEmpty()) {
+                continue;
+            }
+            for (Map.Entry<UUID, LivestockProgressSavedData.Entry> bEntry : snapshot) {
+                UUID bUuid = bEntry.getKey();
+                if (aUuid.equals(bUuid) || claimed.contains(bUuid)) {
+                    continue;
+                }
+                LivestockProgressSavedData.Entry b = saved.get(bUuid);
+                if (b == null || !isMatingCandidate(b) || b.isMale) {
+                    continue;
+                }
+                if (!typeA.equals(normalizedType(b.entityTypeId))) {
+                    continue;
+                }
+                double dSq = distSq(a, b);
+                if (dSq > radiusSq) {
+                    continue;
+                }
+                edges.add(new MateEdge(aUuid, bUuid, dSq));
+            }
+        }
+        edges.sort(Comparator.comparingDouble(e -> e.distSq));
+        for (MateEdge edge : edges) {
+            if (claimed.contains(edge.male) || claimed.contains(edge.female)) {
+                continue;
+            }
+            pairs.put(edge.male, edge.female);
+            pairs.put(edge.female, edge.male);
+            claimed.add(edge.male);
+            claimed.add(edge.female);
+        }
+        return pairs;
+    }
+
+    private static final class MateEdge {
+        final UUID male;
+        final UUID female;
+        final double distSq;
+
+        MateEdge(UUID male, UUID female, double distSq) {
+            this.male = male;
+            this.female = female;
+            this.distSq = distSq;
+        }
+    }
+
+    private static boolean isMatingCandidate(LivestockProgressSavedData.Entry entry) {
+        return entry != null && !entry.pregnant && canReproduce(entry);
+    }
+
+    private static boolean areValidExclusiveMates(
+            LivestockProgressSavedData.Entry a,
+            LivestockProgressSavedData.Entry b,
+            double radiusSq) {
+        if (a.isMale == b.isMale) {
+            return false;
+        }
+        String typeA = normalizedType(a.entityTypeId);
+        String typeB = normalizedType(b.entityTypeId);
+        if (typeA.isEmpty() || !typeA.equals(typeB)) {
+            return false;
+        }
+        return distSq(a, b) <= radiusSq;
+    }
+
+    private static double distSq(LivestockProgressSavedData.Entry a, LivestockProgressSavedData.Entry b) {
+        double dx = a.x - b.x;
+        double dy = a.y - b.y;
+        double dz = a.z - b.z;
+        return dx * dx + dy * dy + dz * dz;
     }
 
     /** Sexe opposé, même espèce, entité chargée dans le rayon. */
@@ -243,92 +409,6 @@ public final class LivestockProgressManager {
                 && !other.isBaby()
                 && other.isMale() != self.isMale()
         ).isEmpty();
-    }
-
-    private static Map<Long, List<Map.Entry<UUID, LivestockProgressSavedData.Entry>>> buildSpatialIndex(
-            List<Map.Entry<UUID, LivestockProgressSavedData.Entry>> all,
-            double radius) {
-        int cell = Math.max(1, (int) Math.ceil(radius));
-        Map<Long, List<Map.Entry<UUID, LivestockProgressSavedData.Entry>>> index = new HashMap<>();
-        for (Map.Entry<UUID, LivestockProgressSavedData.Entry> e : all) {
-            LivestockProgressSavedData.Entry entry = e.getValue();
-            long key = cellKey(entry.x, entry.z, cell);
-            index.computeIfAbsent(key, k -> new ArrayList<>()).add(e);
-        }
-        return index;
-    }
-
-    private static long cellKey(double x, double z, int cell) {
-        int cx = floorDiv((int) Math.floor(x), cell);
-        int cz = floorDiv((int) Math.floor(z), cell);
-        return (((long) cx) << 32) ^ (cz & 0xffffffffL);
-    }
-
-    private static int floorDiv(int a, int b) {
-        int q = a / b;
-        if ((a ^ b) < 0 && q * b != a) {
-            q--;
-        }
-        return q;
-    }
-
-    /** Partenaire éligible pour accumuler la jauge (doit aussi pouvoir se reproduire). */
-    private static boolean hasEligibleMateNearby(
-            UUID selfUuid,
-            LivestockProgressSavedData.Entry self,
-            Map<Long, List<Map.Entry<UUID, LivestockProgressSavedData.Entry>>> spatial) {
-        return findNearbyMate(selfUuid, self, spatial, true) != null;
-    }
-
-    private static LivestockProgressSavedData.Entry findNearbyMate(
-            UUID selfUuid,
-            LivestockProgressSavedData.Entry self,
-            Map<Long, List<Map.Entry<UUID, LivestockProgressSavedData.Entry>>> spatial,
-            boolean requireMateCanReproduce) {
-        String selfType = normalizedType(self.entityTypeId);
-        if (selfType.isEmpty()) {
-            return null;
-        }
-        double radius = MobConfig.getDetectionRadiusBlocks();
-        double radiusSq = radius * radius;
-        int cell = Math.max(1, (int) Math.ceil(radius));
-        int cx = floorDiv((int) Math.floor(self.x), cell);
-        int cz = floorDiv((int) Math.floor(self.z), cell);
-        Vec3 posSelf = new Vec3(self.x, self.y, self.z);
-
-        for (int dx = -1; dx <= 1; dx++) {
-            for (int dz = -1; dz <= 1; dz++) {
-                long key = (((long) (cx + dx)) << 32) ^ ((cz + dz) & 0xffffffffL);
-                List<Map.Entry<UUID, LivestockProgressSavedData.Entry>> bucket = spatial.get(key);
-                if (bucket == null) {
-                    continue;
-                }
-                for (Map.Entry<UUID, LivestockProgressSavedData.Entry> other : bucket) {
-                    if (other.getKey().equals(selfUuid)) {
-                        continue;
-                    }
-                    LivestockProgressSavedData.Entry mate = other.getValue();
-                    String mateType = normalizedType(mate.entityTypeId);
-                    if (mateType.isEmpty() || !selfType.equals(mateType)) {
-                        continue;
-                    }
-                    if (self.isMale == mate.isMale) {
-                        continue;
-                    }
-                    if (self.pregnant || mate.pregnant) {
-                        continue;
-                    }
-                    if (requireMateCanReproduce && !canReproduce(mate)) {
-                        continue;
-                    }
-                    Vec3 posMate = new Vec3(mate.x, mate.y, mate.z);
-                    if (posSelf.distanceToSqr(posMate) <= radiusSq) {
-                        return mate;
-                    }
-                }
-            }
-        }
-        return null;
     }
 
     private static String normalizedType(String typeId) {
@@ -397,6 +477,15 @@ public final class LivestockProgressManager {
         return entry.nutrition >= minNutrition && entry.hydration >= minHydration;
     }
 
+    /**
+     * Accouplement / grossesse : nutrition ≥ sustain (50 % défaut), soif ≥ min (inchangé).
+     * En dessous → pause du timer (pas de reset).
+     */
+    private static boolean canSustainReproductionProgress(LivestockProgressSavedData.Entry entry) {
+        return entry.nutrition >= MobConfig.getSustainNutritionPercent()
+                && entry.hydration >= MobConfig.getMinHydrationPercent();
+    }
+
     private static boolean isMatingComplete(LivestockProgressSavedData.Entry entry) {
         long requiredMs = MobConfig.getRequiredTimeMinutes() * 60_000L;
         return entry.reproductionProgressMs >= requiredMs;
@@ -409,21 +498,39 @@ public final class LivestockProgressManager {
 
     /**
      * Fin du timer d'accouplement → démarre la grossesse 48 h (pas de spawn immédiat).
+     * Conception uniquement avec le partenaire exclusif (1 mâle ↔ 1 femelle).
      */
     private static void tryStartPregnancies(
             ServerLevel level,
             LivestockProgressSavedData saved,
             List<Map.Entry<UUID, LivestockProgressSavedData.Entry>> snapshot,
-            Map<Long, List<Map.Entry<UUID, LivestockProgressSavedData.Entry>>> spatial) {
-        double radius = MobConfig.getDetectionRadiusBlocks();
-        double radiusSq = radius * radius;
-        int cell = Math.max(1, (int) Math.ceil(radius));
-
-        for (int i = 0; i < snapshot.size(); i++) {
-            Map.Entry<UUID, LivestockProgressSavedData.Entry> a = snapshot.get(i);
+            Map<UUID, UUID> exclusivePairs) {
+        for (Map.Entry<UUID, LivestockProgressSavedData.Entry> a : snapshot) {
             LivestockProgressSavedData.Entry entryA = saved.get(a.getKey());
             if (entryA == null || entryA.isMale || entryA.pregnant
                     || !canReproduce(entryA) || !isMatingComplete(entryA)) {
+                continue;
+            }
+
+            UUID mateUuid = exclusivePairs.get(a.getKey());
+            if (mateUuid == null) {
+                mateUuid = entryA.matingPartnerUuid;
+            }
+            if (mateUuid == null) {
+                continue;
+            }
+
+            LivestockProgressSavedData.Entry entryB = saved.get(mateUuid);
+            if (entryB == null || entryB.isMale == entryA.isMale || entryB.pregnant
+                    || !canReproduce(entryB)) {
+                continue;
+            }
+            // Doit être mutuel : le mâle ne peut pas « servir » plusieurs femelles
+            UUID back = exclusivePairs.get(mateUuid);
+            if (back == null) {
+                back = entryB.matingPartnerUuid;
+            }
+            if (back == null || !back.equals(a.getKey())) {
                 continue;
             }
 
@@ -431,72 +538,33 @@ public final class LivestockProgressManager {
             if (!(entityA instanceof CustomAnimal animalA) || !animalA.isAlive() || animalA.isBaby()) {
                 continue;
             }
-
-            int cx = floorDiv((int) Math.floor(entryA.x), cell);
-            int cz = floorDiv((int) Math.floor(entryA.z), cell);
-            Vec3 posA = new Vec3(entryA.x, entryA.y, entryA.z);
-            boolean conceived = false;
-
-            for (int dx = -1; dx <= 1 && !conceived; dx++) {
-                for (int dz = -1; dz <= 1 && !conceived; dz++) {
-                    long key = (((long) (cx + dx)) << 32) ^ ((cz + dz) & 0xffffffffL);
-                    List<Map.Entry<UUID, LivestockProgressSavedData.Entry>> bucket = spatial.get(key);
-                    if (bucket == null) {
-                        continue;
-                    }
-                    for (Map.Entry<UUID, LivestockProgressSavedData.Entry> b : bucket) {
-                        if (b.getKey().equals(a.getKey())) {
-                            continue;
-                        }
-                        LivestockProgressSavedData.Entry entryB = saved.get(b.getKey());
-                        if (entryB == null || entryB.isMale == entryA.isMale) {
-                            continue;
-                        }
-                        String typeA = normalizedType(entryA.entityTypeId);
-                        String typeB = normalizedType(entryB.entityTypeId);
-                        if (typeA.isEmpty() || !typeA.equals(typeB)) {
-                            continue;
-                        }
-                        if (!canReproduce(entryB)) {
-                            continue;
-                        }
-
-                        Vec3 posB = new Vec3(entryB.x, entryB.y, entryB.z);
-                        if (posA.distanceToSqr(posB) > radiusSq) {
-                            continue;
-                        }
-
-                        Entity entityB = level.getEntity(b.getKey());
-                        if (!(entityB instanceof CustomAnimal animalB) || !animalB.isAlive() || animalB.isBaby()) {
-                            continue;
-                        }
-
-                        if (!animalA.isReproductionReadyWith(animalB)) {
-                            continue;
-                        }
-
-                        // Conception : reset jauge accouplement, démarre grossesse.
-                        entryA.reproductionProgressMs = 0L;
-                        entryB.reproductionProgressMs = 0L;
-                        entryA.pregnant = true;
-                        entryA.pregnancyProgressMs = 0L;
-                        animalA.resetReproductionTimer();
-                        animalB.resetReproductionTimer();
-                        animalA.setPregnant(true, 0L);
-                        saved.put(a.getKey(), entryA);
-                        saved.put(b.getKey(), entryB);
-
-                        animalA.addNutrition(-40);
-                        animalA.addHydration(-40);
-                        animalB.addNutrition(-40);
-                        animalB.addHydration(-40);
-                        LivestockProgressManager.persistFromEntity(animalA);
-                        LivestockProgressManager.persistFromEntity(animalB);
-                        conceived = true;
-                        break;
-                    }
-                }
+            Entity entityB = level.getEntity(mateUuid);
+            if (!(entityB instanceof CustomAnimal animalB) || !animalB.isAlive() || animalB.isBaby()) {
+                continue;
             }
+            if (!animalA.isReproductionReadyWith(animalB)) {
+                continue;
+            }
+
+            // Conception : reset jauge accouplement, démarre grossesse.
+            entryA.reproductionProgressMs = 0L;
+            entryB.reproductionProgressMs = 0L;
+            entryA.matingPartnerUuid = null;
+            entryB.matingPartnerUuid = null;
+            entryA.pregnant = true;
+            entryA.pregnancyProgressMs = 0L;
+            animalA.resetReproductionTimer();
+            animalB.resetReproductionTimer();
+            animalA.setPregnant(true, 0L);
+            saved.put(a.getKey(), entryA);
+            saved.put(mateUuid, entryB);
+
+            animalA.addNutrition(-40);
+            animalA.addHydration(-40);
+            animalB.addNutrition(-40);
+            animalB.addHydration(-40);
+            LivestockProgressManager.persistFromEntity(animalA);
+            LivestockProgressManager.persistFromEntity(animalB);
         }
     }
 
